@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{8FA01E8A08DC3202}Prefabs/Weapons/Attachments/Optics/Scrome_J8/Bonnette_ScromeJ8.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

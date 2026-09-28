@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{3DA157E56EFED731}Prefabs/Weapons/Attachments/Mounts/Rail_Picatinny/Rail_Famas_Picatinny_PGMP.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,8 @@
+GenericTerrainEntity {
+ ID "6A4EFD32A619A4A1"
+ components {
+  SRP_DeliveryPointComponent "{6A4EFD32C02A7926}" {
+  }
+ }
+ DielectricReflectance 0.02
+}

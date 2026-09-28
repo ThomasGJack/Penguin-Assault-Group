@@ -1,0 +1,39 @@
+GenericTerrainEntity : "{E992179C1A41CDBC}Prefabs/Props/Depots/SRP_PointLivraison.et" {
+ components {
+  SRP_DeliveryPointComponent "{6A4EFD32C02A7926}" {
+   m_sLabel "Laruns dépot véhicule et Crate"
+   m_bVehicles 1
+  }
+ }
+ coords 7558.369 82.813 5499.931
+}
+$grp GenericEntity {
+ SRP_Parc_1 {
+  coords 7589.258 166.156 4251.125
+  angles 0 -72.731 0
+ }
+ SRP_Parc_2 {
+  coords 7587.803 166.156 4245.714
+  angles 0 -72.731 0
+ }
+ SRP_Parc_3 {
+  coords 7586.508 166.156 4241.022
+  angles 0 -72.731 0
+ }
+ SRP_Parc_4 {
+  coords 7585.847 166.156 4236.61
+  angles 0 -72.731 0
+ }
+ SRP_Parc_5 {
+  coords 7584.74 166.156 4231.931
+  angles 0 -72.731 0
+ }
+ SRP_Parc_6 {
+  coords 7582.932 166.156 4227.934
+  angles 0 -72.731 0
+ }
+}
+GenericEntity : "{0609B37716762F3B}Prefabs/Props/Depots/SRP_Terminal.et" {
+ coords 7542.984 167.511 4221.786
+ angles 0 -139.001 0
+}

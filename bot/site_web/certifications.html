@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Certifications et grades</title>
+<meta name="description" content="Les certifications de la PAG : ce que chacune ouvre, ses prérequis, comment l'obtenir, et les conditions de chaque grade.">
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227; --nous: #3ddc84; --ami: #4da3ff; --alerte: #ff7a59; }
+  * { box-sizing: border-box; scrollbar-color: #2b3a47 #0c1116; scrollbar-width: thin; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  html, body { margin: 0; background: var(--fond); color: var(--texte); font: 15px/1.6 "Segoe UI", system-ui, sans-serif; }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+  header { position: sticky; top: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 10px 26px; background: #0c1116f2; border-bottom: 1px solid var(--bord); backdrop-filter: blur(6px); }
+  header img { width: 34px; height: 34px; }
+  header b { font-size: 15px; }
+  header nav { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  header nav a { color: var(--texte); text-decoration: none; border: 1px solid var(--bord); border-radius: 999px; padding: 4px 13px; font-size: 13px; }
+  header nav a:hover { border-color: var(--or); color: var(--or); }
+  main { max-width: 1120px; margin: 0 auto; padding: 34px 26px 60px; }
+  h1 { margin: 0 0 8px; font-size: clamp(26px, 5vw, 40px); line-height: 1.1; }
+  .chapeau { color: #b4c0cb; font-size: 17px; max-width: 760px; margin: 0 0 8px; }
+  h2 { margin: 54px 0 6px; font-size: 21px; }
+  h2 + p { color: var(--discret); margin: 0 0 20px; max-width: 800px; }
+  a { color: var(--or); }
+
+  /* le parcours */
+  .parcours { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; counter-reset: etape; margin-top: 26px; }
+  .etape { counter-increment: etape; background: var(--panneau); border: 1px solid var(--bord); border-top: 3px solid var(--or); border-radius: 10px; padding: 14px 16px; }
+  .etape:before { content: counter(etape); display: inline-flex; width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--or); color: var(--or); align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin-bottom: 8px; }
+  .etape b { display: block; margin-bottom: 3px; }
+  .etape span { color: #a9b6c2; font-size: 13.5px; }
+
+  /* les certifications */
+  .familles { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .familles button { background: var(--panneau); border: 1px solid var(--bord); color: var(--texte); border-radius: 999px; padding: 5px 15px; font: inherit; font-size: 13.5px; cursor: pointer; }
+  .familles button:hover, .familles button.actif { border-color: var(--or); color: var(--or); }
+  .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+  .certif { background: var(--panneau); border: 1px solid var(--bord); border-left: 3px solid var(--c, var(--or)); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; }
+  .certif:target { border-color: var(--or); box-shadow: 0 0 0 2px #c9a22755; }
+  .certif .tete { display: flex; align-items: center; gap: 10px; }
+  .certif .sigle { font: 700 12px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .1em; background: var(--c, var(--or)); color: #0c1116; border-radius: 5px; padding: 5px 8px; flex: none; }
+  .certif h3 { margin: 0; font-size: 16.5px; }
+  .certif p { margin: 10px 0 12px; color: #b4c0cb; font-size: 14px; flex: 1; }
+  .certif dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 13px; border-top: 1px solid var(--bord); padding-top: 10px; }
+  .certif dt { color: var(--discret); }
+  .certif dd { margin: 0; }
+  .certif dd a { text-decoration: none; }
+  .certif .lien { margin-top: 10px; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 16px; border-top: 1px solid #1b2630; }
+  tr:first-child th { border-top: 0; color: var(--discret); font-weight: 600; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  .table { overflow-x: auto; }
+
+  .deux { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
+  .bloc { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 16px 20px; }
+  .bloc h3 { margin: 0 0 6px; font-size: 16px; }
+  .bloc p, .bloc li { color: #b4c0cb; font-size: 14.5px; }
+  .bloc p { margin: 0 0 8px; } .bloc ul { margin: 0; padding-left: 18px; }
+  .bloc.alerte { border-left: 3px solid var(--alerte); }
+  footer { border-top: 1px solid var(--bord); color: #5d6d7b; font-size: 12.5px; padding: 20px 26px 30px; text-align: center; }
+  @media (max-width: 640px) { main { padding: 22px 16px 40px; } header { padding: 8px 14px; } header b { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <img src="/site/favicon.png" alt="">
+  <b class="titre">PAG · Certifications</b>
+  <nav><a href="/">← Accueil</a><a href="/dotations/">Dotations</a><a href="/effectifs/">Effectifs</a><a href="/campagne/">Campagne</a></nav>
+</header>
+
+<main>
+  <h1 class="titre">Certifications et grades</h1>
+  <p class="chapeau">À la PAG, on ne prend pas une mitrailleuse, le volant d'un blindé ou la trousse du médecin parce qu'on en a envie : on y est formé, puis habilité. Une certification dit ce qu'un soldat sait faire, et le jeu la vérifie.</p>
+
+  <div class="parcours">
+    <div class="etape"><b>Recrue</b><span>Tu arrives, tu acceptes la charte, tu touches la dotation commune. Béret marron.</span></div>
+    <div class="etape"><b>FGI</b><span>La formation générale initiale, une heure avec un instructeur. Validée, tu passes Soldat de 2e classe : béret bleu foncé.</span></div>
+    <div class="etape"><b>Spécialités</b><span>Infirmier, conducteur, mitrailleur, sapeur… Chaque certification ouvre son matériel et son rôle dans le groupe.</span></div>
+    <div class="etape"><b>Chef de groupe</b><span>Opérateur radio puis CDG, à partir de Caporal : tu prends des missions à ton nom et tu commandes.</span></div>
+    <div class="etape"><b>Sous-officier</b><span>Sergent et au-delà : la CDG, des heures de service et des missions réussies.</span></div>
+  </div>
+
+  <h2 class="titre" id="liste">Les certifications</h2>
+  <p>Chaque fiche dit ce que la certification ouvre, ce qu'il faut avoir avant, et renvoie à la dotation du rôle.</p>
+  <div class="familles" id="familles"></div>
+  <div class="grille" id="grille"></div>
+
+  <h2 class="titre" id="obtenir">Comment on l'obtient</h2>
+  <p>Une certification se mérite en séance, pas sur demande.</p>
+  <div class="deux">
+    <div class="bloc"><h3>La formation</h3><p>Les formations s'organisent sur le Discord de la PAG, dans le salon des formations. Un <b>instructeur habilité pour cette certification</b> te prend en séance, en jeu.</p><p>À la fin, il la valide en te regardant : menu « Gestion du soldat ». Le jeu vérifie tes prérequis et ton grade ; s'il manque quelque chose, il dit quoi.</p></div>
+    <div class="bloc"><h3>Les instructeurs</h3><p>Il n'y a pas d'instructeur « de tout ». On est habilité <b>certification par certification</b>, par un Adjudant ou par le Staff : instructeur antichar, instructeur tireur de précision…</p><p>Un instructeur porte le béret amarante. Ses habilitations figurent sur sa <a href="/effectifs/">fiche</a>.</p></div>
+    <div class="bloc alerte"><h3>Sans la certification</h3><p>Le jeu ne t'empêche pas de prendre une arme réservée ou le volant d'un véhicule : en urgence, un soldat doit pouvoir sauver son groupe.</p><p>Mais la prise en main est <b>inscrite sur ta fiche comme infraction</b> et les officiers sont prévenus aussitôt. À toi de t'en expliquer.</p></div>
+    <div class="bloc"><h3>Où voir les miennes</h3><p>Tes certifications, tes heures de service et tes missions sont sur ta fiche, dans les <a href="/effectifs/">effectifs</a>, et en jeu à l'ordinateur de la base (onglet « Ma fiche »).</p><p>Sur Discord, tes rôles suivent ton grade.</p></div>
+  </div>
+
+  <h2 class="titre" id="grades">Les grades</h2>
+  <p>Remplir les conditions ouvre le droit au grade ; c'est un officier qui promeut, jamais au-dessus de son propre grade. La FGI est exigée pour tous.</p>
+  <div class="table"><table>
+    <tr><th>Grade</th><th>Certification exigée</th><th>Heures de service</th><th>Missions réussies</th></tr>
+    <tr><td>Recrue</td><td>—</td><td>—</td><td>—</td></tr>
+    <tr><td>Soldat de 2e classe</td><td><a href="#FGI">FGI</a> validée</td><td>—</td><td>—</td></tr>
+    <tr><td>Soldat de 1re classe</td><td>FGI</td><td>10 h</td><td>8</td></tr>
+    <tr><td>Caporal</td><td>FGI</td><td>25 h</td><td>20</td></tr>
+    <tr><td>Caporal-chef</td><td>FGI</td><td>50 h</td><td>40</td></tr>
+    <tr><td>Sergent</td><td>FGI + <a href="#CDG">CDG</a></td><td>100 h</td><td>70</td></tr>
+    <tr><td>Sergent-chef</td><td>FGI + CDG</td><td>200 h</td><td>120</td></tr>
+    <tr><td>Adjudant</td><td>FGI + CDG</td><td>400 h</td><td>200</td></tr>
+    <tr><td>Lieutenant, Capitaine</td><td colspan="3">Officiers : nommés par le commandement de la PAG</td></tr>
+  </table></div>
+</main>
+
+<footer>PAG · Penguin Assault Group — <a href="/">Accueil</a> · <a href="/dotations/">Dotations</a> · <a href="/effectifs/">Effectifs</a> · <a href="/suivi/">Suivi du développement</a></footer>
+
+<script>
+// Tiré du mod (arbre des certifications et verrous de l'arsenal, du parc et du territoire). « dot » = fiche du guide des dotations.
+const CERTIFS = [
+  { id: 'FGI', sigle: 'FGI', nom: 'Formation générale initiale', famille: 'Socle', c: '#c9a227', avant: 'Aucun', grade: 'Recrue', dot: 'a1',
+    texte: 'La porte d\'entrée. Validée, elle te fait passer Soldat de 2e classe. Sans elle : ni grade, ni autre certification, ni « Trouver une mission », ni contrôle routier.' },
+  { id: 'OR', sigle: 'OR', nom: 'Opérateur radio', famille: 'Commandement', c: '#4da3ff', avant: 'FGI', grade: '—', dot: 'a8',
+    texte: 'Le lien du groupe avec la base et les autres groupes. Il reste à portée de voix du chef. Exigée pour devenir chef de groupe.' },
+  { id: 'CDG', sigle: 'CDG', nom: 'Chef de groupe', famille: 'Commandement', c: '#4da3ff', avant: 'FGI + OR', grade: 'Caporal', dot: 'a7',
+    texte: 'Tu prends une mission du tableau à ton nom et tu mènes le groupe. Exigée pour passer Sergent et au-delà.' },
+  { id: 'Infirmier', sigle: 'INF', nom: 'Infirmier', famille: 'Santé', c: '#3ddc84', avant: 'FGI', grade: '—', dot: 'a6',
+    texte: 'Le soignant du groupe, un pour huit soldats au plus. Ouvre à l\'arsenal l\'épinéphrine, la naloxone, le carbonate d\'ammonium et le masque à oxygène.' },
+  { id: 'Médecin', sigle: 'MED', nom: 'Médecin', famille: 'Santé', c: '#3ddc84', avant: 'FGI + Infirmier', grade: 'Caporal', dot: 'a6',
+    texte: 'Les gestes invasifs et les médicaments du cœur : King LT, kit de décompression, métoprolol, phényléphrine, kit médical.' },
+  { id: 'MG', sigle: 'MG', nom: 'Mitrailleur', famille: 'Armes', c: '#ff7a59', avant: 'FGI', grade: '—', dot: 'a4',
+    texte: 'L\'appui-feu du groupe : les mitrailleuses. Une seule par groupe, deux sur ordre.' },
+  { id: 'LG', sigle: 'LG', nom: 'Lance-grenades', famille: 'Armes', c: '#ff7a59', avant: 'FGI', grade: '—', dot: 'a3',
+    texte: 'Le fusil équipé du lance-grenades HK269 et ses munitions de 40 mm.' },
+  { id: 'AT', sigle: 'AT', nom: 'Antichar', famille: 'Armes', c: '#ff7a59', avant: 'FGI', grade: '—', dot: 'a11',
+    texte: 'Les lance-roquettes. Contre un blindé, c\'est lui que le groupe protège.' },
+  { id: 'TP', sigle: 'TP', nom: 'Tireur de précision', famille: 'Armes', c: '#ff7a59', avant: 'FGI', grade: 'Caporal', dot: 'a5',
+    texte: 'Les fusils de précision, avec les aides au tir : tables balistiques et anémomètre.' },
+  { id: 'Sapeur', sigle: 'SAP', nom: 'Sapeur', famille: 'Appui', c: '#9b8cff', avant: 'FGI', grade: '—', dot: 'a11',
+    texte: 'Il ouvre la route : détecteur de mines et interrupteur homme mort lui sont réservés. C\'est aussi lui qui répare les véhicules.' },
+  { id: 'Logi', sigle: 'LOGI', nom: 'Logisticien', famille: 'Appui', c: '#9b8cff', avant: 'FGI', grade: '—', dot: 'a9',
+    texte: 'Il ravitaille et fait tourner la base. Lui seul, avec les officiers, installe le dépôt d\'un secteur capturé. Béret rouge.' },
+  { id: 'VL', sigle: 'VL', nom: 'Conducteur de véhicules légers', famille: 'Véhicules', c: '#37c2c2', avant: 'FGI', grade: '—', dot: 'a9',
+    texte: 'Les véhicules légers du parc : le premier permis, et le prérequis de tous les autres.' },
+  { id: 'PL', sigle: 'PL', nom: 'Conducteur de poids lourds', famille: 'Véhicules', c: '#37c2c2', avant: 'FGI + VL', grade: '—', dot: 'a9',
+    texte: 'Les camions : transport de troupe, ravitaillement, citernes.' },
+  { id: 'Blindé', sigle: 'BLD', nom: 'Chef d\'engin blindé', famille: 'Véhicules', c: '#37c2c2', avant: 'FGI + VL + PL', grade: 'Caporal', dot: 'a10',
+    texte: 'Les engins blindés du parc. À bord, l\'équipage emporte le minimum.' },
+  { id: 'Pilote', sigle: 'PIL', nom: 'Pilote', famille: 'Véhicules', c: '#37c2c2', avant: 'FGI + VL', grade: 'Caporal', dot: 'a10',
+    texte: 'Les hélicoptères de la base : transport et dépose des groupes.' },
+];
+const propre = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+let famille = 'Toutes';
+function afficher() {
+  const familles = ['Toutes', ...new Set(CERTIFS.map(c => c.famille))];
+  document.getElementById('familles').innerHTML = familles.map(f => `<button class="${f === famille ? 'actif' : ''}" data-f="${propre(f)}">${propre(f)}</button>`).join('');
+  document.getElementById('grille').innerHTML = CERTIFS.filter(c => famille === 'Toutes' || c.famille === famille).map(c => `
+    <article class="certif" id="${propre(c.id)}" style="--c:${c.c}">
+      <div class="tete"><span class="sigle">${propre(c.sigle)}</span><h3>${propre(c.nom)}</h3></div>
+      <p>${propre(c.texte)}</p>
+      <dl><dt>Avant</dt><dd>${propre(c.avant)}</dd><dt>Grade minimum</dt><dd>${propre(c.grade)}</dd><dt>Famille</dt><dd>${propre(c.famille)}</dd></dl>
+      <a class="lien" href="/dotations/#${c.dot}">Voir la dotation du rôle →</a>
+    </article>`).join('');
+  for (const b of document.querySelectorAll('#familles button')) b.onclick = () => { famille = b.dataset.f; afficher(); };
+}
+afficher();
+// Arrivée par un lien vers une certification (fiche d'un soldat) : on montre toutes les familles, puis on y va
+if (location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)))) document.getElementById(decodeURIComponent(location.hash.slice(1))).scrollIntoView();
+</script>
+</body>
+</html>

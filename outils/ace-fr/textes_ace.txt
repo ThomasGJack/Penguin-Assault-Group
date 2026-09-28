@@ -1,0 +1,206 @@
+
+## ACE Ballistics Dev | Language/ACE_Ballistics_localization.fr_fr.conf | {C8F610AFB71A9338}
+ACE_Ballistics-Item_BallisticTables_Mrads_Description	Collection of ballistic tables in milliradians for bullets compatible with your rifle.
+ACE_Ballistics-Item_BallisticTables_Mrads_Name	Ballistic Tables in mrads
+ACE_Ballistics-Item_BallisticTables_WpMils_Description	Collection of ballistic tables in Warsaw Pact mils for bullets compatible with your rifle.
+ACE_Ballistics-Item_BallisticTables_WpMils_Name	Ballistic Tables in WP mils
+
+## ACE Captives Dev | Language/ACE_Captives_localization.fr_fr.conf | {454D2F8D6E432375}
+ACE_Captives-Editor_ContextAction_ToggleCaptive_Name	Toggle take prisoner   [FR du mod : Activer/désactiver la prise de prisonniers]
+ACE_Captives-Editor_ContextAction_ToggleSurrender_Name	Toggle surrender   [FR du mod : Basculer la reddition]
+ACE_Captives-Emotes_Emote_Surrender_Name	Surrender   [FR du mod : Se rendre]
+ACE_Captives-UserAction_EscortCaptive	Escort prisoner   [FR du mod : Escorté le prisonnier]
+ACE_Captives-UserAction_ReleasePrisoner	Release prisoner   [FR du mod : Libérer le prisonnier]
+ACE_Captives-UserAction_TakeAsPrisoner	Take as prisoner   [FR du mod : Faire prisonnier]
+ACE_Captives-UserAction_UnloadCaptive	Unload prisoner:   [FR du mod : Libérer le prisonnier]
+
+## ACE Carrying Dev | Language/ACE_Carrying_localization.fr_fr.conf | {9B8D239D172802B3}
+ACE_Carrying-UserAction_Drag	Drag   [FR du mod : Traîner]
+
+## ACE Chopping Dev | Language/ACE_Chopping_localization.fr_fr.conf | {80459E0AF3F4276E}
+ACE_Chopping_RemoveBush	Remove Bush   [FR du mod : Retirer le buisson]
+ACE_Chopping_RemoveTree	Remove Tree   [FR du mod : Retirer l'arbre]
+
+## ACE Core Dev | Language/ACE_localization.fr_fr.conf | {FDC979CD6B32CAAD}
+ACE-Acronym	ACE
+ACE-ControlsHint_InspectTurret	Inspect Turret
+ACE-Emotes_Emote_MetalClanging_Name	Metal clanging
+ACE-Item_AnvilPatch_Name	ACE Anvil Patch
+ACE-Item_Banana_Description	Healthy potassium!   [FR du mod : Potassium bon pour la santé !]
+ACE-Item_Banana_Name	Banana   [FR du mod : Banane]
+ACE-RadialMenu_ChangeMagazine	Change magazine
+ACE-Item_CbrnPatch_Name	ACE CBRN Patch
+ACE-Item_EngineerPatch_Name	ACE Engineer Patch
+ACE-Item_MedicPatch_Name	ACE Medic Patch
+ACE-UserAction_Carry	Carry   [FR du mod : Porter]
+ACE-UserAction_Carrying	Carrying   [FR du mod : Porter]
+ACE-UserAction_LoadCarried	Load carried:   [FR du mod : Charge transportée]
+ACE-UserAction_Release	Release   [FR du mod : Déposer]
+ACE-Weapon_FragBanana_Description	Explosive Potassium!   [FR du mod : Potassium explosif !]
+ACE-Weapon_FragBanana_Name	Frag Banana   [FR du mod : Banane à fragmentation]
+ACE_Core-AddonName	Core
+
+## ACE Explosives Dev | Language/ACE_Explosives_Localization.fr_fr.conf | {F4A4D90706A8CFAB}
+ACE-Explosives_FailReason_Buried	Buried   [FR du mod : Enterré]
+ACE-Explosives_FailReason_HardSurface	Hard surface   [FR du mod : Surface dure]
+ACE-Explosives_Item_DeadManSwitch_Name	Dead man's switch   [FR du mod : Détonateur par relâchement de pression]
+ACE-Explosives_Item_VMM3_Description	Metal and mine detector used for clearing landmines and UXO.
+ACE-Explosives_Item_VMM3_Name	BMM3 Metal/Mine Detector
+ACE-Explosives_UserAction_Bury_Name	Bury   [FR du mod : Enterrer]
+ACE-Explosives_UserAction_ConnectToInventoryExplosives_Name	Connect to explosives in inventory
+ACE-Explosives_UserAction_Disarm_Name	Disarm   [FR du mod : Désarmer]
+ACE-Explosives_UserAction_Unbury_Name	Unbury   [FR du mod : Déterrer]
+
+## ACE Facepaint Dev | Languages/ACE_Facepaint_Localisation_01.fr_fr.conf | {72569ABBA89E753F}
+ace-item-facepaint-uk-description	UK manufactured camouflage face cream stick. Either end has a different colour camouflage cream.   [FR du mod : Stick de crème camouflage pour le visage, fabriqué au Royaume-Uni. Chaque extrémité contient une crème camouflage de couleur différente]
+ace-item-facepaint-uk-name	Camouflage Face Cream   [FR du mod : Crème de Camouflage]
+ace-item-facepaint-us-description	US manufactured camouflage face cream stick. Either end has a different colour camouflage cream.   [FR du mod : Stick de crème camouflage pour le visage, fabriqué aux États-Unis. Chaque extrémité contient une crème camouflage de couleur différente.]
+ace-item-facepaint-us-name	Camouflage Face Cream   [FR du mod : Crème de Camouflage]
+ace-item-facepaint-ussr-description	Soviet manufactured camouflage face cream stick.   [FR du mod : stick de crème de camouflage pour le visage, de fabrication soviétique]
+ace-item-facepaint-ussr-name	Camouflage Face Cream   [FR du mod : Crème de Camouflage]
+
+## ACE Finger Dev | Language/ACE_Finger_localization.fr_fr.conf | {7BCB15EE938CB63F}
+ACE_Finger-AddonName	Finger   [FR du mod : Doigt]
+ACE_Finger-Keybind_PointOnMap	Point on map   [FR du mod : Pointer sur la carte]
+ACE_Finger-Notification_PlayerPointsAtEntity	%1 points at %2   [FR du mod : %1 désigne %2]
+ACE_Finger-Notification_PlayerPointsAtPosition	%1 points at position   [FR du mod : %1 indique une position]
+
+## ACE Medical Breathing Dev | Language/ACE_Medical_Breathing_localization.fr_fr.conf | {D42E3638EBAD3845}
+ACE_Medical-InfoWidget_ChestSeal	Prevents tension pneumothorax
+ACE_Medical-InfoWidget_KingLT	Prevents obstruction and occlusion of airways
+ACE_Medical-InfoWidget_NCDKit	Used for treating tension pneumothorax
+ACE_Medical-InfoWidget_OxygenMask	Provides supplemental oxygen
+ACE_Medical-Item_ChestSeal_Description	Special dressing for open chest wounds
+ACE_Medical-Item_ChestSeal_Name	Chest Seal
+ACE_Medical-Item_KingLT_Description	Airway management device inserted into throat
+ACE_Medical-Item_KingLT_Name	King LT
+ACE_Medical-Item_NCDKit_Description	Kit for performing needle decompression
+ACE_Medical-Item_NCDKit_Name	NCD Kit
+ACE_Medical-Item_OxygenMask_Description	Mask for oxygen therapy
+ACE_Medical-Item_OxygenMask_Name	Oxygen Mask
+ACE_Medical-Notification_BREATHING_RESULT	You find a respiratory rate of %1 breaths per minute
+ACE_Medical-Notification_SPO2_RESULT	You find a SpO2 of %1%
+ACE_Medical-OpenPneumothorax	Open pneumothorax
+ACE_Medical-RadialMenu_AirwayThoraxManagement	Airway/Thorax management
+ACE_Medical-TensionPneumothorax	Tension pneumothorax
+ACE_Medical-UserAction_CheckBreathing	Check respiratory rate
+ACE_Medical-UserAction_CheckSpO2	Check SpO2
+ACE_Medical-UserAction_ChestSeal	Use chest seal
+ACE_Medical-UserAction_ClearVomit	Clear vomit
+ACE_Medical-UserAction_KingLT	Insert King LT
+ACE_Medical-UserAction_NeedleDecompression	Perform needle decompression
+ACE_Medical-UserAction_OxygenMask	Put on oxygen mask
+ACE_Medical-UserAction_TiltHead	Lift chin
+
+## ACE Medical Circulation Dev | Language/ACE_Medical_Circulation_localization.fr_fr.conf | {9C69F13E858E40AF}
+ACE_Medical-AmmoniumCarbonatePackageAction	Hold under nose
+ACE_Medical-BloodState_Class1	Class I hemorrhage
+ACE_Medical-BloodState_Class2	Class II hemorrhage
+ACE_Medical-BloodState_Class3	Class III hemorrhage
+ACE_Medical-BloodState_Class4	Class IV hemorrhage
+ACE_Medical-CheckBloodPressureAction	Check blood pressure
+ACE_Medical-CheckPulseAction	Check pulse
+ACE_Medical-CPRAction	Perform CPR
+ACE_Medical-Editor_TooltipDetail_Brain_Name	Brain
+ACE_Medical-Editor_TooltipDetail_VitalSigns_Name	Vital signs
+ACE_Medical-FailReason_NotOnBack	Not on back
+ACE_Medical-InfoWidget_AmmoniumCarbonate	Increases wake-up chance
+ACE_Medical-InfoWidget_Epinephrine	Increases heart rate
+ACE_Medical-InfoWidget_Metoprolol	Decreases heart rate
+ACE_Medical-InfoWidget_Naloxone	Antagonist for opioids like morphine
+ACE_Medical-InfoWidget_Phenylephrine	Increases blood pressure and slows down bleeding and transfusion
+ACE_Medical-Item_AmmoniumCarbonate_Description	Administered to unconscious patients.
+ACE_Medical-Item_AmmoniumCarbonate_Name	Ammonium Carbonate
+ACE_Medical-Item_Epinephrine_Description	Administered to patients in cardiac arrest
+ACE_Medical-Item_Epinephrine_Name	Epinephrine
+ACE_Medical-Item_Metoprolol_Description	Administered to patients with too high heart rate
+ACE_Medical-Item_Metoprolol_Name	Metoprolol
+ACE_Medical-Item_Naloxone_Description	Administered to patients with opioid overdose
+ACE_Medical-Item_Naloxone_Name	Naloxone
+ACE_Medical-Item_Phenylephrine_Description	Administered to patients for raising blood pressure
+ACE_Medical-Item_Phenylephrine_Name	Phenylephrine
+ACE_Medical-MetoprololInjectionAction	Inject metoprolol
+ACE_Medical-NaloxoneInjectionAction	Inject naloxone
+ACE_Medical-Notification_BLOOD_PRESSURE_RESULT	You find a blood pressure of %1/%2 mmHg
+ACE_Medical-Notification_PULSE_RESULT	You find a heart rate of %1
+ACE_Medical-PhenylephrineInjectionAction	Inject phenylephrine
+
+## ACE Medical Core Dev | Language/ACE_Medical_Core_localization.fr_fr.conf | {1B1D52F35D553826}
+ACE_Medical-AddonName	Medical   [FR du mod : Médecin]
+ACE_Medical-Editor_TooltipDetail_Resilience_Name	Resilience   [FR du mod : Résilience]
+ACE_Medical-EpinephrineInjectionAction	Inject epinephrine   [FR du mod : Injecter de l'épiméphine]
+ACE_Medical-FailReason_NoPain	Not in pain   [FR du mod : Ne ressent pas de douleur]
+ACE_Medical-FailReason_NotUnconscious	Not unconscious   [FR du mod : Conscient]
+ACE_Medical-FailReason_TooInjured	Too injured   [FR du mod : Grièvement blessé]
+ACE_Medical-InfoWidget_Epinephrine	Increases wake-up chance   [FR du mod : Augmente les chances de reprise de connaissance]
+ACE_Medical-InfoWidget_Morphine	Alleviates severe pain   [FR du mod : Soulage les douleurs intenses]
+ACE_Medical-Item_Epinephrine_Description	Administered to unconscious patients.   [FR du mod : Administrée à des patients inconscients.]
+ACE_Medical-Item_Epinephrine_Name	Epinephrine   [FR du mod : Épinéphrine]
+ACE_Medical-Item_Morphine_Description	Administered to patients in severe pain.   [FR du mod : Administré aux patients souffrant de douleurs intenses.]
+ACE_Medical-KeyBind_OpenRadialMenu	Open medical radial menu   [FR du mod : Ouvrir le menu radial médical]
+ACE_Medical-RadialMenu_ExaminePatient	Examine patient   [FR du mod : Examiner le patient]
+ACE_Medical-RadialMenu_FluidReplacement	Fluid Replacement   [FR du mod : Remplacement du fluide]
+ACE_Medical-RadialMenu_FractureManagement	Fracture management   [FR du mod : Gestion des fractures]
+ACE_Medical-RadialMenu_HemorrhageControl	Hemorrhage control   [FR du mod : Contrôle des hémorragies]
+ACE_Medical-RadialMenu_Medication	Medication   [FR du mod : Médication]
+ACE_Medical-UserAction_BackPosition	Put on back   [FR du mod : Mettre sur le dos]
+ACE_Medical-UserAction_LeftRecoveryPosition	Put in left recovery position   [FR du mod : Mettre en position de récupération gauche]
+ACE_Medical-UserAction_RightRecoveryPosition	Put in right recovery position   [FR du mod : Mettre en position de récupération droite]
+
+## ACE Overheating Dev | Language/ACE_Overheating_localization.fr_fr.conf | {025AF554CF061DA3}
+ACE_Overheating-AddonName	Overheating
+ACE_Overheating-CheckBarrelTemperaturAction	Check barrel temperature
+ACE_Overheating-CoolBarrelInWaterAction	Cool barrel in water
+ACE_Overheating-Notification_BARREL_TEMPERATURE_RESULT	You find a barrel temperature of %1 °C
+ACE_Overheating-SwapBarrelAction	Swap barrel
+ACE_Overheating_TryClearWeaponJam	Try clear weapon jam
+
+## ACE Radio Dev | Language/ACE_Radio_language.fr_fr.conf | {4A7408D4920F75FD}
+ACE_Radio-FailReason_NotLoaded	Not loaded
+ACE_Radio-Item_KYK13_Description	A module used for transferring cryptographic keys to radios.
+ACE_Radio-Item_KYK13_Name	KYK-13 Fill Device
+ACE_Radio-Settings-Radio	Radio
+ACE_Radio-Settings-Radio_Beep_Ch1	Ch.1 transmission beep   [FR du mod : Signal de transmission audible pour le canal 1]
+ACE_Radio-Settings-Radio_Beep_Ch2	Ch.2 transmission beep   [FR du mod : Signal de transmission audible pour le canal 2]
+ACE_Radio-Settings-Radio_Beep_High	High   [FR du mod : Haut]
+ACE_Radio-Settings-Radio_Beep_Low	Low   [FR du mod : Bas]
+ACE_Radio-Settings-Radio_Beep_Off	Off   [FR du mod : Désactivé]
+ACE_Radio-Settings_Beep_Cycle	Transceiver cycle beep   [FR du mod : bip de cycle de l'émetteur-récepteur]
+ACE_Radio-Settings_Click_Off	Click-off sound when transmission ends
+ACE_Radio-UserAction_Address	Address: %1
+ACE_Radio-UserAction_ClearAll	Clear all
+ACE_Radio-UserAction_CopyKey	Copy %1 to %2
+ACE_Radio-UserAction_LoadKey	Load %1
+
+## ACE Scopes Dev | Language/ACE_Scopes_localization.fr_fr.conf | {CD82C37E1FDC0B9D}
+ACE_Scopes-AddonName	Scopes
+ACE_Scopes-KeyBind_ACE_HorizontalZeroingLeft_Name	Adjust windage left
+ACE_Scopes-KeyBind_ACE_HorizontalZeroingRight_Name	Adjust windage right
+ACE_Scopes-KeyBind_VerticalZeroingDown_Name	Adjust elevation down
+ACE_Scopes-KeyBind_VerticalZeroingUp_Name	Adjust elevation up 
+
+## ACE Tactical Ladder Dev | Language/ACE_TacticalLadder_localization.fr_fr.conf | {8FB68A3955F54973}
+ACE_TacticalLadder-Item_Description	Portable ladder for scaling obstacles or tactical entry.   [FR du mod : Échelle portable pour franchir des obstacles ou pour une entrée tactique]
+ACE_TacticalLadder-Item_Name	Telescopic Ladder   [FR du mod : Echelle télescopique]
+ACE_TacticalLadder-UserAction_Extend	Extend   [FR du mod : Ajuster]
+ACE_TacticalLadder-UserAction_TooShort	Too short   [FR du mod : Trop court]
+ACE_TacticalLadder-UserAction_TopExitObstructed	Top exit obstructed   [FR du mod : Sortie supérieure obstruée]
+
+## ACE Tactical Periscope Dev | Language/ACE_TacticalPeriscope_localization.fr_fr.conf | {659650ACAC7CAEDB}
+ACE_TacticalPeriscope-Item_Periscope_Description	Handheld periscope for peaking from behind cover.   [FR du mod : Périscope portatif pour observer derrière un abri]
+ACE_TacticalPeriscope-Item_Periscope_Name	Periscope   [FR du mod : Périscope]
+
+## ACE Trenches Dev | Language/ACE_Trenches_localization.fr_fr.conf | {65CC6E27D400D8F6}
+ACE_Trenches-EditableEntity_PersonalTrench_01_big_Name	Personal Trench (Big)
+ACE_Trenches-EditableEntity_PersonalTrench_01_giant_Name	Personal Trench (Giant)
+ACE_Trenches-EditableEntity_PersonalTrench_01_small_Name	Personal Trench (Small)
+ACE_Trenches-EditableEntity_TrenchSegment_01_short_Name	Trench Segment (Short)
+ACE_Trenches-EditableEntity_VehicleTrench_01_Name	Vehicle Trench
+ACE_Trenches-Item_SandbagContainer_Description	Storage container for transporting empty sandbags.
+ACE_Trenches-Item_SandbagContainer_Name	Sandbag Container
+
+## ACE Weather Dev | Language/ACE_Weather_localization.fr_fr.conf | {8605CE2DD30C6F7D}
+ACE_Weather-AddonName	ACE Weather
+ACE_Weather-Item_Kacestrel4500_Description	Pocket weather tracker
+ACE_Weather-Item_Kacestrel4500_Name	Kacetrel 4500
+ACE_Weather-Keybind_WindInfoToggle	Show wind info   [FR du mod : Afficher les informations sur le vent]

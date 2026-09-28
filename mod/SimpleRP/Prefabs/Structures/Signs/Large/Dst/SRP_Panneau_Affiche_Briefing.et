@@ -1,0 +1,20 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{1BE5EB72F0429247}Assets/Structures/Signs/Large/Dst/SignLarge_01_dst_04.xob"
+   Materials {
+    MaterialAssignClass "{6A5F3505FD09AC39}" {
+     SourceMaterial "SignLarge_01"
+     AssignedMaterial "{94B9C7C9CF5BDD81}Assets/Structures/Signs/Large/Data/panneau_briefing.emat"
+    }
+   }
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "TinyDestructible"
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   m_eMaterialSoundType BREAK_METAL
+  }
+ }
+}

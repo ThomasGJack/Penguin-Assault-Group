@@ -1,0 +1,418 @@
+<title>Plan Ligne de front</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#ECEEE8; --surface:#FFFFFF; --surface-2:#F5F6F1; --line:#D3D8CF; --line-strong:#A9B2A6;
+  --ink:#1B231E; --muted:#56625A; --faint:#89928B;
+  --accent:#1F4FA0; --accent-soft:#DFE7F6; --accent-ink:#FFFFFF;
+  --gold:#946600; --gold-soft:#F5E8C5;
+  --ok:#2F7A4C; --ok-soft:#DDEFE3; --warn:#9A6200; --warn-soft:#F6EAD2;
+  --bleu:#2E62D9; --rouge:#CF382C; --front:#C99A12;
+  --shadow:0 1px 2px rgba(27,35,30,.06),0 6px 18px rgba(27,35,30,.06);
+  --display:"Barlow Condensed","Bahnschrift","Arial Narrow",system-ui,sans-serif;
+  --body:"Barlow","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0F1311; --surface:#181E1A; --surface-2:#131815; --line:#29312C; --line-strong:#45504A;
+    --ink:#E3E8E3; --muted:#9DA8A1; --faint:#6D7871;
+    --accent:#86A9F2; --accent-soft:#1B2944; --accent-ink:#0C1426;
+    --gold:#E2B44C; --gold-soft:#382E14;
+    --ok:#62BD85; --ok-soft:#1B3325; --warn:#E0A64A; --warn-soft:#352914;
+    --bleu:#5B86EE; --rouge:#EE5A4C; --front:#F2C230;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0F1311; --surface:#181E1A; --surface-2:#131815; --line:#29312C; --line-strong:#45504A;
+  --ink:#E3E8E3; --muted:#9DA8A1; --faint:#6D7871;
+  --accent:#86A9F2; --accent-soft:#1B2944; --accent-ink:#0C1426;
+  --gold:#E2B44C; --gold-soft:#382E14;
+  --ok:#62BD85; --ok-soft:#1B3325; --warn:#E0A64A; --warn-soft:#352914;
+  --bleu:#5B86EE; --rouge:#EE5A4C; --front:#F2C230;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{background:var(--ground)}
+body{color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;padding-inline:16px;padding-block:0 64px}
+button,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ground);border-bottom:1px solid var(--line);margin-inline:-16px;padding:12px 16px 10px}
+.top-in{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.brand b{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+.brand b i{font-style:normal;color:var(--bleu)}
+.brand b em{font-style:normal;color:var(--rouge)}
+.brand span{color:var(--muted);font-size:14px;margin-left:8px}
+.nav{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;font-weight:600;flex:1 1 auto}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.pill{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.ok{color:var(--ok);border-color:var(--ok);background:var(--ok-soft)}
+.pill.warn{color:var(--warn);border-color:var(--warn)}
+section{margin-top:40px;scroll-margin-top:80px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,48px);line-height:1.02;letter-spacing:.01em;text-transform:uppercase;margin:34px 0 10px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3vw,30px);letter-spacing:.02em;text-transform:uppercase;margin:0 0 6px;text-wrap:balance}
+h3{font-size:17px;margin:22px 0 8px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+p{max-width:70ch;margin:8px 0}
+.lead{font-size:19px;color:var(--muted);max-width:66ch}
+.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:22px}
+.fig{background:var(--surface);padding:14px 16px}
+.fig b{display:block;font-family:var(--display);font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.fig span{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px clamp(16px,3vw,28px)}
+.mapimg{display:block;width:100%;height:auto;max-width:100%;border-radius:10px;border:1px solid var(--line-strong);margin-top:14px;background:#1B2A33;aspect-ratio:1/1;object-fit:cover}
+.caption{font-size:14px;color:var(--muted);max-width:75ch}
+.rules{display:grid;gap:0}
+.rules h3:first-child{margin-top:4px}
+.rule{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:9px 0;border-top:1px solid var(--line);align-items:baseline}
+.rule .refs{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.ref{font-family:var(--mono);font-size:11px;border:1px solid var(--line-strong);border-radius:5px;padding:0 5px;color:var(--muted);white-space:nowrap}
+.ref.q{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+.list{padding-left:20px;margin:6px 0;display:grid;gap:7px;max-width:75ch}
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:14px}
+.mod{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--surface);display:flex;flex-direction:column;gap:6px}
+.mod header{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.mod header b{font-size:17px}
+.mod header span{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.mod p{margin:0;font-size:15px;color:var(--muted)}
+.mod .files{font-family:var(--mono);font-size:12px;color:var(--faint);word-break:break-word}
+.steps{counter-reset:s;display:grid;gap:10px;margin-top:10px;max-width:78ch}
+.steps li{list-style:none;display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-weight:700;font-size:18px;width:28px;height:28px;border-radius:7px;display:grid;place-items:center;background:var(--ink);color:var(--ground)}
+.steps{padding:0;margin:10px 0 0}
+.risk{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 0;border-top:1px solid var(--line)}
+.sev{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px;height:fit-content;white-space:nowrap}
+.sev.h{color:var(--rouge);background:color-mix(in srgb,var(--rouge) 14%,transparent)}
+.sev.m{color:var(--warn);background:var(--warn-soft)}
+.risk p{margin:0}
+.risk small{display:block;color:var(--muted);font-size:14px}
+/* questions */
+.qs{display:grid;gap:18px;margin-top:14px}
+.qq{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:18px clamp(14px,3vw,24px)}
+.qq .num{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.qq h4{font-size:19px;line-height:1.3;margin:4px 0 6px;text-wrap:balance;max-width:62ch}
+.qq .why{color:var(--muted);font-size:15px;max-width:70ch;margin:0 0 10px}
+.opts{display:grid;gap:8px}
+.opt{position:relative;text-align:left;background:var(--surface-2);border:1.5px solid var(--line);border-radius:10px;padding:11px 14px 11px 44px}
+.opt:hover{border-color:var(--line-strong)}
+.opt::before{content:"";position:absolute;left:14px;top:14px;width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong)}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt[aria-pressed="true"]::before{border-color:var(--accent);background:radial-gradient(circle,var(--accent) 45%,transparent 50%)}
+.opt b{display:block;font-size:16px;padding-right:96px}
+.opt span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.badge{position:absolute;top:10px;right:12px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);background:var(--gold-soft);border-radius:999px;padding:2px 8px}
+textarea{width:100%;min-height:70px;resize:vertical;border:1.5px solid var(--line-strong);border-radius:10px;background:var(--surface-2);padding:10px 12px;margin-top:8px;line-height:1.45}
+textarea:focus{outline:none;border-color:var(--accent)}
+.go{margin-top:18px;padding:16px 18px;border-radius:12px;border:1.5px solid var(--ok);background:var(--ok-soft)}
+.go b{color:var(--ok)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><b><i>Ligne</i> de <em>front</em></b><span>Plan de code · cartes #75 et #76</span></div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#carte">Carte</a><a href="#regles">Règles</a><a href="#commandeur">Commandeur</a><a href="#ecarts">Écarts</a><a href="#code">Code</a><a href="#ordre">Ordre</a><a href="#toi">À faire</a><a href="#risques">Risques</a><a href="#questions">Arbitrages</a>
+    </nav>
+    <span class="pill" id="qcount">10 / 10 questions</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Plan de code : ligne de front et Commandeur ennemi</h1>
+  <p class="lead">Voici ce que je vais coder à partir de tes deux QCM (81 réponses chacun) et de tes 18 arbitrages du 26/09. Le front et le Commandeur partent dans le même bloc, comme tu l’as choisi. Écris « go » dans le chat pour que je commence. Rien n’est codé avant.</p>
+  <div class="figs" aria-label="Chiffres clés">
+    <div class="fig"><b>1 395</b><span>carrés de 200 m en jeu</span></div>
+    <div class="fig"><b>66</b><span>zones, dont 30 avec un village</span></div>
+    <div class="fig"><b>15 min</b><span>pour prendre un carré</span></div>
+    <div class="fig"><b>6</b><span>officiers ennemis, un par région</span></div>
+    <div class="fig"><b>≈ 17 000</b><span>lignes du mod, plus 1 340 pour le bot et le site</span></div>
+  </div>
+
+  <section id="carte">
+    <h2>La carte au lancement</h2>
+    <p>Tout est rouge sauf la base : 161 carrés autour du point d’apparition de Levie, à 1,5 km au plus. Les zones sont les blocs d’un kilomètre de la carte, numérotés de S01 à S66 du plus proche au plus loin de la base.</p>
+    <img class="mapimg" src="blocs_depart.webp" alt="Everon découpée en carrés de 200 m et en 66 zones : la base bleue autour de Levie, tout le reste rouge, la ligne de front en jaune autour de la base" width="1400" height="1400">
+    <p class="caption">Un bloc coupé par la mer ou par la base forme deux zones. Les bouts de moins de 5 carrés sans village rejoignent leur voisin. L’île d’Erquy forme une seule zone de 34 carrés. Les deux blocs à deux villages sont coupés en deux zones (ton choix, question 3). Calcul fait sur le relief du site : le compte exact sortira au premier démarrage, dans un fichier que tu pourras lire.</p>
+  </section>
+
+  <section id="regles">
+    <h2>Tes règles, telles que je vais les coder</h2>
+    <p>Chaque ligne renvoie à ta réponse du QCM. En jaune, les points réglés par tes 10 arbitrages.</p>
+    <div class="card rules">
+      <h3>Carte et zones</h3>
+      <div class="rule"><div>Carrés de 200 m sur toute la terre qui a au moins 10 % de terre. Îlots vides exclus, Erquy reste.</div><div class="refs"><span class="ref">A1</span><span class="ref">A2</span></div></div>
+      <div class="rule"><div>Zones = blocs d’un kilomètre de la carte. Un bloc coupé par la mer ou la base fait deux zones ; les petits bouts sans village rejoignent leur voisin. Un bloc à deux villages est coupé en deux zones, chaque carré allant au village le plus proche.</div><div class="refs"><span class="ref">A3</span><span class="ref q">Q3</span></div></div>
+      <div class="rule"><div>Tu retouches les limites dans un fichier du profil, pris en compte au redémarrage. Un rapport liste les villages coupés par une limite de zone.</div><div class="refs"><span class="ref">A4</span></div></div>
+      <div class="rule"><div>Noms du type « Régina (S07) ». Une zone sans village prend le nom du lieu-dit le plus proche.</div><div class="refs"><span class="ref">A6</span></div></div>
+      <div class="rule"><div>Un carré se désigne par sa référence de carte (« 074 042 ») et s’appelle « carré » partout.</div><div class="refs"><span class="ref">A7</span><span class="ref">A8</span></div></div>
+      <h3>Campagne</h3>
+      <div class="rule"><div>Départ tout rouge sauf la base (1,5 km autour du point d’apparition), menace à 0, ancien historique archivé et consultable.</div><div class="refs"><span class="ref">B1</span><span class="ref">B2</span><span class="ref">K1</span></div></div>
+      <div class="rule"><div>Les zones qui touchent la base ne peuvent plus être perdues une fois prises.</div><div class="refs"><span class="ref">B4</span></div></div>
+      <div class="rule"><div>Victoire quand toutes les zones sont bleues : annonce, front gelé, nouvelle campagne au redémarrage suivant. Objectif : 2 à 3 mois ; on garde tes chiffres, on mesure deux semaines, puis on règle.</div><div class="refs"><span class="ref">B3</span><span class="ref">B5</span><span class="ref q">Q6</span></div></div>
+      <h3>Capture d’un carré</h3>
+      <div class="rule"><div>Seulement un carré rouge qui touche du bleu par un côté.</div><div class="refs"><span class="ref">C1</span></div></div>
+      <div class="rule"><div>15 minutes de présence d’un joueur, sans ennemi au sol en état de combattre dans le carré. Même durée à 1 ou à 10 joueurs.</div><div class="refs"><span class="ref">C4</span><span class="ref">C5</span><span class="ref">C6</span></div></div>
+      <div class="rule"><div>Compte seulement un joueur vivant, conscient, à pied ou dans un véhicule au sol. Le Staff ne compte pas pendant 5 minutes après une téléportation ou le Game Master.</div><div class="refs"><span class="ref">C2</span><span class="ref">C3</span></div></div>
+      <div class="rule"><div>Pendant un combat, la progression se fige ; sans joueur, elle redescend. Le carré est orange tant qu’il est disputé.</div><div class="refs"><span class="ref">C7</span><span class="ref">C8</span></div></div>
+      <h3>Chute d’une zone</h3>
+      <div class="rule"><div>Zone avec village : saisir le poste de commandement ennemi (table, radio, cartes) au point clé, par une action de 60 secondes, et avoir au moins la moitié des carrés bleus. Toute la zone passe alors bleue et nos couleurs sont hissées à la place du poste.</div><div class="refs"><span class="ref">D1</span><span class="ref">D4</span></div></div>
+      <div class="rule"><div>Le carré du point clé doit toucher du bleu et plus aucun ennemi en état de combattre ne doit être à 100 m. La saisie s’arrête si tu es touché ou si un ennemi revient à 100 m.</div><div class="refs"><span class="ref">D2</span><span class="ref">D5</span></div></div>
+      <div class="rule"><div>Ville ou bourg : deux postes à saisir, le centre et le QG.</div><div class="refs"><span class="ref">D6</span></div></div>
+      <div class="rule"><div>Tu poses toi-même les points clés et les QG au Workbench, avec un repère à placer dans le monde. Chaque retouche demande de republier le mod. Tant qu’un repère manque, le point clé est l’endroit du nom sur la carte, et le menu Staff liste ce qui manque.</div><div class="refs"><span class="ref">D3</span><span class="ref q">Q8</span></div></div>
+      <div class="rule"><div>Zone sans village : elle tombe quand la moitié de ses carrés est bleue. Prime de 200 € sous mission ; elle ne produit rien, sauf si tu la désignes (carburant ou pièces) ; elle compte pour la menace.</div><div class="refs"><span class="ref q">Q4</span></div></div>
+      <h3>Front et contre-attaques</h3>
+      <div class="rule"><div>Une zone ennemie est « au contact » dès qu’un de ses carrés touche du bleu. Un seul front, qui part de la base.</div><div class="refs"><span class="ref">E1</span><span class="ref">E6</span></div></div>
+      <div class="rule"><div>Erquy : attaquable quand le carré de côte le plus proche est bleu, et reliée à la base par la mer tant qu’il le reste. Une seule zone de 34 carrés, à prendre en bateau ou en hélico posé.</div><div class="refs"><span class="ref q">Q5</span></div></div>
+      <div class="rule"><div>Pas de règle de poche : un carré garde sa couleur tant qu’on ne l’a pas pris.</div><div class="refs"><span class="ref">E2</span></div></div>
+      <div class="rule"><div>Aucun carré ne change de camp sans combat, sauf deux exceptions. La première : une zone coupée de la base ne produit plus et repasse rouge après 24 heures réelles, serveur éteint compris, minuterie arrêtée pendant un gel.</div><div class="refs"><span class="ref">E4</span><span class="ref q">Q1</span></div></div>
+      <div class="rule"><div>Contre-attaques seulement sur nos zones au contact, le plus souvent la dernière prise. Une toutes les 3 h à menace basse, toutes les heures à menace haute, dès 4 joueurs connectés. Annonce 15 minutes avant, vagues parties des carrés rouges d’en face.</div><div class="refs"><span class="ref">F1</span><span class="ref">F2</span><span class="ref">F6</span><span class="ref">H4</span></div></div>
+      <div class="rule"><div>Seuls les soldats de l’attaque reprennent du terrain, dans la zone visée : 1 minute par carré sans joueur. La zone repasse rouge quand l’ennemi a repris ses points clés et plus de la moitié de ses carrés ; les autres carrés gardent leur couleur. Un joueur vivant à 100 m d’un point clé le protège.</div><div class="refs"><span class="ref">F3</span><span class="ref">F5</span><span class="ref q">Q2</span></div></div>
+      <div class="rule"><div>Défense réussie quand la zone est nettoyée après la dernière vague : menace −1.</div><div class="refs"><span class="ref">F4</span></div></div>
+      <h3>L’ennemi</h3>
+      <div class="rule"><div>Postes de 2 à 4 soldats aux carrefours, routes et hauteurs du front (environ 1 carré du front sur 4), posés à l’approche. Un poste détruit revient après 6 h ou au redémarrage. La limite passe à 120 soldats, dont 12 réservés aux postes (4 au plus).</div><div class="refs"><span class="ref">F7</span><span class="ref">F8</span><span class="ref">F9</span><span class="ref q">Q7</span></div></div>
+      <div class="rule"><div>Garnisons d’abord au front ; un village de l’arrière se garnit si tu t’en approches. Elles se posent à tes points clés.</div><div class="refs"><span class="ref">F11</span></div></div>
+      <div class="rule"><div>Mémoire des pertes : un village se regarnit d’un quart par heure réelle, même après un redémarrage.</div><div class="refs"><span class="ref">F12</span></div></div>
+      <div class="rule"><div>Patrouilles côté rouge, rares infiltrations côté bleu près du front. L’hélico peut venir partout en rouge.</div><div class="refs"><span class="ref">F10</span><span class="ref">G12</span></div></div>
+      <div class="rule"><div>L’autre exception : une offensive tirée au sort une fois par jour, entre 3 h et 7 h, serveur vide depuis 30 minutes. Elle vise une seule zone du front, jamais une voisine de la base, et réussit à 10 % plus 5 % par point de menace (60 % au plus). Le résultat est annoncé sur Discord et à chaque joueur à sa première apparition.</div><div class="refs"><span class="ref">H2</span><span class="ref q">Q1</span></div></div>
+      <h3>Missions et économie</h3>
+      <div class="rule"><div>Mission de capture = une zone au contact du front, réussie quand la zone tombe. Toujours engagée à 3 km, échouée après 15 minutes sans personne (#50). Une à la fois, deux dès 10 joueurs connectés.</div><div class="refs"><span class="ref">G1</span><span class="ref">G3</span></div></div>
+      <div class="rule"><div>Capture possible sans mission. Prime seulement sous mission : hameau 300 €, village 500 €, ville 800 €, à la place de l’ancienne subvention de 500 €. La mission garde sa récompense, avec une difficulté fixée par la zone : 1 pour un hameau ou une zone sans village, 2 pour un village, 3 pour une ville. Une zone forcée par le Staff ne donne ni prime ni menace. Menace +1 par zone prise, −1 par zone perdue, sans double comptage.</div><div class="refs"><span class="ref">G2</span><span class="ref">G8</span><span class="ref">G9</span><span class="ref q">Q9</span></div></div>
+      <div class="rule"><div>Production par zone selon son village, plus les zones carburant ou pièces que tu désignes dans le fichier.</div><div class="refs"><span class="ref">G4</span><span class="ref">G5</span></div></div>
+      <div class="rule"><div>Dépôt n’importe où dans une zone à nous, sauf sur un carré du front. Il est détruit si l’ennemi reprend son carré.</div><div class="refs"><span class="ref">G6</span><span class="ref">G7</span></div></div>
+      <div class="rule"><div>Contrôle routier seulement sur un carré bleu, mais la distance minimale à la base passe de 1 500 à 1 000 m : on peut contrôler dans la couronne bleue dès le premier soir.</div><div class="refs"><span class="ref">G10</span><span class="ref q">Q10</span></div></div>
+      <div class="rule"><div>Gardes de mission toujours présents, même dans un village gardé. Missions offensives en rouge, missions de sécurité en bleu.</div><div class="refs"><span class="ref">G11</span><span class="ref">G13</span></div></div>
+      <div class="rule"><div>Plus de civils dans les zones libérées, rares côté rouge (25 au plus). Pas de mission de défense : l’alerte radio suffit. On réapparaît toujours à la base.</div><div class="refs"><span class="ref">G14</span><span class="ref">G15</span><span class="ref">H5</span></div></div>
+      <h3>Affichage</h3>
+      <div class="rule"><div>Carte du jeu (plein écran, réapparition, Game Master) : carrés très pâles toujours affichés, orange si disputés, front épais, limites et noms des zones. Compatible manette.</div><div class="refs"><span class="ref">I1</span><span class="ref">I2</span></div></div>
+      <div class="rule"><div>Infos sur l’ennemi seulement pour les zones au front.</div><div class="refs"><span class="ref">I3</span></div></div>
+      <div class="rule"><div>Rien à l’écran pendant l’avance. La radio annonce chaque carré pris ou perdu, les zones et les attaques.</div><div class="refs"><span class="ref">I4</span><span class="ref">I5</span></div></div>
+      <div class="rule"><div>PC, onglet Territoire : toutes les zones, avec leur propriétaire, leur part de carrés bleus et l’attaque en cours.</div><div class="refs"><span class="ref">I10</span></div></div>
+      <div class="rule"><div>Site : carte du front visible même serveur éteint, frise avec une photo à chaque zone prise ou perdue et une par jour, part de l’île à l’accueil. La ligne « Secteurs pris » est retirée des fiches.</div><div class="refs"><span class="ref">I6</span><span class="ref">I8</span><span class="ref">I9</span></div></div>
+      <div class="rule"><div>Discord : une annonce par zone prise, perdue ou attaquée, et l’image de la carte du front chaque soir à 23 h, sans bilan.</div><div class="refs"><span class="ref">I7</span></div></div>
+      <h3>Staff et passage</h3>
+      <div class="rule"><div>Menu Staff : forcer une zone ou le carré où tu te tiens, remettre à zéro une zone ou tout, revenir à la copie d’un jour, geler le front. Le tableau et /ordonner ne proposent que les zones au contact.</div><div class="refs"><span class="ref">J1</span><span class="ref">J2</span><span class="ref">J3</span><span class="ref">J4</span></div></div>
+      <div class="rule"><div>Les 186 paquets en attente sont versés une seule fois aux stocks de la base (150 vivres, 36 munitions). Livraison d’un bloc, sans interrupteur de retour.</div><div class="refs"><span class="ref">K2</span><span class="ref">K3</span><span class="ref">K4</span></div></div>
+    </div>
+  </section>
+
+  <section id="commandeur">
+    <h2>Le Commandeur ennemi, tel que je vais le coder</h2>
+    <p>Ta carte #76, qui reprend tes idées #39, #40 et #41. Chaque ligne renvoie à ta réponse du QCM du Commandeur ; en jaune, tes 8 arbitrages.</p>
+    <img class="mapimg" src="regions.webp" alt="Everon découpée en 6 régions d’officier, de 8 à 13 zones chacune, autour de la base de Levie" width="1100" height="1100">
+    <p class="caption">Le découpage automatique en 6 régions, tel qu’il sortira au premier démarrage (retouchable dans un fichier).</p>
+    <div class="card rules">
+      <h3>Le cerveau</h3>
+      <div class="rule"><div>Un état-major hors d’atteinte, qui se pose par-dessus tes règles du front : il choisit la cible, le moment, la taille et le soutien, sans jamais franchir une règle votée.</div><div class="refs"><span class="ref">CO1</span><span class="ref">CO3</span></div></div>
+      <div class="rule"><div>Deux vitesses : renforts et mortier toutes les 1 à 2 min ; blindé, artillerie lourde, bombe et contre-attaque au plus toutes les 15 à 20 min.</div><div class="refs"><span class="ref">CO4</span></div></div>
+      <div class="rule"><div>Il ne sait que ce que ses soldats voient (à 50-100 m près) ou entendent (à 100-150 m près), oublié après 20 min. Le vrai nombre de joueurs ne sert qu’à doser ses moyens, jamais à viser.</div><div class="refs"><span class="ref">CO5</span></div></div>
+      <div class="rule"><div>Civils informateurs en zone rouge : 1 chance sur 4 de signaler un joueur vu à 120 m, message 2 à 5 min plus tard à 150-300 m près, perdu si le civil est mort, inconscient ou menotté. Il ne déclenche qu’une fouille, jamais un appui lourd.</div><div class="refs"><span class="ref">CO5</span><span class="ref q">C4</span></div></div>
+      <div class="rule"><div>Les coups de feu font monter l’alerte et la taille des renforts ; un appui lourd exige un joueur vu depuis moins de 5 min ou des pertes récentes.</div><div class="refs"><span class="ref">CO6</span></div></div>
+      <div class="rule"><div>Humeur adaptative (prudent quand il s’épuise, agressif quand il reprend du terrain) et un caractère par officier (prudent, audacieux, lent ou méthodique). Rien ne change la nuit.</div><div class="refs"><span class="ref">CO7</span><span class="ref">CO8</span></div></div>
+      <div class="rule"><div>Une alerte par région, qui monte avec vos actions et retombe en 3 h ; elle s’ajoute à la menace de l’île pour sa région seulement.</div><div class="refs"><span class="ref">CO9</span></div></div>
+      <h3>Les officiers</h3>
+      <div class="rule"><div>6 régions de 8 à 13 zones, tracées automatiquement et retouchables dans un fichier, chacune au nom de sa plus grande localité (« région de Saint-Philippe »).</div><div class="refs"><span class="ref">OF1</span><span class="ref">VU1</span></div></div>
+      <div class="rule"><div>« Officier ennemi Volkov » : il change chaque jour à 6 h de cachette parmi 3 localités en retrait, avec 2 gardes, et fuit si un joueur arrive à 250 m.</div><div class="refs"><span class="ref">OF2</span></div></div>
+      <div class="rule"><div>Tous les groupes lui font un compte rendu toutes les 30 à 60 s ; un opérateur radio tué retarde de 5 min les nouvelles de sa localité. Il décide seul des réflexes locaux, les appuis lourds passent par le Commandeur.</div><div class="refs"><span class="ref">OF3</span><span class="ref">OF4</span></div></div>
+      <div class="rule"><div>Tant qu’il vit, les garnisons de sa région ont un quart de soldats en plus (60 au plus par garnison).</div><div class="refs"><span class="ref">OF5</span></div></div>
+      <div class="rule"><div>Tué : région désorganisée 3 h (sans comptes rendus, renforts deux fois plus lents, ni mortier ni artillerie, contre-attaque réduite). Capturé : 6 h, dépôt révélé. Si les menottes ACE ne marchent pas sur un officier inconscient, il ne peut qu’être tué.</div><div class="refs"><span class="ref">OF6</span><span class="ref">OF7</span><span class="ref">OF8</span><span class="ref">OF9</span><span class="ref q">C7</span></div></div>
+      <div class="rule"><div>La mission « officier » vise l’officier de région et sa localité du jour. Une région entièrement libérée perd son officier pour de bon.</div><div class="refs"><span class="ref">OF10</span><span class="ref">OF11</span></div></div>
+      <h3>Les ressources</h3>
+      <div class="rule"><div>L’infanterie et les camions sont gratuits. Seuls les obus, les blindés, les sorties d’hélico, l’artillerie lourde et la bombe sont des stocks.</div><div class="refs"><span class="ref">RE7</span><span class="ref q">C1</span></div></div>
+      <div class="rule"><div>Stocks pleins : 48 obus (répartis par région), 2 blindés, 3 sorties d’hélico, 1 tir d’artillerie lourde, grossis de 5 % par point de menace. Ils se refont en 4 h au revenu plein, même serveur vide, selon les zones rouges tenues (jamais sous la moitié).</div><div class="refs"><span class="ref">RE2</span><span class="ref">RE3</span><span class="ref">RE4</span><span class="ref">RE5</span><span class="ref">RE6</span><span class="ref">RE10</span></div></div>
+      <div class="rule"><div>Un dépôt caché par région : saboté, il coupe pendant 24 h la moitié du revenu de sa région, puis change de place. On le trouve par le renseignement.</div><div class="refs"><span class="ref">RE8</span><span class="ref">RE9</span></div></div>
+      <div class="rule"><div>Tout ce qui est au sol compte dans les 120 soldats, avec 20 places pour les renforts et 12 pour les postes. Le combat passe d’abord ; la localité attaquée est servie à sa taille, les autres se partagent le reste (8 soldats au moins).</div><div class="refs"><span class="ref">RE11</span><span class="ref">RE12</span><span class="ref q">C6</span></div></div>
+      <div class="rule"><div>Tout son état est sauvé ; au redémarrage, les troupes en route rentrent au stock.</div><div class="refs"><span class="ref">RE13</span></div></div>
+      <h3>Renforts et manœuvres</h3>
+      <div class="rule"><div>Renfort dès le premier contact, en camion, pris dans la localité voisine (3 à 6 min), avec un frein : un renfort par zone toutes les 10 min, et la voisine garde la moitié de sa garnison.</div><div class="refs"><span class="ref">MA1</span><span class="ref">MA2</span><span class="ref">MA3</span><span class="ref q">C2</span></div></div>
+      <div class="rule"><div>Des colonnes se déplacent sur le papier et deviennent de vrais camions à 1,5 km d’un joueur : on peut les intercepter. Les poches sont ravitaillées à travers votre territoire.</div><div class="refs"><span class="ref">MA4</span><span class="ref">MA12</span></div></div>
+      <div class="rule"><div>Repli #40 : une section au tiers se replie sur le centre, une garnison aux deux tiers de pertes décroche sous fumigènes vers la voisine (sauf le QG d’une ville). La localité quittée reste vide tant que vous êtes à 2 km.</div><div class="refs"><span class="ref">MA5</span><span class="ref">MA6</span><span class="ref">MA7</span></div></div>
+      <div class="rule"><div>Assaut selon ce qu’il sait : de face, par le flanc ou par deux axes ; moyens là où c’est le plus grave pour lui ; harcèlement du front au plus une fois par heure ; la localité suivante se garnit à fond après chaque zone prise.</div><div class="refs"><span class="ref">MA8</span><span class="ref">MA9</span><span class="ref">MA10</span><span class="ref">MA11</span></div></div>
+      <h3>Contre-attaques</h3>
+      <div class="rule"><div>Ta minuterie avancée ou retardée de 20 min au plus (45 min au moins entre deux) ; 70 % sur la dernière zone prise, sinon une cible choisie sur renseignements ; 2 à 4 vagues avec mortier, fumée, et blindé ou artillerie s’il en a.</div><div class="refs"><span class="ref">CA1</span><span class="ref">CA2</span><span class="ref">CA3</span><span class="ref">CA4</span></div></div>
+      <div class="rule"><div>Abandon aux deux tiers de pertes (défense réussie, menace −1) ou au bout de 60 min. Une zone non défendue est perdue : ses vagues avancent quand même.</div><div class="refs"><span class="ref">CA5</span><span class="ref">CA6</span><span class="ref q">C8</span></div></div>
+      <div class="rule"><div>L’offensive de la nuit tient compte de ses stocks au départ du dernier joueur : +10 chances s’ils sont pleins, rien sous un tiers.</div><div class="refs"><span class="ref">CA7</span></div></div>
+      <h3>Mortier et gros appuis</h3>
+      <div class="rule"><div>Mortier : une vraie pièce par région, à 800-1 200 m, avec 2 servants ; on l’entend partir puis siffler. 1er obus 1 à 2 min après la décision, 4 à 6 obus ; il se rapproche tant qu’un soldat vous voit, 30 m au mieux. Seulement sur des joueurs vus en rouge ou au front.</div><div class="refs"><span class="ref">MO1</span><span class="ref">MO2</span><span class="ref">MO3</span><span class="ref">MO4</span><span class="ref">MO5</span><span class="ref">MO6</span></div></div>
+      <div class="rule"><div>Fumée pour couvrir assauts et replis, feinte sur un faux axe environ une grosse attaque sur 4. La fumée ne coûte rien. Pièce réduite au silence : 24 h sans mortier dans sa région.</div><div class="refs"><span class="ref">MO7</span><span class="ref">MO8</span><span class="ref">MO9</span><span class="ref q">C5</span></div></div>
+      <div class="rule"><div>Artillerie lourde tirée depuis une batterie 2S1 à détruire, à 2-3 km, contre un point d’appui repéré ou pour ouvrir une contre-attaque, avec 1 ou 2 coups de réglage avant.</div><div class="refs"><span class="ref">AP1</span><span class="ref">AP2</span><span class="ref">EQ1</span></div></div>
+      <div class="rule"><div>Passages d’avion sans dégât, et une bombe FAB-500 au plus par 24 h, dès 10 joueurs dans le secteur, annoncée par le bruit de l’avion. Pas d’hélico armé : l’hélico reste un chercheur, appelé par le Commandeur sur son stock.</div><div class="refs"><span class="ref">AP3</span><span class="ref">AP7</span><span class="ref">AP8</span></div></div>
+      <div class="rule"><div>Blindés : BTR-70, BRDM-2, et un Typhoon de 30 mm très rare ; en contre-attaque, en renfort ou contre vos véhicules armés. Capturé et ramené à la base : prime (2 000 ou 5 000 €), puis retiré.</div><div class="refs"><span class="ref">AP4</span><span class="ref">AP5</span><span class="ref">AP6</span><span class="ref q">C3</span></div></div>
+      <div class="rule"><div>Plafonds prudents sur l’île : 2 tirs de mortier par heure, 1 tir d’artillerie lourde toutes les 2 h, 1 blindé à la fois, une seule grosse opération, jamais deux frappes au même endroit en 20 min. Dans un rayon de 3 km : mortier dès 3 joueurs, blindé dès 6, artillerie dès 8. Pas d’interception radio.</div><div class="refs"><span class="ref">EQ2</span><span class="ref">EQ3</span><span class="ref">EQ4</span></div></div>
+      <h3>Joueurs et Staff</h3>
+      <div class="rule"><div>L’état de l’ennemi d’une région (officier, forces) ne se dévoile qu’après un renseignement gagné. La chute d’un officier est annoncée à la radio et dans le salon Discord du territoire.</div><div class="refs"><span class="ref">VU2</span><span class="ref">VU3</span></div></div>
+      <div class="rule"><div>Journal des décisions (raison, coût, stock restant) au menu Staff et dans un salon Discord réservé au Staff. Outils : voir, geler le Commandeur, forcer une décision. Deux interrupteurs séparés : front gelé, Commandeur gelé.</div><div class="refs"><span class="ref">VU4</span><span class="ref">VU5</span><span class="ref">VU6</span></div></div>
+    </div>
+  </section>
+
+  <section id="ecarts">
+    <h2>Petits écarts que je prends</h2>
+    <p>Des détails que tes réponses ne tranchaient pas, réglés dans l’esprit de tes choix. Dis-le-moi si l’un d’eux te gêne.</p>
+    <ul class="list">
+      <li>Le code S07 sert de clé technique, pas le nom : un nom peut changer avec une retouche, le code jamais.</li>
+      <li>Radio : quand plus de 3 carrés tombent dans le même passage, une seule ligne les regroupe. Une zone qui tombe n’annonce pas ses 25 carrés un par un.</li>
+      <li>Le PC liste les 66 zones, regroupées : attaques en cours, zones ennemies au contact, nos zones au front, l’arrière.</li>
+      <li>Comme le Staff, un joueur téléporté par le Staff ne compte pas pendant 5 minutes.</li>
+      <li>La carte du jeu ne montre pas de chiffres (« 7 / 15 min ») : l’orange suffit. Les minutes et les vagues se lisent au PC et au menu Staff.</li>
+      <li>Les chiffres clés (durée de capture, reprise, coupure, menace, postes) se règlent aussi dans le fichier du profil : tu pourras équilibrer sans republier le mod.</li>
+      <li>Pendant la séance d’essai au Workbench, la capture passe à 1 minute par carré. Je vérifie qu’elle revient à 15 minutes avant la publication.</li>
+      <li>Les jeeps et les camions de vague gardent leur tirage d’aujourd’hui, bornés par la limite des 120 ; l’hélico et tous les nouveaux moyens passent sous le Commandeur.</li>
+      <li>Commandeur gelé : les règles du front s’appliquent seules, le camion d’alerte du #69 revient et le frein des renforts ne joue plus. En ligne, c’est aussi la sortie de secours sans republier.</li>
+      <li>La bombe compte les joueurs à 3 km comme les autres seuils, et « une par jour » veut dire une par 24 h glissantes.</li>
+      <li>« Méthodique » est un caractère d’officier neutre ; l’audacieux engage plus vite ses renforts et ses vagues.</li>
+      <li>Une chute d’officier forcée par le Staff est annoncée comme une vraie ; son remplaçant arrive en silence.</li>
+      <li>Le journal public du PC ne montrera jamais les décisions du Commandeur : elles ont leur propre catégorie, réservée au Staff.</li>
+    </ul>
+  </section>
+
+  <section id="code">
+    <h2>Ce que je vais coder</h2>
+    <p>Huit parties, relues ensemble pour qu’elles s’emboîtent : une seule source de vérité, une seule porte pour changer une zone de camp, une seule façon de payer une prime et d’annoncer.</p>
+    <div class="mods">
+      <article class="mod"><header><b>1. Le socle</b><span>≈ 2 400 lignes</span></header><p>La grille, la terre et la mer, les zones et leurs noms, les points clés, la sauvegarde avec une copie par jour, l’envoi de la carte aux joueurs. Il applique la base imprenable, la zone coupée 24 h et la victoire.</p><div class="files">SRP_Front.c · SRP_FrontGeometry.c</div></article>
+      <article class="mod"><header><b>2. La capture</b><span>≈ 900 lignes</span></header><p>Toutes les 5 secondes : qui est dans quel carré, les 15 minutes, le gel pendant le combat, l’orange, la reprise ennemie en 1 minute, la protection du point clé.</p><div class="files">SRP_FrontCapture.c</div></article>
+      <article class="mod"><header><b>3. La chute des zones</b><span>≈ 1 200 lignes</span></header><p>Le poste de commandement ennemi et l’action « Saisir », le mât à nos couleurs, la règle point clé + moitié des carrés, la perte d’une zone, la prime et la menace.</p><div class="files">SRP_ZoneFall.c · 2 prefabs neufs</div></article>
+      <article class="mod"><header><b>4. L’ennemi</b><span>≈ 2 000 lignes</span></header><p>Garnisons au front et aux points clés, mémoire des pertes, postes du front, patrouilles côté rouge, contre-attaques et vagues, offensive de la nuit, hélico en zone rouge.</p><div class="files">SRP_FrontEnemy.c · garnisons, camions, hélico, sirène</div></article>
+      <article class="mod"><header><b>5. Missions et économie</b><span>≈ 950 lignes</span></header><p>Mission de capture par zone, tableau et /ordonner, primes, production par zone, dépôt, contrôle routier en bleu, gardes de mission, civils, versement des 186 paquets.</p><div class="files">SRP_FrontEconomy.c · missions, tableau, civils</div></article>
+      <article class="mod"><header><b>6. L’affichage en jeu</b><span>≈ 1 700 lignes</span></header><p>Le calque de la carte du jeu (le morceau le plus neuf), la radio, l’onglet Territoire du PC, les pages du menu Staff.</p><div class="files">SRP_FrontMap.c · SRP_FrontRadio.c · SRP_FrontScreens.c</div></article>
+      <article class="mod"><header><b>7. Le bot et le site</b><span>≈ 1 400 lignes</span></header><p>Le pont envoie la carte, le bot la garde, le site la dessine même serveur éteint, la frise en photos, les annonces par zone et l’image du soir.</p><div class="files">SRP_Bridge.c · bot.py · campagne.py · carte web</div></article>
+      <article class="mod"><header><b>9. Le cerveau et les officiers</b><span>≈ 2 400 lignes</span></header><p>Comptes rendus, connaissance, civils informateurs, deux vitesses de décision, humeur, alerte par région, les 6 officiers, leurs cachettes, leur chute et leur remplacement.</p><div class="files">SRP_Commander.c · SRP_CmdRegions.c · SRP_CmdSettings.c</div></article>
+      <article class="mod"><header><b>10. Ressources et capacité</b><span>≈ 2 300 lignes</span></header><p>Les stocks et leur revenu, les dépôts à saboter, et la répartition des 120 soldats et 160 IA actives entre tout ce qui est posé.</p><div class="files">SRP_CmdResources.c · SRP_CmdDepot.c · SRP_CmdCapacity.c</div></article>
+      <article class="mod"><header><b>11. Manœuvres</b><span>≈ 2 300 lignes</span></header><p>Renforts et frein, colonnes sur le papier, replis sous fumigènes, assauts, harcèlement, contre-attaques pilotées.</p><div class="files">SRP_CmdManeuvers.c · camions, garnisons</div></article>
+      <article class="mod"><header><b>12. Appuis</b><span>≈ 2 100 lignes</span></header><p>Pièce de mortier et obus par script, batterie 2S1, passages d’avion et bombe, blindés capturables, hélico.</p><div class="files">SRP_CmdSupport.c · SRP_CmdArmor.c · 1 prefab</div></article>
+      <article class="mod"><header><b>13. Écrans du Commandeur</b><span>≈ 1 350 lignes</span></header><p>Journal des décisions, renseignement gagné, pages Staff (voir, geler, forcer), salon Discord du Staff.</p><div class="files">SRP_CmdScreens.c · Admin · Discord</div></article>
+      <article class="mod"><header><b>8. La bascule</b><span>≈ 650 lignes</span></header><p>Les quelque 60 appels à l’ancien système repris un par un, l’ancien territoire archivé, le prefab nettoyé (dont une capture à 2 minutes qui écraserait tes 15), le guide mis à jour.</p><div class="files">SRP_Territory.c · 13 fichiers appelants · guide</div></article>
+    </div>
+    <p class="caption">Environ 17 000 lignes du mod une fois les doublons retirés : 8 000 pour le front et 9 200 pour le Commandeur, dans 42 fichiers dont 20 nouveaux, plus 5 prefabs neufs. S’y ajoutent environ 1 340 lignes pour le bot et le site, et environ 600 lignes de guide avec une liste de 31 essais. C’est à peu près 39 % du mod actuel.</p>
+  </section>
+
+  <section id="ordre">
+    <h2>Comment je vais m’y prendre</h2>
+    <ol class="steps">
+      <li>Les contrats d’abord : noms, états et fonctions de toutes les parties, à corps vides, compilés seuls. Tout le reste s’y branche sans erreur.</li>
+      <li>Le socle, la limite des 120 soldats et 160 IA branchée sur toutes les poses existantes, puis les 6 régions.</li>
+      <li>Capture, chute des zones, économie, puis la bascule de tous les fichiers qui parlaient aux anciens secteurs, l’ennemi du front, la carte et les écrans. <b>Séance 1</b> : le calque de carte d’abord, puis le front seul, Commandeur au repos.</li>
+      <li>Le bot et le site, puis tout le cerveau du Commandeur d’un coup (officiers, stocks, décisions). <b>Séance 2</b> : cerveau à blanc, capture d’un officier avec ACE en premier.</li>
+      <li>Tous les moyens d’un coup (manœuvres, mortier, artillerie, bombe, blindés). <b>Séance 3</b> : les moyens, avec un deuxième joueur pour vérifier le sifflement et les colonnes.</li>
+      <li>Finition et contrôles (doublons, mots interdits, réglages). <b>Séance 4</b> : essai à deux avec un redémarrage. Puis une seule publication, un soir sans opération, Staff présent.</li>
+    </ol>
+    <p class="caption">Compter 12 à 16 allers-retours de compilation avec toi, sans rien publier entre-temps.</p>
+  </section>
+
+  <section id="toi">
+    <h2>Ce que tu auras à faire</h2>
+    <ul class="list">
+      <li>Garder le Workbench fermé pendant que je code, puis compiler et m’envoyer les journaux.</li>
+      <li>Poser au Workbench un repère de point clé par village, et un deuxième pour le QG des villes et des bourgs, en une soirée environ. Le menu Staff te dira ce qui manque.</li>
+      <li>Quatre séances d’essai au Workbench (front seul, cerveau à blanc, moyens avec un deuxième joueur, essai à deux avec redémarrage). Dans la première, avec 1 minute par carré :
+        <ul class="list">
+          <li>carte du jeu : île rouge, bleu autour de Levie, front, noms des zones ; le calque suit le zoom et le déplacement ;</li>
+          <li>un carré collé au bleu passe orange puis bleu ; un carré en diagonale ne bouge pas ; un ennemi dans le carré fige la progression ;</li>
+          <li>saisie du poste d’un village, puis chute de la zone, annoncée à la radio et sur Discord ;</li>
+          <li>contre-attaque forcée : annonce, vagues, reprise carré par carré, défense réussie ;</li>
+          <li>dépôt refusé sur un carré du front, détruit si son carré est repris ; tableau limité aux zones au contact ; prime et menace ;</li>
+          <li>versement des 186 paquets, une seule fois ;</li>
+          <li>menu Staff : forcer un carré, geler le front, revenir à la copie du jour ;</li>
+          <li>arrêt puis relance : la carte est gardée, la capture en cours est perdue.</li>
+        </ul>
+      </li>
+      <li>Pour le Commandeur, les essais clés : capture d’un officier inconscient avec les menottes ACE, sifflement et bruit de départ du mortier chez un deuxième joueur, pièce détruite qui fait cesser le tir, BTR conduit par l’ordinateur, bombe et passage d’avion, colonne qui devient réelle, décrochage, zone non défendue.</li>
+      <li>Retoucher les régions dans leur fichier si le découpage ne te plaît pas.</li>
+      <li>Un essai à deux joueurs avant la publication, pour vérifier que la carte arrive bien chez un joueur qui se connecte en cours de partie.</li>
+      <li>Publier le mod quand tout est bon. Le tableau et l’annonce de version, seulement quand tu me le demandes.</li>
+    </ul>
+  </section>
+
+  <section id="risques">
+    <h2>Les risques et leurs parades</h2>
+    <div class="card">
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Le calque de la carte du jeu n’a jamais été essayé.</p><small>Deux points à vérifier au Workbench : qu’il suive le zoom et qu’il passe sous les icônes. Parade : je le code tôt et tu le regardes d’abord. En secours, le PC, le site et Discord montrent le front quand même.</small></div></div>
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Trop d’IA en même temps un soir de monde.</p><small>Tu as choisi 120 soldats. Au-delà de 128 IA actives, civils compris, le jeu endort des groupes : garnisons incomplètes, postes vides. Parade : un essai à 5 joueurs ou plus, et la limite se règle sans republier.</small></div></div>
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Le réseau : une carte de 5 à 6 Ko à envoyer à chaque joueur qui arrive.</p><small>Parade : envoi de la carte une fois, puis seulement les carrés qui changent, et l’essai à deux obligatoire.</small></div></div>
+      <div class="risk"><span class="sev m">Moyen</span><div><p>Quelques comportements du moteur jamais utilisés par le jeu lui-même : l’action de saisie interrompue côté serveur, la recherche des routes pour les postes.</p><small>Chacun a un repli prévu, testé un par un.</small></div></div>
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Un bloc d’environ 17 000 lignes livré d’un coup, sans retour à l’ancien système.</p><small>Parade : contrats figés compilés d’abord, étapes qui compilent chacune, 4 séances d’essai, recherche des doublons et des appels orphelins, copie datée du front chaque jour. En ligne, « Commandeur gelé » ramène au front seul sans republier.</small></div></div>
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Des tirs par script jamais essayés : obus lancés par le serveur, sifflement chez les joueurs, bombe et avion RHS hors de leur système d’appel.</p><small>Parade : essai à deux obligatoire ; en repli, les obus sont relancés chez chaque joueur.</small></div></div>
+      <div class="risk"><span class="sev h">Élevé</span><div><p>Des comportements de l’IA jamais essayés ici : BTR et BRDM conduits par l’ordinateur, ordres de fumée et de tir de suppression sous CRX, menottes ACE sur un officier inconscient.</p><small>Parade : chacun a son essai dédié ; sans menottes ACE, l’officier ne peut qu’être tué (ton choix).</small></div></div>
+      <div class="risk"><span class="sev m">Moyen</span><div><p>Des unités « sur le papier » : un carré peut repasser rouge sans ennemi visible si un joueur arrive entre 1 et 1,5 km, et une colonne peut échouer à se poser sur la route.</p><small>Parade : essai à deux joueurs, distances réglables.</small></div></div>
+      <div class="risk"><span class="sev m">Moyen</span><div><p>Le rythme de la campagne (question 6).</p><small>66 zones à 15 minutes par carré. Parade : chiffres réglables sans republier, mesure pendant deux semaines.</small></div></div>
+    </div>
+  </section>
+
+  <section id="questions">
+    <h2>Tes 10 arbitrages du front</h2>
+    <p>Répondus le 26/09 dans le chat et reportés ici. Tu peux encore en changer un avant le go : clique simplement sur un autre choix.</p>
+    <div class="qs" id="qs"></div>
+    <h3>Tes 8 arbitrages du Commandeur</h3>
+    <ul class="list">
+      <li><b>C1</b> : l’infanterie et les camions sont gratuits ; seuls obus, blindés, hélico, artillerie et bombe sont des stocks.</li>
+      <li><b>C2</b> : un renfort par zone toutes les 10 min au plus, et la localité qui l’envoie garde la moitié de sa garnison.</li>
+      <li><b>C3</b> : un blindé capturé et ramené à la base rapporte une prime, puis il est retiré.</li>
+      <li><b>C4</b> : informateurs civils au réglage prudent (1 sur 4, jamais d’appui lourd sur un signalement).</li>
+      <li><b>C5</b> : la fumée du mortier est gratuite, seuls les obus explosifs comptent.</li>
+      <li><b>C6</b> : la localité attaquée est servie d’abord, les autres se partagent le reste selon leur taille.</li>
+      <li><b>C7</b> : sans menottes ACE qui marchent, l’officier ne peut qu’être tué.</li>
+      <li><b>C8</b> : une contre-attaque brisée aux deux tiers de pertes compte comme une défense réussie.</li>
+    </ul>
+    <div class="go"><b>Prochaine étape :</b> écris « go » dans le chat, et je commence par le socle.</div>
+  </section>
+</div>
+
+<script>
+const QS = [{"id": "Q1", "titre": "Pertes sans combat : on garde tes deux exceptions, et rien d'autre ?", "pourquoi": "En E5 tu as répondu « jamais sans combat ». Mais en E4, une zone coupée de la base repasse rouge après 24 h, et en H2 une offensive tirée au sort peut faire tomber une zone quand personne ne joue. Les trois ne tiennent ensemble que si E4 et H2 sont les deux seules exceptions.", "conseil": 0, "options": [{"label": "Oui, ces deux exceptions seulement, réglées ainsi", "detail": "Zone coupée : 24 h réelles, serveur éteint compris, arrêtées pendant un gel, seulement une zone entière. Offensive : une fois par jour entre 3 h et 7 h, serveur vide depuis 30 min, une seule zone du front, jamais une voisine de la base. Réussite à 10 % + 5 % par point de menace, 60 % au plus. Résultat annoncé sur Discord et à chaque joueur à sa première apparition."}, {"label": "Garder la zone coupée 24 h, retirer l'offensive de la nuit", "detail": "Rien ne bouge quand le serveur est vide."}, {"label": "Garder l'offensive de la nuit, retirer la zone coupée 24 h", "detail": "Une zone coupée ne produit plus, mais reste bleue."}]}, {"id": "Q2", "titre": "Contre-attaque : quand une zone à nous redevient-elle rouge ?", "pourquoi": "Tu as choisi que l'ennemi reprenne carré par carré, en 1 min par carré, mais rien ne dit quand la zone elle-même change de camp. Et 1 min pour reprendre un carré, contre 15 min pour le prendre, peut défaire en une attaque plusieurs soirées d'avance.", "conseil": 0, "options": [{"label": "Points clés repris ET plus de la moitié des carrés rouges, 1 min par carré", "detail": "Les autres carrés gardent leur couleur, la zone ne retombe jamais d'un bloc. Seuls les soldats de l'attaque reprennent du terrain, dans la zone visée, un carré qui touche du rouge à la fois. Un joueur à 100 m d'un point clé l'empêche d'être repris. La minute se règle ensuite si c'est trop dur."}, {"label": "Même règle, mais 3 min par carré pour l'ennemi", "detail": "Une contre-attaque grignote moins vite : il faut plus longtemps pour perdre une zone."}, {"label": "Même règle, mais 15 min comme nous", "detail": "Symétrique : une contre-attaque ne reprend presque rien avant la fin des vagues."}]}, {"id": "Q3", "titre": "Les deux blocs qui ont deux villages : deux zones, ou une zone à deux villages ?", "pourquoi": "Montignac et Gravette, Tyrone et Meaux sont dans le même bloc. La garnison, la prime, la production et la mission marchent avec un village par zone. Couper donne des zones moins régulières : Tyrone n'aurait que 3 carrés.", "conseil": 0, "options": [{"label": "Couper chaque bloc en deux zones", "detail": "Chaque carré va au village le plus proche. Tu grossis Tyrone avec quelques lignes dans le fichier de retouches."}, {"label": "Une seule zone, au nom du plus gros village", "detail": "Il faut saisir les postes des deux villages pour la faire tomber."}]}, {"id": "Q4", "titre": "Les 36 zones sans village : quand tombent-elles, et que rapportent-elles ?", "pourquoi": "Ta règle (point clé + moitié des carrés) suppose un village. Ces zones n'ont ni point clé ni garnison : seulement des postes du front et des patrouilles.", "conseil": 0, "options": [{"label": "À la moitié des carrés bleus, prime de 200 € sous mission", "detail": "Elles ne produisent rien, sauf celles que tu désignes (carburant ou pièces). Elles comptent pour la menace comme les autres."}, {"label": "À la moitié des carrés, sans prime et sans menace", "detail": "Seules les 30 zones à village paient et font bouger la menace, comme les anciens secteurs."}, {"label": "Seulement quand tous leurs carrés sont bleus", "detail": "Plus long, mais la zone est vraiment nettoyée."}]}, {"id": "Q5", "titre": "L'île d'Erquy : comment la prendre ?", "pourquoi": "Aucun de ses carrés ne touche un carré bleu : avec ta règle « un carré qui touche du bleu », elle serait imprenable. Une fois prise, elle serait coupée de la base et perdue au bout de 24 h, et la victoire deviendrait impossible.", "conseil": 0, "options": [{"label": "Une liaison par la mer avec la côte la plus proche", "detail": "Erquy devient attaquable quand le carré de côte le plus proche est bleu, et reste reliée à la base tant qu'il le reste. L'île forme une seule zone de 34 carrés, à prendre en bateau ou en hélico posé."}, {"label": "Débarquement possible à tout moment", "detail": "On peut prendre pied sur l'île quand on veut ; elle reste reliée à la base par la mer."}]}, {"id": "Q6", "titre": "Rythme de la campagne : on garde tes chiffres avec 66 zones au lieu de 30 ?", "pourquoi": "Ton objectif est 2 à 3 mois. À 15 min par carré et la moitié des carrés par zone, une zone moyenne demande environ 2 h 30 de présence à un joueur seul, moins à plusieurs sur des carrés différents. Il faudrait 5 à 6 zones par semaine. Et avec +1 de menace par zone, la menace atteint 10 après une dizaine de zones : la contre-attaque tombe alors toutes les heures jusqu'à la fin.", "conseil": 0, "options": [{"label": "Garder tes chiffres, mesurer 2 semaines, puis régler", "detail": "15 min par carré, +1 ou −1 de menace par zone. Les réglages se changent dans le fichier du profil, sans republier."}, {"label": "La menace ne bouge que pour les 30 zones à village", "detail": "On garde l'échelle des anciens secteurs : la menace monte deux fois moins vite."}]}, {"id": "Q7", "titre": "Beaucoup d'ennemis en même temps : on reste dans la limite actuelle de 100 soldats ?", "pourquoi": "Tes choix ajoutent des soldats : postes du front, gardes même dans un village gardé, deux captures à la fois dès 10 joueurs. Ils s'ajoutent aux 3 garnisons, aux camions, aux vagues et aux 25 civils. Au-delà de 128 IA actives, le jeu endort des groupes : des garnisons restent incomplètes et des postes vides.", "conseil": 0, "options": [{"label": "Rester à 100 soldats et 30 groupes, avec une réserve pour les postes", "detail": "12 soldats réservés aux postes (4 postes au plus) et la place des camions. Un soir de monde, la garnison la plus proche est complète, la 2e réduite, la 3e attend une place. Dans un village gardé, les gardes d'une mission sont limités à 2 groupes. On ne monte que si l'essai à 5 joueurs le permet."}, {"label": "Monter tout de suite à 120 soldats et mesurer", "detail": "Plus d'ennemis présents, au risque que le jeu endorme des groupes les soirs de monde."}]}, {"id": "Q8", "titre": "Points clés : tu les poses en jeu, avec le menu Staff ?", "pourquoi": "Tu as choisi de poser toi-même les points clés des 30 villages, plus un QG par ville ou bourg. Posés au Workbench, chaque retouche demanderait de republier le mod ; posés en jeu, non.", "conseil": 0, "options": [{"label": "En jeu : « Point clé ICI » et « QG ICI » dans le menu Staff", "detail": "Là où tu te tiens, face à ta direction. La table ennemie se déplace tout de suite. Pas de QG automatique : tant que tu ne l'as pas posé, la ville n'a que son centre, et le menu liste ce qui manque. Une soirée pour tout poser avant l'ouverture."}, {"label": "Au Workbench, avec un repère à poser dans le monde", "detail": "Chaque retouche demande de republier le mod."}]}, {"id": "Q9", "titre": "Argent d'une zone prise : la mission de capture garde-t-elle sa propre récompense en plus de ta prime ?", "pourquoi": "Aujourd'hui, la mission de capture verse déjà 1 500 à 4 500 € et 20 à 60 paquets selon une difficulté tirée au hasard. Ta prime (300, 500 ou 800 €) s'y ajouterait. Et une zone forcée par le Staff paie aujourd'hui 500 € et fait monter la menace.", "conseil": 0, "options": [{"label": "La mission garde sa récompense, ta prime remplace l'ancienne subvention", "detail": "Les 500 € d'aujourd'hui deviennent 300, 500 ou 800 € selon la zone. Une zone forcée par le Staff est une correction : ni prime, ni menace, ni radio, juste une ligne au journal Staff."}, {"label": "Pareil, et la difficulté de la mission est fixée par la zone", "detail": "Hameau 1, village 2, ville 3 au lieu d'un tirage : la récompense suit la taille de l'objectif."}]}, {"id": "Q10", "titre": "Contrôle routier : aucun ne sera possible au début de la campagne. D'accord ?", "pourquoi": "Tu as choisi « seulement en territoire bleu » et un départ tout rouge sauf la base de 1,5 km. Or un contrôle doit déjà être à plus de 1,5 km de la base (#14) : il ne reste presque aucune place le premier soir.", "conseil": 0, "options": [{"label": "Oui : les contrôles deviennent possibles avec la première zone prise", "detail": "La règle reste « seulement en bleu », sans exception."}, {"label": "Baisser la distance minimale à la base à 1 000 m", "detail": "On peut contrôler dans la couronne bleue autour de la base dès le premier soir."}]}];
+(function(){
+  const LS = 'pag-front-plan-v1';
+  let ans = {}; let db = null;
+  try { ans = JSON.parse(localStorage.getItem(LS) || '{}') || {}; } catch(e) { ans = {}; }
+  const save = () => { try { localStorage.setItem(LS, JSON.stringify(ans)); } catch(e) {} };
+  const box = document.getElementById('qs'), pill = document.getElementById('qcount');
+  function el(t, a, ...k){ const n = document.createElement(t); if (a) for (const x in a){ const v = a[x]; if (v == null || v === false) continue; if (x === 'class') n.className = v; else if (x.startsWith('on')) n.addEventListener(x.slice(2), v); else n.setAttribute(x, v === true ? '' : v); } for (const c of k.flat()) if (c != null && c !== false) n.append(c.nodeType ? c : document.createTextNode(String(c))); return n; }
+  const done = q => { const a = ans[q.id]; return !!a && (typeof a.c === 'number' || (a.c === 'autre' && (a.t || '').trim())); };
+  function count(){ const n = QS.filter(done).length; pill.textContent = n + ' / ' + QS.length + ' questions'; pill.className = 'pill' + (n === QS.length ? ' ok' : ''); }
+  const queues = {};
+  function persist(q){
+    const a = ans[q.id]; a.at = new Date().toISOString(); save(); count();
+    if (!db) return;
+    const body = {c: a.c, t: a.t || '', at: a.at, question: q.titre, choix: typeof a.c === 'number' ? q.options[a.c].label : 'autre'};
+    queues[q.id] = (queues[q.id] || Promise.resolve()).then(() => db.doc('plan_reponses/' + q.id).set(body)).catch(() => {});
+  }
+  function render(){
+    box.textContent = '';
+    QS.forEach((q, i) => {
+      const a = ans[q.id] || {};
+      const card = el('article', {class: 'qq', id: 'q-' + q.id});
+      card.append(el('div', {class: 'num'}, 'Question ' + (i + 1)), el('h4', null, q.titre), el('p', {class: 'why'}, q.pourquoi));
+      const opts = el('div', {class: 'opts', role: 'group', 'aria-label': 'Choix'});
+      q.options.forEach((o, k) => opts.append(el('button', {class: 'opt', 'aria-pressed': a.c === k ? 'true' : 'false', onclick: () => { ans[q.id] = Object.assign({}, ans[q.id], {c: k}); persist(q); render(); }},
+        el('b', null, o.label), o.detail ? el('span', null, o.detail) : null, k === q.conseil ? el('span', {class: 'badge'}, 'Mon conseil') : null)));
+      opts.append(el('button', {class: 'opt', 'aria-pressed': a.c === 'autre' ? 'true' : 'false', onclick: () => { ans[q.id] = Object.assign({}, ans[q.id], {c: 'autre'}); persist(q); render(); const t = document.getElementById('t-' + q.id); if (t) t.focus(); }}, el('b', null, 'Autre, je t’explique')));
+      card.append(opts);
+      if (a.c === 'autre') {
+        const t = el('textarea', {id: 't-' + q.id, 'aria-label': 'Ta réponse', placeholder: 'Écris ce que tu veux…'}); t.value = a.t || '';
+        let tm; t.addEventListener('input', () => { ans[q.id].t = t.value; clearTimeout(tm); tm = setTimeout(() => persist(q), 700); });
+        card.append(t);
+      }
+      box.append(card);
+    });
+    count();
+  }
+  render();
+  (async () => {
+    try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch(e) { db = null; }
+    if (!db) return;
+    try {
+      const snap = await db.collection('plan_reponses').limit(100).get();
+      snap.docs.forEach(d => { if (!d.exists) return; const r = d.data(), l = ans[d.id]; if (!l || (r.at || '') > (l.at || '')) ans[d.id] = {c: r.c, t: r.t || '', at: r.at}; });
+      save(); render();
+      QS.forEach(q => { const l = ans[q.id]; if (l && l.at) { const r = snap.docs.find(d => d.id === q.id); if (!r || !r.exists || (r.data().at || '') < l.at) persist(q); } });
+    } catch(e) {}
+  })();
+})();
+</script>

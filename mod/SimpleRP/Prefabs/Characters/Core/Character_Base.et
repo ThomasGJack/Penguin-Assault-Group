@@ -1,0 +1,45 @@
+SCR_ChimeraCharacter {
+ ID "520EC961A090B1EE"
+ components {
+  SRP_VoNComponentLoud "{6A5B0C0D0E0F3003}" {
+   Filename "{B4C3941EC8B2AD20}Sounds/VON/von.acp"
+  }
+  SRP_VoNComponentNormal "{6A5B0C0D0E0F3002}" {
+   Filename "{B0D0561A37FF8D82}Sounds/VON/von_30m.acp"
+  }
+  SRP_VoNComponentNear "{6A5B0C0D0E0F3001}" {
+   Filename "{E4B7C7F6AE7E1899}Sounds/VON/von_5m.acp"
+  }
+  SCR_VoNComponent "{520EA1D2F659C856}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{520EA1D2F659CE02}" {
+   additionalActions {
+    SRP_SoldierAction "{6A5B0C0D0E0F3101}" {
+     ParentContextList {
+      "LowerTorso"
+     }
+     UIInfo SCR_ActionUIInfo "{6A5B0C0D0E0F3102}" {
+      Name "Gestion du soldat"
+     }
+     ActionTitle "Gestion du soldat"
+     VisibilityRange 3
+     Duration 0.5
+     "Sort Priority" 20
+    }
+    SRP_CheckpointStartAction "{6A5B0C0D0E0F3111}" {
+     ParentContextList {
+      "LowerTorso"
+     }
+     UIInfo SCR_ActionUIInfo "{6A5B0C0D0E0F3112}" {
+      Name "Établir un point de contrôle ici"
+     }
+     ActionTitle "Établir un point de contrôle ici"
+     VisibilityRange 3
+     Duration 3
+     "Sort Priority" 21
+    }
+   }
+  }
+ }
+}

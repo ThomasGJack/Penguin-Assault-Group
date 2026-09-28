@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{F8915AD9915ECF76}Assets/Structures/Signs/SignLarge_02/Data/Panneau_Large_Bienvenue.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

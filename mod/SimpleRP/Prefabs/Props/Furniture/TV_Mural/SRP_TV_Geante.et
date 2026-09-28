@@ -1,0 +1,12 @@
+GenericEntity : "{1057DD97C8FC4843}Prefabs/Props/Furniture/TV_Mural/TV_Geant_Interactif_LiveFeed.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  FOF_TVComponent_LiveFeed "{68F8AE8990ACF034}" {
+   m_rIdleImage "{4AD77CF5F334891F}Assets/pag_wall.edds"
+   m_fMaxRenderDistance 15
+  }
+  FOF_TVReceiverComponent "{68F8AE8B459E9CEE}" {
+   m_iChannelCount 8
+  }
+ }
+}

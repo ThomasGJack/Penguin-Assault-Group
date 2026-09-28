@@ -1,0 +1,5 @@
+SCR_DestructibleEntity : "{F54599470E4F4406}Prefabs/Structures/Signs/SignLarge_02/SignLarge_02_180x290_base.et" {
+ ID "50D67C36F4200F97"
+ coords 25.196 0 0
+ MaxHealth 800
+}

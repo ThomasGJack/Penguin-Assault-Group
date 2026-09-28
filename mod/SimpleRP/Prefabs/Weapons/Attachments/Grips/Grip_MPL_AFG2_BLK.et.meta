@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{E09C81B3E4EFFB7C}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG2_BLK.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

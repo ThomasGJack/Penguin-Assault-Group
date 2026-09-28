@@ -1,0 +1,18 @@
+GameEntity : "{EC0071079B219026}Prefabs/Characters/Core/Headgear_Helmet_Base.et" {
+ ID "5112706CD4157AC7"
+ components {
+  BaseLoadoutClothComponent "{5112706CD4157AF8}" {
+   Slots {
+    LoadoutSlotInfo Camera {
+     PivotID "Head"
+     Offset 0 0.19 0.045
+     Angles 75 0 0
+     ChildPivotID "AttachmentPoint"
+     InspectionWidgetOffset 0 1.83 0
+     AreaType RHS_LoadoutTopVelcroSlotArea "{6A5B0C0D0E0FB102}" {
+     }
+    }
+   }
+  }
+ }
+}

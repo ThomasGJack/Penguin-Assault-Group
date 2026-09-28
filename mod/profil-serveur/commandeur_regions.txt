@@ -1,0 +1,39 @@
+# Régions du Commandeur ennemi (OF1), rapport réécrit à chaque démarrage du serveur (2026-09-27 14:29:47)
+# Pour changer une zone de région : ajouter « region S12 -> R3 » dans front_retouches.txt (la zone doit toucher R3), puis redémarrer.
+# R1 est la région la plus proche de la base ; la base n'appartient à aucune région.
+
+Tracé : 6 région(s) (voulues : 6), 66 zone(s) hors base, de 8 à 13 zones par région, 1 échange(s) d'équilibrage, somme de contrôle 5612867
+
+R1 — région de Durras : 9 zone(s), graine Camurac (S07), centre à 2128 m de la base
+   zones : VALLON VERT (S02), Régina (S05), Camurac (S07), Durras (S10), MONT SAINTE-MARGUERITE (S13), Vernon (S16), Le Bosc (S17), Pointe de la Souche (S20), MONT-LA-DÉFERLE (S22)
+   localités : Durras (village), Vernon (village), Régina (village), Le Bosc (hameau)
+
+R2 — région de Montignac : 12 zone(s), graine PUY DU BRACONNIER (S24), centre à 2568 m de la base
+   zones : LES SIX CLOCHES (S01), La Valette (S03), Morton (S06), Chotain (S11), Figari (S12), PLATEAU EST (S14), Provins (S18), LE CALVAIRE (S23), PUY DU BRACONNIER (S24), BOIS-NEUF (S29), Entre-Deux (S30), Montignac (S38)
+   localités : Morton (ville), Montignac (ville), Chotain (village), Provins (village), Figari (village), Entre-Deux (village)
+
+R3 — région de Saint-Pierre : 12 zone(s), graine Pointe du Varech (S45), centre à 3235 m de la base
+   zones : Skua Point (S04), CRÊTE DES FANAUX (S09), Perelle (S15), Grotte des Passeurs (S25), Saint-Pierre (S27), Les Cascades (S28), Courbet (S32), MONT DES PIOCHES (S36), La Roue (S40), Lancre (S42), Pointe du Varech (S45), Pointe des Escarpes (S46)
+   localités : Saint-Pierre (ville), Perelle (hameau), Lancre (hameau)
+
+R4 — région de Lamentin : 13 zone(s), graine Kervel (S44), centre à 4292 m de la base
+   zones : Sillon des Mouettes (S08), VALLÉE DE MORTON (S19), COLLINE AU LOUP (S21), Roqueloup (S31), BOIS-VIEUX (S33), Richemont (S34), Lacourt (S41), Kervel (S44), Le Moule (S48), Villeneuve (S51), PUY-LONG (S55), Cap du Pilori (S57), Lamentin (S60)
+   localités : Lamentin (ville), Le Moule (village), Villeneuve (village), Lacourt (hameau), Kervel (hameau), Richemont (hameau)
+
+R5 — région d'Erquy : 8 zone(s), graine Erquy (S66), centre à 4871 m de la base
+   zones : Bénac (S26), Cap de la Goëlette (S35), Flambeau d'André (S37), GRANPIERRE (S43), Kermovan (S50), Promontoire de Lacan (S52), Tyrone (S56), Erquy (S66)
+   localités : Erquy (village), Tyrone (village), Kermovan (hameau), Bénac (hameau)
+
+R6 — région de Saint-Philippe : 12 zone(s), graine Pointe de la Genièvre (S65), centre à 6110 m de la base
+   zones : Gravette (S39), Trou du Soc (S47), Gorey (S49), CRÊTE DE TYRONE (S53), Redon (S54), Étoupe (S58), Meaux (S59), Saint-Philippe (S61), Les Creux (S62), COLLINE AUX PENDUS (S63), La Gorgée du Barreur (S64), Pointe de la Genièvre (S65)
+   localités : Saint-Philippe (ville), Gravette (village), Meaux (village), Redon (hameau), Les Creux (hameau), Gorey (hameau), Étoupe (hameau)
+
+Retouches et avertissements : aucun
+
+État des officiers :
+   R1 — active ; officier : officier ennemi Gromov (méthodique), n° 1, arrivé il y a 12 h 54 — sur le papier ; alerte 0
+   R2 — active ; officier : officier ennemi Mikhailov (audacieux), n° 2, arrivé il y a 12 h 54 — sur le papier ; alerte 0
+   R3 — active ; officier : officier ennemi Belov (prudent), n° 3, arrivé il y a 12 h 54 — sur le papier ; alerte 0
+   R4 — active ; officier : officier ennemi Novikov (prudent), n° 4, arrivé il y a 12 h 54 — sur le papier ; alerte 0
+   R5 — active ; officier : officier ennemi Gusev (lent), n° 5, arrivé il y a 12 h 54 — sur le papier ; alerte 0
+   R6 — active ; officier : officier ennemi Nikitin (lent), n° 6, arrivé il y a 12 h 54 — sur le papier ; alerte 0

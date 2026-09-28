@@ -1,0 +1,6 @@
+MatPBRMulti : "{F6D2D2909C81283D}Assets/Structures/Signs/SignLarge_02/Data/Panneau_Large_Base.emat" {
+ GlobalMCRMap "{0470F15132303F7D}UI/Panneau/gros panneau.edds"
+ OverlayBlackPower 1
+ OverlayWhitePower 1
+ MaskMap "{0470F15132303F7D}UI/Panneau/gros panneau.edds"
+}

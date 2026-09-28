@@ -1,0 +1,12 @@
+# Retouches du front, lues au démarrage du serveur (redémarrer pour les prendre en compte)
+# Une retouche par ligne ; tout ce qui suit # est un commentaire.
+#
+# 074 042 -> S07        déplace le carré dans la zone S07 (ou -> Régina, nom d'avant les retouches)
+#                       le carré doit toucher la zone d'arrivée par un côté, et sa zone de départ ne doit pas être coupée
+# ressource S12 carburant           la zone produit du carburant (ou pièces) ; débit en option : ressource S12 carburant 8
+# ressource S12 rien                la zone ne produit rien (même un village ou une ville)
+# region S12 -> R3      rattache la zone S12 à la région R3 du Commandeur (liste dans commandeur_regions.txt)
+#
+# Les points clés (centre et QG) ne se règlent pas ici : repères SRP_PointCle_Centre et SRP_PointCle_QG posés au Workbench, puis republier.
+#
+# La liste des zones, des points clés et des villages coupés est dans front_zones.txt

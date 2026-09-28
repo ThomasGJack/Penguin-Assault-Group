@@ -1,0 +1,45 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{8C8D2EF181A72B14}Assets/Props/Civilian/Suitcase_01/Suitcase_01.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0F8501}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0F8502}" {
+     UIInfo UIInfo "{6A5B0C0D0E0F8503}" {
+      Name "documents"
+     }
+     ContextName "documents"
+     Position PointInfo "{6A5B0C0D0E0F8504}" {
+      Offset 0 0.3 0
+     }
+     Radius 1
+    }
+   }
+   additionalActions {
+    SRP_DocumentsAction "{6A5B0C0D0E0F8505}" {
+     ParentContextList {
+      "documents"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0F8506}" {
+      Name "Recuperer les documents"
+     }
+     ActionTitle "Recuperer les documents"
+     VisibilityRange 4
+     Duration 3
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}

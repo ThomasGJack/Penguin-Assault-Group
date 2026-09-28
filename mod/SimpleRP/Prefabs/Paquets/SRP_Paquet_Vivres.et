@@ -1,0 +1,31 @@
+GenericEntity : "{30CDE9F71FC702E8}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01_Base.et" {
+ ID "51F66EC33748B84D"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName SCR_InventoryUIInfo "{5222EB4D07D865FA}" {
+     Name "Paquet de Vivres"
+     Description "Paquet de Vivres"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 1
+    }
+    CustomAttributes {
+     SCR_ItemOfInterestAttribute "{554E95CAC60BB241}" {
+      m_InterestType NONE
+     }
+    }
+    CommonItemType "NONE"
+   }
+  }
+  SCR_ConsumableItemComponent "{5943631460899505}" {
+   Enabled 0
+  }
+  SRP_PacketComponent "{6A5529CA046AD7E1}" {
+   m_eResource VIVRES
+  }
+  GadgetGamepadEffectsManagerComponent "{61E103D57E322BB5}" {
+   Enabled 0
+  }
+ }
+}

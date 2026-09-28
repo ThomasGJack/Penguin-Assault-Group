@@ -1,0 +1,4218 @@
+[
+ {
+  "liste": "6532BE0C6839A780",
+  "entree": "6532BE0C6839A79F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6676FF9B716402CC}Prefabs/Items/PersonalBelongings/PersonalBelongings_US.et",
+  "nom": null,
+  "source": "AMF-CORE"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "6532BE0C6839A799",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CA43E7527570A5ED}Prefabs/Weapons/AircraftWeapons/RocketPods/Pod_M260.et",
+  "nom": null,
+  "source": "AMF-CORE"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6532BE0C680075FD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{163B4015946457A5}Prefabs/Weapons/Handguns/Glock17/Handgun_Glock17.et",
+  "nom": "Glock 17 Gen 5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65DC9B17903009DE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1DD725B7BD47576F}Prefabs/Weapons/Handguns/PAMAS/PAMAS_G1.et",
+  "nom": "PAMAS G1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65EF685D3B7D9A79",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{695B2CF2DE7B5235}Prefabs/Weapons/Handguns/PAMAC50/Handgun_PAMAC50_base.et",
+  "nom": "PA MAC 50",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6532BE0C680075C6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{39E0413FA0E2E5D5}Prefabs/Weapons/Rifles/HK416F/HK416F-C.et",
+  "nom": "HK416 F-C",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04E019CCA6A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DD9E57542D154283}Prefabs/Weapons/Rifles/HK416F/HK416F-C_AimM5.et",
+  "nom": "HK416 F-C Aim M5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04E01261E9B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{691205D6BCA4F9EA}Prefabs/Weapons/Rifles/HK416F/HK416F-C_EO512.et",
+  "nom": "HK416 F-C",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A412AB2E8C32",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C50D8562D211B977}Prefabs/Weapons/Rifles/HK416F/HK416F-C_CustomV1.et",
+  "nom": "HK416 F-C",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A412A44505CA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4B228CBE4521F68B}Prefabs/Weapons/Rifles/HK416F/HK416F-C_CustomV2.et",
+  "nom": "HK416 F-C Custom V2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A412A55314A7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AEBEC04749C461E0}Prefabs/Weapons/Rifles/HK416F/HK416F-C_CustomV3.et",
+  "nom": "HK416 F-C",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A412B0D8E048",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{43029DC17958C047}Prefabs/Weapons/Rifles/HK416F/Rifle_HK416FC_HK269.et",
+  "nom": "HK416 F-C HK269",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A4128F7739B3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{54E45368CD323079}Prefabs/Weapons/Rifles/HK416F/Rifle_HK416FC_HK269_AimM5.et",
+  "nom": "HK416 F-C HK269 Aim M5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A4128873DD96",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E06801EA5C838B10}Prefabs/Weapons/Rifles/HK416F/Rifle_HK416FC_HK269_EO512.et",
+  "nom": "HK416 F-C HK269 EoTech 512",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A412BF154304",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BF1359770383100B}Prefabs/Weapons/Rifles/HK416F/HK416F-C_HK269_CustomV1.et",
+  "nom": "HK416 F-C HK269",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6536829632F34BD4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3E90E7B72FA8CB24}Prefabs/Weapons/Rifles/HK416F/HK416F-S.et",
+  "nom": "HK416 F-S",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04D6F8EFEDC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{21DEDBF890CAE897}Prefabs/Weapons/Rifles/HK416F/HK416F-S_AimM5.et",
+  "nom": "HK416 F-S Aim M5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04E0688F245",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9552897A017B53FE}Prefabs/Weapons/Rifles/HK416F/HK416F-S_EO512.et",
+  "nom": "HK416 F-S EO 512",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E4A41360BD6897",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6B67AEC65D7B856E}Prefabs/Weapons/Rifles/HK416F/Rifle_HK416FS_HK269_base.et",
+  "nom": "HK416 F-S HK269",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65368296308DD4C1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0EA8B1049E1D890E}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_Wood_Stannag_base.et",
+  "nom": "PGM Hécate II Bois J10",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04F39586026",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8D1BAD4FCC7CEF6D}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_wood_Ris_base.et",
+  "nom": "PGM Hécate II Bois RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "672F4D3DA8CE9A18",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{162CA303EECD0B0D}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_wood_Ris_S&B.et",
+  "nom": "PGM Hécate II Bois RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "672F4D3DBA9A8D28",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FE889218AE84E3B7}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_Polymer_Stannag.et",
+  "nom": "PGM Hécate II Polymer J10",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "672F4D3DBD860B2A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{571FCE39618200D9}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_Polymer_Ris.et",
+  "nom": "PGM Hécate II Polymer RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "672F4D3D8228C642",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{56CB0F643B155B25}Prefabs/Weapons/Rifles/PGM Hecate II/PGM_HecateII_Polymer_Ris_S&B.et",
+  "nom": "PGM Hécate II Polymer RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6536829633148FE3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{562B03DAF6DFC866}Prefabs/Weapons/Rifles/SCAR-H/Rifle_SCARH_Base.et",
+  "nom": "FN SCAR-H PR",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "6562A04FA9976A69",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{945B888C2BF83090}Prefabs/Weapons/Rifles/SCAR-H/Rifle_SCARH_SM_3-20x500.et",
+  "nom": "FN SCAR-H PR",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65EE86EDFDB7B7DB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D915F66D8F9614F1}Prefabs/Weapons/Rifles/FRF2/FRF2.et",
+  "nom": "FR-F2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65368296339E6AF4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D074FC61809F92F5}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_F1_base.et",
+  "nom": "FN Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E7382A1D4FD9A9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3676320780EABBB9}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_F1_J4.et",
+  "nom": "FN Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "653682963261C735",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F93452E844986563}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_base.et",
+  "nom": "FN Minimi FELIN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E7382AD27A53BC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E9ACA8CB967A1A43}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_J4.et",
+  "nom": "FN Minimi FELIN J4",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E7382A10BD2837",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{453F1C4EC78BF1A9}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_RIS.et",
+  "nom": "FN Minimi FELIN RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E7382A97CC3F12",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1638E181E4F90731}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_RIS_J4.et",
+  "nom": "FN Minimi FELIN Ris J4",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "661F628CC350A416",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{66ECCA40DCE93724}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_MK2.et",
+  "nom": "FN Minimi FELIN MK2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68E738254966B424",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1078EF81CE12EBA4}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_MK2_Specter.et",
+  "nom": "FN Minimi FELIN MK2 Specter",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65368297F5C87597",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{837086B9D00CA04F}Prefabs/Weapons/MachineGuns/MINIMI/FN_MINIMI_FELIN_MK3.et",
+  "nom": "FN Minimi MK3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "656326E57608332D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9BA2CBC37F3F00B8}Prefabs/Weapons/MachineGuns/MAG58/MG_Mag58.et",
+  "nom": "FN MAG58",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65B6D28128AF3CB8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7105D842021421AE}Prefabs/Weapons/MachineGuns/AANF1/MG_AANF1_base.et",
+  "nom": "AAN-F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "659512A5E67D5594",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F03D43611BDE70D8}Prefabs/Weapons/Rifles/FAMAS/Famas_F1_base.et",
+  "nom": "FAMAS F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68A8C6B8E4D85801",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0F1D7639EAA11E66}Prefabs/Weapons/Rifles/FAMAS/Famas_F1_RIS.et",
+  "nom": "FAMAS F1 RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "659512A5E792B3F3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{837EDA3789EC1C89}Prefabs/Weapons/Rifles/FAMAS/Famas_F1_Inf.et",
+  "nom": "FAMAS F1 Infanterie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68A8C6B8E39E717B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{01E7BB9FCA17084A}Prefabs/Weapons/Rifles/FAMAS/Famas_F1_Inf_RIS.et",
+  "nom": "FAMAS F1 Infanterie RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "659512A5D250EBE4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8694E0ED262508E3}Prefabs/Weapons/Rifles/FAMAS/Famas_G2_base.et",
+  "nom": "FAMAS G2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68A8C6B8FF406CE9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B83FF7155E51D748}Prefabs/Weapons/Rifles/FAMAS/Famas_G2_RIS.et",
+  "nom": "FAMAS G2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "659512A5D3D4BD78",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7360DE3A41497F1F}Prefabs/Weapons/Rifles/FAMAS/Famas_G2_PGMP.et",
+  "nom": "FAMAS G2 PGMP",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "68A8C6B8F5FC98AE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B5E86091D87FFFC2}Prefabs/Weapons/Rifles/FAMAS/Famas_G2_PGMP_RIS.et",
+  "nom": "FAMAS G2 PGMP",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "659512A5E4F76E52",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0F15DADA01C2262B}Prefabs/Weapons/Rifles/FAMAS/Famas_Valorise.et",
+  "nom": "Famas Valorisé",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C680075F5",
+  "entree": "65DABCAE5AB288E6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ED9283D74E879FF8}Prefabs/Weapons/Rifles/FAMAS/Famas_FELIN.et",
+  "nom": "Famas FELIN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65368297BCBD6652",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{40DDA411EE07B149}Prefabs/Weapons/Magazines/SCARH/Magazine_762x51_SCARH_20rnd_Base.et",
+  "nom": "#ar-magazine_name SCAR-H (7,62 × 51 mm OTAN)",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65FB085EFB04CDB3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8AC32CA37C9DD6EE}Prefabs/Weapons/Magazines/MINIMI/Box_556x45_MINIMI_100rnd_base.et",
+  "nom": "100Rnd Minimi BO ",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65368297BA90A1BB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5C20C34D9CF85752}Prefabs/Weapons/Magazines/MINIMI/Box_556x45_MINIMI_100rnd_BO_BT.et",
+  "nom": "100Rnd Minimi BO/BT",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65FB085C9AB9FD28",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4FCBBDF274FD2158}Prefabs/Weapons/Magazines/MINIMI/Box_556x45_M249_200rnd_Ball.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65D0EB8694BD7F30",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et",
+  "nom": "30Rnd HK416 BO F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65D0EB869FF99368",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1AEFE527061C0141}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_BT_F5.et",
+  "nom": "30Rnd HK416 BO/BT F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65CF49DE346EEDA1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A90F09E4530B3AAF}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BO_Base.et",
+  "nom": "30Rnd PMAG BO F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65CF49DE3D062607",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6C23B01F312F41C1}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BO_BT.et",
+  "nom": "30Rnd PMAG BO/BT F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "661D331DE7FA38EF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{904437C1D59DA866}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BT.et",
+  "nom": "30Rnd PMAG BT F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65CF49DE3E442B02",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{485B573AFD814A24}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BO_TAN.et",
+  "nom": "30Rnd PMAG TAN BO F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65CF49DE082A59F6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C77C6B0B62A68598}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BO_BT_TAN.et",
+  "nom": "30Rnd PMAG TAN BO/BT F5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "661D331DE81F45AE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{67F58525F89A3F30}Prefabs/Weapons/Magazines/AMF_PMAG/PMAG_30rnd_BT_TAN.et",
+  "nom": "30Rnd PMAG BT F5 TAN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "659512A42C4B4CF3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E28627ECC51DCF83}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_SS109_Famas_25rnd_BO.et",
+  "nom": "BO 25Rnd FMJ SS109",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "659512A42DEDBC10",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{900C63DF7FC70548}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_SS109_Famas_25rnd_BO_TR.et",
+  "nom": "BO/TR 25Rnd FMJ SS109",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "661D331CB725C6E9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4BD8473ECB6C950B}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_SS109_Famas_25rnd_BT.et",
+  "nom": "25Rnd BT SS109",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6722ACF6BC11B6D7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B58EA4C5CE4A5FB9}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_F1_Famas_25rnd_BO.et",
+  "nom": "BO 25Rnd FMJ F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6722ACF682D29628",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{636C3BEF067944A9}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_F1_Famas_25rnd_BO_TR.et",
+  "nom": "BO/TR 25Rnd FMJ F1/F1A",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6722ACF686830628",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F86B719067B9866F}Prefabs/Weapons/Magazines/FAMAS/Magazine_556x45_F1A_Famas_25rnd_BT.et",
+  "nom": "25Rnd BT F1A",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6559359158D0E322",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{613B7C0EF0DCFB60}Prefabs/Weapons/Magazines/GLOCK/Magazine_9x19_Glock17_17rnd_Base.et",
+  "nom": "Chargeur Glock 9x19 17 cps",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65EF685D1A829727",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9C05543A503DB80E}Prefabs/Weapons/Magazines/Magazine_9x19_M9_15rnd_Ball.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65EF685D102BBD51",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4B5ACD71BC632979}Prefabs/Weapons/Magazines/PAMAC50/Magazine_9x19_MAC50_9rnd_Base.et",
+  "nom": "9Rnd PA-MAC 50 FMJ",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65EE86EB8090D8E0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{21E2CB2BF8D8D9FD}Prefabs/Weapons/Magazines/FRF2/Magazine_762x51_FRF2_10rnd_Base.et",
+  "nom": "10Rnd FRF2 BO M62",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65EE86EA9DA0CF16",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7ED703D747CE43A3}Prefabs/Weapons/Magazines/FRF2/Magazine_762x51_FRF2_10rnd_AP.et",
+  "nom": "10Rnd FRF2 AP",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "655935960D4F7942",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{266DD70968577430}Prefabs/Weapons/Magazines/PGM Hecate II/Magazine_127x99_PGM_7rnd_Base.et",
+  "nom": "#AR-Magazine_M14_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65EE86EDE60653E0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0EC147AF7D93CABD}Prefabs/Weapons/Magazines/PGM Hecate II/Magazine_127x99_PGM_7rnd_PEI.et",
+  "nom": "7Rnd 12.7X99 PGM Hecate II PEI",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6532BE0C683C1C3A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4FCBBDF274FD2158}Prefabs/Weapons/Magazines/MINIMI/Box_556x45_M249_200rnd_Ball.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65DCA3B02A802E2B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8AC32CA37C9DD6EE}Prefabs/Weapons/Magazines/MINIMI/Box_556x45_MINIMI_100rnd_base.et",
+  "nom": "100Rnd Minimi BO ",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "656326E57AC5F894",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{75632A0CA07D3817}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_AP.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "656326E57A39E56D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4D2C1E8F3A81F894}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_4Ball_1Tracer.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "656326E569F06166",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{982F5BA41A3738CF}Prefabs/Weapons/Magazines/Box_762x51_M60_100rnd_Ball.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65B6D28104C6786E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{69D6B11E2A16ED44}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_50rnd_BO_BT.et",
+  "nom": "50Rnd AAN-F1 7.62X51 BO/BT",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "65B6D2810410F7EF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{143BBF15E72D4963}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_50rnd_BO_Base.et",
+  "nom": "50Rnd AAN-F1 7.62X51 BO",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "68E12B12B1A4E278",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FAEEA13ECEC2C387}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_75rnd_BO_BT.et",
+  "nom": "75Rnd AAN-F1 7.62X51 BO/BT",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "68E12B12B2D1C7C9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D2C74492B2A796F6}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_75rnd_BO.et",
+  "nom": "50Rnd AAN-F1 7.62X51 BO",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "68E12B12B3D2C0C1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{73A8C462FCE3109C}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_100rnd_BO_BT.et",
+  "nom": "50Rnd AAN-F1 7.62X51 BO",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "68E12B128CD381B0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E207A93AB202A69}Prefabs/Weapons/Magazines/AANF1/Box_762x51_ANNF1_100rnd_BO.et",
+  "nom": "100Rnd AAN-F1 7.62X51 BO",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6619256CF07E8080",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1BAB4B97E1FED3CF}Prefabs/Weapons/Magazines/AmmoBox_VHL/Box_762x51_AANF1_VBL_200rnd_Base.et",
+  "nom": "200Rnd AAN-F1 7.62X51mm 4BO/1TRC",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6619256CF828BD71",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AB48F2ADBAE862AD}Prefabs/Weapons/Magazines/AmmoBox_VHL/Box_762x51_MAG58_VBL_200rnd_Base.et",
+  "nom": "200Rnd MAG 58 7.62X51mm 4BO/1TRC",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6619256CC78C4F28",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ACDA34268C66E2BC}Prefabs/Weapons/Magazines/AmmoBox_VHL/AMF_AmmoBox_127x99_M2_PEI_105rnd_Base.et",
+  "nom": "105Rnd 12.7X99 M2HB 2BO/1PEI/1AP/1TRC",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6562A04DE27929F9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8A0A4B3CEEE018A4}Prefabs/Weapons/Ammo/AMF_Ammo_Grenade_HE_M406.et",
+  "nom": "AMF 40mm HE M406",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6562A04D942E5F69",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{922F57AEECC84B1E}Prefabs/Weapons/Ammo/AMF_Ammo_Grenade_HEDP_M433.et",
+  "nom": "AMF HEDP M433",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6562A04DB2486A1A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{98DB57ECEDC81CC2}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M583A1_White.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6562A04DB38C588B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0AF10C206CF1A283}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M661_Green.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683FFE02",
+  "entree": "6562A04DA6331E9A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2A63C909016C4C41}Prefabs/Weapons/Ammo/Ammo_Flare_40mm_M662_Red.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C1C20",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D0DECE32083BFD31}Prefabs/Weapons/Attachments/Optics/Aimpoint_CompM5/Aimpoint_CompM5_base.et",
+  "nom": "Aimpoint CompM5",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C1C2C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A1FFCEC361F95B08}Prefabs/Weapons/Attachments/Optics/AimpointCompM/Collim_AimpointCompM_base.et",
+  "nom": "Aimpoint CompM PGMP",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65E754F5D82B3F32",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{072DA2A9C34BB19D}Prefabs/Weapons/Attachments/Optics/AimpointProPatrol/Aimpoint_ProPatrol.et",
+  "nom": "Aimpoint Pro Patrol",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65E8766A90128379",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{44B61AF8E0154F50}Prefabs/Weapons/Attachments/Optics/AimpointMicro/Aimpoint_MicroT1.et",
+  "nom": "Aimpoint Micro T1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65E8766582917B0A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F2CC1F377EFA32C1}Prefabs/Weapons/Attachments/Optics/AimpointMicro/Aimpoint_MicroT2_Base.et",
+  "nom": "Aimpoint Micro T2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C3C7E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D0DECE32083BFD32}Prefabs/Weapons/Attachments/Optics/Eotech/Eotech_512_base.et",
+  "nom": "Eotech 512",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6A1349E1F4549FB5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3DED4694A1B4C5DE}Prefabs/Weapons/Attachments/Optics/Eotech/Eotech_552_base.et",
+  "nom": "Eotech 552",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C563B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{381885534AE63F68}Prefabs/Weapons/Attachments/Optics/Eotech/Eotech_553_base.et",
+  "nom": "Eotech 553",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65E94E59E8236AFD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A513E06A5902948D}Prefabs/Weapons/Attachments/Optics/Eotech/Eotech_EXPS3.et",
+  "nom": "Eotech EXPS3-0",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65DB23B7030C8A14",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9904BD3F27E81B96}Prefabs/Weapons/Attachments/Optics/Specter/Elcan_Specter.et",
+  "nom": "Elcan Specter",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C563F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6CCF4182B01ADF25}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_PGMP.et",
+  "nom": "Scrome J4 F1 PGMP",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C5632",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AC5D63AEB2973942}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_PGMP_NoCover.et",
+  "nom": "Scrome J4 F1 PGMP sans bonette",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C5631",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{83DF68ED50F71DE4}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_RIS.et",
+  "nom": "Scrome J4 F1 RIS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683C5635",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5109418A5C927E42}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_Ris_NoCover.et",
+  "nom": "Scrome J4 F1 RIS sans bonette",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683CB9F7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5C004D0D71EB4573}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_Minimi.et",
+  "nom": "Scrome J4 F1 Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "6532BE0C683CB9F2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7E11C24773B2216A}Prefabs/Weapons/Attachments/Optics/Scrome_J4/J4F1_Minimi_NoCover.et",
+  "nom": "Scrome J4 F1 Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68AF2D1F5E8F8A04",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2861E6AE02362896}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/IronSight_Front_HK416.et",
+  "nom": "Guidon HK-416F",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA49E3B75C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C886A31ECBA7EFD2}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Front_BLK.et",
+  "nom": "Guidon Magpul MBUS Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA40841E6A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{552E9F0A63775297}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Front_DE.et",
+  "nom": "Guidon Magpul MBUS Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA41675756",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{56EE0C112D5CD459}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Front_OD.et",
+  "nom": "Guidon Magpul MBUS Olive",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68AF2D1F5BC315F4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ABCE14B8F079C665}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/IronSight_Rear_HK416.et",
+  "nom": "Oeilleton HK-416F",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA58A9C1E0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5441E2321EA4D826}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Rear_BLK.et",
+  "nom": "Oeilleton Magpul MBUS Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA5B7B9DA0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{83344871F7F878F1}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Rear_DE.et",
+  "nom": "Oeilleton Magpul MBUS Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CB47DA54548286",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{80F4DB6AB9D3FE3F}Prefabs/Weapons/Attachments/Optics/IronSight/HK416F/MBUS_IronSight_Rear_OD.et",
+  "nom": "Oeilleton Magpul MBUS Olive",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "659512A5A3777A6E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D50907989631FF91}Prefabs/Weapons/Attachments/Bayonets/Bayonet_Famas_Base.et",
+  "nom": "Baïonnette Famas",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68A95CD94EFBC05E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{03E939C733B21A7F}Prefabs/Weapons/Attachments/Grips/FAMAS/Grip_Famas_base.et",
+  "nom": "Interface poignée Famas",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FD4D72944E2B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{71F98E1F73EF8659}Prefabs/Weapons/Attachments/Grips/FAMAS/Grip_HK_Famas.et",
+  "nom": "Interface poignée HK Famas",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4159812A366",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{46F77AAFBCABB4D6}Prefabs/Weapons/Attachments/Grips/FAMAS/Grip_Famas_RVG_BLK.et",
+  "nom": "Interface poignée Famas Magpul RVG Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A415990AA6A0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C7B5C88D3ABE5951}Prefabs/Weapons/Attachments/Grips/FAMAS/Grip_Famas_RVG_DE.et",
+  "nom": "Interface poignée Famas Magpul RVG Dark Erath",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4159A051090",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C4755B967495DF9F}Prefabs/Weapons/Attachments/Grips/FAMAS/Grip_Famas_RVG_OD.et",
+  "nom": "Interface poignée Famas Magpul RVG Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4159AFA7629",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A6BAB21080F76325}Prefabs/Weapons/Attachments/Grips/FAMAS/GripBipod_Famas_BLK.et",
+  "nom": "Interface poignée bipied Famas Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4159364330C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{EE4969991B16A962}Prefabs/Weapons/Attachments/Grips/FAMAS/GripBipod_Famas_DE.et",
+  "nom": "Interface poignée bipied Famas Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A41A6C6EF356",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ED89FA82553D2FAC}Prefabs/Weapons/Attachments/Grips/FAMAS/GripBipod_Famas_OD.et",
+  "nom": "Interface poignée bipied Famas Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75CDCAC696",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A0928415F19B9DDE}Prefabs/Weapons/Attachments/Grips/Minimi/Grip_Minimi_base.et",
+  "nom": "Interface poignée Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75A08AA919",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C9F8AB5751CD5BA5}Prefabs/Weapons/Attachments/Grips/Minimi/Grip_HK_Minimi.et",
+  "nom": "Interface poignée HK Minimi F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75C494CB5B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{364916F630498B5E}Prefabs/Weapons/Attachments/Grips/Minimi/Grip_Minimi_RVG_BLK.et",
+  "nom": "Interface poignée Minimi F1 Magpul RVG Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75C596401C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0067AB42CF51998C}Prefabs/Weapons/Attachments/Grips/Minimi/Grip_Minimi_RVG_DE.et",
+  "nom": "Interface poignée Minimi F1 Magpul RVG Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75C67D1A12",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{03A73859817A1F42}Prefabs/Weapons/Attachments/Grips/Minimi/Grip_Minimi_RVG_OD.et",
+  "nom": "Interface poignée Minimi F1 Magpul RVG Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75C72F0A4D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F9E0DF94FEF5D0B8}Prefabs/Weapons/Attachments/Grips/Minimi/GripBipod_Minimi_BLK.et",
+  "nom": "Interface poignée Minimi F1 poignée bipied Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75DB863A9F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5291DB3290B67C1E}Prefabs/Weapons/Attachments/Grips/Minimi/GripBipod_Minimi_DE.et",
+  "nom": "Interface poignée Minimi F1 poignée bipied Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FE75D499F584",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{51514829DE9DFAD0}Prefabs/Weapons/Attachments/Grips/Minimi/GripBipod_Minimi_OD.et",
+  "nom": "Interface poignée Minimi F1 poignée bipied Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68AECC9150052D15",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{16D205C0AECDCA5D}Prefabs/Weapons/Attachments/Grips/Grip_base.et",
+  "nom": "Poignée Vertical",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68F0FD4D5452894B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{01D954B6BF4595DF}Prefabs/Weapons/Attachments/Grips/Grip_HK.et",
+  "nom": "Poignée Vertical HK",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C654B18EB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3E6CAC53AD04E155}Prefabs/Weapons/Attachments/Grips/Grip_Bipod_BLK.et",
+  "nom": "Poignée Bipied Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C665262C3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7A4E39E38491AB05}Prefabs/Weapons/Attachments/Grips/Grip_Bipod_DE.et",
+  "nom": "Poignée Bipied Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C674FABED",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{798EAAF8CABA2DCB}Prefabs/Weapons/Attachments/Grips/Grip_Bipod_OD.et",
+  "nom": "Poignée Bipied Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C6029EE30",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A5954F33B0F33097}Prefabs/Weapons/Attachments/Grips/Grip_MPL_RVG_BLK.et",
+  "nom": "Magpul RVG Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C7A98F771",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{326238D1A2149DFD}Prefabs/Weapons/Attachments/Grips/Grip_MPL_RVG_DE.et",
+  "nom": "Magpul RVG Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68CAF71C7B603459",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{31A2ABCAEC3F1B33}Prefabs/Weapons/Attachments/Grips/Grip_MPL_RVG_OD.et",
+  "nom": "Magpul RVG Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A41344855CF3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E09C81B3E4EFFB7C}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG2_BLK.et",
+  "nom": "Magpul AFG 2 Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A41341907B62",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9021B948B568EC0D}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG2_DE.et",
+  "nom": "Magpul AFG 2 Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A41342739D6D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{93E12A53FB436AC3}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG2_OD.et",
+  "nom": "Magpul AFG 2 Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4135897361D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{59395BF584031766}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG_BLK.et",
+  "nom": "Magpul AFG Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4135568EB26",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4B2100E62144503E}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG_DE.et",
+  "nom": "Magpul AFG Dark Earth",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "68E4A4135676B9CE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{48E193FD6F6FD6F0}Prefabs/Weapons/Attachments/Grips/Grip_MPL_AFG_OD.et",
+  "nom": "Magpul AFG Olive Drab",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "659512A5948F517E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AD177FA269EDE094}Prefabs/Weapons/Attachments/Muzzle/FlashHider_FamasF1/FlashHider_FamasF1.et",
+  "nom": "Cache Flame Famas F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "659512A5ACCB6CDD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E273893B83E5930}Prefabs/Weapons/Attachments/Muzzle/FlashHider_FamasF1/FlashHider_FamasG2.et",
+  "nom": "Cache Flame Famas G2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "662D1EC6645B4A15",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3E79E59FD83221F1}Prefabs/Weapons/Attachments/Muzzle/Suppressor_RDS_Vortex/Suppressor_Vortex_CF22.et",
+  "nom": "Vortex CF-22",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "661D3314176C1F32",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{49A1E7C56BD38DC6}Prefabs/Weapons/Attachments/Muzzle/Suppressor_Zastava_Famas/Zastava_RDS_Famas.et",
+  "nom": "RDS Zastava Famas",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65DAD6C29861C231",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{207E52DCA16D0220}Prefabs/Weapons/Attachments/Optics/SchmidtBender_PMII_1-8x24/Optic_SB_8X24_CC_Base.et",
+  "nom": "Schmidt & Bender 8X24 Mildot CC",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65EF78863ACF1FC4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6F40E83E868684E5}Prefabs/Weapons/Attachments/Optics/SchmidtBender_PMII_3-20x50/Optic_SB_3x20_Base.et",
+  "nom": "Schmidt & Bender 3-20x50",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "65EF788603F81F6A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D1132448029D3D83}Prefabs/Weapons/Attachments/Optics/Scrome_J8/Optic_ScromeJ8_base.et",
+  "nom": "Scrome J8",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "672F4D3A5DB68871",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7A3C9CF0781D69BB}Prefabs/Weapons/Attachments/Optics/Scrome_J8/Optic_ScromeJ8_NoCover.et",
+  "nom": "Scrome J8 NoCover",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "672F4D3B4FAFECE2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E05D99375A79AF6D}Prefabs/Weapons/Attachments/Optics/Scrome_J8/Optic_ScromeJ10_base.et",
+  "nom": "Scrome J10",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683C1C21",
+  "entree": "672F4D3B55CDB22C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1C6E56655ABFC0F9}Prefabs/Weapons/Attachments/Optics/Scrome_J8/Optic_ScromeJ10_NoCover.et",
+  "nom": "Scrome J10 NoCover",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "6532BE0C683CD6BD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2A1A0F3F15BBCAD7}Prefabs/Weapons/Grenades/GR_FUM_FR/GR_FUM_MA_White.et",
+  "nom": "GR MA FUM Blanche",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "6532BE0C683CD687",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{76A6907ACBE61E87}Prefabs/Weapons/Grenades/GR_FUM_FR/GR_FUM_MA_Green.et",
+  "nom": "GR MA FUM Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "6532BE0C683CD68A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3724A346C7724159}Prefabs/Weapons/Grenades/GR_FUM_FR/GR_FUM_MA_Red.et",
+  "nom": "GR MA FUM Rouge",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "6532BE0C683CD68E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6AAEF1CCF29F9035}Prefabs/Weapons/Grenades/GR_FUM_FR/GR_FUM_MA_Yellow.et",
+  "nom": "GR MA FUM Jaune",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "6532BE0C683CD694",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{21839CF5BB32FF4D}Prefabs/Weapons/Grenades/AMF_GR_OF.et",
+  "nom": "GR MA OF F1",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CD6BF",
+  "entree": "65CD334A169C5B17",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1246F0A3DE2607AD}Prefabs/Weapons/Grenades/AMF_GR_DEF.et",
+  "nom": "GR MA DEF",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683CE003",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B20B1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D104114A2E261A7F}Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_FR.et",
+  "nom": "#AR-Item_Tourniquet_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B20B7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0D9A5DCF89AE7AAA}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6719177EA63DAEEB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3A97E77257551570}Prefabs/Items/Medicine/FMA/FMA.et",
+  "nom": "FMA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B20AF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B20A0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{922F95F91943F69A}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B2098",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F06E27221DBF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7C8705EF20C58FFD}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Black.et",
+  "nom": "Thalès BI-NYX Tan",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F061C9E5894D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{27F797EF74AEF029}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Black_Without_WindShield.et",
+  "nom": "Thalès BI-NYX Tan #AMF-NVG-Name-WithoutLensCap",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F069CE2FECF0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{734F20C5103B94C9}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Tan.et",
+  "nom": "Thalès BI-NYX Tan",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F061C8C6CB4F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CD08188AEC7EADB9}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Tan_Without_WindShield.et",
+  "nom": "Thalès BI-NYX Tan #AMF-NVG-Name-WithoutLensCap",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "690D420A073464F0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{69C17A7B61801759}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Tan_Without_String.et",
+  "nom": "Thalès BI-NYX Tan sans string",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "690D420A0608E194",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DA3DF6CAD6509ABB}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_Black_Without_String.et",
+  "nom": "Thalès BI-NYX Tan sans string",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "690D420A08DD85C5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{91D4412F0AAB0505}Prefabs/Items/Equipment/NVG/NVG_BI-NYX_TAN_Without_String_and_WindShield.et",
+  "nom": "Thalès BI-NYX Tan sans bonettes et sans string",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F069CF1AEB79",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D9212F531B23A63C}Prefabs/Items/Equipment/NVG/NVG_O-NYX_Tan.et",
+  "nom": "Thalès O-NYX Tan",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6734F061CF4BDA4E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{95EBC1CD18FC3794}Prefabs/Items/Equipment/NVG/NVG_O-NYX_Tan_Without_WindShield.et",
+  "nom": "Thalès O-NYX Tan #AMF-NVG-Name-WithoutLensCap",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "690D420A054A4B5A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5E4C7B5003ACEB1D}Prefabs/Items/Equipment/NVG/NVG_O-NYX_Without_String_and_WindShield.et",
+  "nom": "Thalès O-NYX Tan sans bonnettes et sans string",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "690D420A044DC18D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{84F648FAE5366F46}Prefabs/Items/Equipment/NVG/NVG_O-NYX_Without_String_TAN.et",
+  "nom": "Thalès O-NYX Tan sans string",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B209D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991/Flashlight_MX991.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B209E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6ECDF523E1035A0F}Prefabs/Items/Equipment/Watches/Watch_SandY184A_Map.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B2095",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0C3505B69B4EF47C}Prefabs/Items/Equipment/Binoculars/APX_M241/Binoculars_APX_M241.et",
+  "nom": "APX M241",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "67354B1CCCF8CF3A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{EF7233A865462083}Prefabs/Items/Equipment/Binoculars/VectorIV/Binoculars_VectorIV.et",
+  "nom": "Leica Vector IV",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "67353BB7DF6D5D66",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B3A16FBED09B5F6E}Prefabs/Items/Equipment/Binoculars/OB72_Sophie/OB72_Sophie.et",
+  "nom": "Thales OB 72 Sophie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B7AF3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DC1B220C66D47F85}Prefabs/Items/Equipment/Radios/Radio_ER328.et",
+  "nom": "Thalès ER328",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683B7AE8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6E35D94130954509}Prefabs/Items/Equipment/Accessories/ETool_ALICE/ETool_ALICE_FreeRoamBuilding_Gadget.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683BCE29",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683CE002",
+  "entree": "6532BE0C683BCE2E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683A018A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8B28237F66B077E2}Prefabs/Items/Equipment/Radios/Radio_Deployable_Base.et",
+  "nom": "Tecpack 45L ER314",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683A018C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{647385C05D8957A2}Prefabs/Characters/Backpack/F2/SacF2.et",
+  "nom": "TECPACK 70L",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0B58063AED5444",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{111097A6F13FBF9C}Prefabs/Characters/Backpack/TECPACK/TECPACK30L.et",
+  "nom": "TECPACK 30L.",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "653682906C775455",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B11BA9F90C3AAFD5}Prefabs/Characters/Backpack/TECPACK/TECPACK45L.et",
+  "nom": "TECPACK 45L",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65CF1A297D76E470",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FFF87C9351E61216}Prefabs/Characters/Backpack/TECPACK/TECPACK45L_AuxSan.et",
+  "nom": "TECPACK 45L AuxSan",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65CF1A2942807D2D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9EDEFCBA6FDE4777}Prefabs/Characters/Backpack/TECPACK/TECPACK45L_GL_40mm.et",
+  "nom": "TECPACK 45L #ar-role_grenadier",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65E744C01CCE732C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{170501D9E7A0DC9A}Prefabs/Characters/Backpack/TECPACK/TECPACK45L_Minimi.et",
+  "nom": "TECPACK 45L Minimi",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "653682906D9728C8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0620ABFA3C7445F9}Prefabs/Characters/Backpack/TECPACK/TECPACK70L.et",
+  "nom": "TECPACK 70L",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683A642C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ABAC4A7351DCC4FA}Prefabs/Characters/Vests/Ceinture_De_Combat/Ceinture_SMB.et",
+  "nom": "Ceinture De Combat SMB",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65549636079F46E1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E83A12DECAE5BB67}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_GV_MG.et",
+  "nom": "Gilet de Combat SMB - Mitrailleur",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "655496360731EE6C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9AA80190308C3696}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_GV_FA.et",
+  "nom": "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0B5805DF771F11",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D895E77BFAA7A839}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_GV_FA_FAMAS.et",
+  "nom": "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6554963602517E0C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{EDE82A0ADA1AF25D}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_HeliPilot.et",
+  "nom": "Gilet de Combat SMB - Pilote d'hélicopthère ",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6554963604379A33",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7B2AD4A2839F5569}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_HeliCrew.et",
+  "nom": "Gilet de Combat SMB - Tireur d'hélicopthère léger",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "655496360504ECBD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A4010219ED2C2806}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_Sharpshooter_SCARH.et",
+  "nom": "Gilet de Combat SMB - Tireur de précision SCAR-H",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6554963605B48C8D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ED486FA45FFAC45E}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_TE_PGM.et",
+  "nom": "Gilet de Combat SMB - Tireur d'élite PGM Hecate",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65549637F3F8F9D3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D062C78AF0A8B754}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_TL.et",
+  "nom": "Gilet de Combat SMB - Chef de groupe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65549637F3482707",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DD6BDBBFF59A6F62}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_Auxsan.et",
+  "nom": "Gilet de Combat SMB - Auxiliaire sanitaire",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683A95F8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1BD5B11497CFCA85}Prefabs/Characters/EarsGear/ELNO_IH_295/ELNO_IH_295_Base.et",
+  "nom": "ELNO IH 595",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683A95FB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{88C5F0EF05F38716}Prefabs/Characters/EyesGear/Oakley_Goggles/Oakley_Base.et",
+  "nom": "Masque Oakley",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6532BE0C683AAA52",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{88C5F0EF05F38715}Prefabs/Characters/EyesGear/ESS_Goggles/ESS_Crossbow.et",
+  "nom": "ESS Crossbow",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291A759E329",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3432}Prefabs/Items/Equipment/Accessories/PouchSystem/Utility/Pouch_admin.et",
+  "nom": "Poche Admin",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291A4DB3243",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3439}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_Chargeur_STANAG.et",
+  "nom": "Poche Chargueur Double",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65CD1768179918DC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D66B3F44C82D6C9A}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_Chargeur_FAMAS.et",
+  "nom": "Poche Chargueur Double FAMAS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291A4A7A34A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3438}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_Chargeur_STANAG_Simple.et",
+  "nom": "Poche Chargueur Simple",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65CD17681A875F9B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6228DDF03421BA2F}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_Chargeur_FAMAS_Simple.et",
+  "nom": "Poche Chargueur Simple",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291E2ECAB36",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7009CA889455B79F}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_762/Pouch_Chargeur_SCARH.et",
+  "nom": "Poche Chargueur Double SCARH-PR",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291A4220B2E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{97F2DE2038B6C933}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_762/Pouch_Chargeur_SCARH_Simple.et",
+  "nom": "Poche Chargueur Simple SCARH-PR",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6646B5D816156DBB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3435}Prefabs/Items/Equipment/Accessories/PouchSystem/Grenade/Pouch_Grenade_Base.et",
+  "nom": "Poche Grenade",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6646B5D8131A8146",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F433A24532F0A539}Prefabs/Items/Equipment/Accessories/PouchSystem/Grenade/Pouch_Grenade_DEF.et",
+  "nom": "Poche Grenade",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6646B5D8108652D4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{126F7DA7703EB49C}Prefabs/Items/Equipment/Accessories/PouchSystem/Grenade/Pouch_Grenade_OF.et",
+  "nom": "Poche Grenade",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "69DAB93065849F06",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{13F073B7C57290C7}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_9mm/Pouch_9mm_SMB.et",
+  "nom": "Poche Chargueur Double 9mm TAN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291E33F5E12",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1698ED08C0465030}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_IFAK.et",
+  "nom": "Poche IFAK",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291A53B95BF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3434}Prefabs/Items/Equipment/Accessories/PouchSystem/Utility/Pouch_Field.et",
+  "nom": "Poche De Delestage",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6646B5D808BE29A4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7CE1FF1D9DFD7C19}Prefabs/Items/Equipment/Accessories/PouchSystem/Holster/Holster.et",
+  "nom": "Holster",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "65368291E3895B7F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3437}Prefabs/Items/Equipment/Accessories/PouchSystem/Utility/Pouch_Kamelback.et",
+  "nom": "Poche à Eau",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "653682919E9322DB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E1528087D5C3436}Prefabs/Items/Equipment/Accessories/PouchSystem/MG_Minimi/Pouch_Minimi_SMB.et",
+  "nom": "Poche Minimi",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "653682919E100F87",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{339E60057DC6529E}Prefabs/Items/Equipment/Accessories/PouchSystem/Radio/Pouch_Radio.et",
+  "nom": "Poche Radio SMB",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "653682919C5D76E1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4DE3762F6F54FFB4}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_Tourniquet.et",
+  "nom": "Poche Tourniquet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683AD3F8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5D3EF6B045D24ADF}Prefabs/Characters/HeadGear/F3_HELMET/MSA_F3_base.et",
+  "nom": "Casque de Combat F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683AD3F4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{353E76FF020BD0CB}Prefabs/Characters/HeadGear/F3_HELMET/MSA_FELIN_base.et",
+  "nom": "Casque de Combat FELIN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C68390221",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{371F3544B6C4BCEE}Prefabs/Characters/HeadGear/TCNVG_Helmet/MSA_TCNVG_CCE.et",
+  "nom": "MSA TCNVG CCE",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C68390224",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D0384575A45621D9}Prefabs/Characters/HeadGear/TCNVG_Helmet/MSA_TCNVG_DA.et",
+  "nom": "MSA TCNVG DA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A79D9CAEB2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{353E76FF020BD0CC}Prefabs/Characters/HeadGear/MLE78_Helmet/Casque_mle78_Base.et",
+  "nom": "Casque Mle 78",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A7847FD945",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{EA91E1C609F04319}Prefabs/Characters/HeadGear/MLE78_Helmet/Casque_mle78_ONU.et",
+  "nom": "Casque Mle 78 UN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683AD3F1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{168D2343B653197E}Prefabs/Characters/HeadGear/ALPHA900_Helmet/Alpha900_base.et",
+  "nom": "Gentex Alpha 900",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C6839023D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{32F3D80DC6345B9A}Prefabs/Characters/HeadGear/ELNO_DH_586_HELMET/ELNO_DH_586.et",
+  "nom": "ELNO DH 586",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C6839022A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{47B440058A76B3D6}Prefabs/Characters/HeadGear/TOPOWL_Helmet/Topowl_base.et",
+  "nom": "Thales TopOwl",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C68390229",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C705CEAB7FF71071}Prefabs/Characters/HeadCover/MSA_F3_FELIN/HelmetCover_FELIN_CE.et",
+  "nom": "Couvre-casque FELIN - Centre Europe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C6839022C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{91A22522D0D9ACAB}Prefabs/Characters/HeadCover/MSA_F3_FELIN/HelmetCover_FELIN_TAN.et",
+  "nom": "Couvre-casque FELIN - TAN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A7BB1886BE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{30E1CDDA613E1202}Prefabs/Characters/HeadCover/MLE78/HelmetCover_MLE78_CCE_S300.et",
+  "nom": "Couvre-casque MLE 78 F1 - CE S300",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A7A7558DD4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4A2B52A12CAA8570}Prefabs/Characters/HeadCover/MLE78/HelmetCover_MLE78_CE.et",
+  "nom": "Couvre-casque MLE 78 F1 - CE",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A7A5C45551",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1C8CB928838439AA}Prefabs/Characters/HeadCover/MLE78/HelmetCover_MLE78_DA.et",
+  "nom": "Couvre-casque MLE 78 F1 - Daguet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "657728A7A4437DF6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BE0993B59AE5E7F2}Prefabs/Characters/HeadCover/MLE78/HelmetCover_MLE78_Lizard.et",
+  "nom": "Couvre-casque MLE 78 F1 - LIZARD",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829155FA0686",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3368BA20EADCC2C1}Prefabs/Characters/HeadGear/BERET/beret_amarante.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682915236CE3A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{46F6ED562A04FB4E}Prefabs/Characters/HeadGear/BERET/beret_Bleu_Fonce.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682915075ABAA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{77003EA07FD55AB8}Prefabs/Characters/HeadGear/BERET/beret_Bleu_Roi.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829150D656F3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AC171CFCE1720F9C}Prefabs/Characters/HeadGear/BERET/beret_noir.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829153A75CEE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9C6F08D4C1D9486A}Prefabs/Characters/HeadGear/BERET/beret_ONU.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682915B25F3A3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7CA1DA7716161954}Prefabs/Characters/HeadGear/BERET/beret_Rouge.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829146B183FC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BDCDF226FC27CE86}Prefabs/Characters/HeadGear/BERET/beret_Vert.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829147F968BD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7881B797D813A28D}Prefabs/Characters/HeadGear/BERET/beret_Vert_Inverse.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "659EE0D61EC63C9E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7E48DB011752FBA6}Prefabs/Characters/HeadGear/BERET/Beret_Alpin.et",
+  "nom": "Beret Alpin",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A1E9C56B40B0DB8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5D7ED3A5CDA44FDE}Prefabs/Characters/HeadGear/BERET/beret_marron.et",
+  "nom": "#AR-Headgear_BoonieHat_Olive_Name",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829159AB37EA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{417CE0141824C3C2}Prefabs/Characters/FaceGear/Alpha900_Mask/Alpha900_mask.et",
+  "nom": "Masque Gentex Alpha 900",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682915823CA08",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9669EF80367776F3}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_13DBLE_base.et",
+  "nom": "#AMF-Insignia-Name 13e Demi Brigade De La Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444C07A7ADB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3E862A8DABF8BBAF}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_1RE_base.et",
+  "nom": "#AMF-Insignia-Name 1er Régiment Etranger",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444C17C6A52",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F1D225381B4CE613}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_1REC_base.et",
+  "nom": "#AMF-Insignia-Name 1e Régiment Etranger De Cavalerie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444CF5003CD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E6052A27B6070CCB}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_1REG_base.et",
+  "nom": "#AMF-Insignia-Name 1er Régiment Etranger du Génie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444CE5A5F1D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AA6D3CB62F0B5345}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_RPIMA_base.et",
+  "nom": "#AMF-Insignia-Name  Régiment Parachutiste De Marine",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444CEC22263",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{19DF777336F39C8D}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_2REG_base.et",
+  "nom": "#AMF-Insignia-Name 2e Régiment Etranger Du Génie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444CD9438B0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2A4DE1DC178A5689}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_2REI_base.et",
+  "nom": "#AMF-Insignia-Name 2e Régiment Etranger D'infanterie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444B36621F9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BEAB8A490F7FCB3A}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_3REI_base.et",
+  "nom": "#AMF-Insignia-Name 3e Régiment Etranger D'infanterie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444B17A1A7A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{40EA4269B0CA11DE}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_4RE_base.et",
+  "nom": "#AMF-Insignia-Name 4e Régiment Etranger",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444B1FD277E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2EB401379E103386}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_ALAT.et",
+  "nom": "#AMF-Insignia-Name Aviation Légère de L'Armée de Terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444B07F6D7F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E1D6873EAFAEB206}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Artillerie_base.et",
+  "nom": "#AMF-Insignia-Name Artillerie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444B09DB43D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0DD1B0B98C1CCB56}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_cavalerie_base.et",
+  "nom": "#AMF-Insignia-Name Calaverie Blindée",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444C1FC8E2D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B0258B2756F15305}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_chasseur_base.et",
+  "nom": "#AMF-Insignia-Name Chasseur Alpin",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A2933508",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{77C265D181C93AC4}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Commando_Marine_base.et",
+  "nom": "#AMF-Insignia-Name Commando Marine",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A396AB06",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{815B760D3007E5DC}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_CPA10_base.et",
+  "nom": "#AMF-Insignia-Name CPA10",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A21EF808",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9D00DD4509D6BF9A}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_fanco_allemand_base.et",
+  "nom": "#AMF-Insignia-Name Brigade Franco Allemande",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444AB8F1C35",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E3B85E038FBB8A62}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Genie_base.et",
+  "nom": "#AMF-Insignia-Name Génie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD44496C21A1D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{232E6345E04F3940}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_infanterie_base.et",
+  "nom": "#AMF-Insignia-Name infanterie",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A9794D27",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3D99D32C44B2C720}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Marine_base.et",
+  "nom": "#AMF-Insignia-Name Marine",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A9F73A67",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4A8022DB1BE39A46}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Medical_base.et",
+  "nom": "#AMF-Insignia-Name Médical",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A873569F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D4741F415BB1514D}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_onu_base.et",
+  "nom": "#AMF-Insignia-Name Nations Unies",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444A8E459F8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5B0852188ADD337C}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_Para_base.et",
+  "nom": "#AMF-Insignia-Name Transmission",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD444AB17197C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6410FE9913539ADD}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_SAS_base.et",
+  "nom": "#AMF-Insignia-Name SAS",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CD44499E29DBF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9022D7A112A3ACCC}Prefabs/Items/Equipment/Accessories/Insignes/Insigne_transmission_base.et",
+  "nom": "#AMF-Insignia-Name Transmission",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C68390C06",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E978D6009CA66122}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_CE.et",
+  "nom": "Veste de combat F3 - Centre Europe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662E7CED21120004",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DD84DFBAD0BEE359}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_Rolled_CCE.et",
+  "nom": "Veste de combat F3 manche relevée (Centre Europe)",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656944F25A4633D5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5D9D5809A8FE1D3B}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_BME.et",
+  "nom": "Veste de combat F3 - Bariolage Multi Environnement",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662E7CED260B7682",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2E164BB8846B91F3}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_Rolled_BME.et",
+  "nom": "Veste de combat F3 manche relevée Bariolage Multi Environnement",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656944F25B950110",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BFDF3D893388DDF8}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_DA.et",
+  "nom": "Veste de combat F3 - Daguet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662E7CED2D844654",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{89CA23B61048FC7B}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_Rolled_DA.et",
+  "nom": "Veste de combat F3 manche relevée Daguet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656944F258AA07D0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2EED68835F6248EB}Prefabs/Characters/Uniforms/F3_Vest/F3_Vest_Tundra.et",
+  "nom": "Veste de combat F3 - Tundra",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5071EF8E2EA2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D96EBF342FD90F15}Prefabs/Characters/Uniforms/F3_Ubas/CE/F3_Ubas_CE.et",
+  "nom": "Chemise de combat F3 - Centre Europe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5A2667265BB0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CAEEB688E27690BE}Prefabs/Characters/Uniforms/F3_Ubas/CE/F3_Ubas_Rolled_CE.et",
+  "nom": "Chemise de combat F3 manche relever  - Centre Europe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5071C2757186",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DD69D67E07743318}Prefabs/Characters/Uniforms/F3_Ubas/OD/F3_Ubas_OD.et",
+  "nom": "Chemise de combat F3 - Centre Europe OD",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5A233A32EE52",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CEE9DFC2CADBACB3}Prefabs/Characters/Uniforms/F3_Ubas/OD/F3_Ubas_Rolled_OD.et",
+  "nom": "Chemise de combat F3 manche relever  - Centre Europe OD",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5071E3469E39",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E1B3E5BA66B2A40A}Prefabs/Characters/Uniforms/F3_Ubas/BME/F3_Ubas_BME.et",
+  "nom": "Chemise de combat F3 - Bariolage Multi Environnement",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5A2300C721CB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C09603B4A3F2D150}Prefabs/Characters/Uniforms/F3_Ubas/BME/F3_Ubas_Rolled_BME.et",
+  "nom": "Chemise de combat F3 - Bariolage Multi Environnement",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5071F3AEC33B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9C495D014D582C64}Prefabs/Characters/Uniforms/F3_Ubas/DA/F3_Ubas_Rolled_DA.et",
+  "nom": "Chemise de combat F3 manche relever  - Daguet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662D5071FA7550F2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0DEC40371B86E2C3}Prefabs/Characters/Uniforms/F3_Ubas/Tundra/F3_Ubas_Tundra.et",
+  "nom": "Chemise de combat F3 - Tundra",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65CCF6EB411028CC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{32F56D356565CE93}Prefabs/Characters/Uniforms/FELIN_T4S2_Vest/FELIN_T4S2_Vest_CCE.et",
+  "nom": "Veste T4S2 CCE",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662E92F45C0CD1AD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8968F9EE1C987770}Prefabs/Characters/Uniforms/FELIN_T4S2_Vest/FELIN_T4S2_Vest_Rolled_CCE.et",
+  "nom": "Veste T4S2 manche relevée CCE",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65CCF6EA894B6B26",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{80D272002E5F2A80}Prefabs/Characters/Uniforms/FELIN_T4S2_Vest/FELIN_T4S2_Vest_DA.et",
+  "nom": "Veste T4S2 DA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "662E92F4A0D4C04E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{48F8D5B1422E6BE3}Prefabs/Characters/Uniforms/FELIN_T4S2_Vest/FELIN_T4S2_Vest_Rolled_DA.et",
+  "nom": "Veste T4S2 manche relevée DA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65CCF6EB4BDBE8EA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7ACBEAC605222C8A}Prefabs/Characters/Uniforms/FELIN_T4S2_Pantalon/Pants_FELIN_T4S2_CCE_base.et",
+  "nom": "FELIN T4S2 CCE",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65CCF6EB5302BE09",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C095E929FA798DB3}Prefabs/Characters/Uniforms/FELIN_T4S2_Pantalon/Pants_FELIN_T4S2_DA_base.et",
+  "nom": "FELIN T4S2 DA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368292AAAFDC89",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DB9AD32A04DCF155}Prefabs/Characters/Uniforms/Marine_polo/Marine_Polo_base.et",
+  "nom": "T-shirt Polo Marine Nationale",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683972BD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ADBA42284222F1BA}Prefabs/Characters/Uniforms/F3_Pantalon/F3_Pantalon_CE.et",
+  "nom": "Pantalon de combat F3 - Centre Europe",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368292E7FEA987",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B68982BCEE2AEAE6}Prefabs/Characters/Uniforms/F3_Pantalon/F3_Pantalon_BME.et",
+  "nom": "Pantalon de combat F3 - Bariolage Multi Environnement",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368292E7756146",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F277891AB79F482D}Prefabs/Characters/Uniforms/F3_Pantalon/F3_Pantalon_DA.et",
+  "nom": "Pantalon de combat F3 - Daguet",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656B0274764F05A2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AFFA424D3F916C2B}Prefabs/Characters/Uniforms/F3_Pantalon/F3_Pantalon_TUNDRA.et",
+  "nom": "Pantalon de combat F3 - Tundra",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368292E655CCFA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{42652C3C62DE7D81}Prefabs/Characters/Uniforms/Marine_Pantalon/Marine_Pantalon_base.et",
+  "nom": "Marine_Pantalon",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683972B3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{324E196A831CF35E}Prefabs/Characters/Uniforms/Marine_PTB/PTB_base.et",
+  "nom": "Tenue de protection de base",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C683972B5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AA902460115F8439}Prefabs/Characters/Handwear/gants_coyote_v1/gloves_coyote_v1_base.et",
+  "nom": "gants de combat ",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682929DB098D6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{10F3F4B0F182F139}Prefabs/Characters/Handwear/gants_coyote_v2/gloves_coyote_v2_base.et",
+  "nom": "gants de combat V2",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C68398E7B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{152EC2C0A16CEBB8}Prefabs/Characters/Footwear/BMJA_Base.et",
+  "nom": "BMJA",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368292823FDB22",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{47893449DFFB82E4}Prefabs/Characters/Footwear/Haix_Base.et",
+  "nom": "Haix Nepal Pro",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829283A5D94E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{253C75176D3BF9A4}Prefabs/Characters/Footwear/Haix_Sable_Base.et",
+  "nom": "Haix Nepal Pro Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829280DF6FCC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C5F82088AF85F359}Prefabs/Characters/Footwear/Meindl_Base.et",
+  "nom": "Meindl",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6532BE0C6839A7BB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{953E3BDBAC727B41}Prefabs/Characters/Footwear/Timberland_Base.et",
+  "nom": "Timberland Pro",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "686323C41433151F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C8114B06D8E47394}Prefabs/Characters/Footwear/LowaZephyr_base.et",
+  "nom": "Lowa Zephyr Noir",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "686323C47E85DC57",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FB5A67820541E88A}Prefabs/Characters/Footwear/LowaZephyr_TAN.et",
+  "nom": "Lowa Zephyr TAN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DAD6C236D9AC2D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FBB5CCB063ACF734}Prefabs/Characters/Uniforms/T-Shirt/Shirt_ADT_Base.et",
+  "nom": "T-Shirt TTA Armée de terre Coyote",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DAD6C22FA8A863",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{21A9D1703BE38666}Prefabs/Characters/Uniforms/T-Shirt/Shirt_ADT_OD.et",
+  "nom": "T-Shirt TTA Armée de terre Kaki",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DAD6C22CEC3CB1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CC317B6A2DA32016}Prefabs/Characters/Uniforms/T-Shirt/Shirt_ADT_tan_logo.et",
+  "nom": "T-Shirt Coyote logo armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DAD6C228E25D15",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9704D3905C034F7F}Prefabs/Characters/Uniforms/T-Shirt/Shirt_ADT_od_logo.et",
+  "nom": "T-Shirt Kaki logo armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368291171B9867",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4253F3311DFF1EEE}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_FRANCE_Base.et",
+  "nom": "Patch France Haute Visibilité",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368291162D8799",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C40FB4C7CDFDCA42}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_FRANCE_BV01_Base.et",
+  "nom": "Patch France Basse Visibilité - Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6536829116566A11",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B53ED8F3B884C268}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_FRANCE_BV02_Base.et",
+  "nom": "Patch France Basse Visibilité - Gris",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682915853A2D7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BBD784F8B7D859C2}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_SERVAL_Base.et",
+  "nom": "Patch Opération Serval Haute Visibilité",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682912A8F2B16",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BF16CA565BE5BCE2}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_BARKHANE_Base.et",
+  "nom": "Patch Opération Barkhane Haute Visibilité",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65368291283A9F94",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{011C9B324D4DC71D}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_SANGARIS_Base.et",
+  "nom": "Patch Opération Sangaris Haute Visibilité",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6910C943A2E260C5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BBB85B8B3243975C}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_EuroModders_ubas_Base.et",
+  "nom": "Patch Euro Modders",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682912B0FF56A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9E7C93D14A2E27B1}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_CHAMMAL_Base.et",
+  "nom": "Patch Opération Chammal Haute Visibilité",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65E727E4241C05D9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3C45B0BB9B72DB7A}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_DEMI_LUNE_Base.et",
+  "nom": "Demi-Lune Legiion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65E727E41FDD8EA8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{218C10AFBB1500C5}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_DEMI_LUNE_or.et",
+  "nom": "Demi-Lune Legiion Etrangère Or",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DB2664FC899377",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C7E822629ACC1B2B}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_makearmanotwar_ubas_Base.et",
+  "nom": "Patch Arma Not War",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B197E4B579",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{90A1B9FBC811123C}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_1CL_HV_grade_Ubas.et",
+  "nom": "Patch 1er Classe Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B18D4B1267",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CF56B906B9619EFB}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_HV_grade_Ubas.et",
+  "nom": "Patch Caporal Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B1FC5B08A6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1C1A46A4114506DA}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_Chef_HV_grade_Ubas.et",
+  "nom": "Patch Caporal Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B1F8D47D96",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{917F0C29A701AAFC}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_Chef_1CL_HV_grade_Ubas.et",
+  "nom": "Patch Caporal Chef De 1er Classe Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B1F477A626",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0C3EF586C2047FFA}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_HV_grade_Ubas.et",
+  "nom": "Patch Sergent Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B1EE699C72",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{385DFE2670F1F29B}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_Chef_HV_grade_Ubas.et",
+  "nom": "Patch Sergent Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B1E9EBD479",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BD738DBCD1E35544}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_Chef_BM2_HV_grade_Ubas.et",
+  "nom": "Patch Sergent Chef BM2 Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B60315C99F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{16F6C3B4050498E1}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Adjudant_HV_grade_Ubas.et",
+  "nom": "Patch Adjudant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B67B76208F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{40C300EBC4EB5B0B}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Adjudant_Chef_HV_grade_Ubas.et",
+  "nom": "Patch Adjudant Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B675FAB73E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{16AB9867C48CD3F4}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Major_HV_grade_Ubas.et",
+  "nom": "Patch Major Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6522A07D1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F145B8D07DE82D38}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Aspirant_HV_grade_Ubas.et",
+  "nom": "Patch Aspirant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B644492CEF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3C81D580475A65C0}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Sous_Lieutenant_HV_grade_Uba.et",
+  "nom": "Patch Sous-Lieutenant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B64069D11D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B7A4AD98C386CD44}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Lieutenant_HV_grade_Ubas.et",
+  "nom": "Patch Lieutenant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6BB051277",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{681F35245072AC78}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Capitaine_HV_grade_Ubas.et",
+  "nom": "Patch Capitaine Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6B2E55B01",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{64110AE5307C0778}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Commandant_HV_grade_Ubas.et",
+  "nom": "Patch Commandant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B7A22C6F18",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{06A7C1677068E93D}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Lieutenant_Colonel_HV_grade_Ubas.et",
+  "nom": "Patch Lieutenant Colonel Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6ACE3DB82",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{41DC70132DB84BFF}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/HAUTE VISIBILITE/ADT_Colonel_HV_grade_Ubas.et",
+  "nom": "Patch Colonel Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6D4F0F8F4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E4B8FB66B83B029B}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_1CL_BV_Ubas.et",
+  "nom": "Patch 1er Classe Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6CC77EA91",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CAD3DADFC47DC424}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Caporal_BV_Ubas.et",
+  "nom": "Patch Caporal Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6C68A7540",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A9BA6AC86B772726}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Caporal_Chef_BV_Ubas.et",
+  "nom": "Patch Caporal Chef Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B6C032AAF6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AC03B69C67C42A96}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Caporal_Chef_1CL_BV_Ubas.et",
+  "nom": "Patch Caporal Chef de 1er Classe Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B71CB8B162",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{62D798EEE1EB6601}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_BV_Ubas.et",
+  "nom": "Patch Sergent Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B717F52EB9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F8F3E03216702E97}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_Chef_BV_Ubas.et",
+  "nom": "Patch Sergent Chef Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B714E98A86",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B00BA0F3B5BFB0BE}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_Chef_BM2_BV_Ubas.et",
+  "nom": "Patch Sergent Chef BM2 Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B70F231FA1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{81F50CEDE0CF7DB2}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Adjudant_BV_Ubas.et",
+  "nom": "Patch Adjudant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B708632276",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2C2CD9E3C6183161}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Adjudant_Chef_BV_Ubas.et",
+  "nom": "Patch Adjudant Chef Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B705D34601",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6834EAB3A53BDDB0}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Major_BV_Ubas.et",
+  "nom": "Patch Major Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B76E01687B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{09A08487588D64E4}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Aspirant_BV_Ubas.et",
+  "nom": "Patch Aspirant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B76AF1F4DA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9EAB9C46307DEA41}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Sous_Lieutenant_BV_Ubas.et",
+  "nom": "Patch Sous Lieutenant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B760ADED6E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{93BD96B926DFB221}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Lieutenant_BV_Ubas.et",
+  "nom": "Patch Lieutenant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B75B74EB3B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9CAFA9780A5DA0AE}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Capitaine_BV_Ubas.et",
+  "nom": "Patch Capitaine Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B746C3AC59",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3226D2CC43BF9372}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Commandant_BV_Ubas.et",
+  "nom": "Patch Commandant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B74187A4E7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B81F3846556756C1}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Lieutenant_Colonel_BV_Ubas.et",
+  "nom": "Patch Lieutenant Colonel Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B7BBF2F2C1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{181A6135463085E0}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/ADT/BASSE VISIBILITE/ADT_Colonel_BV_Ubas.et",
+  "nom": "Patch Colonel Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B41FE6A022",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C722032DB043BF4E}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/HAUTE VISIBILITE/Legion_1CL_HV_Ubas.et",
+  "nom": "Patch 1er Classe Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B419CFC836",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{34E09A611E02A823}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/HAUTE VISIBILITE/Legion_Caporal_HV_Ubas.et",
+  "nom": "Patch Caporal Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B416DF2EB5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C5C61FF5F08E7799}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/HAUTE VISIBILITE/Legion_Caporal_Chef_HV_Ubas.et",
+  "nom": "Patch Caporal Chef Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B40EB1C7DB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{777F248F85639927}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/BASSE VISILIBITE/Legion_1CL_BV_Ubas.et",
+  "nom": "Patch 1er Classe  Basse Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B40B2F3B2F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E2ED37984CE876DB}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/BASSE VISILIBITE/Legion_Caporal_BV_Ubas.et",
+  "nom": "Patch Caporal Basse Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B406E8F695",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{46C9EF399E453782}Prefabs/Items/Equipment/Patches/F3 Ubas/Grades/LEGION ETRANGERE/BASSE VISILIBITE/Legion_Caporal_Chef_BV_Ubas.et",
+  "nom": "Patch 1er Classe  Basse Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4421DF9F7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E3F14A36C1A79658}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/A_NEG_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin A Negatif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4BEDEF1C0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{13C3FA726D6CCDFB}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/A_POS_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin A Positif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4BABE7CF7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A662B2D3CA350382}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/AB_NEG_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin AB Negatif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4B74E92B5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C21C4E430C6E1667}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/AB_POS_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin AB Positif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4B4EBCC35",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{679D48FCACA21F5C}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/B_NEG_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin B Negatif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4B1DBB954",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{03E3B46C6AF90AB9}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/B_POS_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin B Positif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4AE7E9D4A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4E47211D08C53CE7}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/O_NEG_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin O Negatif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B4ACD78ADD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2A39DD8DCE9E2902}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/OD/O_POS_OD_Ubas.et",
+  "nom": "Patch Groupe Sanguin O Positif Vert",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B508F864A1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6D0043803F479FBD}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/A_NEG_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin A Négatif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B505D72FFB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7C9E681701E0A049}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/A_POS_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin A Positif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B50229C231",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{255A18B4A72204BA}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/AB_NEG_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin AB Négatif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B57F2B551D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5ED072DC5D009FCC}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/AB_POS_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin AB Positif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B57D9B64E5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7C9E681701E0A04A}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/B_NEG_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin A Négatif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B579A0F8B8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0714027FFBC23B3F}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/B_POS_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin B Positif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B5764A803A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{715AA816FAC04BF4}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/O_NEG_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin O Négatif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3B574E2169F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0AD0C27E00E2D082}Prefabs/Items/Equipment/Patches/F3 Ubas/Groupe_Sanguin/SABLE/O_POS_sable_Ubas.et",
+  "nom": "Patch Groupe Sanguin O Positif Sable",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "653682912997A724",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9D1A5B71AE980651}Prefabs/Items/Equipment/Patches/Patch_Medic.et",
+  "nom": "Patch SAN",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F9B9D7209",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{80C6178E51DAD3DC}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_FRANCE_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F98D44AF0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6E15292A639ABC26}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_FRANCE_BV01_F3Veste.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F9AB5588F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{677597E2B4DE667C}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_FRANCE_BV02_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F9ADF0C51",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7591662392DC8807}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_SERVAL_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F914C2D06",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B15D32B0725CAE92}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_BARKHANE_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F9A0D68BE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8D27755C7231F1E8}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_SANGARIS_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "656CDB0F9D422A5A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5E49F8369E1C020D}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_CHAMMAL_VesteF3.et",
+  "nom": "Cet écusson peut uniquement être placé sur une veste F3",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DB2664826CD9F4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ED56218C767ADE1C}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_MakeArmaNotWar_VesteF3.et",
+  "nom": "Patch Make Arma Not War",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA283B371C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8B3AB1B732904D76}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_1CL_HV_Vest.et",
+  "nom": "Patch 1er Classe Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA20B09787",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{974267CEC5FC1E8E}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_HV_Vest.et",
+  "nom": "Patch Caporal Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA1A305A5A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2D61D2BFDD1A9A1F}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_Chef_HV_Vest.et",
+  "nom": "Patch Caporal Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA153FEAC7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1432E9B0541D3902}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Caporal_Chef_1CL_HV_Vest.et",
+  "nom": "Patch Caporal Chef De 1er Classe Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA0BFEA901",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3F4625FFE06ABCAB}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_HV_Vest.et",
+  "nom": "Patch Sergent Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA0592F43F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7C285845A01D93AE}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_Chef_HV_Vest.et",
+  "nom": "Patch Sergent Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA0121C7CD",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BEF716F5A3343012}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Sergent_Chef_BM2_HV_Vest.et",
+  "nom": "Patch Sergent Chef BM2 Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA7EF4B7BC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F6B2B0454AF0AD85}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Adjudant_HV_Vest.et",
+  "nom": "Patch Adjudant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA795B4460",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8B3AB1B732904D77}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Adjudant_Chef_HV_Vest.et",
+  "nom": "Patch Adjudant Chef Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA76F5B3F3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AE44CFE20C1DA32B}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Major_HV_Vest.et",
+  "nom": "Patch Major Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA71BCB0AE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7EE7382FF2B2B4D3}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Aspirant_HV_Vest.et",
+  "nom": "Patch Aspirant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA6CF798D5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A27E5B8CBE25AE39}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Sous_Lieutenant_HV_Vest.et",
+  "nom": "Patch Sous Lieutenant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA64534242",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BDA9EFF221FF9F69}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Lieutenant_HV_Vest.et",
+  "nom": "Patch Lieutenant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA5F1D6634",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E61452D970FA52DF}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Capitaine_HV_Vest.et",
+  "nom": "Patch Capitaine Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA5AAFFA9C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9014AC5F7C9D5AE2}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Commandant_HV_Vest.et",
+  "nom": "Patch Commandant Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA548FC95C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{88C153D5ADA247E9}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Lieutenant_Colonel_HV_Vest.et",
+  "nom": "Patch Lieutenant Colonel Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA45973AC3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DAF411FE7084182F}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/HAUTE VISIBILITE/ADT_Colonel_HV_Vest.et",
+  "nom": "Patch Colonel Haute Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BABDDFE21D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1F6F9A419884021D}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_1CL_BV_Vest.et",
+  "nom": "Patch 1er Classe Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAB87A776D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C8339E27A3D1C639}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Caporal_BV_Vest.et",
+  "nom": "Patch Caporal Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAB221C7FF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BC6F9943CBBF10A7}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Caporal_Chef_1CL_BV_Vest.et",
+  "nom": "Patch 1er Classe Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAAF695073",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6037DC168647641C}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_BV_Vest.et",
+  "nom": "Patch Sergent Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAA51D6C46",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5BAC47426C1ED1F5}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_Chef_BV_Vest.et",
+  "nom": "Patch Sergent Chef Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA97B5374E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{16AA66063C9619B7}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Sergent_Chef_BM2_BV_Vest.et",
+  "nom": "Patch Sergent Chef BM2 Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA939F1F86",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1B3F5DC4DE98BF72}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Adjudant_BV_Vest.et",
+  "nom": "Patch Adjudant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA8D4AE7D1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7175F503CFA9C521}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Adjudant_Chef_BV_Vest.et",
+  "nom": "Patch Adjudant Chef Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA8AD6E7F9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E76E007AABE833A0}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Major_BV_Vest.et",
+  "nom": "Patch Major Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BA845A5D43",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{936AD5AE66DAA624}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Aspirant_BV_Vest.et",
+  "nom": "Patch Aspirant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAFD17CDF2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8E946F92A3A5A3DF}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Sous_Lieutenant_BV_Vest.et",
+  "nom": "Patch Lieutenant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BAEA249288",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CB5F9603B9ADCB1D}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Lieutenant_BV_Vest.et",
+  "nom": "Patch 1er Classe Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BADEBF75D5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2ED178BD3E9C97F2}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Capitaine_BV_Vest.et",
+  "nom": "Patch Capitaine Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB3F15ADB8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{D7AF15B0BA47945D}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Commandant_BV_Vest.et",
+  "nom": "Patch Commandant Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB3B44CC9F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{01AA29E16AC8E555}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Lieutenant_Colonel_BV_Vest.et",
+  "nom": "Patch Lieutenant Colonel Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB321961A8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{368CD636F9D7728D}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/ADT/BASSE VISIBILITE/ADT_Colonel_BV_Vest.et",
+  "nom": "Patch Colonel Basse Visibilité armée de terre",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB52E6143B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7305BA98CD595DF5}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/HAUTE VISIBILITE/LEGION_1CL_HV_Vest.et",
+  "nom": "Patch 1er Classe Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB4811B3F8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0A5B6FAB574A7B73}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/HAUTE VISIBILITE/LEGION_Caporal_HV_Vest.et",
+  "nom": "Patch Caporal Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB4682746B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C274303348DAC845}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/HAUTE VISIBILITE/LEGION_Caporal_Chef_HV_Vest.et",
+  "nom": "Patch Caporal Chef Haute Visibilité Légion Etrangère",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB42C37C50",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B3D59DAED0F866F4}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/BASSE VISIBILITE/LEGION_1CL_BV_Vest.et",
+  "nom": "Patch 1er Classe Basse Visibilité Légion Etrangére",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BBBBDCB53E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4DE0D6449190B5CC}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/BASSE VISIBILITE/LEGION_Caporal_BV_Vest.et",
+  "nom": "Patch Caporal Basse Visibilité Légion Etrangére",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BBAD2FF992",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{E83B984BE7003CBC}Prefabs/Items/Equipment/Patches/F3 Veste/Grades/LEGION/BASSE VISIBILITE/LEGION_Caporal_Chef_BV_Vest.et",
+  "nom": "Patch Caporal Chef Basse Visibilité Légion Etrangére",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "65DCA3BB8B0C6807",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{83F05F0199AEB3D2}Prefabs/Items/Equipment/Patches/F3 Veste/Patch_patronymique_VesteF3.et",
+  "nom": "Patch patronymique",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C6839A7B5",
+  "entree": "6532BE0C6839A782",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BE9B11D929032DFF}Prefabs/Weapons/Attachments/Underbarrel/UGL_HK269F_base.et",
+  "nom": "HK269F",
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C6839A780",
+  "entree": "6532BE0C6839A79F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6676FF9B716402CC}Prefabs/Items/PersonalBelongings/PersonalBelongings_US.et",
+  "nom": null,
+  "source": "AMF-FANTASSIN"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C7AFA7C3EB211",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{83B20851066AEE44}Prefabs/Characters/EarsGear/MSA_Sourdin/MSA_Sourdin_Headphones_OD.et",
+  "nom": "MSA Sourdin Headphones OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C7AFA75560E16",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{16FE485F0219D97D}Prefabs/Characters/EarsGear/MSA_Sourdin/MSA_Sourdin_Headphones_TAN.et",
+  "nom": "MSA Sourdin Headphones TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C7AFA72521DEB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{DF90FF909ADF9B49}Prefabs/Characters/EarsGear/MSA_Sourdin/MSA_Sourdin_TAN.et",
+  "nom": "MSA Sourdin",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C7AFA64CE0D6C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{05414EA69BD28CF3}Prefabs/Characters/EarsGear/MSA_Sourdin/MSA_Sourdin_OD.et",
+  "nom": "MSA Sourdin",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C7AFA54BDE9BA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4E7097754FCBF8A8}Prefabs/Characters/EyesGear/Oakley_Goggles/Oakley_OpsCore.et",
+  "nom": "Masque Oakley pour casque Opscore",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E70641CB16",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{649B97A7FC193089}Prefabs/Characters/Backpack/RUSH_511/RUSH_511_BLK.et",
+  "nom": "RUSH 511 Black",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E703FEDD76",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{80454A56F552DF3A}Prefabs/Characters/Backpack/RUSH_511/RUSH_511_Multicam.et",
+  "nom": "RUSH 511 Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7014FE75B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{616674E8ED2E34BE}Prefabs/Characters/Backpack/RUSH_511/RUSH_511_OD.et",
+  "nom": "RUSH 511 OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E70061AC17",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A7E62449A38A1067}Prefabs/Characters/Backpack/RUSH_511/RUSH_511_TAN.et",
+  "nom": "RUSH 511 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E1B630A06F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ECF52CB8BF197876}Prefabs/Characters/Backpack/RUSH_511/RUSH_511_TDF.et",
+  "nom": "RUSH 511 TDF",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E755F2A40C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3A912D741AD4AA12}Prefabs/Characters/Vests/Ceinture_De_Combat/Ceinture_Multicam.et",
+  "nom": "WAS Ceinture de combat Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7B9021E20",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FA478F8BD2D73032}Prefabs/Characters/Vests/Ceinture_De_Combat/Ceinture_OD.et",
+  "nom": "WAS Ceinture de combat OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7B606F4DE",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FF865ED9342AFEA1}Prefabs/Characters/Vests/Ceinture_De_Combat/Ceinture_TAN.et",
+  "nom": "WAS Ceinture de combat TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7B1FD32F9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{36469B2F3EF3A234}Prefabs/Characters/Vests/CryPrecison/JPC_Multicam.et",
+  "nom": "Cry JPC Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7A224E0AA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C7CC712F2A193F52}Prefabs/Characters/Vests/CryPrecison/JPC_RG.et",
+  "nom": "Cry JPC RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7A06AB9B6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{6E97E990FC7B6486}Prefabs/Characters/Vests/CryPrecison/JPC_TAN_Base.et",
+  "nom": "WAS DCS TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E79CAB9ACF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{83375E0F2E6C31E0}Prefabs/Characters/Vests/Warrior_Assault_Systems/WAS_DCS_Multicam.et",
+  "nom": "WAS DCS Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7972BF849",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9BE585408E66D178}Prefabs/Characters/Vests/Warrior_Assault_Systems/WAS_DCS_OD_Base.et",
+  "nom": "WAS DCS OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7943C7C29",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5F673C6D7D681322}Prefabs/Characters/Vests/Warrior_Assault_Systems/WAS_DCS_TAN.et",
+  "nom": "WAS DCS TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E78233E67D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A22F2B74CD8FF809}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_9mm/Pouch_9mm_Multicam.et",
+  "nom": "Poche Chargueur Double 9mm TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7C48D59C4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4E48555874691021}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_9mm/Pouch_9mm_OD.et",
+  "nom": "Poche Chargueur Double 9mm TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7C19B7BFB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2722006751C3E1B3}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_9mm/Pouch_9mm_TAN.et",
+  "nom": "Poche Chargueur Double 9mm TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7C869BC18",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1951BE8D717C2A9C}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_556_Muticam_STANAG.et",
+  "nom": "Porte chargeur HSGI Muticam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7FE1387A0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{36C5550F3DA4C79B}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_556_Muticam_FAMAS.et",
+  "nom": "Porte chargeur HSGI Muticam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7F18A39DB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2F2156E3A5B07DE3}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_556_TAN_STANAG.et",
+  "nom": "Porte chargeur HSGI TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7F0B69780",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4A5832C689398256}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_556_TAN_FAMAS.et",
+  "nom": "Porte chargeur HSGI TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7E4935465",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{388D2A87F92272B6}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_Double_556_RG_STANAG.et",
+  "nom": "Porte chargeur double HSGI RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7DBFA63D2",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C0AEE35070577399}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_Double_556_RG_FAMAS.et",
+  "nom": "Porte chargeur double HSGI RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7D6543626",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{89CF4A3FD5D1C3D1}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_Double_556_TAN_STANAG.et",
+  "nom": "Porte chargeur double HSGI TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E7D574BA37",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1B80CB2CD56DC3DA}Prefabs/Items/Equipment/Accessories/PouchSystem/Ammo_556/Pouch_HSGI_Double_556_TAN_FAMAS.et",
+  "nom": "Porte chargeur double HSGI TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E633EFE96E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{C95F3F1D3365E7C1}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V1_Multicam.et",
+  "nom": "T.I.C V1 Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E62F798639",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{FF38635997218E20}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V1_RG_base.et",
+  "nom": "T.I.C V1 OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E62906E3C0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{195CE2CF159904A4}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V1_TAN.et",
+  "nom": "T.I.C V1 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E6250F67D5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{89FE8DBB097014C6}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V2_Multicam.et",
+  "nom": "T.I.C V2 Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E624085B04",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{936C57B92BE5010E}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V2_RG.et",
+  "nom": "T.I.C V2 OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E623022C9E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{AB8BA0244A3B373C}Prefabs/Items/Equipment/Accessories/PouchSystem/Medical/Pouch_TIC_V2_TAN.et",
+  "nom": "T.I.C V2 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E61BDA9BF7",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BB4D66F05790DC97}Prefabs/Items/Equipment/Accessories/PouchSystem/MG_Minimi/Pouch_Minimi_Multicam.et",
+  "nom": "Poche Minimi Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E61ADA9502",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{ED4D68A9F982AA6C}Prefabs/Items/Equipment/Accessories/PouchSystem/MG_Minimi/Pouch_Minimi_RG_base.et",
+  "nom": "Poche Minimi",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E619CC5BB4",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B19C3F9A82B0D868}Prefabs/Items/Equipment/Accessories/PouchSystem/MG_Minimi/Pouch_Minimi_TAN.et",
+  "nom": "Poche Minimi TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E611A0ECFC",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1B3C204B829E8946}Prefabs/Items/Equipment/Accessories/PouchSystem/Radio/Pouch_Radio_2_Multicam.et",
+  "nom": "Poche Radio Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E60F187C76",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1AF4EB9C1813EEC2}Prefabs/Items/Equipment/Accessories/PouchSystem/Radio/Pouch_Radio_2_OD_Base.et",
+  "nom": "Poche Radio",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683A018B",
+  "entree": "6A0C61E60FD0124A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{863C7D6DA44595E9}Prefabs/Items/Equipment/Accessories/PouchSystem/Radio/Pouch_Radio_2_TAN.et",
+  "nom": "Poche Radio TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8F9CD6C68",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F9924B42A782C9C4}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore FAST/OpsCore_FAST_BLK.et",
+  "nom": "Casque Ops-Core FAST Noir",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8EB10DDBA",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{71B708F65C6E7206}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore FAST/OpsCore_FAST_Grey.et",
+  "nom": "Casque Ops-Core FAST Gris",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8EAF98706",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{878266496A4A34BA}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore FAST/OpsCore_FAST_MultiCam.et",
+  "nom": "Casque Ops-Core FAST Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8E8CCC885",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{44344209CE810D28}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore FAST/OpsCore_FAST_RG.et",
+  "nom": "Casque Ops-Core FAST RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8E30722B5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3AEFF8ACF811E92B}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore FAST/OpsCore_FAST_TAN.et",
+  "nom": "Casque Ops-Core FAST TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8D91410A0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{7D5E0D1B001FEBE5}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore BUMP/OpsCore_BUMP_BLK.et",
+  "nom": "Casque Ops-Core BUMP Noir",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8D8FE4B84",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9CE1911CC95D4047}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore BUMP/OpsCore_BUMP_Grey.et",
+  "nom": "Casque Ops-Core BUMP Gris",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8D6F48431",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5DF823E8AE5B4D99}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore BUMP/OpsCore_BUMP_Multicam.et",
+  "nom": "Casque Ops-Core BUMP Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8D2942D2E",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BDEE2647B4C74A80}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore BUMP/OpsCore_BUMP_OD.et",
+  "nom": "Casque Ops-Core BUMP OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF8CEE1057D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{BE23BEF55F8CCB0B}Prefabs/Characters/HeadGear/OpsCore_Helmet/Opscore BUMP/OpsCore_BUMP_TAN.et",
+  "nom": "Casque Ops-Core BUMP TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF9ECBEC9BB",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{EC971CD5323EB498}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3000_BLK.et",
+  "nom": "MSA TC 3000 Black",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF9D8F00B5F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4DC4DACAB376BC93}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3000_MultiSnake.et",
+  "nom": "MSA TC 3000 Multi-Snake",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF9D41FC949",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{33F00E49A91EA112}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3000_Snake_OD.et",
+  "nom": "MSA TC 3000 OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF9D2FA24A3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{08453C30BA467581}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3000_Snake_TAN.et",
+  "nom": "MSA TC 3000 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AF9C1FFAE09",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{82DA228C075F5A10}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3001_BLK.et",
+  "nom": "MSA TC 3001 Black",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA3D467D1C",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{5F4815E836015A04}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3001_Multisnake.et",
+  "nom": "MSA TC 3001 Multi-Snake",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA3B960DA6",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{3668889477989B52}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3001_Snake_OD.et",
+  "nom": "MSA TC 3001 OD",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA386F6AF1",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9B0066409BD4EFCD}Prefabs/Characters/HeadGear/MSA_TC_Helmet/TC_3001_Snake_TAN.et",
+  "nom": "MSA TC 3001 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA31EB889B",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{897EA2420D16DABA}Prefabs/Characters/HeadCover/MSA_TC_ACCESSORIES/TC_Accessories_BLK.et",
+  "nom": null,
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA2B620D0D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8C2DFEA72E7FA227}Prefabs/Characters/HeadCover/MSA_TC_ACCESSORIES/TC_Accessories_MultiSnake.et",
+  "nom": "Kit d'accessoires pour casques MSA TC ",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA297DD210",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{023F3A90D3ED211C}Prefabs/Characters/HeadCover/MSA_TC_ACCESSORIES/TC_Accessories_Snake_OD.et",
+  "nom": null,
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA27BF0B26",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{2FC68DA1510EC323}Prefabs/Characters/HeadCover/MSA_TC_ACCESSORIES/TC_Accessories_Snake_TAN.et",
+  "nom": null,
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C7AFA2121709A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{A2FF69895C7F7B98}Prefabs/Characters/HeadCover/MSA_TC_ACCESSORIES/TC_FaceShield_Base.et",
+  "nom": "Visière de protection pour casques MSA TC 800 et 801",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1A9E2B5A3",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0A87D9C6A2B4749F}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_Multicam.et",
+  "nom": "Cry G3 Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E014099A64",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B82A29BEFFC3E2A2}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_CCE.et",
+  "nom": "Cry G3 CCE",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1954CC219",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{F414B4ABE9C751EB}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_Arktis_DA.et",
+  "nom": "Cry G3 Arktis DA",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1925F3E75",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{4ECFB87C2168024E}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_BLK.et",
+  "nom": "Cry G3 BLK",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1908A1EAF",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{CA2B5176283BC6CF}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RG.et",
+  "nom": "Cry G3 RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1FCD5C686",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{8DB20B927EFB22A0}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_TAN.et",
+  "nom": "Cry G3 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1F40B209F",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1F293FDAB31AFB6B}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_Multicam.et",
+  "nom": "Cry G3 Manche levée Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E01D39534D",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{35DAAF04EFDDF301}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_CCE.et",
+  "nom": "Cry G3 Manche levée RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1F067A215",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{370C57EB7001FA48}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_Arktis_DA.et",
+  "nom": "Cry G3 Manche levée Arktis DA",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1E800F7E5",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B16EFEF8A833F6B8}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_BLK.et",
+  "nom": "Cry G3 BLK",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1E33788F8",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{9B157D99D38E374F}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_RG_base.et",
+  "nom": "Cry G3 Manche levée RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1DEC756F0",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{00428D286EE53303}Prefabs/Characters/Uniforms/CryG3_Ubas/CryG3_Shirt_RolledUp_TAN.et",
+  "nom": "Cry G3 Manche levée TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1C80BCB55",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{96B446AABE828FC8}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_Multicam_Pantalon.et",
+  "nom": "Pantalon Cry G3 Multicam",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E02264FB54",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{95ACA019C0D00D73}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_CCE_Pantalon.et",
+  "nom": "Pantalon Cry G3 CCE",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1C58A819A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{1DBC9BE15A5BEB84}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_Arktis_DA.et",
+  "nom": "Pantalon Cry G3 Arkits DA",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E1C1A36F1A",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{0CF2BB1EE4CC23F5}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_BLK_Pantalon.et",
+  "nom": "Pantalon Cry G3 BLK",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E03FAC4864",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{165F7555CB17EDD1}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_RG_base_Pantalon.et",
+  "nom": "Pantalon Cry G3 RG",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C683AAA27",
+  "entree": "6A0C61E038AB6DA9",
+  "classe": "SCR_EntityCatalogInventoryItem",
+  "prefab": "{B950D3D1AB311FD5}Prefabs/Characters/Uniforms/CryG3_Pantalon/CryG3_TAN_Pantalon.et",
+  "nom": "Pantalon Cry G3 TAN",
+  "source": "AMF-FORCESSPECIALES"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "670EA414BD252EC1",
+  "classe": "SCR_EntityCatalogEntry",
+  "prefab": "{7066683D24A9103B}Prefabs/Weapons/Magazines/Magazine_M811/Box_25x137_GIAT_M811_507rnd_HEIT.et",
+  "nom": "Bande 295 cartouches GIAT M811 HEI-T",
+  "source": "AMF-VEHICULES01"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "670EA4148327EAA8",
+  "classe": "SCR_EntityCatalogEntry",
+  "prefab": "{532B20ED82A58C7A}Prefabs/Weapons/Magazines/Magazine_M811/Box_25x137_GIAT_M811_295rnd_APFSDST.et",
+  "nom": "Bande 295 cartouches GIAT M811 APFSDS-T",
+  "source": "AMF-VEHICULES01"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "670EA4154883A06C",
+  "classe": "SCR_EntityCatalogEntry",
+  "prefab": "{A4EC97E6666E2084}Prefabs/Weapons/Magazines/Magazine_DREB/VBCI/Box_DREB_GALIX_3.et",
+  "nom": "Munition tube-lanceurs GALIX 3 80mm (Écran de fumée)",
+  "source": "AMF-VEHICULES01"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "670EA4153AD9A89C",
+  "classe": "SCR_EntityCatalogEntry",
+  "prefab": "{99D8B2DE1302A9B3}Prefabs/Weapons/Magazines/Magazine_DREB/VBCI/Box_DREB_GALIX_4.et",
+  "nom": "#AMF-DREB-GALIX4-Inventory-Name (x1)",
+  "source": "AMF-VEHICULES01"
+ },
+ {
+  "liste": "6532BE0C6839A79A",
+  "entree": "68B5102122E2420A",
+  "classe": "SCR_EntityCatalogEntry",
+  "prefab": "{EFF2C1C3A5AA5F61}Prefabs/Weapons/Magazines/Magazine_DREB/HORNET/Box_DREB_GALIX_Hornet_3.et",
+  "nom": "DREB GALIX HORNET (x1)",
+  "source": "AMF-VEHICULES01"
+ }
+]

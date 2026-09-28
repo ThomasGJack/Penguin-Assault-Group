@@ -1,0 +1,7 @@
+MatPBRBasic {
+ RoughnessScale 1.5
+ AOScale 0.5
+ CavityFromAO 0.2
+ BCRMap "{C91E628706B9FC26}Assets/Ecussons/PAG_BCR2.edds"
+ NMOMap "{CE4C5512E1BFFCD7}Assets/Items/Patchs/Textures/OPEX/AMF_Patch_Round_Serval_NMO.edds"
+}

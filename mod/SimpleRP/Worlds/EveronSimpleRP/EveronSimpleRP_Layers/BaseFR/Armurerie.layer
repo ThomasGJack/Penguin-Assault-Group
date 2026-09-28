@@ -1,0 +1,205 @@
+$grp GenericEntity : "{02BADAE3C4AEA5F1}Prefabs/Structures/Signs/Large/Dst/SRP_Panneau_Affiche_Secours.et" {
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F35003A0891FA}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{C983CE3506B2EE99}Assets/Structures/Signs/Large/Data/panneau_intendance.emat"
+     }
+    }
+   }
+  }
+  coords 7474.155 165.179 4265.998
+  angles 0 100.011 0
+ }
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F35003A0891FA}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{C983CE3506B2EE99}Assets/Structures/Signs/Large/Data/panneau_intendance.emat"
+     }
+    }
+   }
+  }
+  coords 7473.038 165.216 4273.796
+  angles 0 10.509 0
+ }
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F35003A0891FA}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{C983CE3506B2EE99}Assets/Structures/Signs/Large/Data/panneau_intendance.emat"
+     }
+    }
+   }
+  }
+  coords 7461.396 164.032 4261.617
+  angles 0 -78.991 0
+ }
+}
+$grp GenericEntity : "{54986385A6AF77B2}Prefabs/Props/Military/Arsenal/ArsenalBoxes/ArsenalBox_Base.et" {
+ {
+  components {
+   SCR_ArsenalComponent "{56F2C6D1431AD9AF}" {
+    m_eSupportedArsenalItemModes 510
+    m_eArsenalSaveType NO_RESTRICTIONS
+    m_bAlwaysUseDefaultFaction 1
+   }
+   SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+    "faction affiliation" "FR"
+   }
+   SRP_ArsenalZoneComponent "{6A4D20E9576E7274}" {
+   }
+   ActionsManagerComponent "{56F2C6D1431ADB12}" {
+    additionalActions {
+     SCR_SaveArsenalLoadout "{58EE8EA3E73F1F6A}" {
+      m_eFactionUsageCheck 0
+     }
+    }
+   }
+  }
+  coords 7528.743 166.993 4308.476
+  angles 0 105.094 0
+ }
+ {
+  components {
+   SCR_ArsenalComponent "{56F2C6D1431AD9AF}" {
+    m_eSupportedArsenalItemModes 510
+    m_eArsenalSaveType NO_RESTRICTIONS
+    m_bAlwaysUseDefaultFaction 1
+   }
+   SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+    "faction affiliation" "FR"
+   }
+   SRP_ArsenalZoneComponent "{6A4D20E9576E7274}" {
+   }
+   ActionsManagerComponent "{56F2C6D1431ADB12}" {
+    additionalActions {
+     SCR_SaveArsenalLoadout "{58EE8EA3E73F1F6A}" {
+      m_eFactionUsageCheck 0
+     }
+    }
+   }
+  }
+  coords 7528.164 166.993 4306.72
+  angles 0 105.094 0
+ }
+ {
+  components {
+   SCR_ArsenalComponent "{56F2C6D1431AD9AF}" {
+    m_eSupportedArsenalItemModes 510
+    m_eArsenalSaveType NO_RESTRICTIONS
+    m_bAlwaysUseDefaultFaction 1
+   }
+   SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+    "faction affiliation" "FR"
+   }
+   SRP_ArsenalZoneComponent "{6A4D20E9576E7274}" {
+   }
+   ActionsManagerComponent "{56F2C6D1431ADB12}" {
+    additionalActions {
+     SCR_SaveArsenalLoadout "{58EE8EA3E73F1F6A}" {
+      m_eFactionUsageCheck 0
+     }
+    }
+   }
+  }
+  coords 7527.635 166.993 4305.052
+  angles 0 105.094 0
+ }
+ {
+  components {
+   SCR_ArsenalComponent "{56F2C6D1431AD9AF}" {
+    m_eSupportedArsenalItemModes 510
+    m_eArsenalSaveType NO_RESTRICTIONS
+    m_bAlwaysUseDefaultFaction 1
+   }
+   SCR_FactionAffiliationComponent "{5A50E7655452A21D}" {
+    "faction affiliation" "FR"
+   }
+   SRP_ArsenalZoneComponent "{6A4D20E9576E7274}" {
+    m_fRadius 1
+   }
+   ActionsManagerComponent "{56F2C6D1431ADB12}" {
+    additionalActions {
+     SCR_SaveArsenalLoadout "{58EE8EA3E73F1F6A}" {
+      m_eFactionUsageCheck 0
+     }
+    }
+   }
+  }
+  coords 7527.074 166.993 4303.398
+  angles 0 105.094 0
+ }
+}
+$grp GenericEntity : "{5EECA2D61979A02A}Prefabs/Structures/Signs/Large/Dst/SRP_Panneau_Affiche_Base.et" {
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F350141E0A1F8}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{B90F14FEFCB9F1D1}Assets/Structures/Signs/Large/Data/panneau_attente.emat"
+     }
+    }
+   }
+  }
+  coords 7503.476 165.949 4327.873
+  angles 0 -73.164 0
+  scale 0.85
+ }
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F350164DD128E}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{63941C7EAD83697D}Assets/Structures/Signs/Large/Data/panneau_accueil.emat"
+     }
+    }
+   }
+  }
+  coords 7506.631 165.869 4330.97
+  angles 0 -163.07 0
+  scale 0.85
+ }
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F350164DD128E}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{63941C7EAD83697D}Assets/Structures/Signs/Large/Data/panneau_accueil.emat"
+     }
+    }
+   }
+  }
+  coords 7511.827 166.861 4329.111
+  angles 0 107.173 0
+  scale 0.278
+ }
+ {
+  components {
+   MeshObject "{5872F0EB7FA40561}" {
+    Materials {
+     MaterialAssignClass "{6A5F350164DD128E}" {
+      SourceMaterial "SignLarge_01"
+      AssignedMaterial "{63941C7EAD83697D}Assets/Structures/Signs/Large/Data/panneau_accueil.emat"
+     }
+    }
+   }
+  }
+  coords 7511.162 166.861 4326.913
+  angles 0 106.273 0
+  scale 0.278
+ }
+}
+GenericEntity : "{9F5932D886ABE8C5}Prefabs/Structures/Signs/Large/Dst/SRP_Panneau_Affiche_Briefing.et" {
+ coords 7504.704 169.385 4332.091
+ angles 0 -73.226 0
+}

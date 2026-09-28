@@ -1,0 +1,61 @@
+GenericEntity : "{30CDE9F71FC702E8}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01_Base.et" {
+ ID "51F66EC33748B84D"
+ components {
+  InventoryItemComponent "{5222EB4D0C73006B}" {
+   Attributes SCR_ItemAttributeCollection "{5222EB4D0A2B466B}" {
+    ItemDisplayName SCR_InventoryUIInfo "{5222EB4D07D865FA}" {
+     Name "Kit de dépôt de zone"
+     Description "Matériel pour établir le dépôt d'une zone libérée. Volumineux : se transporte dans le coffre d'un véhicule. Sur place, le poser au sol à l'endroit voulu, puis « Installer le dépôt ici » (logisticien ou officier)."
+    }
+    ItemPhysAttributes ItemPhysicalAttributes PhysicalAttributes {
+     Weight 40
+     SizeSetupStrategy Manual
+     ItemDimensions 80 50 40
+     ItemVolume 45000
+    }
+    CustomAttributes {
+     SCR_ItemOfInterestAttribute "{554E95CAC60BB241}" {
+      m_InterestType NONE
+     }
+    }
+    CommonItemType "NONE"
+   }
+  }
+  MeshObject "{51F66EC3C5BC700D}" {
+   Object "{9E1DFF036BCE913E}Assets/Props/Military/AmmoBox/EquipmentBoxWooden_01/EquipmentBoxWooden_Ammunition_01.xob"
+  }
+  RigidBody "{51F66EC3C5BC7033}" {
+   Mass 40
+  }
+  SCR_ConsumableItemComponent "{5943631460899505}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{508AB5952B584B2E}" {
+   ActionContexts {
+    UserActionContext "{508AC2ABEC97066C}" {
+     Position PointInfo "{508AC2ABEAC4A0F5}" {
+      Offset 0 0.25 0
+     }
+     Radius 0.7
+    }
+   }
+   additionalActions {
+    SRP_DepotInstallAction "{6A5B0C0D0E0FB14A}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo SCR_ActionUIInfo "{6A5B0C0D0E0FB14B}" {
+      Name "Installer le dépôt ici"
+     }
+     ActionTitle "Installer le dépôt ici"
+     VisibilityRange 3
+     Duration 5
+     "Sort Priority" 1
+    }
+   }
+  }
+  GadgetGamepadEffectsManagerComponent "{61E103D57E322BB5}" {
+   Enabled 0
+  }
+ }
+}

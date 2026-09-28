@@ -1,0 +1,44 @@
+GenericEntity : "{50801280D56B67A1}Prefabs/Props/Services/Healthcare/BedMedical_01.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  ActionsManagerComponent "{6A4D1277ED0B08B0}" {
+   ActionContexts {
+    UserActionContext "{6A4D1277EB2E91F4}" {
+     UIInfo UIInfo "{6A4D1277EB2E91F5}" {
+      Name "soins"
+     }
+     ContextName "soins"
+     Position PointInfo "{6A4D1277E744D567}" {
+      Offset 0 0.7 0
+     }
+     Radius 3
+    }
+   }
+   additionalActions {
+    SRP_MedicalHealAction "{6A4D12761F1B495B}" {
+     ParentContextList {
+      "soins"
+     }
+     UIInfo UIInfo "{6A4D12761BF1BD25}" {
+      Name "Se faire soigner"
+     }
+     ActionTitle "Se faire soigner"
+     VisibilityRange 3
+     Duration 30
+    }
+    SRP_MedicalHealOtherAction "{6A4D12761F1B4A01}" {
+     ParentContextList {
+      "soins"
+     }
+     UIInfo UIInfo "{6A4D12761F1B4A02}" {
+      Name "Soigner le blessé allongé"
+     }
+     ActionTitle "Soigner le blessé allongé"
+     VisibilityRange 3
+     Duration 30
+     "Sort Priority" 1
+    }
+   }
+  }
+ }
+}

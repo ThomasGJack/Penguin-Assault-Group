@@ -1,0 +1,154 @@
+$grp GenericEntity : "{0461B0EC7E7495FB}Prefabs/Props/Depots/SRP_Depot_Munitions.et" {
+ {
+  coords 7533.182 167.376 4304.876
+  angles 0 15.064 0
+ }
+ {
+  coords 7533.182 168.559 4304.876
+  angles 0 15.064 0
+ }
+ {
+  coords 7532.059 168.559 4300.701
+  angles 0 15.064 0
+ }
+ {
+  coords 7532.059 167.376 4300.701
+  angles 0 15.064 0
+ }
+ {
+  coords 7535.577 168.559 4299.333
+  angles 0 15.064 0
+ }
+ {
+  coords 7535.577 167.376 4299.333
+  angles 0 15.064 0
+ }
+ {
+  coords 7537.591 168.559 4298.676
+  angles 0 15.064 0
+ }
+ {
+  coords 7537.591 167.376 4298.676
+  angles 0 15.064 0
+ }
+ {
+  coords 7534.009 167.376 4299.652
+  angles 0 15.064 0
+ }
+}
+$grp GenericEntity : "{8535E6EC8A721733}Prefabs/Props/Depots/SRP_Depot_Vivres.et" {
+ {
+  coords 7568.895 167.298 4286.007
+  angles 0 106.188 0
+ }
+ {
+  coords 7568.398 167.298 4284.297
+  angles 0 106.188 0
+ }
+ {
+  coords 7567.772 167.298 4282.14
+  angles 0 106.188 0
+ }
+ {
+  coords 7567.217 167.298 4280.227
+  angles 0 106.188 0
+ }
+ {
+  coords 7568.398 168.498 4284.297
+  angles 0 106.188 0
+ }
+ {
+  coords 7567.772 168.498 4282.14
+  angles 0 106.188 0
+ }
+ {
+  coords 7567.217 168.496 4280.227
+  angles 0 106.188 0
+ }
+ {
+  coords 7568.895 168.498 4286.007
+  angles 0 106.188 0
+ }
+ {
+  coords 7573.039 168.498 4282.95
+  angles 0 106.188 0
+ }
+ {
+  coords 7573.536 168.498 4284.66
+  angles 0 106.188 0
+ }
+}
+GenericEntity : "{8C8174FF5C97235C}Prefabs/Props/Banque/SRP_Coffre.et" {
+ coords 7507.06 170.025 4336.678
+ angles 0 15.895 0
+}
+GenericEntity : "{97AAF0AF68365B48}Prefabs/Props/Depots/SRP_Depot_Carburant.et" {
+ coords 7585.302 166.296 4264.209
+ angles 0 -163.807 0
+}
+$grp GenericEntity : "{9CF82BCA38DD7F41}Prefabs/Props/Depots/SRP_Depot_Pieces.et" {
+ {
+  coords 7544.651 166.629 4215.934
+  angles 0 17.38 0
+ }
+ {
+  coords 7542.992 166.629 4216.463
+  angles 0 17.38 0
+ }
+ {
+  coords 7541.27 166.629 4216.987
+  angles 0 17.38 0
+ }
+ {
+  coords 7539.664 166.629 4217.496
+  angles 0 17.38 0
+ }
+ {
+  coords 7542.992 167.133 4216.463
+  angles 0 17.38 0
+ }
+ {
+  coords 7541.27 167.133 4216.987
+  angles 0 17.38 0
+ }
+ {
+  coords 7539.664 167.133 4217.496
+  angles 0 17.38 0
+ }
+ {
+  coords 7542.992 167.64 4216.463
+  angles 0 17.38 0
+ }
+ {
+  coords 7541.27 167.64 4216.987
+  angles 0 17.38 0
+ }
+ {
+  coords 7539.664 167.64 4217.496
+  angles 0 17.38 0
+ }
+ {
+  coords 7542.992 168.153 4216.463
+  angles 0 17.38 0
+ }
+ {
+  coords 7541.27 168.153 4216.987
+  angles 0 17.38 0
+ }
+ {
+  coords 7539.664 168.153 4217.496
+  angles 0 17.38 0
+ }
+ {
+  coords 7544.806 167.132 4215.885
+  angles 0 17.38 0
+ }
+ {
+  coords 7544.651 167.671 4215.934
+  angles 0 17.38 0
+ }
+ {
+  coords 7544.651 168.154 4215.934
+  angles 0 17.38 0
+ }
+}

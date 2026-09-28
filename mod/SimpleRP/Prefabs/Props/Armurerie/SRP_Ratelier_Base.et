@@ -1,0 +1,55 @@
+GenericEntity : "{466A6AA84E5F900F}Prefabs/Compositions/Misc/CustomEntities/InteractionPoints/WeaponRackCabinetArsenal_US_Basic.et" {
+ ID "589F01C8AEC1441E"
+ components {
+  SCR_ArsenalDisplayComponent "{589F01C8E2FEDEE5}" {
+   Enabled 0
+  }
+  SCR_FactionAffiliationComponent "{5A50E76678BE335D}" {
+   Enabled 0
+   "faction affiliation" "FR"
+  }
+  SCR_ServicePointComponent "{5CE2F3418E4D03D3}" {
+   Enabled 0
+  }
+  SRP_RackComponent "{6A4D04DC99E1FD7A}" {
+   m_sItemPrefab "{39E0413FA0E2E5D5}Prefabs/Weapons/Rifles/HK416F/HK416F-C.et"
+   m_iCost 5
+   m_bKitDeBase 1
+  }
+  ActionsManagerComponent "{6A4D04DCCBA6DD83}" {
+   ActionContexts {
+    UserActionContext "{6A4D04DCC7A25985}" {
+     ContextName "rack"
+     Position PointInfo "{6A4D04DCF85E7CFF}" {
+      Offset 0 1 0
+     }
+     Radius 2
+    }
+   }
+   additionalActions {
+    SRP_RackTakeAction "{6A4D04DCECBD4007}" {
+     ParentContextList {
+      "rack"
+     }
+     UIInfo UIInfo "{6A4D04DF1D50E634}" {
+      Name "Prendre"
+     }
+     ActionTitle "Prendre"
+     VisibilityRange 3
+     Duration 1
+    }
+    SRP_RackReturnAction "{6A4D0CB52A8C5F03}" {
+     ParentContextList {
+      "rack"
+     }
+     UIInfo UIInfo "{6A4D0CB520B15D7D}" {
+      Name "Rendre"
+     }
+     ActionTitle "Rendre"
+     VisibilityRange 3
+     Duration 1
+    }
+   }
+  }
+ }
+}

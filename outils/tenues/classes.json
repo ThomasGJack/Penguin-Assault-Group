@@ -1,0 +1,1282 @@
+{
+ "Beret Marron": {
+  "s": "garder",
+  "c": "Recrues (avant la FGI)"
+ },
+ "Béret bleu foncé – Béret standard de l’armée de Terre": {
+  "s": "garder",
+  "c": "Soldats, toutes catégories (remis à la FGI)"
+ },
+ "Béret vert - Commandos marine (forces spéciales de la marine)": {
+  "s": "garder",
+  "c": "Officiers, haut commandement"
+ },
+ "Béret Rouge": {
+  "s": "garder",
+  "c": "Logisticiens (certif LOGI)"
+ },
+ "Béret amarante – Parachutistes de l’armée de Terre": {
+  "s": "garder",
+  "c": "Instructeurs habilités"
+ },
+ "Béret noir – Troupes blindées et de cavalerie": {
+  "s": "garder",
+  "c": "Vétérans : 100 missions réussies"
+ },
+ "Béret vert – Légion étrangère Française": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Béret bleu ciel – Missions des Nations Unies": {
+  "s": "garder",
+  "c": "Invités d'un autre groupe (règle RP, libre dans l'arsenal)"
+ },
+ "Béret bleu roi – Aviation Légère de l’Armée de Terre (ALAT)": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Béret des chasseurs alpins – Infanterie de montagne": {
+  "s": "retirer",
+  "c": ""
+ },
+ "T-shirt Polo Marine Nationale": {
+  "s": "retirer",
+  "c": ""
+ },
+ "T-Shirt TTA Armée de terre Coyote": {
+  "s": "retirer",
+  "c": ""
+ },
+ "T-Shirt TTA Armée de terre Kaki": {
+  "s": "retirer",
+  "c": ""
+ },
+ "T-Shirt Coyote logo armée de terre": {
+  "s": "retirer",
+  "c": ""
+ },
+ "T-Shirt Kaki logo armée de terre": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3000 Black": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3000 Multi-Snake": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3000 OD": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3000 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3001 Black": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3001 Multi-Snake": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3001 OD": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TC 3001 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core FAST Noir": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core FAST Gris": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core FAST Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core FAST RG": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core FAST TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core BUMP Noir": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core BUMP Gris": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core BUMP Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core BUMP OD": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Ops-Core BUMP TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque de Combat F3": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Casque de Combat FELIN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "MSA TCNVG CCE": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "MSA TCNVG DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Mle 78": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Casque Mle 78 UN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Gentex Alpha 900": {
+  "s": "garder",
+  "c": "Équipages et pilotes"
+ },
+ "ELNO DH 586": {
+  "s": "garder",
+  "c": "Équipages et pilotes"
+ },
+ "Thales TopOwl": {
+  "s": "garder",
+  "c": "Équipages et pilotes"
+ },
+ "Veste de combat F3 - Centre Europe": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Veste de combat F3 manche relevée (Centre Europe)": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Veste de combat F3 - Bariolage Multi Environnement": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste de combat F3 manche relevée Bariolage Multi Environnement": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste de combat F3 - Daguet": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste de combat F3 manche relevée Daguet": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste de combat F3 - Tundra": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Chemise de combat F3 - Centre Europe": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Chemise de combat F3 manche relever - Centre Europe": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Chemise de combat F3 - Centre Europe OD": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Chemise de combat F3 manche relever - Centre Europe OD": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Chemise de combat F3 - Bariolage Multi Environnement": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Chemise de combat F3 - Bariolage Multi Environnement#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Chemise de combat F3 manche relever - Daguet": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Chemise de combat F3 - Tundra": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste T4S2 CCE": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste T4S2 manche relevée CCE": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste T4S2 DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Veste T4S2 manche relevée DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 CCE": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Arktis DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 BLK": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 RG": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Manche levée Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Manche levée RG": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Manche levée Arktis DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 BLK#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Manche levée RG#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry G3 Manche levée TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Gilet de Combat SMB - Mitrailleur": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Mitrailleur"
+ },
+ "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Fusilier, Grenadier (lance-grenades), Opérateur radio, Logisticien et conducteurs"
+ },
+ "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Gilet de Combat SMB - Pilote d'hélicopthère": {
+  "s": "garder",
+  "c": "Équipages et pilotes"
+ },
+ "Gilet de Combat SMB - Tireur d'hélicopthère léger": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Gilet de Combat SMB - Tireur de précision SCAR-H": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Tireur de précision"
+ },
+ "Gilet de Combat SMB - Tireur d'élite PGM Hecate": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "Gilet de Combat SMB - Chef de groupe": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Chef de groupe et officier"
+ },
+ "Gilet de Combat SMB - Auxiliaire sanitaire": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Infirmier et médecin"
+ },
+ "Cry JPC Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Cry JPC RG": {
+  "s": "retirer",
+  "c": ""
+ },
+ "WAS DCS TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "WAS DCS Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "WAS DCS OD": {
+  "s": "retirer",
+  "c": ""
+ },
+ "WAS DCS TAN#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FELIN T4S2 CCE": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FELIN T4S2 DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon de combat F3 - Centre Europe": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Pantalon de combat F3 - Bariolage Multi Environnement": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon de combat F3 - Daguet": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon de combat F3 - Tundra": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Marine_Pantalon": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Tenue de protection de base (blocked)": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 CCE": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 Arkits DA": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 BLK": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 RG": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Pantalon Cry G3 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "gants de combat": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "gants de combat V2": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Ceinture De Combat SMB": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "WAS Ceinture de combat Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "WAS Ceinture de combat OD": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "WAS Ceinture de combat TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Tecpack 45L ER314": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Opérateur radio"
+ },
+ "TECPACK 70L": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Logisticien et conducteurs ; Mule"
+ },
+ "TECPACK 30L.": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Tireur de précision"
+ },
+ "TECPACK 45L": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Fusilier, Chef de groupe et officier"
+ },
+ "TECPACK 45L AuxSan": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Infirmier et médecin"
+ },
+ "TECPACK 45L Grenadier": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Grenadier (lance-grenades)"
+ },
+ "TECPACK 45L Minimi": {
+  "s": "garder",
+  "c": "Tenue du soldat ; Mitrailleur"
+ },
+ "TECPACK 70L#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "RUSH 511 Black": {
+  "s": "retirer",
+  "c": ""
+ },
+ "RUSH 511 Multicam": {
+  "s": "retirer",
+  "c": ""
+ },
+ "RUSH 511 OD": {
+  "s": "retirer",
+  "c": ""
+ },
+ "RUSH 511 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "RUSH 511 TDF": {
+  "s": "retirer",
+  "c": ""
+ },
+ "BMJA": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Haix Nepal Pro": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Haix Nepal Pro Sable": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Meindl": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Timberland Pro": {
+  "s": "garder",
+  "c": "Tenue du soldat"
+ },
+ "Lowa Zephyr Noir": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Lowa Zephyr TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FAMAS G2#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FAMAS G2 PGMP#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C Aim M5": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C#3": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C#4": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C Custom V2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C HK269 Aim M5": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C HK269 EoTech 512": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-C HK269#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-S Aim M5": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "HK416 F-S EO 512": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FN Minimi F1#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FN Minimi FELIN J4": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FN Minimi FELIN Ris J4": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FN Minimi FELIN MK2 Specter": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "PGM Hécate II Bois J10": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "PGM Hécate II Bois RIS#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "PGM Hécate II Polymer J10": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "PGM Hécate II Polymer RIS#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FN SCAR-H PR#2": {
+  "s": "retirer",
+  "c": "version avec optique ou couleur : on garde l'arme nue, l'optique se monte à la main"
+ },
+ "FAMAS F1": {
+  "s": "garder",
+  "c": "Fusilier, Infirmier et médecin, Chef de groupe et officier"
+ },
+ "FAMAS F1 RIS": {
+  "s": "garder",
+  "c": "Fusilier, Infirmier et médecin, Chef de groupe et officier : le F1 à rail, pour monter une optique (rails PGM et PGMP à l'arsenal)"
+ },
+ "FAMAS F1 Infanterie": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FAMAS F1 Infanterie RIS": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FAMAS G2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FAMAS G2 PGMP": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Famas Valorisé": {
+  "s": "garder",
+  "c": "Fusilier, Infirmier et médecin, Chef de groupe et officier"
+ },
+ "Famas FELIN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "HK416 F-C": {
+  "s": "garder",
+  "c": "Chef de groupe et officier, Opérateur radio, Logisticien et conducteurs, Équipage blindé et pilote"
+ },
+ "HK416 F-C HK269": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "HK416 F-S": {
+  "s": "garder",
+  "c": "Fusilier, Infirmier et médecin, Chef de groupe et officier, Opérateur radio"
+ },
+ "HK416 F-S HK269": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "AAN-F1": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FN Minimi F1": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "FN Minimi FELIN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FN Minimi FELIN RIS": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FN Minimi FELIN MK2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "FN Minimi MK3": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "FN MAG58": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "PGM Hécate II Bois RIS": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "PGM Hécate II Polymer RIS": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "FN SCAR-H PR": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "FR-F2": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "Glock 17 Gen 5": {
+  "s": "garder",
+  "c": "Dotation commune, Mitrailleur, Tireur de précision, Équipage blindé et pilote"
+ },
+ "PAMAS G1": {
+  "s": "garder",
+  "c": "Dotation commune, Mitrailleur, Tireur de précision, Équipage blindé et pilote"
+ },
+ "PA MAC 50": {
+  "s": "garder",
+  "c": "Officiers uniquement"
+ },
+ "GR MA FUM Blanche": {
+  "s": "garder",
+  "c": "Dotation commune, Infirmier et médecin"
+ },
+ "GR MA FUM Vert": {
+  "s": "garder",
+  "c": "Chef de groupe et officier, Opérateur radio"
+ },
+ "GR MA FUM Rouge": {
+  "s": "garder",
+  "c": "Chef de groupe et officier, Opérateur radio"
+ },
+ "GR MA FUM Jaune": {
+  "s": "garder",
+  "c": "Chef de groupe et officier, Opérateur radio"
+ },
+ "GR MA OF F1": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "GR MA DEF": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "APX M241": {
+  "s": "garder",
+  "c": "Chef de groupe et officier"
+ },
+ "Leica Vector IV": {
+  "s": "garder",
+  "c": "Tireur de précision, Chef de groupe et officier"
+ },
+ "Thales OB 72 Sophie": {
+  "s": "garder",
+  "c": "Chef de groupe et officier"
+ },
+ "Montre": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Tactix Bravo GPS Smartwatch Black": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Aimpoint CompM5": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Aimpoint Micro T2": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Eotech 552": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Eotech EXPS3-0": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Elcan Specter": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 RIS": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 Minimi F1": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Schmidt & Bender 8X24 Mildot CC": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ },
+ "Schmidt & Bender 3-20x50": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ },
+ "Scrome J8": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ },
+ "Scrome J10": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ },
+ "Carte (OTAN)": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Boussole": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Thalès BI-NYX Tan sans bonnettes": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan sans bonnettes#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan sans string": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan sans string#2": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès BI-NYX Tan sans bonettes et sans string": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès O-NYX Tan": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Thalès O-NYX Tan sans bonnettes": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès O-NYX Tan sans bonnettes et sans string": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Thalès O-NYX Tan sans string": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Lampe-torche": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Thalès ER328": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Pelle M1967": {
+  "s": "garder",
+  "c": "Sapeur et antichar"
+ },
+ "Récipient à carburant": {
+  "s": "garder",
+  "c": "Logisticien et conducteurs"
+ },
+ "Clé de réparation": {
+  "s": "garder",
+  "c": "Logisticien et conducteurs, Équipage blindé et pilote"
+ },
+ "Écusson PAG": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Écusson PAG (veste)": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Poche Chargeur Double": {
+  "s": "garder",
+  "c": "Au choix sur le gilet, pour loger les 300 cartouches (poche 5,56 AMF, double ou simple)"
+ },
+ "Poche Chargeur Double FAMAS": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Poche Chargeur Simple": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Affaires personnelles": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Bandage": {
+  "s": "garder",
+  "c": "Dotation commune, Infirmier et médecin"
+ },
+ "Garrot": {
+  "s": "garder",
+  "c": "Dotation commune, Infirmier et médecin"
+ },
+ "Morphine auto-injectable": {
+  "s": "garder",
+  "c": "Dotation commune, Infirmier et médecin"
+ },
+ "Solution saline": {
+  "s": "garder",
+  "c": "Infirmier et médecin"
+ },
+ "Épinéphrine": {
+  "s": "garder",
+  "c": "Infirmier et médecin"
+ },
+ "Kit médical": {
+  "s": "garder",
+  "c": "Infirmier et médecin"
+ },
+ "200Rnd AAN-F1 7.62X51mm 4BO/1TRC": {
+  "s": "retirer",
+  "c": ""
+ },
+ "200Rnd MAG 58 7.62X51mm 4BO/1TRC": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "105Rnd 12.7X99 M2HB 2BO/1PEI/1AP/1TRC": {
+  "s": "retirer",
+  "c": ""
+ },
+ "AMF 40mm HE M406": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "AMF HEDP M433": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "Fusée blanche M583A1 40 mm": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "Fusée verte M661 40 mm": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "Fusée rouge M662 40 mm": {
+  "s": "garder",
+  "c": "Grenadier (lance-grenades)"
+ },
+ "Chargeur SCAR-H (7,62 × 51 mm OTAN)": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "100Rnd Minimi BO": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "100Rnd Minimi BO/BT": {
+  "s": "garder",
+  "c": "Mitrailleur"
+ },
+ "200rnd M249 Belt (M855A1)": {
+  "s": "retirer",
+  "c": ""
+ },
+ "30Rnd HK416 BO F5": {
+  "s": "garder",
+  "c": "Fusilier, Grenadier (lance-grenades)"
+ },
+ "30Rnd HK416 BO/BT F5": {
+  "s": "garder",
+  "c": "Fusilier, Grenadier (lance-grenades)"
+ },
+ "30Rnd PMAG BO F5": {
+  "s": "garder",
+  "c": "Fusilier, Grenadier (lance-grenades)"
+ },
+ "30Rnd PMAG BO/BT F5": {
+  "s": "garder",
+  "c": "Fusilier, Grenadier (lance-grenades)"
+ },
+ "30Rnd PMAG BT F5": {
+  "s": "retirer",
+  "c": ""
+ },
+ "30Rnd PMAG TAN BO F5": {
+  "s": "retirer",
+  "c": ""
+ },
+ "30Rnd PMAG TAN BO/BT F5": {
+  "s": "retirer",
+  "c": ""
+ },
+ "30Rnd PMAG BT F5 TAN": {
+  "s": "retirer",
+  "c": ""
+ },
+ "BO 25Rnd FMJ SS109": {
+  "s": "garder",
+  "c": "Fusilier"
+ },
+ "BO/TR 25Rnd FMJ SS109": {
+  "s": "garder",
+  "c": "Fusilier"
+ },
+ "25Rnd BT SS109": {
+  "s": "retirer",
+  "c": ""
+ },
+ "BO 25Rnd FMJ F1": {
+  "s": "garder",
+  "c": "Fusilier"
+ },
+ "BO/TR 25Rnd FMJ F1/F1A": {
+  "s": "garder",
+  "c": "Fusilier"
+ },
+ "25Rnd BT F1A": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Chargeur Glock 9x19 17 cps": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "Chargeur 15 balles M9 9 × 19 mm": {
+  "s": "garder",
+  "c": "Dotation commune"
+ },
+ "9Rnd PA-MAC 50 FMJ": {
+  "s": "garder",
+  "c": "Officiers uniquement"
+ },
+ "10Rnd FRF2 BO M62": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "10Rnd FRF2 AP": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "Chargeur 20 balles M14 7,62 × 51 mm": {
+  "s": "retirer",
+  "c": ""
+ },
+ "7Rnd 12.7X99 PGM Hecate II PEI": {
+  "s": "garder",
+  "c": "Tireur de précision"
+ },
+ "Bande 100 balles M60 antiblindage 7,62 × 51 mm": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Bande 100 balles M60 7,62 × 51 mm": {
+  "s": "retirer",
+  "c": ""
+ },
+ "50Rnd AAN-F1 7.62X51 BO/BT": {
+  "s": "retirer",
+  "c": ""
+ },
+ "50Rnd AAN-F1 7.62X51 BO": {
+  "s": "retirer",
+  "c": ""
+ },
+ "75Rnd AAN-F1 7.62X51 BO/BT": {
+  "s": "retirer",
+  "c": ""
+ },
+ "100Rnd AAN-F1 7.62X51 BO": {
+  "s": "retirer",
+  "c": ""
+ },
+ "Aimpoint CompM PGMP": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Aimpoint Pro Patrol": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Aimpoint Micro T1": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Eotech 512": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Eotech 553": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 PGMP": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 PGMP sans bonette": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 RIS sans bonette": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J4 F1 Minimi F1#2": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Guidon HK-416F": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Guidon Magpul MBUS Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Guidon Magpul MBUS Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Guidon Magpul MBUS Olive": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Oeilleton HK-416F": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Oeilleton Magpul MBUS Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Oeilleton Magpul MBUS Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Oeilleton Magpul MBUS Olive": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Baïonnette Famas": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Famas": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée HK Famas": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Famas Magpul RVG Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Famas Magpul RVG Dark Erath": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Famas Magpul RVG Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée bipied Famas Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée bipied Famas Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée bipied Famas Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée HK Minimi F1": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 Magpul RVG Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 Magpul RVG Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 Magpul RVG Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 poignée bipied Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 poignée bipied Dark Earth#2": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Interface poignée Minimi F1 poignée bipied Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Poignée Vertical": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Poignée Vertical HK": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Poignée Bipied Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Poignée Bipied Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Poignée Bipied Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul RVG Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul RVG Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul RVG Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG 2 Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG 2 Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG 2 Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG Noir": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG Dark Earth": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Magpul AFG Olive Drab": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Cache Flame Famas F1": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Cache Flame Famas G2": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Vortex CF-22": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "RDS Zastava Famas": {
+  "s": "garder",
+  "c": "Libre pour tous"
+ },
+ "Scrome J8 NoCover": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ },
+ "Scrome J10 NoCover": {
+  "s": "garder",
+  "c": "Tireur de précision uniquement (plus de x4)"
+ }
+}

@@ -1,0 +1,40 @@
+GenericEntity : "{0958E6B949501D00}Prefabs/Props/Military/Generators/GeneratorPortable_US_01.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  ActionsManagerComponent "{5298C80DC0D5555E}" {
+   ActionContexts {
+    UserActionContext "{5298C80D3983BD6B}" {
+     Radius 1.5
+    }
+   }
+   additionalActions {
+    SRP_GenerateurStartAction "{6A5B0C0D0E0FE003}" {
+     ParentContextList {
+      "powerswitch"
+     }
+     UIInfo SCR_ActionUIInfo "{6A5B0C0D0E0FE004}" {
+      Name "Démarrer / couper le générateur"
+     }
+     ActionTitle "Démarrer / couper le générateur"
+     VisibilityRange 3
+     Duration 1
+     "Sort Priority" 1
+    }
+    SRP_GenerateurRepairAction "{6A5B0C0D0E0FE005}" {
+     ParentContextList {
+      "powerswitch"
+     }
+     UIInfo SCR_ActionUIInfo "{6A5B0C0D0E0FE006}" {
+      Name "Réparer le générateur"
+     }
+     ActionTitle "Réparer le générateur"
+     VisibilityRange 3
+     Duration 30
+     "Sort Priority" 2
+    }
+   }
+  }
+  SRP_GenerateurEntityComponent "{6A5B0C0D0E0FE007}" {
+  }
+ }
+}

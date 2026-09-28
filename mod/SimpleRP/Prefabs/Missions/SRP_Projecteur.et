@@ -1,0 +1,14 @@
+LightEntity : "{4A83A1AF81A6608F}Prefabs/Vehicles/Core/Lights/VehicleLight_Landing_Base.et" {
+ ID "514ED7499ABC27FE"
+ Color 0.92 0.96 1 1
+ LV 11
+ Radius 400
+ SpotAngle 16
+ SpotAngleAttenuation 0.5
+ DistanceAttenuation 0.05
+ Dynamic 1
+ Visualization Normal
+ VolLightOffset 0.1
+ VolLightScale 1
+ VolLightIntensity 0.35
+}

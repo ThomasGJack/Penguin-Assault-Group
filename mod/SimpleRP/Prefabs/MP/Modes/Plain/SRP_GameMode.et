@@ -1,0 +1,198 @@
+SCR_BaseGameMode : "{0F307326459A1395}Prefabs/MP/Modes/GameMode_Base.et" {
+ ID "56B2B479C6B96951"
+ components {
+  SCR_CommandingManagerComponent "{6A4C88185F92FDEA}" {
+  }
+  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
+   m_bPermitUnconsciousVON 0
+  }
+  SCR_NightModeGameModeComponent "{6A5B0C0D0E0FE001}" {
+   m_bAllowGlobalNightMode 1
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SRP_SpawnLogic "{6A4C88185F92FDCA}" {
+    m_sCharacterPrefab "{C5EABFB67F9B8CB2}Prefabs/Characters/Factions/BLUFOR/AMF_2020s/CCE/Character_FR_CCE_Unarmed.et"
+    m_aKitDeBase {
+     "{9AA80190308C3696}Prefabs/Characters/Vests/Structure_Modilaire_Balistique/Structure_Modulaire_Balistique_GV_FA.et" "{B11BA9F90C3AAFD5}Prefabs/Characters/Backpack/TECPACK/TECPACK45L.et" "{3E90E7B72FA8CB24}Prefabs/Weapons/Rifles/HK416F/HK416F-S.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et" "{E6B5E2E8BE30E6D3}Prefabs/Weapons/Magazines/STANAG/Magazine_556x45_SS109_HK_30rnd_BO_F5.et"
+    }
+   }
+  }
+  SRP_AdminComponent "{6A4EFD3480A3ABBC}" {
+  }
+  SRP_ArsenalEconomyComponent "{6A4D20EADEBB0616}" {
+  }
+  SRP_BrecheComponent "{6A5B0C0D0E0FF001}" {
+   m_bDiag 0
+  }
+  SRP_SireneComponent "{6A5B0C0D0E0FF002}" {
+  }
+  SRP_BridgeComponent "{6A5B0C0D0E0F7002}" {
+   Enabled 0
+  }
+  SRP_BridgeComponent "{6A5D01CE22CA6A7E}" {
+  }
+  SRP_CharteComponent "{6A5AE7EC205C07A5}" {
+  }
+  SRP_CivilianManagerComponent "{6A4E9283CC0FF41F}" {
+   m_aCharacterPrefabs {
+    "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et" "{E024A74F8A4BC644}Prefabs/Characters/Factions/CIV/Businessman/Character_CIV_Businessman_1.et" "{A517C72CEF150898}Prefabs/Characters/Factions/CIV/Businessman/Character_CIV_Businessman_2.et" "{626874113CAE4387}Prefabs/Characters/Factions/CIV/Businessman/Character_CIV_Businessman_3.et" "{B3AB6D12D247DDB5}Prefabs/Characters/Factions/CIV/Businessman/Character_CIV_Businessman_Randomized.et" "{6F5A71376479B353}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_1.et" "{C97B985FCFC3E4D6}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_2.et" "{2CE7D4A6C32673BD}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_3.et" "{11D3F19EB64AFA8A}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_4.et" "{F44FBD67BAAF6DE1}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_5.et" "{D97EAE64721478F3}Prefabs/Characters/Factions/CIV/ConstructionWorker/Character_CIV_ConstructionWorker_Randomized.et" "{8C7093AF368F496A}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_1.et" "{DF7F8D5C05CC1AF6}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_2.et" "{408B8BD5E3F09FF3}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_3.et" "{035F8F1CEF3B187F}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_4.et" "{E6C3C3E5E3DE8F14}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_5.et" "{8A97F7055F1A003A}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_6.et" "{11EB9A0D2A5899EA}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_1.et" "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_2.et" "{C6FAF52907A544AC}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_1.et" "{2CDFBF355F3410DD}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_2.et" "{2366B9D00B40D3C7}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_3.et" "{472F2B06FF9BF37D}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_4.et" "{A2B367FFF37E6416}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_5.et" "{CEE7531F4FBAEB38}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_6.et" "{5882AE7A4543AFB4}Prefabs/Characters/Factions/CIV/Dockworker/Character_CIV_Dockworker_Randomized.et" "{C943F3CC53D187B6}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Turtleneck_1.et" "{1FFE2B88BEF51840}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Turtleneck_2.et" "{3A2FBAD5B929AC4B}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Turtleneck_3.et"
+   }
+   m_aVehiclePrefabs {
+    "{57A441224AC02CF3}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_Randomized.et" "{1B0D46B41C50873D}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_uncovered_CIV_Randomized.et" "{767D49C35F87DC1A}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_cargo_CIV_randomized.et" "{C7CE8044B5E301F5}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_transport_CIV_randomized.et" "{5729759DD092B0F7}Prefabs/Vehicles/Wheeled/S1203/S1203_cargo_randomized.et" "{49C909AFD66E90A1}Prefabs/Vehicles/Wheeled/S1203/S1203_transport_randomized.et" "{128253A267BE9424}Prefabs/Vehicles/Wheeled/S105/S105_randomized.et" "{DCAF0585D17B917A}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_tanker_CIV_randomized.et" "{EEAC3A94929A2B55}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_CIV_randomized.et"
+   }
+   m_sZonePrefab "{465A7AFA953FE5DE}Prefabs/Props/Fabric/Flags/SRP_ZoneCivile.et"
+   m_CityPreset SRP_CivPreset "{6A4E97ADD5570D09}" {
+    m_fRadius 250
+    m_iWalkers 10
+    m_iParked 5
+    m_iDrivers 2
+   }
+   m_TownPreset SRP_CivPreset "{6A4E97ADD49A97D9}" {
+    m_fRadius 2000
+    m_iWalkers 10
+    m_iPosts 5
+    m_iDrivers 2
+   }
+   m_VillagePreset SRP_CivPreset "{6A4E97ADD7B52513}" {
+    m_fRadius 2000
+    m_iWalkers 10
+    m_iPosts 5
+    m_iDrivers 2
+   }
+   m_SettlementPreset SRP_CivPreset "{6A4E97ADD7EAC9D7}" {
+    m_fRadius 2000
+    m_iWalkers 10
+   }
+   m_iTickSeconds 1
+   m_iSpawnsPerTick 1
+  }
+  SRP_DayNightComponent "{6A5B34B507A93CD9}" {
+   m_fRealHoursPerDay 3
+  }
+  SRP_DeliveryComponent "{6A4EFD3312103565}" {
+   m_fEnemyChance 10
+  }
+  SRP_DisconnectComponent "{6A5D01CE058D7B60}" {
+   m_bStaffExempt 0
+  }
+  SRP_DiscordComponent "{6A5B0C0D0E0F7001}" {
+   Enabled 0
+   m_bEnabled 0
+  }
+  SRP_DiscordComponent "{6A5B54A6309F31DC}" {
+   Enabled 1
+  }
+  SRP_EnemyComponent "{6A5B06898DE96EFF}" {
+   m_aGroupPrefabs {
+    "{BE031B9F579DA1FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_AmmoTeam.et" "{0ACD74AD27EEEE7D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_FireGroup.et" "{F40CDA3D5A7B1CDF}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_LightFireTeam.et" "{60E2D587BE5A9B43}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MachineGunTeam.et" "{A906B4565ED3BAFC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_ManeuverGroup.et" "{1A00EE432E398461}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MedicalSection.et" "{BA8CA45F6B252004}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_PlatoonHQ.et" "{823A051BD29CAAAE}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RadioReconTeam.et" "{7A82440DCA7B9056}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_ReconTeam.et" "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et" "{56FD583BBC989204}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_SentryTeam.et" "{0A8A59C10F0B2D8B}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_AT.et" "{DFF74E2181355AFD}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_GL.et" "{D30C5912E5B492C4}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_LAT.et" "{6670E1CEEA776B6F}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_Suppress.et"
+   }
+   m_sDefendWaypointPrefab "{FAD1D789EE291964}Prefabs/AI/Waypoints/AIWaypoint_Defend_Large.et"
+   m_sFactionKey "AFRF"
+   m_iMaxGroups 36
+   m_sCommandGroupPrefab "{BA8CA45F6B252004}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_PlatoonHQ.et"
+   m_aSectionPrefabs {
+    "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et" "{0ACD74AD27EEEE7D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_FireGroup.et" "{F40CDA3D5A7B1CDF}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_LightFireTeam.et" "{0A8A59C10F0B2D8B}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_AT.et" "{D30C5912E5B492C4}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_LAT.et" "{DFF74E2181355AFD}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_GL.et" "{6670E1CEEA776B6F}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_Suppress.et"
+   }
+   m_aSentryPrefabs {
+    "{56FD583BBC989204}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_SentryTeam.et" "{60E2D587BE5A9B43}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MachineGunTeam.et" "{7A82440DCA7B9056}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_ReconTeam.et"
+   }
+   m_iPlayersPerExtraGroup 1
+   m_fAmbientChance 5
+   m_iAmbientMax 20
+   m_iAmbientLifetimeMinutes 60
+   m_fCRXHoldRadius 100
+  }
+  SRP_EnemyTruckComponent "{6A5B0C0D0E0FF003}" {
+  }
+  SRP_FleetManagerComponent "{6A4D45230CD02986}" {
+   m_aFlotte {
+    SRP_FleetEntry "{6A4D452303650370}" {
+     m_sName "VBL AANF1"
+     m_sPrefab "{338B56912EB63330}Prefabs/Vehicles/Land_Vehicles/Wheeled_Vehicles/VBL/VBL_Unarmed_AANF1_CCE.et"
+     m_iCategory LEGER
+    }
+    SRP_FleetEntry "{6A4D45232142A60B}" {
+     m_sName "VBL tourelleau AANF1"
+     m_sPrefab "{49B154E85296FAD8}Prefabs/Vehicles/Land_Vehicles/Wheeled_Vehicles/VBL/VBL_Armed_AANF1_CE.et"
+     m_iCategory LEGER
+    }
+    SRP_FleetEntry "{6A4D4523691D301D}" {
+     m_sName "GBC 180 MK1 transport"
+     m_sPrefab "{8F3B12DC23DF2E70}Prefabs/Vehicles/Land_Vehicles/Wheeled_Vehicles/GBC180/CCE/GBC180_CCE_MK1_Transport.et"
+     m_iCategory LOURD
+    }
+    SRP_FleetEntry "{6A4D452399D76F7E}" {
+     m_sName "GBC 180 MK2 transport"
+     m_sPrefab "{A5019E4548F81453}Prefabs/Vehicles/Land_Vehicles/Wheeled_Vehicles/GBC180/CCE/GBC180_CCE_MK2_Transport.et"
+     m_iCategory LOURD
+    }
+    SRP_FleetEntry "{6A4D45238A1D1CD6}" {
+     m_sName "VBMR Griffon VTT"
+     m_sPrefab "{0BBC303A84D87434}Prefabs/Vehicles/Land_Vehicles/Wheeled_Vehicles/VBMR/VBMR_VTT_CE.et"
+     m_iCategory BLINDE
+    }
+   }
+   m_fBaseRadius 1000
+   m_iOrderDelaySeconds 60
+  }
+  SRP_FrontComponent "{6A5B0C0D0E0FF010}" {
+   m_sCPPrefab "{6A5B0C0D0E0F7A03}Prefabs/Props/SRP_PosteCommandement.et"
+   m_sColoursPrefab "{6A5B0C0D0E0F7A04}Prefabs/Props/SRP_MatCouleurs.et"
+  }
+  SRP_FrontEnemyComponent "{6A5B0C0D0E0FF004}" {
+  }
+  SRP_GenerateurComponent "{6A5B0C0D0E0FE002}" {
+  }
+  SRP_JournalComponent "{6A4C92769CE20508}" {
+  }
+  SRP_MissionManagerComponent "{6A554304FDF873CC}" {
+   m_sCachePrefab "{361B78F0EC88F339}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SRP_Cache.et"
+   m_aVehiclePrefabs {
+    "{16E32C3ABEAFC2C6}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_transport.et" "{E28501E93F8EFDC0}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_FIA_uncovered.et" "{F7E9AA0C813EABDA}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_FIA.et" "{F0EC3EFF70B174B0}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_ambulance_FIA.et" "{5F5AAFE8465D9D62}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_cargo_FIA.et" "{B47110AA1A806556}Prefabs/Vehicles/Wheeled/BTR70/BTR70_FIA.et" "{6C9E196676394DE2}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_transport_covered_closed.et" "{DC1C2350CF665F9E}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_tanker.et"
+   }
+   m_aConvoyVehiclePrefabs {
+    "{16C1F16C9B053801}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport.et" "{D9B91FAB817A6033}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered.et" "{3336BE330C4F355B}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ammo.et" "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et"
+   }
+   m_sObservationPostPrefab "{6A5B0C0D0E0F8001}Prefabs/Missions/SRP_Poste.et"
+   m_aSabotageTargetPrefabs {
+    "{6A5B0C0D0E0F8002}Prefabs/Missions/SRP_Cible_Mortier.et" "{6A5B0C0D0E0F8003}Prefabs/Missions/SRP_Cible_AA.et" "{6A5B0C0D0E0F8004}Prefabs/Missions/SRP_Cible_Radar.et" "{6A5B0C0D0E0FB011}Prefabs/Missions/SRP_Cible_Mortier120.et" "{6A5B0C0D0E0FB012}Prefabs/Missions/SRP_Cible_Antichar.et" "{6A5B0C0D0E0FB013}Prefabs/Missions/SRP_Cible_RadarMobile.et" "{6A5B0C0D0E0FB014}Prefabs/Missions/SRP_Cible_Transmissions.et" "{6A5B0C0D0E0FB015}Prefabs/Missions/SRP_Cible_Generateur.et"
+   }
+   m_aOfficerPrefabs {
+    "{124C018E4FE2DE7B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Officer.et" "{124C018E4FE2DE7B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Officer.et" "{124C018E4FE2DE7B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Officer.et"
+   }
+   m_aMinePrefabs {
+    "{D6EF54367CECE1D9}Prefabs/Weapons/Explosives/Mine_TM62M/Mine_TM62M.et" "{B05A816C0BF50802}Prefabs/Weapons/Explosives/Mine_PMN4/Mine_PMN4.et" "{E4C9F0A4090CFE4D}Prefabs/Weapons/Explosives/Mine_M14/Mine_M14.et"
+   }
+   m_sWreckPrefab "{38E750A0E7C3B350}Prefabs/Props/Wrecks/Mi8MT_wreck/Mi8MT_wreck.et"
+   m_sBriefcasePrefab "{6A5B0C0D0E0F8005}Prefabs/Missions/SRP_Mallette.et"
+   m_sAntennaPrefab "{5B8922E61D8DF345}Prefabs/Props/Military/Antennas/Antenna_R161_01.et"
+   m_bAutoCountMissions 1
+  }
+  SRP_PlayerManagerComponent "{6A4C9276993F91AA}" {
+   m_aStaffIdentities {
+   }
+   m_iAutosaveInterval 120
+  }
+  SRP_ResourceManagerComponent "{6A4C991530CD1981}" {
+   m_sPacketMunitions "{040C5389BC517770}Prefabs/Paquets/SRP_Paquet_Munitions.et"
+   m_sPacketCarburant "{1ECDD1BEC9F53053}Prefabs/Paquets/SRP_Paquet_Carburant.et"
+   m_sPacketPieces "{8CC6BE023A960518}Prefabs/Paquets/SRP_Paquet_Pieces.et"
+   m_sPacketVivres "{F5F3DC8B9AB337AB}Prefabs/Paquets/SRP_Paquet_Vivres.et"
+   m_sBoxPrefab "{F2472F23B6D9381A}Prefabs/Paquets/SRP_CaisseLivraison.et"
+  }
+  SRP_TerritoryComponent "{6A5B068C2E0AB2B2}" {
+  }
+  SRP_TreasuryComponent "{6A4E86693104A417}" {
+   m_iInitialBalance 10000
+   m_sCataloguePath "{2B8E2FD0B331A4FE}Configs/SRP_Catalogue.conf"
+   m_iDeliveryDelaySeconds 60
+   m_sMoneyPrefab "{9170D00A20F86DB9}Prefabs/Props/Banque/SRP_Sacoche.et"
+   m_sEnemyFactions "USSR,FIA,AFRF"
+  }
+ }
+ coords 7557.208 166.831 4335.211
+ m_bUseSpawnPreload 0
+ m_aDisabledResourceTypes {
+  SUPPLIES
+ }
+}

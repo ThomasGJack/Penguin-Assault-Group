@@ -1,0 +1,23 @@
+GameEntity : "{0B201E22AD2DFA7F}Prefabs/Items/Equipment/Accessories/ClothAttachment_Base.et" {
+ ID "5DB09136945FC6DB"
+ components {
+  FOF_PonosCameraRigComponent "{E819479EE929009F}" {
+   m_fCameraFOV 95
+   m_fFarPlane 350
+  }
+  FOF_PonosFeedComponent "{CEA0E035DD7ED6CB}" {
+   m_sFeedName "PAG-CAM"
+  }
+  InventoryItemComponent "{5DB09136B1C985CE}" {
+   Attributes SCR_ItemAttributeCollection "{5DB09136B1C985C1}" {
+    ItemDisplayName SCR_ItemHintUIInfo "{5DB09136B1C985EB}" {
+     Name "Caméra de casque"
+     Description "Caméra de casque de la PAG : diffuse son image en direct sur les écrans du PC de la base. Se fixe sur le dessus du casque, s'allume depuis le menu radial."
+    }
+   }
+  }
+  RHS_SGC_RadialMenuComponent "{5DB09136B1C985AD}" {
+   m_sDisplayName "Caméra de casque"
+  }
+ }
+}

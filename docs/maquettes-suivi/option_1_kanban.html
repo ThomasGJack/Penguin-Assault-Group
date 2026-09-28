@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Suivi du développement</title>
+<meta name="description" content="Tableau de suivi du développement du mod de la PAG : idées, chantier, essais et historique des mises à jour.">
+<!-- Police de secours pour les appareils sans Bahnschrift (Android, Linux) ; Windows garde Bahnschrift comme le reste du site -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ Maquette 1 : « Kanban tactique » ============ */
+  :root {
+    --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227;
+    --idee: #9b8cff; --a_faire: #4da3ff; --a_developper: #37c2c2; --en_cours: #ffb020; --a_tester: #ff7a59; --termine: #3ddc84;
+    --clair: #b4c1cc; --fond-2: #0e151c; --rouge: #ff5d5d;
+    --haut: 60px; /* hauteur de la barre du haut, sert aux en-têtes de colonnes collants */
+    --police-titre: Bahnschrift, "DIN Alternate", "Barlow Semi Condensed", "Segoe UI", system-ui, sans-serif;
+    --police-mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  * { scrollbar-color: #2b3a47 var(--fond); scrollbar-width: thin; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh; overflow-x: clip; color: var(--texte); font: 15px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    background-color: var(--fond);
+    background-image:
+      radial-gradient(900px 360px at 10% -140px, #c9a22716, transparent 70%),
+      linear-gradient(#ffffff05 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+    background-size: auto, 48px 48px, 48px 48px;
+  }
+  body.fige { overflow: hidden; }
+  a { color: inherit; }
+  button { font: inherit; }
+  .conteneur { max-width: 1760px; margin: 0 auto; padding: 0 24px; }
+  .or { color: var(--or); }
+
+  /* ---------- barre du haut ---------- */
+  .barre { position: sticky; top: 0; z-index: 30; height: var(--haut); display: flex; align-items: center; gap: 14px; padding: 0 24px;
+           background: #0c1116ed; border-bottom: 1px solid var(--bord); backdrop-filter: blur(8px); }
+  .marque { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+  .marque svg { flex: none; }
+  .marque b { font: 700 17px/1 var(--police-titre); letter-spacing: .14em; }
+  .marque i { width: 1px; height: 18px; background: var(--bord); flex: none; }
+  .marque span { font: 600 13px/1.6 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--discret); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .barre nav { margin-left: auto; display: flex; gap: 8px; }
+  .barre nav a { text-decoration: none; border: 1px solid var(--bord); background: #0c1116aa; border-radius: 999px; padding: 5px 14px; font-size: 13px; white-space: nowrap; transition: border-color .15s, color .15s; }
+  .barre nav a:hover, .barre nav a:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+
+  /* ---------- introduction ---------- */
+  .intro { padding: 34px 0 20px; display: grid; grid-template-columns: 1fr auto; gap: 14px 32px; align-items: end; }
+  .surtitre { margin: 0 0 10px; font: 600 12px/1.45 var(--police-titre); letter-spacing: .24em; text-transform: uppercase; color: var(--or); }
+  h1 { margin: 0; font: 700 clamp(26px, 3.4vw, 40px)/1.05 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; }
+  .chapeau { margin: 10px 0 0; color: var(--clair); max-width: 680px; }
+  .resume { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 13.5px; color: var(--discret); }
+  .resume span + span:before { content: "·"; margin: 0 10px; color: #3a4a58; }
+  .resume b { color: var(--texte); font-weight: 600; }
+  .releve { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--bord); background: #0c1116cc; border-radius: 999px; padding: 7px 15px; font-size: 13px; color: var(--clair); white-space: nowrap; }
+  .releve i { width: 8px; height: 8px; border-radius: 50%; background: var(--or); flex: none; }
+  .releve.direct i { background: var(--termine); animation: pouls 2s infinite; }
+  .releve.panne i { background: var(--rouge); }
+  @keyframes pouls { 0% { box-shadow: 0 0 0 0 #3ddc8499; } 100% { box-shadow: 0 0 0 9px #3ddc8400; } }
+
+  /* ---------- poste de commande : répartition, filtres, recherche ---------- */
+  .poste { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 14px 16px; display: grid; gap: 12px; }
+  .poste-titre { display: flex; justify-content: space-between; gap: 12px; font-size: 12.5px; color: var(--discret); }
+  .poste-titre b { font: 700 12px/1.3 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--clair); }
+  .repartition { display: flex; gap: 2px; height: 8px; border-radius: 99px; overflow: hidden; background: var(--fond-2); }
+  .repartition i { flex: 0 1 0; min-width: 4px; background: var(--c); transition: flex-grow .4s ease-out; }
+  .puces { display: flex; flex-wrap: wrap; gap: 8px; }
+  .puce { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord);
+          border-radius: 999px; padding: 4px 5px 4px 11px; cursor: pointer; transition: border-color .15s, opacity .15s; }
+  .puce:before { content: ""; width: 9px; height: 9px; border-radius: 3px; background: var(--c); flex: none; }
+  .puce b { min-width: 26px; text-align: center; font: 700 12px/20px var(--police-mono); border-radius: 99px; padding: 0 7px; background: color-mix(in srgb, var(--c) 20%, transparent); color: var(--c); }
+  .puce:hover { border-color: var(--c); }
+  .puce:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .puce[aria-pressed="false"] { opacity: .55; }
+  .puce[aria-pressed="false"]:before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--c); }
+  .puce[aria-pressed="false"] span { text-decoration: line-through; }
+  .separateur { height: 1px; background: var(--bord); margin: 2px 0; }
+  .outils { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .champ { position: relative; flex: 1 1 280px; max-width: 480px; }
+  .champ svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--discret); pointer-events: none; }
+  .champ input { width: 100%; font: inherit; font-size: 14.5px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 9px; padding: 9px 40px 9px 38px; outline: none; transition: border-color .15s, box-shadow .15s; }
+  .champ input::placeholder { color: #6c7c8a; }
+  .champ input:focus { border-color: var(--or); box-shadow: 0 0 0 3px #c9a22726; }
+  .champ kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font: 600 11px/1 var(--police-mono); color: var(--discret); border: 1px solid var(--bord); border-bottom-width: 2px; border-radius: 4px; padding: 3px 6px; pointer-events: none; }
+  .champ input:not(:placeholder-shown) ~ kbd, .champ input:focus ~ kbd { display: none; }
+  .bascule { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--clair); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 14px; cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+  .bascule b { font: 700 12px/1 var(--police-mono); color: var(--or); }
+  .bascule:hover { border-color: var(--or); }
+  .bascule:focus-visible, .tri select:focus-visible, .lien-bouton:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .bascule[aria-pressed="true"] { color: #15120a; background: var(--or); border-color: var(--or); }
+  .bascule[aria-pressed="true"] b { color: #15120a; }
+  .tri { position: relative; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--discret); }
+  .tri select { font: inherit; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 32px 7px 14px; appearance: none; -webkit-appearance: none; cursor: pointer; }
+  .tri svg { position: absolute; right: 12px; pointer-events: none; color: var(--discret); }
+  .lien-bouton { background: none; border: 0; padding: 4px 2px; color: var(--or); font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .compte { margin-left: auto; font-size: 13px; color: var(--discret); }
+  .archives { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13px; color: var(--discret); }
+  .archives a { text-decoration: none; border: 1px dashed #3a4a58; border-radius: 6px; padding: 3px 9px; color: var(--clair); max-width: 100%; overflow-wrap: anywhere; }
+  .archives a:hover, .archives a:focus-visible { border-color: var(--or); color: var(--texte); outline: none; }
+  .archives a b { color: var(--or); font-weight: 600; margin-right: 4px; }
+
+  /* ---------- onglets (téléphone) ---------- */
+  .onglets { display: none; }
+  .onglet { flex: none; display: inline-flex; align-items: center; gap: 8px; font: 600 13px/1 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; color: var(--discret);
+            background: transparent; border: 1px solid var(--bord); border-radius: 8px; padding: 9px 10px 9px 12px; cursor: pointer; position: relative; }
+  .onglet b { font: 700 12px/18px var(--police-mono); letter-spacing: 0; padding: 0 6px; border-radius: 99px; background: color-mix(in srgb, var(--c) 22%, transparent); color: var(--c); }
+  .onglet[aria-selected="true"] { color: var(--texte); border-color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--panneau)); box-shadow: inset 0 -3px 0 var(--c); }
+  .onglet.touche:after { content: ""; position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--or); box-shadow: 0 0 0 2px var(--fond); }
+  .onglet:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+
+  /* ---------- tableau ---------- */
+  .zone-tableau { margin-top: 16px; }
+  .tableau { display: grid; gap: 12px; align-items: stretch; }
+  .colonne { --c: var(--discret); position: relative; min-width: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #121a22, #0f161d); border: 1px solid var(--bord); border-radius: 10px; }
+  .col-tete { position: sticky; top: var(--haut); z-index: 5; padding: 12px 12px 10px; background: #121a22f7; border-bottom: 1px solid var(--bord); border-radius: 10px 10px 0 0;
+              box-shadow: inset 0 3px 0 var(--c), 0 8px 14px -12px #000; backdrop-filter: blur(6px); }
+  .col-ligne { display: flex; align-items: center; gap: 8px; }
+  .col-num { font: 600 11px/1 var(--police-mono); color: var(--discret); }
+  .col-nom { margin: 0; flex: 1; min-width: 0; font: 700 14px/1.5 var(--police-titre); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .col-compte { font: 700 12px/20px var(--police-mono); padding: 0 8px; border-radius: 99px; background: color-mix(in srgb, var(--c) 20%, transparent); color: var(--c); white-space: nowrap; }
+  .col-compte small { font-size: 11px; opacity: .75; }
+  .col-legende { margin-top: 5px; font-size: 12px; color: var(--discret); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .col-plier { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 7px; border: 1px solid var(--bord); background: transparent; color: var(--discret); cursor: pointer; }
+  .col-plier:hover, .col-plier:focus-visible { color: var(--c); border-color: var(--c); outline: none; }
+  .col-corps { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .vide { border: 1px dashed #2c3a47; border-radius: 8px; padding: 16px 10px; text-align: center; color: var(--discret); font-size: 12.5px; }
+  .vide button { margin-top: 6px; }
+
+  /* colonne Idée repliée */
+  .colonne.repliee { cursor: pointer; transition: border-color .15s, background .15s; }
+  .colonne.repliee:hover { border-color: color-mix(in srgb, var(--c) 60%, var(--bord)); background: color-mix(in srgb, var(--c) 7%, var(--panneau)); }
+  .rail { flex: 1; min-height: 320px; border-radius: 10px; box-shadow: inset 0 3px 0 var(--c); outline: none; }
+  .rail:focus-visible { box-shadow: inset 0 3px 0 var(--c), 0 0 0 2px var(--or); }
+  .rail-interne { position: sticky; top: calc(var(--haut) + 10px); display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 14px 0; }
+  .rail-icone { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; border: 1px solid var(--bord); color: var(--c); }
+  .rail .col-compte { padding: 0 6px; }
+  .rail .vertical { writing-mode: vertical-rl; transform: rotate(180deg); font: 700 14px/1 var(--police-titre); letter-spacing: .2em; text-transform: uppercase; }
+  .rail .vertical.petit { font: 500 12px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .02em; text-transform: none; color: var(--discret); }
+
+  /* cartes */
+  .fiche { --c: var(--discret); display: block; text-decoration: none; color: inherit; background: var(--carte); border: 1px solid var(--bord); border-left: 3px solid var(--c); border-radius: 8px;
+           padding: 10px 11px 9px; transition: border-color .15s, transform .15s, box-shadow .15s, background .15s; }
+  .fiche:hover { border-color: color-mix(in srgb, var(--c) 55%, var(--bord)); border-left-color: var(--c); background: #1b2733; transform: translateY(-1px); box-shadow: 0 12px 24px -14px #000; }
+  .fiche:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .fiche-haut { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .num { font: 600 11.5px/1 var(--police-mono); color: var(--discret); }
+  .badge { font: 700 10px/1 var(--police-titre); letter-spacing: .1em; text-transform: uppercase; padding: 3px 6px 2px; border-radius: 4px; white-space: nowrap; }
+  .badge.nouveau { background: var(--or); color: #15120a; }
+  .badge.maj { color: var(--or); box-shadow: inset 0 0 0 1px #c9a227a6; }
+  .fiche .titre { margin-top: 5px; font-size: 14px; font-weight: 600; line-height: 1.35; color: #e6edf3; overflow-wrap: anywhere; }
+  .extrait { margin: 5px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--discret); overflow-wrap: anywhere;
+             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .progression { display: flex; align-items: center; gap: 8px; margin-top: 9px; }
+  .jauge { display: block; flex: 1; height: 4px; border-radius: 99px; background: var(--fond-2); overflow: hidden; }
+  .jauge i { display: block; height: 100%; border-radius: 99px; background: var(--c); transition: width .5s ease-out; }
+  .progression > span:last-child { font: 600 11.5px/1 var(--police-mono); color: var(--clair); }
+  .progression.complet .jauge i { background: var(--termine); }
+  .progression.complet > span:last-child { color: var(--termine); }
+  .fiche-bas { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 11.5px; color: var(--discret); }
+  .fiche-bas .ouvrir { color: var(--c); opacity: 0; transition: opacity .15s; white-space: nowrap; }
+  .fiche:hover .ouvrir, .fiche:focus-visible .ouvrir { opacity: 1; }
+  @media (hover: none) { .fiche-bas .ouvrir { opacity: 1; } }
+  mark { background: #c9a22747; color: #fff; border-radius: 2px; padding: 0 1px; box-shadow: 0 1px 0 var(--or); }
+  .tableau.premier .fiche { animation: arrivee .35s ease-out both; animation-delay: calc(var(--i, 0) * 28ms); }
+  .fiche.flash { animation: flash 1.8s ease-out; }
+  @keyframes arrivee { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes flash { from { box-shadow: 0 0 0 2px var(--or), 0 0 26px -4px var(--or); } }
+
+  /* ---------- historique : frise ---------- */
+  .historique { margin-top: 56px; scroll-margin-top: calc(var(--haut) + 16px); }
+  .h-tete { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 14px; }
+  .historique h2 { margin: 0; font: 700 22px/1.1 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; }
+  .h-chapeau { margin: 6px 0 0; color: var(--discret); font-size: 14px; }
+  .frise-cadre { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 14px 8px 8px; overflow-x: auto; }
+  .frise { display: flex; min-width: max-content; }
+  .jalon { position: relative; flex: 1 0 150px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 4px 8px 10px; background: none; border: 0; border-radius: 8px; color: inherit; text-align: center; cursor: pointer; }
+  .jalon:before { content: ""; position: absolute; top: 12px; left: 0; right: 0; height: 2px; background: #2f3e4b; }
+  .jalon:first-child:before { left: 50%; }
+  .jalon:last-child:before { right: 50%; }
+  .jalon:only-child:before { display: none; }
+  .jalon.avenir:before { background: repeating-linear-gradient(90deg, #3ddc84aa 0 6px, transparent 6px 12px); }
+  .jalon .point { position: relative; z-index: 1; width: 18px; height: 18px; border-radius: 50%; background: var(--fond); border: 2px solid var(--or); margin-bottom: 6px; transition: transform .2s, box-shadow .2s, background .2s; }
+  .jalon .v { font: 700 17px/1.1 var(--police-titre); letter-spacing: .06em; color: var(--or); }
+  .jalon .d { font-size: 12.5px; color: var(--discret); }
+  .jalon .n { font-size: 12px; color: var(--clair); }
+  .jalon:hover .point { transform: scale(1.12); }
+  .jalon:focus-visible { outline: 2px solid var(--or); outline-offset: -2px; }
+  .jalon[aria-pressed="true"] { background: #c9a2270f; }
+  .jalon[aria-pressed="true"] .point { background: var(--or); box-shadow: 0 0 0 5px #c9a22733; }
+  .jalon.avenir .point { border-style: dashed; border-color: var(--termine); }
+  .jalon.avenir .v { color: var(--termine); }
+  .jalon.avenir[aria-pressed="true"] { background: #3ddc840d; }
+  .jalon.avenir[aria-pressed="true"] .point { background: var(--termine); border-style: solid; box-shadow: 0 0 0 5px #3ddc8433; }
+
+  .version { --c: var(--or); margin-top: 14px; background: var(--panneau); border: 1px solid var(--bord); border-left: 3px solid var(--c); border-radius: 12px; padding: 18px 20px 20px; animation: arrivee .3s ease-out; }
+  .version.avenir { --c: var(--termine); }
+  .v-tete { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .v-nom { margin: 0; font: 700 26px/1.1 var(--police-titre); letter-spacing: .04em; color: var(--c); }
+  .v-date { color: var(--discret); font-size: 13.5px; }
+  .v-nb { font: 700 12px/20px var(--police-mono); padding: 0 8px; border-radius: 99px; background: color-mix(in srgb, var(--c) 18%, transparent); color: var(--c); }
+  .v-notes { max-width: 880px; }
+  .v-notes p { margin: 10px 0 0; color: var(--clair); overflow-wrap: anywhere; }
+  .v-notes b { color: var(--texte); font-weight: 600; }
+  .v-notes a { color: var(--or); }
+  .v-sous { margin: 20px 0 8px; font: 700 12px/1.2 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--discret); }
+  .v-cartes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 8px; }
+  .v-cartes a { display: flex; align-items: baseline; gap: 10px; height: 100%; text-decoration: none; background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: 9px 12px; transition: border-color .15s, background .15s; }
+  .v-cartes a:hover, .v-cartes a:focus-visible { border-color: color-mix(in srgb, var(--c) 60%, var(--bord)); background: #1b2733; outline: none; }
+  .v-titre { flex: 1; min-width: 0; font-size: 14px; overflow-wrap: anywhere; }
+  .v-plus { color: var(--c); }
+
+  footer { margin-top: 56px; border-top: 1px solid var(--bord); color: #6c7c8a; font-size: 12.5px; padding: 22px 0 30px; text-align: center; }
+  footer code { font-family: var(--police-mono); color: var(--clair); }
+
+  /* ---------- tiroir de détail ---------- */
+  .voile { position: fixed; inset: 0; z-index: 40; background: #05080bb8; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .voile.ouvert { opacity: 1; pointer-events: auto; }
+  .tiroir { --c: var(--or); position: fixed; z-index: 41; top: 0; right: 0; bottom: 0; width: min(640px, 100%); display: flex; flex-direction: column; background: var(--panneau);
+            border-left: 1px solid var(--bord); box-shadow: -30px 0 60px -24px #000; transform: translateX(104%); visibility: hidden;
+            transition: transform .3s cubic-bezier(.2, .8, .2, 1), visibility 0s linear .3s; outline: none; }
+  .tiroir.ouvert { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.2, .8, .2, 1), visibility 0s; }
+  .t-tete { padding: 18px 22px 16px; border-bottom: 1px solid var(--bord); box-shadow: inset 0 4px 0 var(--c); background: linear-gradient(180deg, color-mix(in srgb, var(--c) 9%, var(--panneau)), var(--panneau)); }
+  .t-ligne { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .t-phase { font: 700 11.5px/1 var(--police-titre); letter-spacing: .12em; text-transform: uppercase; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 60%, transparent); border-radius: 4px; padding: 4px 7px 3px; }
+  .t-fermer { margin-left: auto; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 9px; border: 1px solid var(--bord); background: var(--fond-2); color: var(--texte); cursor: pointer; }
+  .t-fermer:hover, .t-fermer:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+  #t-titre { margin: 12px 0 6px; font-size: 22px; line-height: 1.25; font-weight: 650; overflow-wrap: anywhere; }
+  .t-meta { font-size: 13px; color: var(--discret); }
+  .t-corps { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 18px 22px 30px; }
+  .t-bloc { background: var(--fond-2); border: 1px solid var(--bord); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+  .t-etapes { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+  .t-etapes i { height: 6px; border-radius: 2px; background: #22303c; }
+  .t-etapes i.passe { background: #3d4d5b; }
+  .t-etapes i.ici { background: var(--c); box-shadow: 0 0 12px -2px var(--c); }
+  .t-etapes i.publie { background: var(--or); }
+  .t-etiquettes { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 6px; }
+  .t-etiquettes span { font: 600 10.5px/1.2 var(--police-titre); letter-spacing: .06em; text-transform: uppercase; color: #5f707e; overflow-wrap: anywhere; }
+  .t-etiquettes span.ici { color: var(--c); }
+  .t-etape-texte { margin: 9px 0 0; font-size: 13px; color: var(--discret); }
+  .t-etape-texte b { color: var(--texte); font-weight: 600; }
+  .t-av-haut { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; font-size: 13px; color: var(--discret); }
+  .t-av-haut b { font: 700 14px/1 var(--police-mono); color: var(--texte); }
+  .t-bloc .jauge { height: 6px; background: #22303c; }   /* piste visible : le bloc a déjà le fond --fond-2 */
+  .t-bloc.complet .jauge i { background: var(--termine); }
+  .t-bloc.complet .t-av-haut b { color: var(--termine); }
+  .t-pied { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--bord); background: #0f161d; }
+  .t-pied button { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+  .t-pied button:hover:not(:disabled), .t-pied button:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+  .t-pied button:disabled { opacity: .4; cursor: default; }
+  #t-position { margin-right: auto; font-size: 12.5px; color: var(--discret); }
+
+  /* mise en forme du détail : « # Titre », « - puce », « [ ] à faire », « [x] fait » */
+  .detail { font-size: 14.5px; line-height: 1.62; color: #c3ced8; overflow-wrap: anywhere; }
+  .detail p { margin: 0 0 10px; }
+  .detail h4 { display: flex; align-items: center; gap: 10px; margin: 22px 0 8px; font: 700 12.5px/1.25 var(--police-titre); letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
+  .detail h4:after { content: ""; flex: 1; height: 1px; background: var(--bord); }
+  .detail > h4:first-child { margin-top: 4px; }
+  .detail ul { margin: 0 0 12px; padding-left: 20px; }
+  .detail li { margin: 4px 0; padding-left: 2px; }
+  .detail li::marker { color: var(--c); }
+  .detail li.case { list-style: none; position: relative; margin-left: -20px; padding-left: 28px; }
+  .detail li.case:before { content: ""; position: absolute; left: 2px; top: 4px; width: 15px; height: 15px; border: 1.5px solid var(--c); border-radius: 4px; box-sizing: border-box; }
+  .detail li.case.fait { color: var(--discret); text-decoration: line-through; text-decoration-color: #7f909f99; }
+  .detail li.case.fait:before { background: var(--termine); border-color: var(--termine); }
+  .detail li.case.fait:after { content: ""; position: absolute; left: 7.5px; top: 6.5px; width: 4px; height: 8px; border: solid #0c1116; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .detail p.journal { padding-left: 12px; border-left: 2px solid #c9a22766; }
+  .tampon { display: inline-block; margin-right: 5px; padding: 0 6px; font: 700 11px/1.55 var(--police-mono); letter-spacing: .06em; color: var(--or); border: 1px solid #c9a22799; border-radius: 3px; vertical-align: 1px; }
+  .detail a { color: var(--or); }
+  .sans-detail { color: var(--discret); font-style: italic; }
+
+  @media (max-width: 1299px) { .col-num { display: none; } .col-nom { font-size: 13.5px; letter-spacing: .05em; } }
+  /* ---------- téléphone et petite tablette : colonnes en onglets ---------- */
+  @media (max-width: 959px) {
+    :root { --haut: 0px; }
+    .conteneur { padding: 0 16px; }
+    .barre { position: static; height: auto; flex-wrap: wrap; gap: 10px 12px; padding: 12px 16px; backdrop-filter: none; }
+    .barre nav { margin-left: 0; width: 100%; flex-wrap: wrap; gap: 6px; }
+    .barre nav a { padding: 5px 11px; font-size: 12.5px; }
+    .intro { grid-template-columns: 1fr; padding-top: 24px; }
+    .resume { gap: 2px 16px; }
+    .resume span + span:before { content: none; }
+    .releve { white-space: normal; justify-self: start; }
+    .puces, .poste-titre small, .champ kbd { display: none; }
+    .champ input { padding-right: 12px; }
+    .compte { margin-left: 0; width: 100%; }
+    .onglets { display: flex; position: sticky; top: 0; z-index: 25; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 10px 16px;
+               background: #0c1116f2; border-bottom: 1px solid var(--bord); backdrop-filter: blur(8px); }
+    .onglets::-webkit-scrollbar { display: none; }
+    .tableau { margin-top: 12px; }
+    .col-tete { position: static; }
+    .col-nom { font-size: 15px; }
+    .t-tete, .t-corps { padding-left: 16px; padding-right: 16px; }
+    .t-pied { padding: 10px 16px; }
+    #t-titre { font-size: 19px; }
+    .version { padding: 16px; }
+    .v-nom { font-size: 22px; }
+  }
+  @media (max-width: 520px) {
+    .marque span { display: none; }
+    .marque i { display: none; }
+    .t-etiquettes { display: none; }
+    .champ { flex-basis: 100%; max-width: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *:before, *:after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="barre">
+  <a class="marque" href="/" aria-label="PAG, retour à l'accueil">
+    <!-- En production : <img src="/site/favicon.png" width="32" height="32" alt=""> comme sur l'accueil -->
+    <svg width="28" height="32" viewBox="0 0 32 36" aria-hidden="true"><path d="M16 1.5 30 6.5V17c0 8.6-6 14.6-14 17.5C8 31.6 2 25.6 2 17V6.5Z" fill="#121a22" stroke="#c9a227" stroke-width="2"/><path d="m9 13.5 7 4.2 7-4.2M9 20l7 4.2 7-4.2" fill="none" stroke="#c9a227" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <b>PAG</b><i></i><span>Suivi du développement</span>
+  </a>
+  <nav aria-label="Navigation du site">
+    <a href="/">← Accueil</a>
+    <a href="/carte/">Carte de situation</a>
+    <a href="#historique">Mises à jour</a>
+  </nav>
+</header>
+
+<main class="conteneur">
+  <section class="intro">
+    <div>
+      <p class="surtitre">Tableau des opérations · mod du serveur</p>
+      <h1>Suivi du développement</h1>
+      <p class="chapeau">Tout ce qui avance sur le mod de la PAG, de l'idée jusqu'à la mise à jour publiée. Cliquez sur une carte pour lire son détail complet.</p>
+      <div class="resume" id="resume"></div>
+    </div>
+    <div class="releve" id="releve" role="status"><i></i><span>Chargement…</span></div>
+  </section>
+
+  <section class="poste" aria-label="Filtres du tableau">
+    <div class="poste-titre"><b>Répartition des cartes</b><small>Cliquez sur une colonne pour la masquer ou l'afficher</small></div>
+    <div class="repartition" id="repartition" aria-hidden="true"></div>
+    <div class="puces" id="puces"></div>
+    <div class="separateur"></div>
+    <div class="outils">
+      <label class="champ">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="search" id="recherche" placeholder="Rechercher une carte (mot, n°)" autocomplete="off" spellcheck="false" aria-label="Rechercher une carte">
+        <kbd>/</kbd>
+      </label>
+      <button type="button" class="bascule" id="recentes" aria-pressed="false" title="Cartes créées ou modifiées depuis moins de 48 heures">Modifiées depuis 48 h <b>0</b></button>
+      <label class="tri"><span>Trier</span>
+        <select id="tri">
+          <option value="recent">dernière modification</option>
+          <option value="numero">numéro de carte</option>
+        </select>
+        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="m1.5 3.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </label>
+      <button type="button" class="lien-bouton" id="effacer" hidden>Effacer les filtres</button>
+      <span class="compte" id="compte" aria-live="polite"></span>
+    </div>
+    <div class="archives" id="archives" hidden></div>
+  </section>
+
+  <section class="zone-tableau" aria-label="Tableau des cartes">
+    <div class="onglets" id="onglets" role="tablist" aria-label="Colonnes du tableau"></div>
+    <div class="tableau" id="tableau"></div>
+  </section>
+
+  <section class="historique" id="historique" aria-labelledby="h-titre">
+    <div class="h-tete">
+      <div>
+        <h2 id="h-titre">Historique des mises à jour</h2>
+        <p class="h-chapeau">Chaque version publiée, ses notes et les cartes qu'elle contient. Choisissez un jalon sur la frise.</p>
+      </div>
+      <button type="button" class="bascule" id="toutes" aria-pressed="false">Afficher toutes les versions</button>
+    </div>
+    <div class="frise-cadre" id="frise-cadre"><div class="frise" id="frise" role="group" aria-label="Versions publiées"></div></div>
+    <div id="versions"></div>
+  </section>
+
+  <footer>
+    Le tableau se gère depuis le Discord de la PAG (commande <code>/suivi</code>). Cette page se met à jour toute seule.<br>
+    PAG · Penguin Assault Group — communauté de joueurs, sans lien avec l'armée française ni avec Bohemia Interactive.
+  </footer>
+</main>
+
+<div class="voile" id="voile"></div>
+<aside class="tiroir" id="tiroir" role="dialog" aria-modal="true" aria-labelledby="t-titre" tabindex="-1">
+  <div class="t-tete">
+    <div class="t-ligne">
+      <span class="num" id="t-num"></span>
+      <span class="t-phase" id="t-phase"></span>
+      <span id="t-badges"></span>
+      <button type="button" class="t-fermer" id="t-fermer" aria-label="Fermer le détail (Échap)">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 3.5 9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <h2 id="t-titre"></h2>
+    <div class="t-meta" id="t-meta"></div>
+  </div>
+  <div class="t-corps" id="t-corps"></div>
+  <div class="t-pied">
+    <button type="button" id="t-prec" aria-label="Carte précédente">‹ Précédente</button>
+    <button type="button" id="t-suiv" aria-label="Carte suivante">Suivante ›</button>
+    <span id="t-position"></span>
+    <button type="button" id="t-lien">
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2L8 3.8M9.5 6.5a3 3 0 0 0-4.2 0L2.7 9.1a3 3 0 0 0 4.2 4.2L8 12.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Copier le lien</span>
+    </button>
+  </div>
+</aside>
+
+<noscript><p style="padding:16px">Cette page a besoin de JavaScript pour afficher le tableau.</p></noscript>
+
+<script>
+'use strict';
+/* =====================================================================================
+   MAQUETTE : les données ci-dessous sont une copie de la réponse de l'API au 24/09/2026 19:13.
+   EN PRODUCTION : passer MAQUETTE à false et supprimer DONNEES. La page appelle alors
+   fetch('api') toutes les 15 s, comme la page actuelle (voir la fonction actualiser()),
+   et accepte aussi bien { cartes: [...] } que { colonnes: [{ cle, nom, cartes }] }.
+   ===================================================================================== */
+const MAQUETTE = true;
+const RELEVE_MAQUETTE = '2026-09-24 19:13';   // « maintenant » de la maquette (sert aux badges et aux « il y a … »)
+const DONNEES = {
+ "suivant": 72,
+ "cartes": [
+  {
+   "id": 11,
+   "titre": "Hélicoptère de recherche ennemi",
+   "detail": "Prototype qui vole (vol scripté, fluide, virages et roulis validés). Il fouille la zone au projecteur, se fixe sur un soldat repéré, renseigne les patrouilles, tombe si on touche un moteur, un rotor ou les pilotes.\n\nANALYSE du 24/09/2026 : il ne pouvait jamais venir à 2 joueurs (3 minimum), un seul tirage à 12 % perdu en silence ; le projecteur n'était pas accroché à l'hélico (source posée dans le vide, halo, lampe ronde au-dessus des joueurs, allumé dès 2 km, point éclairé qui sautait) : d'où la « boule divine qui se téléporte ».\n\nREFONTE validée par Jack et CODÉE le 24/09/2026, relue (aucune erreur de compilation trouvée), PAS ENCORE COMPILÉE.\n# Apparition\n- 2 joueurs minimum ; chance qui monte à chaque tirage raté (nuit 25, 40, 55, 70 % ; jour 10, 25, 40, 55, 70 %), remise à zéro après une sortie ; tirage jamais gaspillé\n- Mission ou secteur ennemi à 900 m (site ou centre de la garde)\n- Journal « Hélico » sur Discord avec la raison de chaque décision ; menu Staff : état, « forcer le prochain tirage », « appoint au sol ON/OFF »\n# Vol et équipage\n- Appareil : Mi-8 RHS noir sans pylônes\n- Départ toujours sur la terre ferme, du côté du secteur ennemi\n- 2 pilotes RHS assis à bord dès l'apparition ; les tuer fait tomber l'appareil\n- 6 min comptées depuis l'arrivée, prolongées tant qu'il tient un soldat (10 min au plus) ; repart si plus personne à 1,5 km, ou à la fin de la mission\n- Chute : feux coupés, équipage retiré, épave supprimée après 20 min sans joueur\n# Projecteur\n- Allumé seulement sur zone et la nuit ; le jour il cherche à vue\n- Faisceau blanc chaud, étroit, attaché sous le nez, qui tourne comme une tourelle et glisse au lieu de sauter ; lumière d'appoint invisible au-dessus de la tache pour bien éclairer le sol\n- Repéré seulement dans la tache éclairée ; perdu de vue : il reste 3 s sur le dernier point puis fouille autour\n# Feuillage\n- Sous un arbre ou un buisson de plus de 2 m (pas un arbre mort) : jamais repéré de jour ; la nuit seulement si le projecteur reste sur toi (chance divisée par 10)\n# À faire\n[x] Refonte codée\n[ ] Compiler (Jack)\n[ ] Essai Workbench de nuit : menu Staff > Rapide > Essais, hélico au-dessus de moi ; se placer à 150, 250 et 400 m ; le sol est-il éclairé, face puis dos à l'hélico ? Comparer appoint ON et OFF\n[ ] Le faisceau part bien de sous le nez et reste collé pendant les cercles (point d'attache à caler)\n[ ] Se coucher sous un arbre de jour, puis de nuit\n[ ] Tuer les pilotes, tirer sur le rotor de queue : chute, feux, épave\n[ ] Sur le serveur, à 2 : forcer le prochain tirage pendant une mission, puis lire le journal Hélico sur Discord\n[x] Mi-8 remplacé par le Mi-8 RHS noir sans pylônes\n[ ] Vérifier sur le Mi-8 RHS : pilotes assis, point d'attache du projecteur sous le nez\n\nESSAI DE JACK (24/09) : sans l'appoint le sol reste noir ; aucun faisceau ni halo visible, même juste en dessous de l'hélico (1re personne et Zeus), alors que les feux de navigation et d'anticollision se voient.\nCORRIGÉ le 24/09 (à compiler) :\n- Appoint au sol rendu obligatoire, bouton Staff retiré\n- Le moteur n'affiche pas la lampe accrochée sous le nez : le faisceau est maintenant DESSINÉ (un ruban lumineux du nez jusqu'au sol, toujours tourné vers le joueur, caché quand on est dedans) et un halo au nez qui grossit quand le projecteur te vise\n[ ] Compiler, vérifier qu'il n'y a pas d'erreur et que les matériaux Assets/Helico/SRP_Faisceau et SRP_FaisceauHalo apparaissent\n[ ] Essai de nuit : voir la colonne du nez au sol à 100, 250 et 400 m, qu'elle suive le balayage, sans boule ; entrer dans la tache et regarder le halo ; tache au bord de l'écran, hélico hors champ\n[ ] Régler l'intensité du ruban et du halo à l'œil",
+   "colonne": "a_tester",
+   "cree": "2026-09-20 19:46",
+   "modifie": "2026-09-24 18:18"
+  },
+  {
+   "id": 17,
+   "titre": "Garage et maintenance",
+   "detail": "Les véhicules s'usent et s'entretiennent à l'atelier, payé en paquets de pièces. Réparer coûte moins cher que perdre.",
+   "colonne": "idee",
+   "cree": "2026-09-20 19:46",
+   "modifie": "2026-09-20 19:46"
+  },
+  {
+   "id": 22,
+   "titre": "Ravitaillement par hélicoptère",
+   "detail": "Une escouade à court de munitions demande un largage.\n- Un pilote joueur charge la caisse à la base\n- Il la dépose au carré demandé\nDonne des missions au NH90 Caïman en dehors du transport.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:01",
+   "modifie": "2026-09-20 20:01"
+  },
+  {
+   "id": 27,
+   "titre": "Informateurs civils",
+   "detail": "Certains civils, si on leur parle sans arme pointée, indiquent où ils ont vu l'ennemi (« des camions vers Durras hier »).\n- Parfois c'est faux\n- Tuer un civil ferme le village pour un temps",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:01",
+   "modifie": "2026-09-20 20:01"
+  },
+  {
+   "id": 28,
+   "titre": "Météo et nuit qui comptent",
+   "detail": "- Brouillard ou pluie : la perception ennemie baisse encore, l'hélicoptère ne sort pas\n- Nuit noire : plus de patrouilles à lampe, fusées éclairantes plus fréquentes\nUne vraie raison de choisir son heure d'opération.\n# À vérifier d'abord\n[ ] Ce qu'ACE Weather et le jeu exposent par script (brouillard, pluie, luminosité)",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:01",
+   "modifie": "2026-09-20 20:01"
+  },
+  {
+   "id": 30,
+   "titre": "Fréquences et plan radio",
+   "detail": "Avant chaque opération, l'officier publie un plan radio depuis Discord : canal commandement, canal par escouade.\nLes soldats le retrouvent en jeu sur un panneau de la base.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:01",
+   "modifie": "2026-09-20 20:01"
+  },
+  {
+   "id": 33,
+   "titre": "Effectifs et présence",
+   "detail": "Une page web et un message Discord hebdomadaire :\n- Qui a joué, combien d'heures\n- Quelles escouades tournent\n- Quels jours sont les plus actifs\nPour placer les opérations quand il y a du monde.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:01",
+   "modifie": "2026-09-20 20:01"
+  },
+  {
+   "id": 39,
+   "titre": "Mortier ennemi",
+   "detail": "Quand une alerte dure, l'ennemi peut tirer quelques obus de mortier sur la dernière position connue.\n- Lent, imprécis, annoncé par un sifflement : ça oblige à bouger\n- La pièce est quelque part à 1 km : la trouver fait cesser le tir\n# Attention\nÀ doser finement : un mortier mal réglé devient vite pénible.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 40,
+   "titre": "Ennemis qui se replient",
+   "detail": "Une garnison qui a perdu les deux tiers de ses hommes décroche vers le secteur voisin et le renforce, au lieu de mourir sur place.\nLes poursuivre ou les laisser filer : un vrai choix.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 41,
+   "titre": "Officier ennemi nommé",
+   "detail": "Chaque région de l'île a un commandant, avec un nom et un portrait sur la page web.\n- Tant qu'il vit, ses secteurs sont mieux garnis et contre-attaquent plus souvent\n- L'éliminer ou le capturer désorganise la zone pendant des heures",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 42,
+   "titre": "Pièges et mines autour des positions",
+   "detail": "Les secteurs tenus depuis longtemps par l'ennemi se protègent.\n- Mines sur les accès évidents\n- Fil piégé dans un bâtiment\nUn sapeur devient utile à chaque assaut.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 43,
+   "titre": "Civils blessés dans les combats",
+   "detail": "Un civil pris dans un échange de tirs peut être blessé plutôt que tué.\nLe soigner avec le médical ACE compte pour le soignant, et pour le village.",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 44,
+   "titre": "Marché noir",
+   "detail": "Un civil discret, à un endroit qui change, vend du matériel introuvable à l'arsenal, contre des euros.\n- Une fois sur trois c'est un piège : l'ennemi est prévenu",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 45,
+   "titre": "Événements météo marquants",
+   "detail": "Rarement, une tempête ou un brouillard épais s'installe pour une heure réelle, annoncé sur Discord : le moment des opérations discrètes.\nVa de pair avec la carte « Météo et nuit qui comptent ».",
+   "colonne": "idee",
+   "cree": "2026-09-20 20:06",
+   "modifie": "2026-09-20 20:06"
+  },
+  {
+   "id": 60,
+   "titre": "Couper la parole quand on est inconscient (ACE)",
+   "detail": "Un joueur mis à terre par le médical ACE pouvait encore parler : il continuait de donner des informations alors qu'il est censé être inconscient.\n\nFAIT le 23/09/2026 (à compiler et essayer) : le mode de jeu SRP_GameMode.et autorisait la voix pendant l'inconscience (SCR_GameModeHealthSettings, m_bPermitUnconsciousVON à 1). Passé à 0 : c'est le comportement de base du jeu. Aucun script ajouté.\n# À faire\n[x] Couper l'émission vocale (proximité et radio) tant que le joueur est inconscient, et la rendre dès le réveil : réglage du jeu, dans SRP_GameMode.et\n[x] Vérifier d'abord s'il existe un réglage avant d'écrire du code : oui, m_bPermitUnconsciousVON du mode de jeu\n[x] Vérifié : ACE Medical passe par l'état « inconscient » du jeu (INCAPACITATED), arrêt cardiaque compris ; ACE Radio n'ajoute que les bips, il ne contourne rien ; les scripts du mod (portée de voix, bouchons) ne rouvrent pas le micro\n[x] Décidé par Jack : on ne peut plus parler, et on reparle au réveil. On entend toujours les autres ; le chat écrit n'est pas touché\n[ ] Essai à deux : un blessé inconscient ne s'entend plus (proximité ni radio), il est réveillé, il reparle normalement ; même chose en arrêt cardiaque",
+   "colonne": "termine",
+   "cree": "2026-09-22 22:10",
+   "modifie": "2026-09-23 23:29",
+   "termine": "2026-09-23 23:29"
+  },
+  {
+   "id": 61,
+   "titre": "Contrôle routier : fuite annoncée avant l'arrivée de la voiture",
+   "detail": "Signalé par Jack le 23/09/2026. Pendant un contrôle routier, l'alerte « le véhicule n° X ne ralentit pas : il force le barrage ! » s'affichait alors que la voiture n'était pas encore arrivée au point, ou ne l'avait pas passé.\n\nCODÉ le 23/09/2026 (SRP_Checkpoint.c), PAS ENCORE COMPILÉ.\n\nTrois causes trouvées :\n1. La voiture qui force déclenchait l'alerte dès 140 m du point à vol d'oiseau, même encore sur une autre route ou cachée par un virage.\n2. Elle roulait vers sa localité, pas vers le point : rien ne garantissait qu'elle passe par le contrôle. Parfois elle ne venait jamais, et 900 m plus loin on annonçait « a forcé le barrage et s'est échappé », avec la pénalité de 750.\n3. Le côté d'arrivée était deviné en ligne droite au moment où la voiture apparaît. Si la route faisait le tour et arrivait par l'autre bout, la voiture passait pour « déjà passée » dès qu'elle roulait, même à 500 m. La file d'attente se plaçait aussi du mauvais côté.\n\nCe qui change :\n- La voiture qui force roule maintenant droit sur le point, puis au-delà sans s'arrêter.\n- L'alerte ne part que quand elle est vraiment au barrage : sur la route du point à moins de 90 m et en train d'approcher, ou à moins de 35 m, ou déjà passée dessus. Si les véhicules de la section la bloquent juste devant, l'annonce dit qu'elle est bloquée, puis le conducteur se rend.\n- Le côté d'arrivée suit la voiture tant qu'elle n'a pas atteint le point : la file et la place d'attente se corrigent toutes seules.\n- « Passée au travers » n'est retenu que si la trajectoire de la voiture est vraiment passée à moins de 30 m du point, et qu'elle roule ensuite au-delà. Une voiture ordinaire qui dépasse un peu le point est simplement arrêtée là.\n- Une fois le point passé, la voiture file au loin, du côté où elle part, au lieu de s'arrêter 300 m plus loin et de se rendre toute seule.\n- Une voiture qui s'échappe sans jamais être passée au point : message « a fait demi-tour avant le barrage » (toujours comptée comme ratée).\n# À faire\n[x] Ne déclarer le barrage forcé qu'une fois la voiture vraiment au point ou après l'avoir passé\n[x] Garder une annonce seulement quand elle est proche et en approche\n[x] Corriger le calcul du côté d'arrivée\n[ ] Compiler (Jack)\n[ ] Essai : un contrôle avec une voiture qui force. L'alerte ne sort qu'à son arrivée au barrage. Le journal CONTROLE donne la distance au point à chaque changement d'état (« arrive sans ralentir, à X m »)\n[ ] Essai : bloquer la route avec un véhicule. La voiture qui force est annoncée bloquée, puis le conducteur se rend\n[ ] Essai : une voiture qui passe le point file au loin, et « s'est échappé » ne sort qu'à 900 m",
+   "colonne": "a_tester",
+   "cree": "2026-09-23 18:14",
+   "modifie": "2026-09-24 12:46"
+  },
+  {
+   "id": 62,
+   "titre": "Changer de nom de dotation \"fusilliers\" par \"Grenadier Voltigeur\" Alias GV",
+   "detail": "",
+   "colonne": "a_faire",
+   "cree": "2026-09-23 22:06",
+   "modifie": "2026-09-23 22:06"
+  },
+  {
+   "id": 63,
+   "titre": "Ajouter AWM",
+   "detail": "Ajouter le mod https://reforger.armaplatform.com/workshop/64ED6553B8AF6B62-AtmosphericWeatherMod",
+   "colonne": "termine",
+   "cree": "2026-09-23 22:07",
+   "modifie": "2026-09-24 16:45",
+   "termine": "2026-09-24 16:45"
+  },
+  {
+   "id": 64,
+   "titre": "Fix bug call radio de temps en temps",
+   "detail": "Sa fait une sorte de saturation bizarre, comme si quand on call en radio quelque chose requete beaucoup trop le serveur, par exemple forcer l'encrypter des radios h24 qui fait lag le serveur\n\nANALYSÉ le 24/09/2026 : le script qui force la clé des radios n'y est pour rien (la faction FR n'a pas de clé, il ne fait rien). Cause retenue avec Jack : un micro resté ouvert après des allers-retours au Game Master. Le problème ne touchait que celui qui faisait les allers-retours.\n\nCODÉ le 24/09/2026 (SRP_VoiceRange.c), relu (aucune erreur de compilation trouvée), PAS ENCORE COMPILÉ.\n- À l'ouverture ou la fermeture du Game Master et à la réapparition, l'ancien composant de voix est coupé ; une parole en cours s'arrête (on rappuie pour parler)\n- Une parole commencée pendant le retour sur la portée F9 passe sur le bon composant\n- Filet de sécurité : à chaque fin de parole, tous les autres composants de voix du personnage sont coupés\n- F9 pendant le Game Master : la portée est retenue et appliquée au retour en jeu\n- Si le personnage n'est pas prêt après une réapparition, la portée est réappliquée quelques instants plus tard\n- Changement visible : la voix directe en mode bascule se coupe à l'ouverture et à la fermeture du Game Master\n# À faire\n[x] Trouver la cause\n[x] Corriger SRP_VoiceRange.c\n[ ] Compiler (Jack)\n[ ] Essai à deux : ouvrir et fermer le Game Master plusieurs fois, en parlant en direct puis à la radio pendant et juste après. L'autre joueur ne doit plus voir Jack émettre quand il se tait, ni l'entendre en double\n[ ] Essai : F9 pendant le Game Master, puis retour en jeu : la portée choisie s'applique\n\nRapport complet de l'analyse (autres pistes, dont de petits gels du serveur à mesurer) : Downloads/Analyse_carte_64_radio.md sur le PC de Jack.",
+   "colonne": "a_tester",
+   "cree": "2026-09-23 22:08",
+   "modifie": "2026-09-24 13:08"
+  },
+  {
+   "id": 65,
+   "titre": "Mettre en place le plan MARKETING",
+   "detail": "Ouvrir tous les réseaux Youtube Tiktok, Insta, tweeter pour faire de la pub du serveur en poste régulièrement du contenues soit automatique via bot soit du contenue de la commu",
+   "colonne": "a_faire",
+   "cree": "2026-09-23 22:09",
+   "modifie": "2026-09-23 22:09"
+  },
+  {
+   "id": 66,
+   "titre": "Ajouter un système réaliste de de rep et d'entretient des véhicules",
+   "detail": "Ajouter au logisticien le fait de pouvoir réparer et entretenir les véhicules comme par exemple vidange, plaquette de frein, réarmement, de façon réaliste et sympa en cohérence avec les dépots de pièces",
+   "colonne": "a_faire",
+   "cree": "2026-09-23 22:11",
+   "modifie": "2026-09-23 22:11"
+  },
+  {
+   "id": 67,
+   "titre": "Actions visibles seulement quand on a le droit (Gestion du soldat, point de contrôle)",
+   "detail": "Demandé par Jack le 23/09/2026. CODÉ le 23/09/2026, relu (aucune erreur de compilation trouvée), PAS ENCORE COMPILÉ.\n\nBut : un joueur ne voit une action d'interaction que s'il peut vraiment s'en servir.\n- « Gestion du soldat » (en regardant un joueur) : seulement pour les officiers, l'Adjudant, les instructeurs habilités sur au moins une certification, et le Staff. Les mêmes règles que le menu lui-même.\n- « Établir un point de contrôle ici » (en regardant un équipier) : seulement quand toutes les conditions sont réunies à cet endroit : soldat formé, sur une route, loin de la base, hors secteur ennemi, aucun autre contrôle trop proche, deux soldats sur place.\n- « Contrôler » (sur un civil) : seulement à moins de 1 km d'un point de contrôle routier en place (un barrage forcé est suivi jusqu'à 900 m).\n\nComment : nouveau fichier SRP_Rights.c. Toutes les 5 s, le serveur calcule les droits de chaque joueur avec les mêmes vérifications qu'à l'exécution (StartControl découpé en CheckControl + OpenControl) et les envoie au joueur quand ils changent, et de toute façon toutes les 30 s. Le serveur revérifie tout au moment de l'action, comme avant.\n\nÀ vérifier après compilation :\n- une recrue ne voit plus « Gestion du soldat » ; un instructeur ou un officier le voit ;\n- à la base, « Établir un point de contrôle » n'apparaît pas ; sur une route loin de la base, à deux, il apparaît (jusqu'à 5 s de délai) ;\n- « Contrôler » n'apparaît plus sur les promeneurs loin d'un contrôle ;\n- le lancement depuis le menu Staff (seul) marche toujours.",
+   "colonne": "a_tester",
+   "cree": "2026-09-23 23:08",
+   "modifie": "2026-09-24 12:46"
+  },
+  {
+   "id": 68,
+   "titre": "Nouvelles missions",
+   "detail": "Toutes les idées de nouvelles missions réunies sur une seule carte (regroupement du 24/09/2026 des anciennes cartes #15, #18, #19, #21, #23, #24, #25, #26, #29, #34, #35, #36, #37 et #38).\n\n# Renseignement (ex-#15)\nLe mod Collectable Intel est chargé mais ne sert à rien. Des documents pris sur les officiers ennemis, ramenés à l'ordinateur de la base, révèlent une cache, un convoi ou la garnison d'un secteur.\n\n# Prisonniers à ramener (ex-#21)\nUn ennemi qui se rend, ou un officier capturé vivant, se menotte au serflex et se ramène à la base.\n- Il vaut plus vivant que mort : prime au groupe\n- Un prisonnier ramené donne un renseignement : la garnison d'un secteur révélée\n- S'appuie sur les serflex d'ACE Captives, déjà dans la dotation commune\n\n# Pilote abattu à récupérer (ex-#23)\nUn équipage allié s'est écrasé en zone ennemie.\n- Balise approximative : il faut le retrouver avant la patrouille ennemie\n- Le soigner, puis l'exfiltrer\n- Compte à rebours selon son état médical ACE\n\n# Reconnaissance sans contact (ex-#35)\nObserver un site ennemi pendant 10 minutes et revenir sans avoir été repérés.\n- La moindre alerte fait échouer la mission\n- Faite pour la discrétion et les tireurs de précision ; s'appuie sur le système d'alerte déjà écrit\n\n# Tireur d'élite embusqué (ex-#25)\nRare : un tireur isolé tient un axe ou un village, et décroche quand on l'approche. Mission de contre-sniper pour les tireurs de précision : la discrétion dans l'autre sens, c'est lui qu'on ne voit pas.\n\n# Embuscade sur renseignement (ex-#34)\nLe renseignement annonce le passage d'une colonne ennemie sur un axe dans 20 minutes.\n- À vous de choisir le terrain et de la détruire\n- Arrivée trop tard : elle renforce le secteur d'à côté\n\n# Barrages ennemis sur les routes (ex-#26)\nDans les zones sous forte menace, l'ennemi installe des points de contrôle sur les axes. Tant qu'ils ne sont pas levés :\n- Ils gênent les déplacements motorisés\n- Ils bloquent la circulation civile\n\n# Station radio pirate (ex-#38)\nUn émetteur ennemi brouille une zone : les marqueurs de carte et la balise de flotte sont coupés dans le secteur.\n- Le localiser en se rapprochant\n- Le faire sauter\n\n# Récupération d'un blindé ennemi (ex-#37)\nUn BTR est en panne dans un village tenu par l'ennemi.\n- Le prendre, le réparer sur place, le ramener\n- Il rejoint la flotte, avec un entretien coûteux\n\n# Destruction d'un pont ou d'un dépôt de carburant (ex-#36)\nObjectif réservé aux sapeurs : charge à poser, mise à feu, exfiltration avant l'arrivée des renforts.\n- Tant que le pont n'est pas « réparé », les renforts ennemis arrivent moins vite dans la zone\n\n# Déminage d'axe (ex-#24)\nAvant qu'un convoi ou la circulation civile puisse passer, une route doit être ouverte par les sapeurs au détecteur VMM3.\n- Un véhicule qui saute sur une mine oubliée = échec\n- S'appuie sur le détecteur de mines d'ACE Explosives, réservé à la certification Génie\n\n# Antichar et missions de sapeur (ex-#18)\nDes missions qui exigent un sapeur : pont à détruire, blindé à stopper.\n- Va avec : des lance-roquettes à l'arsenal, avec certification\n\n# Représailles ennemies (ex-#29)\nAprès une grosse réussite (officier éliminé, dépôt détruit), l'ennemi monte une opération ciblée sur le secteur à nous le plus proche, dans les 30 minutes, annoncée par le renseignement.\n\n# Raid ennemi sur la base de Levie (ex-#19)\nQuand la PAG tient beaucoup de secteurs, l'ennemi attaque la base, annoncé 10 minutes avant.\n- Échec = perte de trésorerie ou de véhicules\n- À faire en dernier, quand tout le reste est stable",
+   "colonne": "idee",
+   "cree": "2026-09-24 12:49",
+   "modifie": "2026-09-24 12:49"
+  },
+  {
+   "id": 69,
+   "titre": "Refaire l'intelligence artificielle des ennemis",
+   "detail": "Demandé par Jack le 24/09/2026.\n\nConstat : les ennemis sont trop faciles. Ils ne nous voient pas alors qu'on est juste devant eux, à 100 m, et ne tirent pas, ou très longtemps après.\n\n# Perception\n- Un peu meilleure qu'aujourd'hui, mais surtout ultra réaliste : un soldat à découvert devant eux est vu, et ils ripostent vite\n- Trouver un compromis correct : ni aveugles ni surhumains\n\n# La nuit\n- Les ennemis n'ont pas de jumelles de vision nocturne (NVG) : de nuit, ils nous repèrent moins, les missions de nuit sont plus faciles\n- En contrepartie, peut-être un peu plus d'ennemis de nuit que de jour (à débattre)\n\n# Renforts par camion\n- Sur place au départ : une première patrouille ennemie\n- Quand on progresse dans la zone : obligatoirement 1 ou 2 renforts. Un camion cargo chargé d'ennemis se gare en ville ou dans la zone, ils débarquent tous, et le camion repart aussitôt\n- But : créer des événements. En progressant vers la ville, on voit des véhicules et des patrouilles arriver et se garer, on doit se cacher\n\n# À débattre avant de coder\n[ ] Combien d'ennemis de jour, combien de nuit\n[ ] À partir de quand ils apparaissent (distance, moment)\n[ ] Nombre de renforts par camion et à quel moment de la progression ils arrivent\n[ ] Vérifier d'abord ce que le mod CRX Enfusion A.I., chargé sur le serveur, règle déjà (perception, réaction) : le mod SimpleRP ne touche pas à la perception des IA aujourd'hui",
+   "colonne": "a_developper",
+   "cree": "2026-09-24 12:53",
+   "modifie": "2026-09-24 12:53"
+  },
+  {
+   "id": 70,
+   "titre": "Déconnexion et redémarrage : tenue perdue, joueur compté mort",
+   "detail": "Signalé par Jack le 24/09/2026. À corriger plus tard.\n\nConstat, après une déconnexion puis un redémarrage du serveur :\n- La position est bien sauvegardée : on réapparaît à l'endroit où on s'était déconnecté\n- Mais la tenue n'est pas sauvegardée : on réapparaît à cet endroit sans sa tenue\n- Parfois, le joueur est compté comme mort alors qu'il ne l'était pas : il s'était simplement déconnecté, en pleine base\n\nBut : refaire la réapparition après une déconnexion et après un redémarrage, pour retrouver sa position ET sa tenue, et ne jamais être compté mort sans l'avoir été.\n\n# À faire\n[ ] Reproduire : se déconnecter en tenue (à la base et sur le terrain), redémarrer le serveur, se reconnecter\n[ ] Trouver pourquoi la tenue n'est pas restaurée alors que la position l'est\n[ ] Trouver pourquoi un joueur déconnecté vivant est parfois compté mort\n[ ] Corriger, puis refaire les deux essais\n\nOù regarder : la sauvegarde des joueurs (SRP_PlayerManagerComponent, capture de l'inventaire), la restauration à la réapparition (SRP_SpawnLogic.c) et la gestion des corps de joueurs déconnectés (SRP_Disconnect).",
+   "colonne": "en_cours",
+   "cree": "2026-09-24 16:32",
+   "modifie": "2026-09-24 16:32"
+  },
+  {
+   "id": 71,
+   "titre": "Compatibilité consoles : menus et touches à la manette",
+   "detail": "Signalé par Jack le 23/09/2026 : un joueur sur PS5 n'arrivait pas à interagir avec les civils.\n\nCause : les menus du mod (Contrôler, Gestion du soldat, terminal, demande de mission, PC, menu Staff) ne choisissaient une ligne qu'au clic de souris. À la manette, le bouton A validait sans ligne choisie. Les touches F8, F9 et F10 n'avaient pas d'équivalent manette. Trois fichiers n'avaient pas de réglage pour la PS5.\n\nCORRIGÉ le 23/09/2026, relu, COMPILÉ le 24/09/2026.\n- Menus : à la manette, la ligne en surbrillance est choisie, A valide, B ferme ; la première ligne est sélectionnée à l'ouverture ; le stick droit fait défiler\n- PC et menu Staff : onglets avec L1 / R1\n- Achat de véhicule au terminal : A deux fois pour confirmer\n- Touches manette : portée de la voix L1 + croix haut, bouchons L1 + croix bas, menu Staff Vue + Carré maintenus ; réglables dans Contrôles > PAG\n- « Contrôler » devient « Contrôler (point de contrôle) », avec un message si ce n'est pas un conducteur arrêté à un contrôle\n- Charte : rouverte au plus une fois par minute\n- Réponses du serveur aussi en encart pour un joueur à la manette\n- Textes « clique » remplacés par « choisis », aide avec les touches manette\n- Réglages PS5 ajoutés aux trois fichiers qui n'en avaient pas\n\nNon traité : le menu radial médical d'ACE à la manette, l'arsenal Bacon (à essayer), le chat sur console.\n# À faire\n[x] Trouver la cause\n[x] Corriger et relire\n[x] Compiler\n[ ] Essai avec une manette sur PC : Contrôler un conducteur arrêté (A ordonne, B ferme), terminal (un A = une seule quantité), PC (L1/R1), charte, L1 + croix\n[ ] Essai par le joueur PS5 sur le serveur, après publication",
+   "colonne": "termine",
+   "cree": "2026-09-24 18:59",
+   "modifie": "2026-09-24 19:12",
+   "termine": "2026-09-24 19:12"
+  }
+ ],
+ "versions": [
+  {
+   "version": "1.0.26",
+   "date": "2026-09-22 14:43",
+   "notes": "En jeu : la dotation passe à 300 cartouches (10 chargeurs HK416 ou 12 FAMAS), chacun apparaît avec son kit de départ, et l'arsenal ne puise plus dans la soute que pour les chargeurs, grenades et roquettes. Le FAMAS F1 RIS et les rails PGM et PGMP sont de retour.\nLe poste de secours de la base fonctionne enfin, ouvert à tous ; le Staff peut soigner, relever et connaître l'état d'un blessé à distance. L'enrayage est coupé : une arme qui perd son mode de tir est signalée et peut être recréée par le Staff. Chargeur vers le sac, jamais au sol.\nLe contrôle routier est refait : deux voies et file d'attente, voitures qui s'arrêtent ou forcent le barrage, mains en l'air quand on braque, plus de demi-tours ni de fuite.\nL'ennemi tient ses villages : garnisons dans les rues avec rondes et postes, apparitions hors de vue, contre-attaques par la route, renforts, reddition des derniers hommes, menace qui monte et descend.\nLa base s'éclaire la nuit, avec un générateur à surveiller. Guide des dotations à jour sur https://penguinassaultgroup.fr/dotations/",
+   "cartes": [
+    {
+     "id": 52,
+     "titre": "Correction dotation pour soldat : avoir 300 cartouches de munitions au lieu de 210",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé. Hypothèses prises : kit gratuit au spawn = HK416F-S + 10 chargeurs + gilet + sac (m_aKitDeBase dans SRP_GameMode.et) ; mule 16 chargeurs. Le PDF FGI n'est pas régénéré (texte du piège corrigé dans generer_fgi.py seulement).\nDotation : 300 cartouches par fusil = 10 chargeurs HK416 (30) ou 12 chargeurs FAMAS (25), chargeurs pleins. Avant : rien de scripté, c'était le guide (7 chargeurs = 210 HK416, 175 FAMAS).\n# Décisions (QCM du 22/09)\n[x] Tous les rôles à 10 (12 FAMAS) ; CDG et OR à 300 ; mule 16 ; piège FGI « dix chargeurs » reformulé\n[x] Minimi 5 boîtes, SCAR-H 10 chargeurs, pistolet 3 ; munitions libres\n[x] Une partie dans le sac ; poche chargeur AMF officialisée dans le guide\n[x] Kit gratuit au spawn : HK416F-S + 10 chargeurs (+ gilet et sac pour les ranger)\n[ ] Conformité vérifiée par le CDG ; annonce Discord « ré-enregistrez votre tenue » (à la publication, sur ton feu vert)\n[x] Guide fonctionnel corrigé (§1, §2, §4, §9.3-9.5) ; guide/PDF/site régénérés avec #56 et #59 ; site en ligne (13 × « 300 cartouches »)"
+    },
+    {
+     "id": 53,
+     "titre": "Corriger bug soins",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé. À vérifier en jeu : les lits du calque hopital.layer peuvent flotter (hauteur 164,8), énumération ACE_Medical_EVitalStateID, visibilité d'UpdateConsciousness.\nLe poste de secours de la base n'a JAMAIS eu de menu d'action sur les lits : rien n'apparaît en visant un lit, pour tous les joueurs, depuis le début. Aucun Médecin en ligne. Les gestes ACE entre soldats marchent.\n# Cause probable\nSRP_PosteDeSecours.et hérite d'un lit avec le maillage désactivé : sans maillage, pas de collision, l'action n'est jamais atteignable. Le .meta pointe un mauvais dossier.\n# Décisions (QCM du 22/09)\n[x] Prefab refait : lit visible, contexte d'action à 0,7 m sur le matelas, .meta corrigé, GUID conservé (9DEAEF173C906596)\n[x] Ouvert à tout le monde, toujours (m_bRefuseIfMedicOnline à 0) ; remise à neuf complète\n[x] Action « Soigner le blessé allongé » : un inconscient à moins de 2,5 m du lit est soigné et réveillé\n[x] Discord moins bavard : plus de message public « Infirmerie », journal Staff seulement\n[x] Soin Staff (/admin joueurs:soigner, bouton Discord) relève un inconscient et fait réapparaître un mort sur son corps (joueurs:corps)\n[x] Commande « etat <joueur> » (sang, conscience, saignements, pouls) : /admin joueurs:etat, Discord bouton « État » et commande etat <joueur>\n[x] m_fSecondChanceResilienceRegenScale 0.5 dans la mission : réveil spontané lent possible\n[x] Déconnecté inconscient : le corps reste 15 min (m_bUnconsciousIsDeath 0)\n[x] Guide : le poste est ouvert à tous (§4)\nParcours voulu : soigné sur place, évacué à la base si trop grave. Les IA continuent de se soigner (ACE Medical AI gardé)."
+    },
+    {
+     "id": 54,
+     "titre": "Corriger les lumières dans la base",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé. Reste à faire par Jack : poser les lampes et le générateur au Workbench (calque BaseFR/Eclairage) d'après Downloads/Eclairage_base_PAG.md. À vérifier à la compilation : méthode nommée Break, Track(vector mat[4]), surcharge ActionContexts dans SRP_Generateur.et.\nDans les bâtiments de la base il n'y a pas de lumière la nuit (tous les joueurs, serveur). Le mod n'a jamais posé de lampe : c'est un AJOUT. JVN et lampe MX991 déjà à l'arsenal et fonctionnelles.\n# Décisions (QCM du 22/09)\n[x] Prefabs fournis : SRP_Plafonnier.et, SRP_Neon.et, liste des lampes et mâts du jeu (état LIT) dans Eclairage_base_PAG.md\n[x] Lampes allumables à la main (SCR_SwitchLightUserAction surchargé : rien ne s'allume sans courant), décor indestructible\n[x] Générateur SRP_Generateur.et : actions démarrer/arrêter/réparer ; coupé ou en panne = base dans le noir ; état sauvegardé dans generateur.json ; boutons Staff (/admin Serveur : on, off, panne, réparer)\n[ ] Jack pose les lampes et le générateur au Workbench dans le calque BaseFR/Eclairage\n[x] Lanterne la nuit sur les points de livraison actifs et le point de contrôle\n[x] Mode nuit du Game Master pour le Staff (/admin Serveur : nuit)\n[x] Guide des dotations : lampe et JVN libres, listées ; guide §9.20 Éclairage\nInchangé : rythme 3 h réelles par journée, pas de lampe dans le kit, base visible de loin assumée."
+    },
+    {
+     "id": 55,
+     "titre": "Corriger les bugs sur le contrôle routier",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé. Hypothèse prise : PLUSIEURS contrôles simultanés, un par groupe, à plus d'1 km l'un de l'autre. À vérifier à la compilation : API ACE Captives (SetSurrender/SetCaptive/IsCaptive), conversion AIWaypoint_GetIn, action « Désamorcer » = ordre du menu (classe SRP_CheckpointDefuseAction écrite mais attachée à aucun prefab).\nConstat (QCM du 22/09) : point sous les pieds, action facile, voitures annoncées arrivent et s'arrêtent ; MAIS voitures ambiantes croisées qui traversent sans conséquence (tirer dessus = crime de guerre), demi-tours après « repartir », conducteur téléporté puis immobile, « descendre » = fuite immédiate impossible à arrêter sans tuer, pas de mains en l'air, serflex sans effet, trop de voitures entassées.\n# Décisions\n[x] Journal CONTROLE à chaque changement d'état, avec la distance au point\n[x] File d'attente à deux voies : une voiture au point par sens (axe de la route trouvé au lancement), les suivantes attendent 40 m derrière ; circulation ambiante coupée à 1 km pendant le contrôle\n[x] Voitures ambiantes déjà en route : prises dans le contrôle ; celle qui ne s'arrête pas = « force le barrage » (cible légitime, malus)\n[x] « Repartir » : destination au-delà du point, le conducteur marche jusqu'au véhicule (plus de téléportation), relance si immobile\n[x] « Descendre » sans fuite automatique ; fuite seulement si personne ne le vise à 15 m (test de visée 10°)\n[x] Braqué = mains en l'air (ACE Captives) ; « Arrêter » = menotté ; serflex du joueur acceptés ; blessé sans être tué = il s'arrête, soignable puis attachable\n[x] Pas d'amende pour un suspect révélé (fuyard, cargaison, force annoncée ou non) ; un civil ordinaire reste protégé\n[x] Abandon à 300 m ; primes des saisies et arrestations versées même en échec (EarnedEuros)\n[x] Véhicules des morts, hostiles, explosifs retirés après 10 min sans joueur à 100 m ; ordre « désamorcer » 30 s (Génie ou Staff) ; véhicule gardé si un joueur est dedans\n[x] Un contrôle par groupe (plus de verrou unique serveur), 1 km minimum entre deux contrôles\n[x] Lanterne posée à 4 m du point la nuit\nInchangé : droits (2 soldats, tout joueur à 12 m ordonne), papiers faux = suspect certain (50 % des suspects) mais un suspect peut avoir des papiers en règle, 20 min, messages en chat local. Guide §9.10 réécrit."
+    },
+    {
+     "id": 56,
+     "titre": "Ajouter l'accessoire PGM pour le FAMAS F1",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé (catalogue régénéré, 177 entrées).\nVoulu : le FAMAS F1 classique avec un rail et une optique. Le rail PGM seul est cosmétique ; les variantes à rail ont été retirées de l'arsenal le 20/09.\n# Décisions (QCM du 22/09)\n[x] « FAMAS F1 RIS » réactivé par la chaîne PAG-Tenues (classes.json, ajout_armement.py, catalogue FR régénéré)\n[x] Rails PGM et PGMP en objets d'arsenal gratuits (entrées 6A5B0C0D0E0FC012 et C013)\n[x] Optiques : collimateurs et ×4 (règle > ×4 = TP écrite seulement)\n[x] Pour tous les ayants droit au F1 ; F1 nu ET F1 rail gardés ; nom AMF ; arme nue\n[x] Fiche FUSIL du guide (dotations.html, PDF, site en ligne) ; surcharges de réplication des rails publiées avec #57"
+    },
+    {
+     "id": 57,
+     "titre": "Arme enrayée impossible à débloquer, puis plantage en retirant le chargeur",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé : Workbench fermé, remplacer les fichiers, ouvrir, lire SCRIPT (E). À vérifier à la compilation : signature de la surcharge ACE_Overheating_TryClearJam (paramètre par défaut), UpdateConsciousness, EquipedWeaponStorageComponent.\nDeux plantages le 21/09 en retirant le chargeur par l'inventaire vers le sol (erreur mémoire du moteur dans TryRemoveItemFromInventory) ; le même plantage a eu lieu le 19/09 SANS ACE Overheating, et le second du 21/09 sur une arme recréée 30 s plus tôt sans aucun Maj + R.\n# Diagnostic (QCM du 22/09)\n- L'arme perd son MODE DE TIR côté client : aucun indice de désenrayage, case du sélecteur vide, sûreté sans effet, rien côté équipiers ; arrive en plein tir, après un changement d'accessoire (toujours la poignée RVG) et après reconnexion ; persiste après avoir lâché l'arme\n- Le plantage vient du dépôt AU SOL d'un objet du stockage de l'arme ; vers le sac ou le gilet, ça ne plante pas (session de 22 h 22)\n- Maj + R lance aussi le rechargement ; BoltRack System (dépendance) écoute le même geste\n# Décisions\n[x] m_fJamChanceScale 0 : enrayage coupé, surchauffe et dispersion gardées (Configs/ACE/Settings.conf)\n[x] Maj + R protégé : composant introuvable = message « changez d'arme puis reprenez-la », sortie propre (SRP_AceCompat.c)\n[x] Message en jeu quand l'arme en main n'a plus de mode de tir + ligne de journal ARME (SRP_PlayerController.c, contrôle local toutes les 2 s)\n[x] Bouton Staff « Recréer l'arme de <joueur> » : /admin (joueurs:arme-recreer) et panneau Discord (pv_arme, commande arme-recreer <joueur>)\n[ ] Publier les 10 surcharges d'accessoires AMF (partent avec la 1.0.26)\n[ ] Test à deux sur le serveur (HK416F-S + RVG, puis M16A2) ; journaux serveur du 21/09 à récupérer\n# Consigne\nChargeur vers le sac, jamais au sol. Arme libre (pas de changement de dotation)."
+    },
+    {
+     "id": 58,
+     "titre": "Refaire les déplacements et les apparitions de l'IA",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé. À vérifier à la compilation : GetOnPlayerSpawned (int, IEntity), presets de SCR_DefendWaypoint, AIWaypointCycle.SetWaypoints/SetRerunCounter(-1), GetReachableWaypointInRoad, DropWeapon(slot) + DeactivateAI après ACE_Captives_SetSurrender, Math.Clamp sur int. Réglés dans SRP_GameMode.et : Defend_Large, hold 100, garnisons 2000/3500.\nConstat (QCM du 22/09, serveur 1.0.24/1.0.25) : garnisons hors des villages (rayon de secteur 2 000 m dans le prefab), groupes immobiles (garnisons, patrouilles, gardes), trop d'ennemis en campagne et pas assez dans les villages, ennemi trop aveugle. Le point « Defend » est réglé sur le drapeau SRP_ZoneCivile : les gardes n'ont aucun ordre.\n# Temps 1 : réglages\n[x] Rayon de secteur découplé du rayon civil : hameau 150, village 250, bourg/ville 350 ; 30 secteurs gardés\n[x] Point Defend_Large avec postes (tourelles, sacs de sable, bâtiments) ; rondes (Cycle sur 3-5 points de rue) + postes fixes\n[x] Maintien des gardes 100 m (cache 30, poste 80, sabotage 150) ; garnisons posées à 2 000 m, retirées à 3 500\n[x] Rayon interdit 1 500 m autour de la base pour tout spawn ; délai de grâce 3 min à la connexion et à la réapparition\n[x] Perception relevée (0.7/1.1/1.7/2.2) ; mode essai gardé avec marqueur [ESSAI] dans le journal\n# Temps 2 : code\n[x] Brique commune de pose SRP_Placement.c : 14 essais, hors de l'eau et de la base, loin des joueurs, hors de vue (trace jusqu'à 1 500 m), route puis lisière, repli ancien tirage\n[x] Garnisons : premier groupe aux postes, suivants 60 % en ronde / 40 % en Defend ; nouvelle garnison quand elle est anéantie et plus personne à 1 500 m ; assaillants convertis en garnison ; éviction de la plus lointaine au plafond ; priorité au secteur des joueurs\n[x] Contre-attaque : secteur à nous le plus proche d'un joueur, par la route depuis 1-2 secteurs voisins (≤ 4 km), deux axes échelonnés 60-90 s\n[x] Ambiante 50/50 : vient voir le joueur puis reprend sa ronde, ou suit une route voisine en boucle ; fréquence × (1 + menace/10) ; routes puis 350 m à travers champs\n[x] Réaction : renfort du voisin après 5 min d'alerte, vagues sur alerte à 400 m, poursuite courte (300 m) ; motorisés débarquent sur route à ~300 m (Ural si ≥ 5, UAZ sinon) ; convoi qui débarque au contact\n[x] Menace : AddThreat borné 0-10 ; monte à la capture ; baisse par poste/officier/sabotage réussis et contre-attaque repoussée ; livraison 10 % + 3 %/menace (max 40 %)\n[x] Survivants de mission retirés après 15 min hors de vue ; reddition des groupes réduits à 1-2 hommes (joueur à 30 m, 50 %, arme lâchée, mains en l'air, comptés neutralisés)\nGardés : alerte, hélico, prorata, jeep, convoi, 1,5 soldat/joueur, groupes au hasard, gardes de sabotage/écoute (poste sur la pièce), lampes la nuit. Non fait : une ronde interrompue par une alerte repart d'un nouveau cycle ; guide non mis à jour pour cette carte."
+    },
+    {
+     "id": 59,
+     "titre": "Retirer la consommation de paquets de munitions dans l'arsenal",
+     "detail": "CODÉ le 22/09 (1.0.26), pas encore compilé (SRP_ArsenalEconomy.c).\nPrendre du matériel à l'arsenal vidait la soute trop vite : les armes coûtaient 5 à 20 paquets.\n# Décisions (QCM du 22/09)\n[x] Facturés : chargeurs (1 paquet par chargeur quelle que soit la taille, m_iRoundsPerMagazineUnit retiré), grenades 2, roquettes 5\n[x] Armes, tenues, accessoires, consommables médicaux : 0\n[x] Stock inchangé ; traité avec #52 dans la même mise à jour\nAvant : fusil 5, pistolet 3, MG 15, TP 10, LR 20, LG 10, chargeur 1 par 30 cartouches, roquette 5, grenade 2, médical 1."
+    }
+   ]
+  },
+  {
+   "version": "1.0.25",
+   "date": "2026-09-21 19:21",
+   "notes": "En jeu : les missions changent de rythme. Deux missions au tableau en permanence, qui attendent trois heures ; « Trouver une mission » pour en faire tirer une au sort à la distance voulue ; un officier peut ordonner une mission précise, dans une localité précise, à un chef de mission, en jeu comme depuis Discord. La capture d'un secteur s'active maintenant au tableau comme une mission : aucun délai pour se préparer, engagée à 3 km de l'objectif, perdue si la zone reste vide 15 minutes.\nTerritoire : la production d'un secteur arrive désormais à son dépôt, que l'on fixe soi-même avec un kit acheté au terminal logistique et amené en véhicule (logisticiens et officiers).\nSur le web : le site de la PAG a son adresse, https://penguinassaultgroup.fr, en HTTPS.",
+   "cartes": [
+    {
+     "id": 49,
+     "titre": "Dépôt de secteur : un kit à poser pour recevoir la production du territoire",
+     "detail": "# Demande d'origine\nTrouver une solution pour faire apparaître la cargaison produite par un territoire capturé : poser un coffre quelque part, dont la position est sauvegardée, et qui sert ensuite à ravitailler les paquets générés. Un point qui ne bouge plus, sauf si l'ennemi reprend le territoire.\n# Le problème aujourd'hui\n- La caisse de production apparaît toujours à 3 m du centre du secteur. Pour les secteurs créés depuis la carte, ce centre tombe souvent dans une maison, sur un toit, dans un mur ou au milieu d'une route : caisse introuvable ou inaccessible\n- Après un redémarrage, elle est reposée au même mauvais endroit\n# Décidé avec Jack (QCM du 21/09)\n- Le dépôt se fixe avec un OBJET À POSER : un « kit de dépôt » volumineux, qui ne tient que dans le coffre d'un véhicule : il faut monter un convoi logistique jusqu'au secteur\n- Le kit s'achète au terminal logistique de la base, avec l'argent du coffre (500 €, réglable)\n- Sur place : on sort le kit, on le pose au sol, action « Installer le dépôt ici » : il devient la caisse de dépôt du secteur\n- Seuls les logisticiens (certification Logi), les officiers et le Staff peuvent l'installer ; tout le monde peut le transporter\n- Seule contrainte de lieu : être dans le rayon d'un secteur à nous qui n'a pas encore de dépôt\n- Tant qu'aucun dépôt n'est fixé, la production ATTEND : les paquets s'accumulent sans caisse jusqu'au plafond (3 h), et la caisse apparaît avec tout ce qui attendait dès la pose. Plus aucune caisse au centre\n- Une fois fixé, le dépôt ne bouge plus. Si l'ennemi reprend le secteur : dépôt et contenu perdus, à refaire après la reprise (nouveau kit)\n- Le Staff garde un bouton pour retirer un dépôt mal placé\n- Repérage : marqueur « Dépôt de <secteur> » sur la carte du jeu, et icône sur la carte web avec le nombre de paquets à ramasser\n# Fait (à compiler)\n[x] Objet « kit de dépôt » (40 kg, 45 litres : véhicule seulement) et son action « Installer le dépôt ici »\n[x] Vente au terminal logistique, 500 €\n[x] Position du dépôt sauvegardée, production en attente sans dépôt, caisse reposée au dépôt après redémarrage\n[x] Perte du secteur : dépôt retiré ; boutons Staff « fixer ici » et « retirer »\n[x] Marqueur sur la carte du jeu, icône et stock sur la carte web\n# À vérifier\n[ ] Compilation au lancement du Workbench\n[ ] Le kit acheté : ne rentre pas dans un sac, rentre dans un coffre de véhicule (sinon régler poids et volume)\n[ ] Posé au sol dans un secteur à nous : l'action apparaît, la caisse arrive avec le stock en attente\n[ ] Secteur perdu : le dépôt disparaît"
+    },
+    {
+     "id": 50,
+     "titre": "Missions : moins d'automatiques, « Trouver une mission », mission ordonnée, captures activées au tableau",
+     "detail": "# Demande d'origine\nGénérer moins de missions mais leur laisser une durée plus élevée. Pouvoir faire une requête au tableau pour « trouver une mission », générée aléatoirement. Ou voir un officier pour avoir une mission choisie, dans une ville choisie.\n# Le problème aujourd'hui\n- Le serveur garde 2 à 4 missions en permanence (10 % de chance par minute d'en ajouter une) ; une mission non acceptée disparaît au bout de 60 min et est aussitôt remplacée\n- Résultat : un défilé d'annonces radio pour des missions que personne n'a demandées\n- Au tableau on peut seulement DEMANDER une mission déjà affichée (ou une capture) : impossible d'en faire générer une, ou qu'un officier en crée une sur une ville précise\n# Décidé avec Jack (QCM du 21/09)\n- Automatique : DEUX missions en permanence, jamais plus\n- Une mission attend 3 HEURES d'être acceptée (délai toujours en pause quand des joueurs sont dans les environs)\n- « Trouver une mission » au tableau : tout soldat formé (pas les recrues). Il choisit seulement la DISTANCE (proche, moyenne, lointaine) ; le type et le lieu sont tirés au sort\n- La mission trouvée apparaît au tableau et doit ensuite être ACCORDÉE par le commandement, comme aujourd'hui (« Demander une mission »)\n- Limites : 4 missions au plus sur l'île ; 15 min entre deux demandes d'un même soldat ; pas de nouvelle mission trouvée tant que la précédente n'a pas été prise\n- Mission ORDONNÉE par un officier (Lieutenant, Capitaine, Staff) : il choisit le type, la ville, puis un chef de mission parmi les soldats en ligne (ou « au tableau »). Créée et accordée d'un coup, le chef reçoit l'ordre en jeu\n- L'officier choisit librement : pas de règle de distance aux joueurs ou aux autres missions, seule la base reste interdite ; si le type ne peut pas se poser là, le menu le dit\n- L'officier peut le faire EN JEU (tableau des missions) ET DEPUIS DISCORD (salon commandement)\n- Radio allégée : mission automatique = une ligne courte à tous ; mission trouvée ou ordonnée = seulement aux concernés (demandeur, chef désigné, officiers) ; expiration d'une mission jamais prise = silencieuse\n# Captures de territoire = missions (ajout du 21/09)\n- Une capture s'ACTIVE au tableau comme une mission (choix du secteur, accord du commandement) : on sait quand elle commence\n- Aucun délai après l'activation : on se prépare et on s'équipe le temps qu'il faut\n- ENGAGÉE dès qu'un soldat entre à 3 km de l'objectif : plus de retour arrière (plus d'abandon, seul le Staff annule)\n- ÉCHEC si plus aucun soldat dans la zone des 3 km pendant 15 minutes ; RÉUSSITE à la capture du secteur\n- Cette règle ne vaut QUE pour les captures : les autres missions gardent leurs règles\n- Capturer sans mission activée reste possible, mais sans subvention ni crédit de mission, et le commandement est prévenu\n- Après un échec : la garnison du secteur se reconstitue et la MENACE du territoire monte\n- La mission automatique « Village à libérer » est RETIRÉE du tirage : les captures se choisissent au tableau\n# Proposition de Claude, à confirmer\n- Distances mesurées depuis la base : proche 2 à 3,5 km, moyenne 3,5 à 6 km, lointaine 6 à 9 km\n- Le contrôle routier et la panne restent à part (lancés sur place ou par événement), hors de ces règles\n# Fait (à compiler)\n[x] Générateur : 2 missions, 3 h, radio allégée\n[x] Tableau : « Trouver une mission » et « Ordonner une mission »\n[x] Capture = mission (engagement à 3 km, échec après 15 min, menace) ; capture hors mission sans subvention\n[x] Discord : commande /ordonner, alertes au salon commandement\n# À vérifier\n[ ] Compilation au lancement du Workbench\n[ ] Trouver une mission, puis la demander\n[ ] Ordonner une mission en jeu, et par /ordonner\n[ ] Une capture accordée : engagement, abandon refusé, échec après 15 min"
+    },
+    {
+     "id": 51,
+     "titre": "Site vitrine et application web de la PAG : penguinassaultgroup.fr",
+     "detail": "Le site de la PAG est en ligne, sous son propre nom de domaine et en HTTPS.\n# Adresse\nhttps://penguinassaultgroup.fr\n# Ce qu'on y trouve\n- L'accueil : présentation de la PAG, état du serveur en direct, comment nous rejoindre, lien vers le Discord\n- La carte de situation : Everon en photographie aérienne, carrés de 100 m occupés par les soldats, missions, secteurs, historique des secteurs et tracé des déplacements\n- La page Campagne : territoire, menace, missions, trésorerie, dépôts, parc de véhicules\n- Les effectifs et la fiche de chaque soldat : grade, certifications, états de service, secteurs pris\n- Le suivi du développement et l'historique des mises à jour\n# Technique\n- Nom de domaine penguinassaultgroup.fr, pointé vers le serveur du bot\n- HTTPS avec certificat gratuit, renouvelé tout seul ; les anciennes adresses redirigent vers la nouvelle\n- Tout est public et en lecture seule : ni connexion, ni identifiant du jeu, ni sanction affichés\n[x] Nom de domaine\n[x] HTTPS\n[x] Pages en ligne et vérifiées"
+    }
+   ]
+  },
+  {
+   "version": "1.0.24",
+   "date": "2026-09-20 22:18",
+   "notes": "Mise à jour du mod et du site de la PAG.\nEn jeu : nouvelle mission de contrôle routier lancée par les soldats eux-mêmes, IA ennemie à la mesure des joueurs présents, discrétion récompensée, alertes et fusées éclairantes, jeep armée et renforts en camion, circulation civile sur les routes, morphine ACE à l'arsenal.\nSur le web : penguinassaultgroup.fr, avec la carte de situation en photographie aérienne, la page Campagne, les effectifs et la fiche de chaque soldat, l'historique des secteurs et le tracé des déplacements.",
+   "cartes": [
+    {
+     "id": 1,
+     "titre": "Carte de situation web : photographie aérienne d'Everon",
+     "detail": "La carte en ligne affiche la photographie aérienne d'Everon prise en jeu : maisons, arbres, routes, notre base. 0,25 m par pixel, 22 316 tuiles.\n# Étapes\n[x] Page web, quadrillage, carrés occupés par les soldats\n[x] Fond satellite tiré du terrain du jeu (1 m par pixel)\n[x] Outil de capture en jeu, essai à 4 hauteurs : 350 m retenu\n[x] Capture de toute l'île (4 505 photos)\n[x] Assemblage en tuiles à 0,25 m par pixel et envoi sur le VPS\n[x] Lac intérieur : c'est la vraie eau du jeu sur la photographie\n# Reste\n[ ] Publier le mod pour que missions, secteurs et noms de lieux s'affichent\n# Adresse\nhttp://penguinassaultgroup.fr/carte/"
+    },
+    {
+     "id": 2,
+     "titre": "Pont du mod pour la carte web",
+     "detail": "Le mod envoie au bot ce que la carte affiche en plus des soldats.\n- Carré de 100 m de chaque mission, et qui l'a prise\n- Secteurs : carré, à nous ou non, attaque en cours\n- Heure en jeu, noms des localités\n# À faire\n[ ] Vérifier la compilation au prochain lancement du Workbench\n[ ] Publier le mod : la carte en ligne se complète toute seule"
+    },
+    {
+     "id": 3,
+     "titre": "IA ennemie : effectif au prorata des joueurs proches",
+     "detail": "L'effectif ne suit plus les joueurs connectés mais ceux qui sont à moins de 3 km du lieu (la base ne compte pas).\n- Garnison : 2 groupes pour 1 à 4 joueurs, 3 pour 5-6, 4 pour 7-8, 6 au plus\n- Garde de mission posée à l'approche, plus à la création\n- Budget local : garnison, garde, vagues et patrouilles d'un même lieu partagent un plafond (pas de doublon)\n- Une seule garnison posée à la fois, 5 au plus, jamais pour des joueurs restés à la base\n# À vérifier en jeu\n[ ] Journal TERRITOIRE : « garnison de X groupes pour Y joueurs en approche »\n[ ] Une mission dans un secteur ennemi n'ajoute pas sa propre garde"
+    },
+    {
+     "id": 4,
+     "titre": "Discrétion, alertes et fusées éclairantes",
+     "detail": "On doit pouvoir progresser sans être vu avant le contact.\n- Perception des ennemis réglée par état : tranquille 0,45 · vigilant 0,9 · alerté 1,6 · menacé 2,2\n- Premier repérage = alerte à la dernière position connue : une patrouille vient fouiller, la jeep se rapproche\n- La nuit : fusée éclairante blanche toutes les 50 s, 5 au plus\n- L'alerte s'éteint après 6 minutes sans nouveau repérage\n# À vérifier en jeu\n[ ] Approche accroupi d'une garnison : trop facile ou encore trop dur ?\n[ ] La fusée apparaît, éclaire et descend"
+    },
+    {
+     "id": 5,
+     "titre": "Jeep armée de patrouille et renforts en camion",
+     "detail": "- Jeep UAZ à mitrailleuse : fait le tour du site et des trois lieux-dits voisins, équipage à son poste au contact\n- Renfort motorisé : le premier groupe d'une vague arrive en camion, débarque à 300 m, finit à pied\n- À partir de 3 joueurs sur place (1 seul dans le Workbench grâce au mode essai)\n# Point fragile\nLa conduite de l'IA : un véhicule peut se coincer."
+    },
+    {
+     "id": 6,
+     "titre": "Civils : voitures sur les routes et base interdite",
+     "detail": "- Des voitures civiles apparaissent sur les routes, hors de vue, et roulent vers une localité située au-delà des joueurs : on les croise\n- Aucun civil à moins de 300 m de la base : ni apparition, ni promenade, ni trajet qui la traverse, ni fuite\n# À vérifier en jeu\n[ ] Journal CIVILS : « Circulation : une voiture posée sur la route… »\n[ ] Plus personne ne traverse la base (sinon monter le rayon à 400 ou 500 m)"
+    },
+    {
+     "id": 7,
+     "titre": "Morphine ACE à l'arsenal FR",
+     "detail": "La morphine de l'arsenal était celle du jeu de base : AMF embarque sa propre copie du prefab, que les modifications d'ACE ne touchaient pas. Corrigé par une surcharge dans le mod PAG.\n[ ] Prendre une morphine à l'arsenal, l'injecter : elle doit apparaître dans le journal des injections et faire baisser le pouls"
+    },
+    {
+     "id": 8,
+     "titre": "Arsenal FR épuré",
+     "detail": "151 objets marqués « retirer » sont sortis de l'arsenal. Bérets, optiques et PA MAC 50 restent libres, pas de bouton de dotation.\n[ ] Vérifier en jeu qu'il ne manque rien d'utile\n[ ] Trancher pour « Poche Chargeur Double » et « Double FAMAS », laissées en place"
+    },
+    {
+     "id": 9,
+     "titre": "Demandes de mission, du jeu vers le Discord",
+     "detail": "Action « Demander mission » au tableau des missions, panneau dans le salon commandement, décision de l'officier en message privé (à pied ou motorisé), réponse en jeu.\n[ ] Essai de bout en bout à plusieurs"
+    },
+    {
+     "id": 10,
+     "titre": "Soirée de test à plusieurs",
+     "detail": "Ce qui n'a jamais été essayé en multijoueur :\n[ ] Radio (ACE Radio Dev, portée illimitée)\n[ ] Caméra de casque sur la télé du PC\n[ ] Surchauffe des armes AMF\n[ ] Comportement d'ACE Dev sur le serveur dédié"
+    },
+    {
+     "id": 14,
+     "titre": "Mission « Contrôle routier » : checkpoint et contrôle des civils",
+     "detail": "Un nouveau type de mission : la section tient un point de contrôle à l'entrée d'une localité, la circulation civile passe par elle. La plupart des conducteurs sont en règle, quelques-uns non.\n# Décidé avec Jack (QCM du 20/09)\n- Mission accordée par le commandement, comme les autres, jamais hors mission\n- Installation par simple présence : 2 soldats ou plus sur le point pendant 30 s, rien n'apparaît, la section barre la route avec ses véhicules\n- Les voitures s'arrêtent seules au point de contrôle\n- Durée fixe : tenir le point 20 minutes\n- 1 conducteur sur 5 est suspect\n- Cargaisons possibles : armes et munitions, documents ennemis, ennemi déguisé, explosifs\n- Réactions possibles : il se rend, il force le barrage, il fuit à pied, il sort une arme (l'ennemi déguisé seulement : tirer est alors légitime)\n- Détection : indices dans les papiers, fouille longue (20 s) : on ne fouille pas tout le monde, il faut juger\n- Suspect arrêté : pris en charge sur place, disparaît à la fin de la mission\n- Menace : rarement (1 mission sur 4), une patrouille ennemie vient tâter le barrage\n- Prime : fin de mission + 750 € par saisie + 400 € par arrestation − 750 € par suspect passé au travers\n- Tirer sur un civil innocent reste un crime de guerre\n# Choix de Claude, à confirmer\n- Arrêter quelqu'un n'est possible qu'avec une preuve (fouille positive, fuite, barrage forcé)\n- Abattre celui qui force le barrage n'est pas un crime de guerre ; tirer sur un fuyard à pied en reste un\n- Un fuyard à pied se rend quand on l'approche à 4 m\n- Un innocent sur quatre a lui aussi un détail louche dans ses papiers\n# Étapes\n[x] Type de mission CONTROLE et choix du lieu (route près d'une localité, hors base, hors secteur ennemi)\n[x] Circulation déviée par le point, arrêt des voitures\n[x] Action « Contrôler » au contact du conducteur et son menu\n[x] Suspects : cargaisons, indices, réactions\n[x] Menace ennemie rare\n[x] Prime, malus, compte rendu au bot\n[x] Marqueur sur la carte web (automatique, comme toute mission)\n[x] Compilation (une erreur de nom corrigée, puis bon)\n[x] Essai dans le Workbench par Jack : fonctionne\n[x] Testé et validé par Jack le 20/09"
+    },
+    {
+     "id": 31,
+     "titre": "Fiche du soldat sur le web",
+     "detail": "Une page par soldat, consultable sans Discord.\n# Décidé avec Jack (20/09)\n- Publique, avec un annuaire « Effectifs » classé par grade\n- Contenu : grade et certifications, états de service (heures, missions), dates (première fois vu, dernière connexion), secteurs pris\n- Jamais d'infractions, de sanctions, de statut Staff ni d'identifiant du jeu ; l'adresse utilise un code court impossible à remonter\n# Étapes\n[x] Mémoire des soldats côté bot\n[x] Page Effectifs\n[x] Fiche du soldat\n# Où\nhttp://penguinassaultgroup.fr/effectifs/ puis un clic sur un nom\n# À vérifier\n[ ] Se connecter au serveur : sa fiche apparaît dans les effectifs\n[ ] Grade, certifications, heures et missions sont justes"
+    },
+    {
+     "id": 32,
+     "titre": "Carte web : tracé de l'opération",
+     "detail": "La carte garde la trace des carrés traversés par chaque soldat.\n# Décidé avec Jack (20/09)\n- Enregistrement EN PERMANENCE, sauf serveur vide\n- Données très légères : un point seulement quand le soldat change de carré, fichiers par jour, 30 jours gardés\n- À la fin d'une opération programmée : l'image du trajet est postée dans le salon des opérations\n- Tracé par soldat (le bot ne connaît pas les escouades)\n# Étapes\n[x] Enregistrement léger côté bot\n[x] Affichage des trajets sur la carte\n[x] Image générée sur le VPS\n[x] Envoi dans le salon des opérations en fin d'opération\n# Où\nSur la carte : menu « Trajets » en haut à droite (1 h à 24 h), lien « Image »\n# À vérifier\n[ ] Jouer un quart d’heure, puis afficher les trajets de 1 h\n[ ] Le lien « Image » donne bien le tracé\n[ ] À la fin d’une opération programmée (/operation) : l’image arrive dans le salon des opérations"
+    },
+    {
+     "id": 46,
+     "titre": "Historique des secteurs sur la carte",
+     "detail": "Une frise sous la carte web : quel secteur a été pris ou perdu, quand, par qui. On rejoue la progression de la campagne avec un curseur.\n# Décidé avec Jack (20/09)\n- « Par qui » : les soldats présents dans les carrés autour du secteur au moment de la prise\n- L'historique commence à la publication du mod (avant, le bot ne reçoit pas les secteurs)\n# Étapes\n[x] Le bot note chaque changement de propriétaire\n[x] Frise et curseur sur la carte\n# Où\nSur la carte : la frise en bas, et « Historique des secteurs » dans le panneau\n# À vérifier\n[ ] Publier le mod, prendre un secteur : il apparaît dans la frise avec les soldats présents\n[ ] Reculer le curseur : les losanges reprennent leur couleur d’alors"
+    },
+    {
+     "id": 47,
+     "titre": "Page « Campagne »",
+     "detail": "Une page web d'état de la guerre, pour l'écran du salon ou un second moniteur : /campagne/\n# Décidé avec Jack (20/09)\n- Tout est affiché : secteurs tenus, menace, missions en cours et dernières terminées, trésorerie, stocks, parc, soldats déployés, heure sur l'île\n- Les « commandants ennemis » n'existent pas dans le mod : laissés de côté\n# Étapes\n[x] Collecte côté bot\n[x] Page /campagne/\n[x] Lien depuis l'accueil\n# Où\nhttp://penguinassaultgroup.fr/campagne/\n# À vérifier\n[ ] La page sur le second écran, serveur en ligne avec des joueurs\n[ ] Après publication du mod : la liste des secteurs et les mouvements du front se remplissent"
+    },
+    {
+     "id": 48,
+     "titre": "Page d'accueil du site : hub vitrine de la PAG",
+     "detail": "La page d'accueil du site : une seule adresse à donner, et de là on va où on veut.\n# En ligne\nhttp://penguinassaultgroup.fr/\n# Ce qu'elle contient\n- Écusson, présentation de la PAG, bandeau en photographie aérienne d'Everon\n- État du serveur en direct : en ligne ou non, soldats déployés, secteurs tenus, missions ouvertes, heure sur l'île (totaux seulement, aucun nom)\n- Portes vers la carte de situation et le suivi du développement, avec un aperçu vivant de chacun\n- Bouton et porte Discord : cachés tant que le lien d'invitation n'est pas réglé\n- Rubriques « Ce qui vous attend », « Nous rejoindre », dernière mise à jour publiée\n- Lien « Accueil » ajouté sur la carte et sur le suivi\n# À vérifier\n[ ] Relire les textes de présentation et corriger ce qui ne colle pas\n[ ] Donner le lien d'invitation Discord (discord_invite) et le nom du serveur en jeu (server_name)\n[ ] Essai sur téléphone"
+    }
+   ]
+  }
+ ]
+};
+
+const COLONNES = [
+  { cle: 'idee',         nom: 'Idée',         legende: 'Proposées, pas encore retenues' },
+  { cle: 'a_faire',      nom: 'À faire',      legende: 'Retenues, à préparer' },
+  { cle: 'a_developper', nom: 'À développer', legende: 'Prêtes à être codées' },
+  { cle: 'en_cours',     nom: 'En cours',     legende: 'En chantier en ce moment' },
+  { cle: 'a_tester',     nom: 'À tester',     legende: 'À compiler et essayer en jeu' },
+  { cle: 'termine',      nom: 'Terminé',      legende: 'Faites, pas encore publiées' },
+];
+const INDEX_COL = Object.fromEntries(COLONNES.map((c, i) => [c.cle, i]));
+const H48 = 48 * 3600 * 1000;
+const $ = id => document.getElementById(id);
+const propre = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pluriel = (n, un, plusieurs) => `${n} ${n > 1 ? (plusieurs || un + 's') : un}`;
+const deux = n => String(n).padStart(2, '0');
+const ICONE_DROITE = '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICONE_GAUCHE = '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* ---------- préférences du visiteur (confort seulement, la page marche sans) ---------- */
+const memoire = {
+  lire(cle, defaut) { try { const v = localStorage.getItem('pag-suivi-kanban-' + cle); return v === null ? defaut : JSON.parse(v); } catch (e) { return defaut; } },
+  ecrire(cle, valeur) { try { localStorage.setItem('pag-suivi-kanban-' + cle, JSON.stringify(valeur)); } catch (e) { /* stockage indisponible : tant pis */ } },
+};
+
+/* ---------- dates ---------- */
+function lireDate(s) { const m = /^(\d{4})-(\d\d)-(\d\d)(?:[ T](\d\d):(\d\d))?/.exec(s || ''); return m ? new Date(+m[1], m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0)) : null; }
+function jour(s) { const d = lireDate(s); return d ? `${deux(d.getDate())}/${deux(d.getMonth() + 1)}/${d.getFullYear()}` : ''; }
+function jourHeure(s) { const d = lireDate(s); if (!d) return ''; return jour(s) + (/[ T]\d\d:\d\d/.test(s) ? ` à ${deux(d.getHours())}:${deux(d.getMinutes())}` : ''); }
+const maintenant = () => MAQUETTE ? lireDate(RELEVE_MAQUETTE).getTime() : Date.now();
+function depuis(s) {
+  const d = lireDate(s); if (!d) return '';
+  const n = maintenant(), min = Math.round((n - d.getTime()) / 60000);
+  if (min < 1) return "à l'instant";
+  if (min < 60) return `il y a ${min} min`;
+  if (min < 24 * 60) return `il y a ${Math.floor(min / 60)} h`;
+  const minuit = x => { const t = new Date(x); t.setHours(0, 0, 0, 0); return t.getTime(); };
+  const jours = Math.round((minuit(n) - minuit(d.getTime())) / 86400000);
+  if (jours <= 1) return `hier à ${deux(d.getHours())}:${deux(d.getMinutes())}`;
+  if (jours < 7) return `il y a ${jours} jours`;
+  return 'le ' + jour(s);
+}
+function fraicheur(c) {
+  const n = maintenant(), cr = lireDate(c.cree), mo = lireDate(c.modifie);
+  if (cr && n - cr.getTime() < H48) return 'nouveau';
+  if (mo && n - mo.getTime() < H48) return 'maj';
+  return '';
+}
+function badgeHTML(c) {
+  const f = fraicheur(c);
+  if (f === 'nouveau') return '<span class="badge nouveau" title="Carte créée il y a moins de 48 h">Nouveau</span>';
+  if (f === 'maj') return '<span class="badge maj" title="Carte modifiée il y a moins de 48 h">Mis à jour</span>';
+  return '';
+}
+
+/* ---------- cases à cocher du détail : [ ] et [x] ---------- */
+function taches(detail) {
+  let fait = 0, total = 0;
+  for (const l of String(detail || '').split(/\r?\n/)) { const m = /^\s*(?:[-*•]\s*)?\[( |x|X)\]\s*\S/.exec(l); if (m) { total++; if (m[1] !== ' ') fait++; } }
+  return { fait, total };
+}
+
+/* ---------- recherche : sans tenir compte des accents ni des majuscules ---------- */
+const plier = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/[’‘]/g, "'");
+let termes = [];
+const correspond = c => !termes.length || termes.every(t => plier(`#${c.id} ${c.titre} ${c.detail || ''}`).includes(t));
+function surligner(texte) {
+  texte = String(texte ?? '');
+  if (!termes.length) return propre(texte);
+  let norme = ''; const pos = [];
+  for (let i = 0; i < texte.length; i++) { const p = plier(texte[i]); for (let k = 0; k < p.length; k++) { norme += p[k]; pos.push(i); } }
+  const plages = [];
+  for (const t of termes) { let k = norme.indexOf(t); while (k !== -1) { plages.push([pos[k], pos[k + t.length - 1] + 1]); k = norme.indexOf(t, k + t.length); } }
+  if (!plages.length) return propre(texte);
+  plages.sort((a, b) => a[0] - b[0]);
+  let sortie = '', curseur = 0;
+  for (const [a, b] of plages) {
+    if (b <= curseur) continue;
+    const debut = Math.max(a, curseur);
+    sortie += propre(texte.slice(curseur, debut)) + '<mark>' + propre(texte.slice(debut, b)) + '</mark>';
+    curseur = b;
+  }
+  return sortie + propre(texte.slice(curseur));
+}
+// texte échappé + surligné + adresses web cliquables
+function texteRiche(t) {
+  return String(t ?? '').split(/(https?:\/\/[^\s<>"]+)/g).map((morceau, i) => {
+    if (i % 2 === 0) return surligner(morceau);
+    const m = /^(.*?)([.,;:!?)»]*)$/.exec(morceau);
+    return `<a href="${propre(m[1])}" target="_blank" rel="noopener">${surligner(m[1])}</a>${surligner(m[2])}`;
+  }).join('');
+}
+
+/* ---------- mise en forme du détail : « # Titre », « - puce », « [ ] à faire », « [x] fait », le reste en paragraphes ---------- */
+function mettreEnForme(texte) {
+  const sortie = []; let liste = null;
+  const fermer = () => { if (liste) { sortie.push('<ul>' + liste.join('') + '</ul>'); liste = null; } };
+  for (const brute of String(texte || '').split(/\r?\n/)) {
+    const ligne = brute.trim(); let m;
+    if (!ligne) { fermer(); continue; }
+    if ((m = /^#+\s*(.+)$/.exec(ligne))) { fermer(); sortie.push('<h4>' + texteRiche(m[1]) + '</h4>'); }
+    else if ((m = /^(?:[-*•]\s*)?\[( |x|X)\]\s*(.+)$/.exec(ligne))) (liste = liste || []).push(`<li class="case${m[1] === ' ' ? '' : ' fait'}">${texteRiche(m[2])}</li>`);
+    else if ((m = /^[-*•]\s+(.+)$/.exec(ligne))) (liste = liste || []).push('<li>' + texteRiche(m[1]) + '</li>');
+    else {
+      fermer();
+      // Paragraphe de journal qui commence par un mot en capitales (CODÉ, ANALYSE, ESSAI DE JACK…) : le mot devient un tampon
+      const t = /^([A-ZÀ-ÖØ-Þ]{4,}(?:\s+[A-ZÀ-ÖØ-Þ]{2,})*)(?=[\s,.:;(]|$)/.exec(ligne);
+      sortie.push(t ? `<p class="journal"><span class="tampon">${surligner(t[1])}</span>${texteRiche(ligne.slice(t[1].length))}</p>` : '<p>' + texteRiche(ligne) + '</p>');
+    }
+  }
+  fermer();
+  return sortie.join('');
+}
+// Notes de version : une ligne = un paragraphe ; « En jeu : », « Sur le web : »… en gras
+function notesEnForme(notes) {
+  return String(notes || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => {
+    const m = /^([A-ZÀ-ÖØ-Þ][^:\d]{1,20}?)\s:\s(.+)$/.exec(l);
+    return m && m[1].split(/\s+/).length <= 3 ? `<p><b>${texteRiche(m[1])}</b> : ${texteRiche(m[2])}</p>` : `<p>${texteRiche(l)}</p>`;
+  }).join('');
+}
+// Aperçu de deux lignes sous le titre (ou le passage trouvé par la recherche)
+function extrait(c) {
+  const lignes = String(c.detail || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  if (!lignes.length) return '';
+  const nette = l => l.replace(/^#+\s*/, '').replace(/^(?:[-*•]\s*)?\[( |x|X)\]\s*/, '').replace(/^[-*•]\s+/, '');
+  if (termes.length) {
+    const titre = plier(c.titre);
+    const cherches = termes.filter(t => !titre.includes(t));
+    for (const l of lignes) {
+      const p = plier(l); const t = cherches.find(x => p.includes(x));
+      if (t) { const i = p.indexOf(t), a = Math.max(0, i - 45); return (a ? '…' : '') + surligner(nette(l.slice(a)).slice(0, 200)); }
+    }
+  }
+  const premiere = lignes.find(l => !/^#/.test(l)) || lignes[0];
+  return surligner(nette(premiere).slice(0, 220));
+}
+
+/* ---------- état de la page ---------- */
+const modeOnglets = matchMedia('(max-width: 959px)');
+const grandEcran = matchMedia('(min-width: 1400px)');
+const etat = {
+  cartes: [], versions: [], charge: false, changees: new Set(),
+  recherche: '', recentes: false,
+  tri: memoire.lire('tri', 'recent'),
+  masquees: new Set(memoire.lire('masquees', [])),
+  ideeRepliee: memoire.lire('idee-repliee', null),   // null : repliée sauf sur grand écran
+  onglet: memoire.lire('onglet', null),
+  version: null, toutes: false,
+  tiroir: null,
+};
+const ideeRepliee = () => etat.ideeRepliee === null ? !grandEcran.matches : etat.ideeRepliee;
+const filtreActif = () => termes.length > 0 || etat.recentes;
+const filtrer = c => correspond(c) && (!etat.recentes || fraicheur(c) !== '');
+const cartesDe = cle => etat.cartes.filter(c => c.colonne === cle);
+function trier(liste) {
+  return liste.slice().sort(etat.tri === 'numero'
+    ? (a, b) => a.id - b.id
+    : (a, b) => String(b.modifie || '').localeCompare(String(a.modifie || '')) || b.id - a.id);
+}
+
+function normaliser(brut) {
+  const cartes = [];
+  if (Array.isArray(brut.cartes)) for (const c of brut.cartes) cartes.push({ ...c, id: Number(c.id) });
+  else if (Array.isArray(brut.colonnes)) for (const col of brut.colonnes) for (const c of col.cartes || []) cartes.push({ ...c, id: Number(c.id), colonne: c.colonne || col.cle });
+  const versions = (brut.versions || []).map(v => ({ ...v, cartes: (v.cartes || []).map(c => ({ ...c, id: Number(c.id) })) }))
+    .sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+  return { cartes, versions };
+}
+
+/* ---------- rendu ---------- */
+function construire() {
+  $('puces').innerHTML = COLONNES.map(c => `<button type="button" class="puce" data-cle="${c.cle}" style="--c: var(--${c.cle})" aria-pressed="true"><span>${c.nom}</span><b>0</b></button>`).join('');
+  $('onglets').innerHTML = COLONNES.map(c => `<button type="button" class="onglet" role="tab" id="onglet-${c.cle}" data-cle="${c.cle}" style="--c: var(--${c.cle})" aria-selected="false" aria-controls="tableau"><span>${c.nom}</span><b>0</b></button>`).join('');
+  $('repartition').innerHTML = COLONNES.map(c => `<i data-cle="${c.cle}" style="--c: var(--${c.cle})"></i>`).join('');
+  $('tri').value = etat.tri === 'numero' ? 'numero' : 'recent';
+}
+
+function rendreResume() {
+  const n = etat.cartes.length, nv = etat.versions.length, der = etat.versions[nv - 1];
+  $('resume').innerHTML = `<span><b>${n}</b> carte${n > 1 ? 's' : ''} au tableau</span>`
+    + `<span><b>${nv}</b> mise${nv > 1 ? 's' : ''} à jour publiée${nv > 1 ? 's' : ''}</span>`
+    + (der ? `<span>Dernière : <b class="or">${propre(der.version)}</b> le ${jour(der.date)}</span>` : '');
+}
+
+function rendreReleve(etatConnexion) {
+  const r = $('releve');
+  if (MAQUETTE) { r.className = 'releve'; r.lastElementChild.textContent = `Données figées du ${jourHeure(RELEVE_MAQUETTE)} · maquette « Kanban tactique »`; return; }
+  r.className = 'releve ' + (etatConnexion === false ? 'panne' : 'direct');
+  r.lastElementChild.textContent = etatConnexion === false ? 'Site injoignable, nouvel essai…' : 'En direct · actualisé toutes les 15 s';
+}
+
+function rendreCompteurs() {
+  const filtre = filtreActif();
+  for (const col of COLONNES) {
+    const toutes = cartesDe(col.cle), n = toutes.length, vis = toutes.filter(filtrer).length;
+    const texte = filtre ? `${vis}/${n}` : String(n);
+    const masquee = etat.masquees.has(col.cle);
+    const p = document.querySelector(`.puce[data-cle="${col.cle}"]`);
+    p.querySelector('b').textContent = texte;
+    p.setAttribute('aria-pressed', String(!masquee));
+    p.title = `${col.nom} : ${pluriel(n, 'carte')}. ${masquee ? 'Colonne masquée : cliquer pour l\u2019afficher' : 'Cliquer pour masquer la colonne'}`;
+    const o = $('onglet-' + col.cle);
+    o.querySelector('b').textContent = texte;
+    o.setAttribute('aria-selected', String(etat.onglet === col.cle));
+    o.tabIndex = etat.onglet === col.cle ? 0 : -1;
+    o.classList.toggle('touche', filtre && vis > 0 && etat.onglet !== col.cle);
+    const seg = document.querySelector(`#repartition i[data-cle="${col.cle}"]`);
+    seg.style.flexGrow = n; seg.hidden = !n; seg.title = `${col.nom} : ${n}`;
+  }
+  const total = etat.cartes.length;
+  const colsVues = modeOnglets.matches ? COLONNES : COLONNES.filter(c => !etat.masquees.has(c.cle));
+  const nVues = etat.cartes.filter(c => colsVues.some(k => k.cle === c.colonne) && filtrer(c)).length;
+  $('compte').textContent = (filtre || (!modeOnglets.matches && etat.masquees.size))
+    ? `${nVues} carte${nVues > 1 ? 's' : ''} affichée${nVues > 1 ? 's' : ''} sur ${total}`
+    : `${total} carte${total > 1 ? 's' : ''} au tableau`;
+  $('effacer').hidden = !(etat.recherche || etat.recentes || etat.masquees.size);
+  $('recentes').querySelector('b').textContent = etat.cartes.filter(c => fraicheur(c)).length;
+  $('recentes').setAttribute('aria-pressed', String(etat.recentes));
+}
+
+function ficheHTML(c, i) {
+  const t = taches(c.detail), ex = extrait(c);
+  const pct = t.total ? Math.round(100 * t.fait / t.total) : 0;
+  return `<a class="fiche${etat.changees.has(c.id) ? ' flash' : ''}" href="#carte-${c.id}" data-id="${c.id}" data-focus="fiche-${c.id}" style="--c: var(--${c.colonne}); --i: ${i}">
+    <div class="fiche-haut"><span class="num">#${c.id}</span>${badgeHTML(c)}</div>
+    <div class="titre">${surligner(c.titre)}</div>
+    ${ex ? `<p class="extrait">${ex}</p>` : ''}
+    ${t.total ? `<div class="progression${t.fait === t.total ? ' complet' : ''}" title="${pluriel(t.fait, 'tâche cochée', 'tâches cochées')} sur ${t.total}"><span class="jauge"><i style="width: ${pct}%"></i></span><span>${t.fait}/${t.total}</span></div>` : ''}
+    <div class="fiche-bas"><span title="Modifiée le ${jourHeure(c.modifie)}">${depuis(c.modifie)}</span><span class="ouvrir">Détail →</span></div>
+  </a>`;
+}
+
+function colonneHTML(col, replie, onglets) {
+  const i = INDEX_COL[col.cle];
+  const toutes = cartesDe(col.cle), vues = trier(toutes.filter(filtrer));
+  const filtre = filtreActif();
+  const compte = filtre ? `${vues.length}<small>/${toutes.length}</small>` : String(toutes.length);
+  if (replie) {
+    return `<section class="colonne repliee" style="--c: var(--${col.cle})">
+      <div class="rail" role="button" tabindex="0" data-action="deplier" data-focus="rail-${col.cle}" aria-expanded="false" aria-label="Déplier la colonne ${col.nom} (${pluriel(toutes.length, 'carte')})" title="Déplier la colonne ${col.nom}">
+        <div class="rail-interne">
+          <span class="rail-icone">${ICONE_DROITE}</span>
+          <span class="col-compte">${compte}</span>
+          <span class="vertical">${col.nom}</span>
+          <span class="vertical petit">Déplier la colonne</span>
+        </div>
+      </div>
+    </section>`;
+  }
+  const corps = vues.map(ficheHTML).join('')
+    || `<div class="vide">${filtre ? 'Aucune carte ne correspond' : 'Rien ici pour le moment'}</div>`;
+  return `<section class="colonne" style="--c: var(--${col.cle})" aria-labelledby="col-${col.cle}">
+    <header class="col-tete">
+      <div class="col-ligne">
+        <span class="col-num">${deux(i + 1)}</span>
+        <h2 class="col-nom" id="col-${col.cle}">${col.nom}</h2>
+        <span class="col-compte" title="${pluriel(toutes.length, 'carte')}">${compte}</span>
+        ${col.cle === 'idee' && !onglets ? `<button type="button" class="col-plier" data-action="replier" data-focus="plier-${col.cle}" aria-expanded="true" aria-label="Replier la colonne ${col.nom}" title="Replier la colonne ${col.nom}">${ICONE_GAUCHE}</button>` : ''}
+      </div>
+      <div class="col-legende">${col.legende}</div>
+    </header>
+    <div class="col-corps">${corps}</div>
+  </section>`;
+}
+
+function rendreTableau(focus) {
+  const tab = $('tableau'), onglets = modeOnglets.matches;
+  const avant = focus || (document.activeElement && tab.contains(document.activeElement) ? document.activeElement.dataset.focus : null);
+  const cols = onglets ? COLONNES.filter(c => c.cle === etat.onglet) : COLONNES.filter(c => !etat.masquees.has(c.cle));
+  const replie = !onglets && ideeRepliee();
+  tab.style.gridTemplateColumns = onglets ? 'minmax(0, 1fr)' : (cols.map(c => c.cle === 'idee' && replie ? '58px' : 'minmax(0, 1fr)').join(' ') || '1fr');
+  tab.setAttribute('role', onglets ? 'tabpanel' : 'region');
+  if (onglets) tab.setAttribute('aria-labelledby', 'onglet-' + etat.onglet); else tab.removeAttribute('aria-labelledby');
+  tab.innerHTML = cols.map(col => colonneHTML(col, replie && col.cle === 'idee', onglets)).join('')
+    || '<div class="vide">Toutes les colonnes sont masquées.<br><button type="button" class="lien-bouton" data-action="tout-afficher">Tout afficher</button></div>';
+  if (avant) { const el = tab.querySelector(`[data-focus="${avant}"]`); if (el) el.focus({ preventScroll: true }); }
+}
+
+function rendreArchives() {
+  const el = $('archives');
+  if (!termes.length) { el.hidden = true; el.innerHTML = ''; return; }
+  const trouvees = [];
+  for (const v of etat.versions.slice().reverse()) for (const c of v.cartes) if (correspond(c)) trouvees.push([v, c]);
+  el.hidden = false;
+  el.innerHTML = trouvees.length
+    ? '<span>Aussi dans les mises à jour publiées :</span>' + trouvees.slice(0, 8).map(([v, c]) => `<a href="#carte-${c.id}" data-id="${c.id}"><b>${propre(v.version)}</b>#${c.id} ${surligner(c.titre)}</a>`).join('')
+      + (trouvees.length > 8 ? `<span>et ${trouvees.length - 8} autres</span>` : '')
+    : '<span>Rien de correspondant dans les mises à jour publiées.</span>';
+}
+
+function itemCarte(c) {
+  return `<li><a href="#carte-${c.id}" data-id="${c.id}"><span class="num">#${c.id}</span><span class="v-titre">${propre(c.titre)}</span><span class="v-plus" aria-hidden="true">›</span></a></li>`;
+}
+function panneauVersion(cle) {
+  if (cle === '__avenir') {
+    const t = trier(cartesDe('termine'));
+    return `<article class="version avenir">
+      <header class="v-tete"><h3 class="v-nom">Prochaine mise à jour</h3><span class="v-date">en préparation</span><span class="v-nb">${pluriel(t.length, 'carte terminée', 'cartes terminées')}</span></header>
+      <div class="v-notes"><p>Ces cartes sont dans la colonne Terminé : elles ne figurent encore dans aucune mise à jour publiée.</p></div>
+      <h4 class="v-sous">Cartes en attente</h4><ul class="v-cartes">${t.map(itemCarte).join('')}</ul>
+    </article>`;
+  }
+  const v = etat.versions.find(x => x.version === cle);
+  if (!v) return '';
+  return `<article class="version">
+    <header class="v-tete"><h3 class="v-nom">${propre(v.version)}</h3><span class="v-date">Publiée le ${jourHeure(v.date)}</span><span class="v-nb">${pluriel(v.cartes.length, 'carte')}</span></header>
+    ${v.notes ? `<div class="v-notes">${notesEnForme(v.notes)}</div>` : ''}
+    ${v.cartes.length ? `<h4 class="v-sous">Contenu de la version</h4><ul class="v-cartes">${v.cartes.map(itemCarte).join('')}</ul>` : ''}
+  </article>`;
+}
+
+let friseCalee = false;
+function rendreHistorique() {
+  const vs = etat.versions, nTermine = cartesDe('termine').length;
+  const jalons = vs.map(v => `<button type="button" class="jalon" data-version="${propre(v.version)}" aria-pressed="false"><span class="point"></span><span class="v">${propre(v.version)}</span><span class="d">${jour(v.date)}</span><span class="n">${pluriel(v.cartes.length, 'carte')}</span></button>`);
+  if (nTermine) jalons.push(`<button type="button" class="jalon avenir" data-version="__avenir" aria-pressed="false"><span class="point"></span><span class="v">À venir</span><span class="d">prochaine version</span><span class="n">${pluriel(nTermine, 'carte terminée', 'cartes terminées')}</span></button>`);
+  $('frise').innerHTML = jalons.join('');
+  $('frise-cadre').hidden = !jalons.length;
+  $('toutes').hidden = jalons.length < 2;
+  rendreVersions();
+  if (!friseCalee) { friseCalee = true; const f = $('frise-cadre'); f.scrollLeft = f.scrollWidth; }
+}
+function rendreVersions() {
+  const vs = etat.versions, nTermine = cartesDe('termine').length;
+  for (const j of document.querySelectorAll('.jalon')) j.setAttribute('aria-pressed', String(etat.toutes || j.dataset.version === etat.version));
+  $('toutes').setAttribute('aria-pressed', String(etat.toutes));
+  $('toutes').textContent = etat.toutes ? 'Une version à la fois' : 'Afficher toutes les versions';
+  const liste = etat.toutes ? [...(nTermine ? ['__avenir'] : []), ...vs.slice().reverse().map(v => v.version)] : (etat.version ? [etat.version] : []);
+  $('versions').innerHTML = liste.map(panneauVersion).join('') || '<div class="vide" style="margin-top:14px">Aucune mise à jour publiée pour le moment.</div>';
+}
+
+/* ---------- tiroir de détail ---------- */
+function trouverCarte(id) {
+  const c = etat.cartes.find(x => x.id === id);
+  if (c) return { carte: c, version: null };
+  for (const v of etat.versions) { const a = v.cartes.find(x => x.id === id); if (a) return { carte: a, version: v }; }
+  return null;
+}
+function listeVoisine(r) {
+  if (r.version) return r.version.cartes;
+  const cle = r.carte.colonne;
+  const vues = trier(cartesDe(cle).filter(filtrer));
+  return vues.some(x => x.id === r.carte.id) ? vues : trier(cartesDe(cle));
+}
+function rendreTiroir() {
+  const r = trouverCarte(etat.tiroir);
+  const tir = $('tiroir');
+  if (!r) {
+    tir.style.setProperty('--c', 'var(--discret)');
+    $('t-num').textContent = '#' + etat.tiroir; $('t-phase').textContent = 'Introuvable'; $('t-badges').innerHTML = '';
+    $('t-titre').textContent = 'Cette carte n\u2019existe plus';
+    $('t-meta').textContent = 'Elle a peut-être été supprimée ou fusionnée avec une autre depuis le Discord.';
+    $('t-corps').innerHTML = ''; $('t-prec').disabled = $('t-suiv').disabled = true; $('t-position').textContent = '';
+    return;
+  }
+  const { carte: c, version: v } = r;
+  const col = v ? null : COLONNES[INDEX_COL[c.colonne]];
+  tir.style.setProperty('--c', v ? 'var(--or)' : `var(--${c.colonne})`);
+  $('t-num').textContent = '#' + c.id;
+  $('t-phase').textContent = v ? `Publiée · ${v.version}` : (col ? col.nom : c.colonne);
+  $('t-badges').innerHTML = v ? '' : badgeHTML(c);
+  $('t-titre').innerHTML = surligner(c.titre);
+  $('t-meta').textContent = v
+    ? `Publiée le ${jourHeure(v.date)} dans la mise à jour ${v.version}`
+    : [c.cree ? `Créée le ${jourHeure(c.cree)}` : '', c.modifie ? `modifiée le ${jourHeure(c.modifie)} (${depuis(c.modifie)})` : ''].filter(Boolean).join(' · ');
+
+  const ici = v ? 6 : (INDEX_COL[c.colonne] ?? 0) + 1;
+  const segments = COLONNES.map((k, n) => `<i class="${v ? 'publie' : n < ici - 1 ? 'passe' : n === ici - 1 ? 'ici' : ''}"></i>`).join('');
+  const etiquettes = COLONNES.map((k, n) => `<span class="${!v && n === ici - 1 ? 'ici' : ''}">${k.nom}</span>`).join('');
+  const texteEtape = v ? `Terminée et publiée dans la mise à jour <b>${propre(v.version)}</b>` : `Étape ${ici} sur 6 : <b>${col ? col.nom : ''}</b> — ${col ? col.legende.toLowerCase() : ''}`;
+  const t = taches(c.detail);
+  const avancement = t.total ? `<div class="t-bloc${t.fait === t.total ? ' complet' : ''}"><div class="t-av-haut"><span>Tâches cochées</span><b>${t.fait} / ${t.total}</b></div><span class="jauge"><i style="width: ${Math.round(100 * t.fait / t.total)}%"></i></span></div>` : '';
+  $('t-corps').innerHTML = `<div class="t-bloc"><div class="t-etapes">${segments}</div><div class="t-etiquettes">${etiquettes}</div><p class="t-etape-texte">${texteEtape}</p></div>`
+    + avancement
+    + `<div class="detail">${c.detail ? mettreEnForme(c.detail) : '<p class="sans-detail">Pas de détail pour cette carte.</p>'}</div>`;
+
+  const liste = listeVoisine(r), pos = liste.findIndex(x => x.id === c.id);
+  $('t-prec').disabled = pos <= 0;
+  $('t-suiv').disabled = pos < 0 || pos >= liste.length - 1;
+  $('t-position').textContent = pos >= 0 ? `${pos + 1} / ${liste.length} · ${v ? v.version : (col ? col.nom : '')}` : '';
+}
+
+let tiroirPousse = false, focusAvant = null;
+const fond = () => [document.querySelector('.barre'), document.querySelector('main')];
+function ouvrirTiroir(id, pousser) {
+  if (!trouverCarte(id) && !pousser && etat.tiroir === null) return;   // lien vers une carte inconnue : on ignore
+  const dejaOuvert = etat.tiroir !== null;
+  if (!dejaOuvert) focusAvant = document.activeElement;
+  etat.tiroir = id;
+  if (pousser && !dejaOuvert) { try { history.pushState({ tiroir: id }, '', '#carte-' + id); tiroirPousse = true; } catch (e) { tiroirPousse = false; } }
+  else if (dejaOuvert) { try { history.replaceState(history.state, '', '#carte-' + id); } catch (e) {} }
+  rendreTiroir();
+  $('t-corps').scrollTop = 0;
+  $('tiroir').classList.add('ouvert'); $('voile').classList.add('ouvert');
+  document.body.classList.add('fige');
+  for (const el of fond()) el.inert = true;
+  if (!dejaOuvert) $('t-fermer').focus({ preventScroll: true });
+}
+function fermerTiroir(depuisHistorique) {
+  if (etat.tiroir === null) return;
+  if (!depuisHistorique) {
+    if (tiroirPousse) { tiroirPousse = false; history.back(); return; }        // popstate refermera le tiroir
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
+  tiroirPousse = false;
+  etat.tiroir = null;
+  $('tiroir').classList.remove('ouvert'); $('voile').classList.remove('ouvert');
+  document.body.classList.remove('fige');
+  for (const el of fond()) el.inert = false;
+  if (focusAvant && document.contains(focusAvant)) focusAvant.focus({ preventScroll: true });
+  focusAvant = null;
+}
+function voisine(sens) {
+  const r = trouverCarte(etat.tiroir); if (!r) return;
+  const liste = listeVoisine(r), pos = liste.findIndex(x => x.id === r.carte.id), cible = liste[pos + sens];
+  if (cible) ouvrirTiroir(cible.id, false);
+}
+function lireAncre() {
+  const m = /^#carte-(\d+)$/.exec(location.hash);
+  if (m) ouvrirTiroir(Number(m[1]), false); else fermerTiroir(true);
+}
+
+/* ---------- tout redessiner ---------- */
+function toutRendre() {
+  rendreResume(); rendreCompteurs(); rendreTableau(); rendreArchives(); rendreHistorique();
+  if (etat.tiroir !== null) rendreTiroir();
+}
+function apresFiltre() {
+  rendreCompteurs(); rendreTableau(); rendreArchives();
+  if (etat.tiroir !== null) rendreTiroir();
+}
+
+let anciennes = null;
+function recevoir(brut) {
+  const { cartes, versions } = normaliser(brut);
+  etat.changees = new Set();
+  if (anciennes) for (const c of cartes) if (anciennes.get(c.id) !== `${c.modifie}|${c.colonne}`) etat.changees.add(c.id);
+  anciennes = new Map(cartes.map(c => [c.id, `${c.modifie}|${c.colonne}`]));
+  etat.cartes = cartes; etat.versions = versions;
+  if (!INDEX_COL.hasOwnProperty(etat.onglet)) etat.onglet = ['en_cours', 'a_tester', 'a_developper', 'a_faire', 'termine', 'idee'].find(k => cartesDe(k).length) || 'idee';
+  const cles = versions.map(v => v.version);
+  if (!etat.version || (etat.version === '__avenir' ? !cartesDe('termine').length : !cles.includes(etat.version))) etat.version = cles[cles.length - 1] || (cartesDe('termine').length ? '__avenir' : null);
+  const premier = !etat.charge;
+  if (premier) $('tableau').classList.add('premier');
+  toutRendre();
+  etat.changees = new Set();
+  if (premier) {
+    etat.charge = true;
+    setTimeout(() => $('tableau').classList.remove('premier'), 1200);
+    centrerOnglet(false);
+    if (/^#carte-\d+$/.test(location.hash)) lireAncre();
+    else if (location.hash === '#historique') $('historique').scrollIntoView();
+  }
+}
+
+/* ---------- actualisation (production) ---------- */
+let empreinte = '';
+async function actualiser() {
+  try {
+    const texte = await (await fetch('api', { cache: 'no-store' })).text();
+    rendreReleve(true);
+    if (texte !== empreinte) { empreinte = texte; recevoir(JSON.parse(texte)); }
+  } catch (e) { rendreReleve(false); }
+}
+
+/* ---------- événements ---------- */
+function changerOnglet(cle, defiler) {
+  if (!INDEX_COL.hasOwnProperty(cle) || cle === etat.onglet) return;
+  etat.onglet = cle; memoire.ecrire('onglet', cle);
+  rendreCompteurs(); rendreTableau();
+  centrerOnglet(true);
+  if (defiler) { const haut = $('tableau').getBoundingClientRect().top - $('onglets').offsetHeight - 10; if (haut < 0) window.scrollBy({ top: haut }); }
+}
+function centrerOnglet(doux) {
+  const barre = $('onglets'), o = $('onglet-' + etat.onglet);
+  if (!o || !modeOnglets.matches) return;
+  const gauche = o.offsetLeft - (barre.clientWidth - o.offsetWidth) / 2;
+  barre.scrollTo({ left: Math.max(0, gauche), behavior: doux ? 'smooth' : 'auto' });
+}
+function basculerIdee(replier) {
+  etat.ideeRepliee = replier; memoire.ecrire('idee-repliee', replier);
+  rendreTableau(replier ? 'rail-idee' : 'plier-idee');
+}
+function ouvrirDepuisLien(e) {
+  const a = e.target.closest('a[data-id]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  ouvrirTiroir(Number(a.dataset.id), true);
+}
+
+function brancher() {
+  $('recherche').addEventListener('input', e => {
+    etat.recherche = e.target.value;
+    termes = plier(etat.recherche.trim()).split(/\s+/).filter(Boolean);
+    apresFiltre();
+  });
+  $('recherche').addEventListener('keydown', e => { if (e.key === 'Escape' && e.target.value) { e.target.value = ''; e.target.dispatchEvent(new Event('input')); } });
+  $('recentes').addEventListener('click', () => { etat.recentes = !etat.recentes; apresFiltre(); });
+  $('tri').addEventListener('change', e => { etat.tri = e.target.value; memoire.ecrire('tri', etat.tri); apresFiltre(); rendreVersions(); });
+  $('effacer').addEventListener('click', () => {
+    etat.recherche = ''; $('recherche').value = ''; termes = []; etat.recentes = false; etat.masquees.clear(); memoire.ecrire('masquees', []);
+    apresFiltre();
+  });
+  $('puces').addEventListener('click', e => {
+    const p = e.target.closest('.puce'); if (!p) return;
+    const cle = p.dataset.cle;
+    etat.masquees.has(cle) ? etat.masquees.delete(cle) : etat.masquees.add(cle);
+    memoire.ecrire('masquees', [...etat.masquees]);
+    rendreCompteurs(); rendreTableau();
+  });
+  $('onglets').addEventListener('click', e => { const o = e.target.closest('.onglet'); if (o) changerOnglet(o.dataset.cle, true); });
+  $('onglets').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const i = INDEX_COL[etat.onglet] + (e.key === 'ArrowRight' ? 1 : -1);
+    if (COLONNES[i]) { e.preventDefault(); changerOnglet(COLONNES[i].cle, false); $('onglet-' + COLONNES[i].cle).focus(); }
+  });
+  const tab = $('tableau');
+  tab.addEventListener('click', e => {
+    const act = e.target.closest('[data-action]');
+    if (act) {
+      if (act.dataset.action === 'deplier') basculerIdee(false);
+      else if (act.dataset.action === 'replier') basculerIdee(true);
+      else if (act.dataset.action === 'tout-afficher') { etat.masquees.clear(); memoire.ecrire('masquees', []); rendreCompteurs(); rendreTableau(); }
+      return;
+    }
+    ouvrirDepuisLien(e);
+  });
+  tab.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.dataset.action === 'deplier') { e.preventDefault(); basculerIdee(false); } });
+  // Sur téléphone : glisser le doigt à gauche ou à droite change de colonne
+  let tx = null, ty = null;
+  tab.addEventListener('touchstart', e => { if (!modeOnglets.matches || e.touches.length !== 1) { tx = null; return; } tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  tab.addEventListener('touchend', e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = null;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > 1.6 * Math.abs(dy)) { const c = COLONNES[INDEX_COL[etat.onglet] + (dx < 0 ? 1 : -1)]; if (c) changerOnglet(c.cle, true); }
+  }, { passive: true });
+
+  $('archives').addEventListener('click', ouvrirDepuisLien);
+  $('versions').addEventListener('click', ouvrirDepuisLien);
+  $('frise').addEventListener('click', e => {
+    const j = e.target.closest('.jalon'); if (!j) return;
+    etat.version = j.dataset.version; etat.toutes = false; rendreVersions();
+  });
+  $('toutes').addEventListener('click', () => { etat.toutes = !etat.toutes; rendreVersions(); });
+
+  $('t-fermer').addEventListener('click', () => fermerTiroir(false));
+  $('voile').addEventListener('click', () => fermerTiroir(false));
+  $('t-prec').addEventListener('click', () => voisine(-1));
+  $('t-suiv').addEventListener('click', () => voisine(1));
+  $('t-lien').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#carte-' + etat.tiroir;
+    let ok = false;
+    try { await navigator.clipboard.writeText(url); ok = true; }
+    catch (e) {
+      try { const z = document.createElement('textarea'); z.value = url; z.setAttribute('readonly', ''); z.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(z); z.select(); ok = document.execCommand('copy'); z.remove(); } catch (e2) {}
+    }
+    const s = $('t-lien').querySelector('span'); s.textContent = ok ? 'Lien copié' : 'Copie impossible';
+    setTimeout(() => { s.textContent = 'Copier le lien'; }, 2000);
+  });
+
+  document.addEventListener('keydown', e => {
+    const dansChamp = e.target.closest && e.target.closest('input, textarea, select');
+    if (etat.tiroir !== null) {
+      if (e.key === 'Escape') { e.preventDefault(); fermerTiroir(false); }
+      else if (!dansChamp && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) { e.preventDefault(); voisine(e.key === 'ArrowLeft' ? -1 : 1); }
+      return;
+    }
+    if (e.key === '/' && !dansChamp && !e.ctrlKey && !e.metaKey) { e.preventDefault(); $('recherche').focus(); }
+  });
+  window.addEventListener('popstate', lireAncre);
+  const auChangement = () => { rendreCompteurs(); rendreTableau(); centrerOnglet(false); };
+  modeOnglets.addEventListener('change', auChangement);
+  grandEcran.addEventListener('change', () => { if (etat.ideeRepliee === null) rendreTableau(); });
+}
+
+/* ---------- démarrage ---------- */
+construire();
+brancher();
+rendreReleve();
+if (MAQUETTE) {
+  recevoir(DONNEES);
+} else {
+  actualiser();
+  setInterval(actualiser, 15000);
+  setInterval(() => { if (etat.charge) { rendreCompteurs(); rendreTableau(); } }, 60000);   // « il y a … » et badges 48 h restent justes
+}
+</script>
+</body>
+</html>

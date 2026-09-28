@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arsenal PAG</title>
+<style>
+:root{--bg:#14171a;--panel:#1c2126;--line:#2c333a;--ink:#e8eaec;--mute:#8d979f;--acc:#c9a227;--ok:#4f9d69;--ko:#b5483f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Segoe UI",system-ui,sans-serif;padding-inline:20px;padding-block:28px 60px}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:.02em}
+.sub{color:var(--mute);margin:0 0 20px}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);padding-block:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);margin-bottom:18px}
+.bar input{flex:1 1 220px;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:6px;font:inherit}
+.bar button{background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:6px;font:inherit;cursor:pointer}
+.bar button.on{border-color:var(--acc);color:var(--acc)}
+.count{color:var(--mute);font-variant-numeric:tabular-nums;flex-basis:100%}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--acc);margin:30px 0 8px;display:flex;justify-content:space-between;gap:12px}
+h2 span{color:var(--mute);letter-spacing:0;text-transform:none;white-space:nowrap}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;background:var(--panel)}
+th{text-align:left;font-size:12px;color:var(--mute);font-weight:600;padding:8px 12px;border-bottom:1px solid var(--line)}
+td{padding:6px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+td.n{color:var(--mute);width:44px;font-variant-numeric:tabular-nums}
+td.i{width:100px}
+td.i img{display:block;width:84px;height:69px;border-radius:6px}
+td.nom{font-weight:500}
+td.nom small{display:block;font-weight:400;color:var(--acc);font-size:12px;margin-top:2px}
+tr[data-s="retirer"] td.nom span{text-decoration:line-through}
+select,td input{background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:6px 8px;border-radius:6px;font:inherit;width:100%}
+td.s{width:130px}td.c{width:220px}
+tr[data-s="garder"] td.n{box-shadow:inset 3px 0 var(--ok)}
+tr[data-s="retirer"] td.n{box-shadow:inset 3px 0 var(--ko)}
+tr[data-s="retirer"] td.i,tr[data-s="retirer"] td.nom{opacity:.4}
+@media(max-width:640px){td.c,th.c{display:none}td.i{width:76px}td.i img{width:64px;height:53px}}
+</style></head><body>
+<div class="wrap">
+<h1>Arsenal PAG — inventaire</h1>
+<p class="sub">Étape 1 : recensement image + nom. Le statut et la classe sont mémorisés dans ce navigateur ; « Copier le tri » donne la liste à renvoyer.</p>
+<div class="bar"><input id="q" placeholder="Filtrer par nom…">
+<button data-f="">Tout</button><button data-f="garder">À garder</button><button data-f="retirer">À retirer</button><button data-f="voir">À voir</button>
+<button id="copy">Copier le tri</button><span class="count" id="count"></span></div>

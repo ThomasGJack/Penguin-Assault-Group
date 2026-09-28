@@ -1,0 +1,13 @@
+StaticModelEntity : "{48BD7D41CEBA6E0D}Prefabs/Structures/Military/Sirens/SirenMilitary_E_01/SirenMilitary_E_01.et" {
+ ID "56ACD1C4DB91DB10"
+ components {
+  SCR_DestructionMultiPhaseComponent "{5A5E745B63F5B27D}" {
+   "Additional hit zones" {
+    SCR_HitZone Default {
+     DamageThreshold 20
+    }
+   }
+   m_fBaseHealth 300
+  }
+ }
+}

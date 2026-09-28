@@ -1,0 +1,39 @@
+{
+  "guild_id": 1548785514080108574,
+  "secret": "REMPLACE-PAR-UNE-LONGUE-CHAINE-ALEATOIRE",
+  "port": 8787,
+  "max_players": 40,
+  "staff_role": "Staff",
+  "feedback_channel": "🛡┃staff",
+  "sync_roles": true,
+  "sync_staff_role": false,
+  "grade_roles": {
+    "recrue": "Recrue",
+    "soldat": "Soldat",
+    "sous_officier": "Sous-officier",
+    "officier": "Officier"
+  },
+  "instructor_role": "Instructeur",
+  "offline_after_seconds": 90,
+  "panel_roles": [
+    "Staff",
+    "Officier"
+  ],
+  "ban_roles": [
+    "Staff"
+  ],
+  "logi_role": "Logisticien",
+  "veteran_role": "Vétéran",
+  "veteran_missions": 100,
+  "dashboard_channel": "📊┃tableau-de-bord",
+  "operations_channel": "📅┃opérations",
+  "sanctions_channel": "📕┃sanctions",
+  "ranking_channel": "🏅┃promotions",
+  "command_channel": "⭐┃commandement",
+  "request_roles": [
+    "Staff",
+    "Officier"
+  ],
+  "request_ping_role": "Officier",
+  "request_reminder_minutes": 10
+}

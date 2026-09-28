@@ -1,0 +1,22 @@
+</div>
+<script>
+const KEY='pag-tenues';let st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const rows=[...document.querySelectorAll('tr[data-id]')];let filtre='';
+// La clé est le nom de la pièce : le tri survit quand de nouvelles captures décalent les numéros
+const keyOf=r=>r.dataset.k,nameOf=r=>r.querySelector('.nom span').textContent;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function refresh(){const q=document.getElementById('q').value.toLowerCase();let v=0;
+ rows.forEach(r=>{const ok=(!filtre||r.dataset.s===filtre)&&nameOf(r).toLowerCase().includes(q);r.hidden=!ok;if(ok)v++});
+ document.querySelectorAll('section').forEach(s=>s.hidden=!s.querySelector('tr[data-id]:not([hidden])'));
+ const g=rows.filter(r=>r.dataset.s==='garder').length,k=rows.filter(r=>r.dataset.s==='retirer').length;
+ document.getElementById('count').textContent=v+' affichées · '+g+' gardées · '+k+' retirées · '+rows.length+' au total'}
+rows.forEach(r=>{const id=keyOf(r),sel=r.querySelector('select'),inp=r.querySelector('td input');
+ const d=st[id]||{};const acte=r.dataset.ds!=='voir';sel.value=acte?r.dataset.ds:(d.s||'voir');inp.value=acte?r.dataset.dc:(d.c||'');r.dataset.s=sel.value;
+ sel.onchange=()=>{r.dataset.s=sel.value;st[id]={s:sel.value,c:inp.value};save();refresh()};
+ inp.oninput=()=>{st[id]={s:sel.value,c:inp.value};save()}});
+document.querySelectorAll('.bar button[data-f]').forEach(b=>b.onclick=()=>{filtre=b.dataset.f;document.querySelectorAll('.bar button[data-f]').forEach(x=>x.classList.toggle('on',x===b));refresh()});
+document.getElementById('q').oninput=refresh;
+document.getElementById('copy').onclick=()=>{const t=rows.map(r=>r.dataset.id+' | '+nameOf(r)+' | '+r.dataset.s+' | '+r.querySelector('td input').value).join('\n');
+ const b=document.getElementById('copy');navigator.clipboard.writeText(t).then(()=>{b.textContent='Copié ✓';setTimeout(()=>b.textContent='Copier le tri',1500)})};
+document.querySelector('.bar button[data-f=""]').classList.add('on');refresh();
+</script></body></html>

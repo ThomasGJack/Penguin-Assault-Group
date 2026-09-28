@@ -1,0 +1,32 @@
+GenericEntity : "{ACA8E717A7226E72}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_AA_MG_USSR_NSV_SPP.et" {
+ components {
+  ActionsManagerComponent "{6A5B0C0D0E0F8301}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0F8302}" {
+     UIInfo UIInfo "{6A5B0C0D0E0F8303}" {
+      Name "aa"
+     }
+     ContextName "aa"
+     Position PointInfo "{6A5B0C0D0E0F8304}" {
+      Offset 0 1 0
+     }
+     Radius 3
+    }
+   }
+   additionalActions {
+    SRP_SabotageAction "{6A5B0C0D0E0F8305}" {
+     ParentContextList {
+      "aa"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0F8306}" {
+      Name "Saboter"
+     }
+     ActionTitle "Saboter"
+     VisibilityRange 5
+     Duration 5
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}

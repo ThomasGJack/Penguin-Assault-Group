@@ -1,0 +1,2391 @@
+{
+ "modules": [
+  {
+   "n": "0",
+   "titre": "Accueil : présentation, charte, cadre de la séance",
+   "duree": 5,
+   "lieu": "Salle d'attente de la base",
+   "objectif": "Commencer à l'heure avec des recrues audibles, en règle avec la charte, qui savent ce qui les attend.",
+   "groupes": [
+    {
+     "titre": "Ouverture",
+     "points": [
+      {
+       "texte": "Se présenter : grade, nom, instructeur habilité FGI.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Séance d'une heure ; à la fin, soldat seconde classe et béret bleu foncé.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Déroulé annoncé module par module, avec les durées.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Milsim semi-RP : rigueur sur le terrain, bonne humeur à la base.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Vous avez le droit de vous tromper, pas de faire n'importe quoi.",
+       "mot_pour_mot": true
+      }
+     ]
+    },
+    {
+     "titre": "Comment ça se passe",
+     "points": [
+      {
+       "texte": "Quatre recrues au maximum : chacune exécute chaque geste devant l'instructeur.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Questions à tout moment : on n'attend pas la fin pour demander.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Tour de table : nom, pourquoi la PAG, ce qui donne envie d'y rester.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le cadre à poser",
+     "points": [
+      {
+       "texte": "Fautes éliminatoires : tir volontaire sur un camarade ou un civil ; un deuxième tir, même accidentel.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Aussi : insultes, refus d'obéir, départ sans prévenir, triche ; perturbation après un avertissement.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Faute éliminatoire : la séance s'arrête pour l'intéressé, le Staff est prévenu.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui arrête la séance",
+     "points": [
+      {
+       "texte": "Charte acceptée avant de commencer, sinon la recrue reste consignée à son point de départ.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Retard : le groupe ne recommence pas, la recrue repasse une autre séance.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Micro inaudible ou saturé : deux minutes pour le régler, sinon séance reportée pour la recrue.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [],
+   "faire": [
+    "Rassemblement en salle d'attente, recrues face à l'instructeur, silence avant de commencer.",
+    "Tour de table : écouter chaque micro pendant que la recrue se présente.",
+    "Compte Discord lié tout de suite pour celles qui ne l'ont pas fait.",
+    "Charte vérifiée acceptée pour tout le monde.",
+    "Départ vers l'arsenal : le module 1 s'y passe."
+   ],
+   "questions": [
+    {
+     "q": "Citez deux fautes éliminatoires.",
+     "r": "Deux parmi : tir volontaire, deuxième tir accidentel, insultes, refus d'obéir, départ sans prévenir, triche."
+    }
+   ],
+   "valider": [
+    "Tout le monde s'entend clairement, sans saturation",
+    "Charte acceptée et compte Discord lié",
+    "Chacune cite deux fautes éliminatoires"
+   ],
+   "pieges": [
+    "Former quelqu'un qu'on entend mal : ça se paye en mission.",
+    "Laisser le tour de table tourner à la discussion : on relance."
+   ],
+   "etapes": [
+    {
+     "type": "faire",
+     "titre": "Rassemblement et silence",
+     "points": [
+      "Rassemblement en salle d'attente, face à l'instructeur.",
+      "Silence complet avant de commencer."
+     ],
+     "consigne": "Commence à l'heure : un retardataire repasse une autre séance, le groupe ne recommence pas.",
+     "sources": [
+      "F1",
+      "G4.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Présentation et programme",
+     "points": [
+      "Présentation : grade, nom, instructeur habilité FGI.",
+      "Durée : une heure ; à la fin, soldat seconde classe et béret bleu foncé.",
+      "Déroulé : chaque module annoncé, avec sa durée.",
+      "Esprit milsim semi-RP : rigueur sur le terrain, bonne humeur à la base.",
+      "Micro inaudible ou saturé : deux minutes pour régler, sinon séance reportée pour elle."
+     ],
+     "mot_pour_mot": "Vous avez le droit de vous tromper, pas de faire n'importe quoi.",
+     "sources": [
+      "G1.1",
+      "G1.2",
+      "G1.3",
+      "G1.4",
+      "G1.5",
+      "G4.3"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Tour de table, test micro",
+     "points": [
+      "Nom : chacune se présente à son tour.",
+      "Raison : pourquoi avoir choisi la PAG.",
+      "Envie : ce qui donne envie d'y rester."
+     ],
+     "consigne": "Écoute chaque micro pendant que la recrue se présente ; relance si ça tourne à la discussion.",
+     "sources": [
+      "G2.3",
+      "F2",
+      "G4.3"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Discord et charte",
+     "points": [
+      "Liez votre compte Discord maintenant, si ce n'est pas fait.",
+      "Charte : chacune confirme l'avoir acceptée."
+     ],
+     "consigne": "Vérifie la charte pour tout le monde : sans elle, la recrue reste consignée à son point de départ.",
+     "sources": [
+      "F3",
+      "F4",
+      "G4.1"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Règles de la séance",
+     "points": [
+      "Groupe : quatre recrues au maximum, chacune exécute chaque geste devant l'instructeur.",
+      "Questions : à tout moment, n'attendez pas la fin pour demander.",
+      "Éliminatoire : tir volontaire sur un camarade ou un civil ; un deuxième tir, même accidentel.",
+      "Éliminatoire aussi : insultes, refus d'obéir, départ sans prévenir, triche.",
+      "Perturbation : un avertissement, puis c'est éliminatoire.",
+      "Faute éliminatoire : séance arrêtée pour l'intéressé, Staff prévenu."
+     ],
+     "sources": [
+      "G2.1",
+      "G2.2",
+      "G3.1",
+      "G3.2",
+      "G3.3"
+     ]
+    },
+    {
+     "type": "controle",
+     "consigne": "Deux cases arrêtent la séance pour une recrue : micro toujours inaudible après deux minutes, charte non acceptée. Les autres ne recalent personne."
+    },
+    {
+     "type": "deplacement",
+     "titre": "Direction l'arsenal",
+     "points": [
+      "Destination : l'arsenal de la base, le module 1 s'y passe.",
+      "Questions : toujours possibles, à tout moment."
+     ],
+     "sources": [
+      "F5",
+      "G2.2"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Déroulé cité en une phrase, sans détailler chaque durée.",
+    "Tour de table resserré : relance dès qu'une réponse s'allonge."
+   ]
+  },
+  {
+   "n": "1",
+   "titre": "Qui commande, bérets, tenue, ce qui laisse une trace",
+   "duree": 5,
+   "lieu": "Arsenal de la base",
+   "objectif": "Savoir à qui on obéit, reconnaître un grade, se tenir correctement dans la base, connaître ce qui s'écrit sur sa fiche.",
+   "groupes": [
+    {
+     "titre": "Qui commande",
+     "points": [
+      {
+       "texte": "Obéissance, la seule règle à retenir par cœur : au plus gradé présent ; en mission, au chef de groupe.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "La FGI fait passer soldat seconde classe ; rien d'autre ne donne ce grade.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les bérets",
+     "points": [
+      {
+       "texte": "Bérets : marron recrue, bleu foncé soldat, vert officier, rouge logisticien.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Bérets, suite : amarante instructeur, noir vétéran aux cent missions, bleu ciel invité.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Un seul béret à la fois ; en porter un non mérité est une faute, pas une astuce.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Se tenir dans la base",
+     "points": [
+      {
+       "texte": "Base : arme déchargée, balle déchambrée, dans le dos ou dans le sac.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Casque dans le sac, sauf garde ou alerte ; béret sur la tête.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Casque et chargement sur ordre du chef de groupe ou d'un officier, juste avant le départ.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Personne ne s'arme de sa propre initiative : sinon, rappel à l'ordre.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "La tenue",
+     "points": [
+      {
+       "texte": "Haut et pantalon Centre Europe, toujours ; aucun autre camouflage sur le corps.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Référence : le guide des dotations ; ce qui n'y figure pas est interdit.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui laisse une trace",
+     "points": [
+      {
+       "texte": "Civil tué, ou matériel réservé pris sans certification : infraction sur la fiche, officiers prévenus.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les certifications",
+     "points": [
+      {
+       "texte": "Quinze certifications existent, et la FGI les ouvre toutes.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Les quinze : FGI, opérateur radio, chef de groupe, infirmier, médecin, sapeur, logisticien, VL, PL, blindé, pilote, mitrailleur, lance-grenades, antichar, tireur de précision.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "On ne la demande pas, on la passe : séances annoncées sur le Discord.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [
+    "Les bérets rangés à l'arsenal : marron, bleu foncé, vert, rouge."
+   ],
+   "faire": [],
+   "questions": [
+    {
+     "q": "De quelle couleur est le béret d'un officier ?",
+     "r": "Vert Commandos marine."
+    },
+    {
+     "q": "En mission, un caporal et votre chef de groupe, simple soldat, se contredisent. Qui suivez-vous ?",
+     "r": "Le chef de groupe : en mission, c'est lui qui commande."
+    },
+    {
+     "q": "Citez deux choses qui mettent une infraction sur votre fiche.",
+     "r": "Tuer un civil ; prendre du matériel réservé sans l'avoir."
+    },
+    {
+     "q": "Qui donne l'ordre de vous casquer et de charger ?",
+     "r": "Le chef de groupe ou un officier, avant le départ."
+    }
+   ],
+   "valider": [
+    "Répond juste à la question qui lui est posée",
+    "Cite deux infractions possibles",
+    "Sait que le casque et le chargement se font sur ordre"
+   ],
+   "pieges": [
+    "Faire réciter les dix grades : seule la règle d'obéissance compte.",
+    "Laisser une recrue repartir casquée ou armée de l'arsenal."
+   ],
+   "etapes": [
+    {
+     "type": "dire",
+     "titre": "Qui commande",
+     "points": [
+      "Obéissance : la seule règle à retenir par cœur.",
+      "Plus gradé présent : c'est à lui qu'on obéit.",
+      "En mission : au chef de groupe.",
+      "Grade : la FGI fait passer soldat seconde classe.",
+      "Rien d'autre ne donne ce grade."
+     ],
+     "sources": [
+      "G1.1",
+      "G1.2"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Les bérets de l'arsenal",
+     "points": [
+      "Rangés : marron recrue, bleu foncé soldat, vert officier, rouge logisticien.",
+      "Cités : amarante instructeur, noir vétéran aux cent missions, bleu ciel invité.",
+      "Un seul béret à la fois.",
+      "Béret non mérité porté : une faute, pas une astuce."
+     ],
+     "consigne": "Visite : désigne les quatre bérets rangés, puis cite les trois autres à voix haute.",
+     "sources": [
+      "M1",
+      "G2.1",
+      "G2.2",
+      "G2.3"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Se tenir dans la base",
+     "points": [
+      "Arme déchargée, balle déchambrée, dans le dos ou dans le sac.",
+      "Casque dans le sac, sauf garde ou alerte.",
+      "Béret sur la tête dans la base.",
+      "Casque et chargement : sur ordre du chef de groupe ou d'un officier, juste avant le départ.",
+      "Initiative : personne ne s'arme seul, sinon rappel à l'ordre."
+     ],
+     "sources": [
+      "G3.1",
+      "G3.2",
+      "G3.3",
+      "G3.4"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "La tenue Centre Europe",
+     "points": [
+      "Haut et pantalon Centre Europe, toujours.",
+      "Aucun autre camouflage sur le corps.",
+      "Référence : le guide des dotations.",
+      "Absent du guide : interdit."
+     ],
+     "sources": [
+      "G4.1",
+      "G4.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "La fiche de soldat",
+     "points": [
+      "Fiche : grade, certifications, infractions.",
+      "Infraction : civil tué, ou matériel réservé pris sans certification.",
+      "Conséquence : écrit sur la fiche, officiers prévenus."
+     ],
+     "consigne": "Cite ses trois rubriques ; tu l'ouvriras devant elles au module 3, à l'ordinateur de la base.",
+     "sources": [
+      "M2",
+      "G5.1"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Les quinze certifications",
+     "points": [
+      "Quinze certifications : la FGI les ouvre toutes.",
+      "Liste : FGI, opérateur radio, chef de groupe, infirmier, médecin, sapeur, logisticien.",
+      "Suite : VL, PL, blindé, pilote, mitrailleur, lance-grenades, antichar, tireur de précision.",
+      "Accès : on ne la demande pas, on la passe.",
+      "Séances : annoncées sur le Discord."
+     ],
+     "sources": [
+      "G6.1",
+      "G6.2",
+      "G6.3"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Liste des quinze certifications lue d'un trait, sans commentaire.",
+    "Bérets amarante, noir et bleu ciel cités sans s'y arrêter."
+   ]
+  },
+  {
+   "n": "2",
+   "titre": "S'équiper : du kit de départ à la dotation complète",
+   "duree": 9,
+   "lieu": "Arsenal de la base",
+   "objectif": "Monter seule une dotation complète et réglementaire, et savoir ce qu'elle coûte à la base.",
+   "groupes": [
+    {
+     "titre": "Comment on procède",
+     "points": [
+      {
+       "texte": "Lire la liste complète d'abord, chacune monte sa dotation ensuite.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce que le serveur donne",
+     "points": [
+      {
+       "texte": "Kit gratuit à chaque apparition : gilet de combat, sac TECPACK 45L, HK416 F-S, dix chargeurs.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce qu'il faut compléter",
+     "points": [
+      {
+       "texte": "À compléter : casque, béret marron, radio ER328, carte, montre Tactix Bravo, lampe.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "À compléter, suite : soins, grenades, poches à chargeurs, écusson, caméra de casque.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les quantités",
+     "points": [
+      {
+       "texte": "Soins : quatre bandages, un garrot, une morphine, un pansement thoracique, une solution saline.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Munitions : trois cents cartouches, ce sont les dix chargeurs du kit.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Grenades : deux au maximum, plus un fumigène blanc.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Caméra de casque obligatoire, à l'emplacement « Camera ».",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce que ça coûte à la base",
+     "points": [
+      {
+       "texte": "À l'arsenal, les munitions coûtent à la base ; armes, tenues et accessoires sont gratuits.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Rendu à l'arsenal : remboursé. Posé au sol : perdu pour tout le monde.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui est réservé",
+     "points": [
+      {
+       "texte": "Armes réservées : mitrailleuse, lance-roquettes, fusil de précision, pas sans certification.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Optiques jusqu'à quatre fois libres ; au-delà, certification tireur de précision.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le geste qui fait gagner du temps",
+     "points": [
+      {
+       "texte": "Tenue enregistrée à l'arsenal puis rechargée : du temps gagné à chaque réapparition.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [],
+   "faire": [
+    "Chacune monte sa dotation complète, l'instructeur guide à la voix sans monter la sienne.",
+    "Chacune enregistre sa tenue à l'arsenal, puis la recharge devant l'instructeur.",
+    "Contrôle un par un : la recrue annonce sa dotation emplacement par emplacement.",
+    "Caméra de casque vérifiée sur chacune, et allumée une fois."
+   ],
+   "questions": [
+    {
+     "q": "Que contient le kit donné à l'apparition ?",
+     "r": "Gilet, sac TECPACK 45L, HK416 F-S, dix chargeurs."
+    },
+    {
+     "q": "Qu'est-ce qui coûte à la base quand vous prenez à l'arsenal ?",
+     "r": "Les munitions ; le reste est gratuit."
+    },
+    {
+     "q": "Combien de cartouches emportez-vous ?",
+     "r": "Trois cents : les dix chargeurs du kit."
+    },
+    {
+     "q": "Que faites-vous du matériel dont vous ne voulez plus ?",
+     "r": "On le rend à l'arsenal, jamais au sol."
+    }
+   ],
+   "valider": [
+    "Dotation complète, Centre Europe, rien d'interdit sur elle",
+    "Caméra de casque en place",
+    "Tenue enregistrée puis rechargée devant l'instructeur"
+   ],
+   "pieges": [
+    "Laisser fouiller l'arsenal sans nommer les objets : on y perd cinq minutes.",
+    "Oublier de vérifier la caméra de casque."
+   ],
+   "etapes": [
+    {
+     "type": "dire",
+     "titre": "Le kit et la méthode",
+     "points": [
+      "Kit gratuit à chaque apparition : gilet de combat, sac TECPACK 45L, HK416 F-S, dix chargeurs.",
+      "Méthode : toute la liste d'abord, puis chacune monte sa dotation."
+     ],
+     "sources": [
+      "G2.1",
+      "G1.1"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "La liste à compléter",
+     "points": [
+      "Équipement : casque, béret marron, radio ER328, carte, montre Tactix Bravo, lampe.",
+      "Poches à chargeurs et écusson.",
+      "Soins : quatre bandages, un garrot, une morphine, un pansement thoracique, une solution saline.",
+      "Munitions : trois cents cartouches, les dix chargeurs du kit ; grenades : deux au plus, plus un fumigène blanc.",
+      "Caméra de casque obligatoire, à l'emplacement « Camera »."
+     ],
+     "consigne": "Lis toute la liste avant que quiconque touche à l'arsenal.",
+     "sources": [
+      "G3.1",
+      "G3.2",
+      "G4.1",
+      "G4.2",
+      "G4.3",
+      "G4.4"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Avant de prendre : les règles",
+     "points": [
+      "Munitions prises à l'arsenal : elles coûtent à la base.",
+      "Armes, tenues et accessoires : gratuits.",
+      "Rendu à l'arsenal : remboursé. Posé au sol : perdu pour tout le monde.",
+      "Armes réservées, pas sans certification : mitrailleuse, lance-roquettes, fusil de précision.",
+      "Optiques jusqu'à quatre fois libres ; au-delà, certification tireur de précision."
+     ],
+     "sources": [
+      "G5.1",
+      "G5.2",
+      "G6.1",
+      "G6.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Monter sa dotation",
+     "points": [
+      "Chacune prend chaque objet dès qu'il est nommé.",
+      "Casque, béret marron, radio ER328, carte, montre Tactix Bravo, lampe.",
+      "Poches à chargeurs, écusson, soins, grenades, fumigène blanc.",
+      "Caméra de casque posée à l'emplacement « Camera ».",
+      "Surplus rendu à l'arsenal, jamais posé au sol."
+     ],
+     "consigne": "Guide à la voix en nommant chaque objet ; ne monte pas ta dotation, ne fais rien à leur place.",
+     "sources": [
+      "F1",
+      "G1.1",
+      "G3.1",
+      "G3.2",
+      "G4.2",
+      "G4.3",
+      "G4.4",
+      "G5.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Contrôle un par un",
+     "points": [
+      "Une recrue à la fois annonce sa dotation, emplacement par emplacement.",
+      "Quantités dites : soins, cartouches, grenades, fumigène blanc.",
+      "Rien de réservé : aucune arme sous certification, optique quatre fois maximum.",
+      "Oubli ou erreur : elle corrige, puis reprend son annonce."
+     ],
+     "sources": [
+      "F3",
+      "G4.1",
+      "G4.2",
+      "G4.3",
+      "G6.1",
+      "G6.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "La caméra de casque",
+     "points": [
+      "Caméra de casque vérifiée sur chacune, l'une après l'autre.",
+      "Absente ou mal placée : elle la pose à l'emplacement « Camera ».",
+      "Allumage : menu radial RHS, touche * par défaut ; allumée une fois devant toi."
+     ],
+     "consigne": "Ne passe à la suite qu'une fois la caméra vérifiée sur chacune.",
+     "sources": [
+      "F4",
+      "G4.4"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Enregistrer sa tenue",
+     "points": [
+      "Tenue enregistrée à l'arsenal, puis rechargée.",
+      "Pourquoi : du temps gagné à chaque réapparition."
+     ],
+     "consigne": "Explique à la voix : elles ne voient pas ton écran d'arsenal.",
+     "sources": [
+      "G7.1"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Enregistrer puis recharger",
+     "points": [
+      "Chacune enregistre sa tenue à l'arsenal.",
+      "Puis elle la recharge, devant l'instructeur.",
+      "L'une après l'autre, jusqu'à la dernière recrue."
+     ],
+     "sources": [
+      "F2",
+      "G7.1"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "En route pour le tour",
+     "points": [
+      "Avant de sortir : casque dans le sac, béret sur la tête.",
+      "Arme déchargée, balle déchambrée, dans le dos ou dans le sac.",
+      "Direction : le tour de la base, en marchant."
+     ],
+     "sources": []
+    }
+   ],
+   "raccourcir": [
+    "Kit de départ cité en une phrase : elles l'ont déjà sur elles.",
+    "Enregistrement de tenue : le pourquoi en une phrase, puis la pratique."
+   ]
+  },
+  {
+   "n": "3",
+   "titre": "La base : dépôts, ordinateur, missions, générateur",
+   "duree": 4,
+   "lieu": "Tour de la base, en marchant",
+   "objectif": "Savoir où l'on prend, où l'on rend, où l'on lit ce qui se passe, et ce que coûte une mort.",
+   "groupes": [
+    {
+     "titre": "Comment on fait le tour",
+     "points": [
+      {
+       "texte": "Commencer par le tour de la base, encadré bleu ci-dessous.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les quatre dépôts",
+     "points": [
+      {
+       "texte": "Quatre dépôts : soute pour les munitions, citerne pour le carburant, atelier pour les pièces, intendance pour les vivres.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Cargaison rapportée mais laissée dans le camion : mission perdue.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les écrans de la base",
+     "points": [
+      {
+       "texte": "Ordinateur de la base : fiche du soldat, effectifs, instructeurs, territoire, journal.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Tableau des missions : on y consulte et on y demande une mission ; un officier accorde.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "L'éclairage",
+     "points": [
+      {
+       "texte": "Générateur : il commande l'éclairage de la base ; chacun peut le démarrer ou le couper, le Génie le répare.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Base dans le noir : regarder le générateur avant de crier au bug.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Quitter le jeu, mourir",
+     "points": [
+      {
+       "texte": "Déconnexion en opération : le corps reste allongé quinze minutes et peut être tué pendant l'absence.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Quitter au contact pour sauver son matériel ne sauve rien et se sanctionne.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Mourir coûte des vivres à l'intendance : chaque réapparition est payée par la base.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [
+    "Les quatre dépôts, en marchant, sans s'arrêter longtemps.",
+    "L'arsenal et le poste de secours, cités au passage.",
+    "L'ordinateur de la base et le tableau des missions.",
+    "Le générateur, et l'action pour le démarrer."
+   ],
+   "faire": [],
+   "questions": [
+    {
+     "q": "Où déposez-vous des munitions rapportées de mission ?",
+     "r": "À la soute, pas dans le camion."
+    },
+    {
+     "q": "Citez les quatre dépôts.",
+     "r": "Soute, citerne, atelier, intendance."
+    },
+    {
+     "q": "Que devient votre corps si vous quittez le jeu en opération ?",
+     "r": "Il reste quinze minutes et peut être tué."
+    },
+    {
+     "q": "Qui peut réparer le générateur ?",
+     "r": "Le Génie ; chacun peut le démarrer ou le couper."
+    }
+   ],
+   "valider": [
+    "Nomme les quatre dépôts",
+    "Sait ce qui arrive à son corps à la déconnexion"
+   ],
+   "pieges": [
+    "Transformer le tour en visite guidée : on marche, on montre, on avance.",
+    "S'attarder sur l'ordinateur : il se découvre seul."
+   ],
+   "etapes": [
+    {
+     "type": "montrer",
+     "titre": "Les quatre dépôts",
+     "points": [
+      "Soute : pour les munitions.",
+      "Citerne : pour le carburant.",
+      "Atelier : pour les pièces.",
+      "Intendance : pour les vivres.",
+      "Cargaison rapportée mais laissée dans le camion : mission perdue."
+     ],
+     "consigne": "Commence par le tour : chaque dépôt montré en marchant, sans t'arrêter longtemps ; aucun exercice de dépôt.",
+     "sources": [
+      "G1.1",
+      "M1",
+      "G2.1",
+      "G2.2"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Arsenal et poste de secours",
+     "points": [
+      "Arsenal, cité au passage : on y prend, on y rend.",
+      "Poste de secours, cité au passage : on y revient ensuite."
+     ],
+     "consigne": "Cite-les en passant, sans t'arrêter.",
+     "sources": [
+      "M2"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Ordinateur et missions",
+     "points": [
+      "Ordinateur de la base : fiche du soldat, effectifs, instructeurs, territoire, journal.",
+      "Tableau des missions : on y consulte et on y demande une mission.",
+      "Mission demandée : c'est un officier qui l'accorde."
+     ],
+     "consigne": "Ouvre la fiche du soldat devant elles : grade, certifications, infractions. Le reste de l'ordinateur se découvre seul.",
+     "sources": [
+      "M3",
+      "G3.1",
+      "G3.2"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Le générateur",
+     "points": [
+      "Générateur : il commande l'éclairage de la base.",
+      "Démarrer ou couper : chacun peut le faire.",
+      "Réparation : c'est le Génie qui s'en charge.",
+      "Base dans le noir : regardez le générateur avant de crier au bug."
+     ],
+     "consigne": "Montre l'action pour le démarrer, en la nommant.",
+     "sources": [
+      "M4",
+      "G4.1",
+      "G4.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Quitter le jeu, mourir",
+     "points": [
+      "Déconnexion en opération : le corps reste allongé quinze minutes.",
+      "Pendant votre absence, ce corps peut être tué.",
+      "Quitter au contact pour sauver son matériel : ne sauve rien, sanctionné.",
+      "Mourir coûte des vivres à l'intendance.",
+      "Chaque réapparition est payée par la base."
+     ],
+     "sources": [
+      "G5.1",
+      "G5.2",
+      "G5.3"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "Vers le poste de secours",
+     "points": [
+      "Direction : le poste de secours de la base.",
+      "Suite : le blessé, ce que vous faites avant l'infirmier."
+     ],
+     "sources": []
+    }
+   ],
+   "raccourcir": [
+    "Ordinateur et tableau des missions : nommés en passant, sans s'arrêter devant.",
+    "Générateur : l'action de démarrage montrée une seule fois, sans la détailler."
+   ]
+  },
+  {
+   "n": "4",
+   "titre": "Le blessé : ce que vous faites avant l'infirmier",
+   "duree": 8,
+   "lieu": "Poste de secours de la base",
+   "objectif": "Comprendre l'ordre des gestes et ce qu'on annonce, sans entrer dans le métier de l'infirmier. Module théorique : personne ne joue le blessé.",
+   "groupes": [
+    {
+     "titre": "La règle",
+     "points": [
+      {
+       "texte": "Le matériel de soin que vous portez n'est pas pour vous : il est pour votre binôme, et c'est le sien qui vous sauvera.",
+       "mot_pour_mot": true
+      },
+      {
+       "texte": "Un coup grave met à terre, inconscient ou le cœur arrêté : quelques minutes pour agir, pas plus.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les cinq temps",
+     "points": [
+      {
+       "texte": "Les cinq temps, rappelés à chaque fois : le couvert, la radio, le sang, le pouls, l'infirmier.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Le couvert d'abord : un sauveteur à découvert devient le deuxième blessé.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "La radio ensuite : prévenir l'infirmier avec le carré et l'état du blessé.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le sang",
+     "points": [
+      {
+       "texte": "Le sang : garrot sur un membre qui saigne fort, bandage ensuite, pansement thoracique au thorax.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Garrot retiré une fois la plaie bandée.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le pouls et la respiration",
+     "points": [
+      {
+       "texte": "Le pouls : pas de pouls, patient sur le dos, massage cardiaque sans s'arrêter.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Inconscient avec un pouls : position latérale, tête en arrière, vomissures dégagées.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les produits",
+     "points": [
+      {
+       "texte": "Une seule morphine ; la solution saline se donne à l'infirmier, c'est lui qui perfuse.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Le reste du matériel médical appartient aux soignants, pas à vous.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ramener le blessé",
+     "points": [
+      {
+       "texte": "Évacuation : traîner pour sortir du feu, porter pour aller vite, ne jamais lâcher le blessé.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Au poste de secours : deux actions, se faire soigner et soigner le blessé allongé.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [
+    "Le poste de secours et ses deux actions, sur un lit.",
+    "Les libellés des gestes à l'écran, lus une fois à voix haute."
+   ],
+   "faire": [],
+   "questions": [
+    {
+     "q": "Le matériel de soin que vous portez, pour qui est-il ?",
+     "r": "Pour son binôme."
+    },
+    {
+     "q": "Quel est le premier geste devant un blessé ?",
+     "r": "Le couvert, pour lui et pour soi."
+    },
+    {
+     "q": "Qu'annoncez-vous à la radio pour un blessé ?",
+     "r": "Le carré et son état, et on demande l'infirmier."
+    },
+    {
+     "q": "Combien de morphines peut-on injecter ?",
+     "r": "Une seule."
+    },
+    {
+     "q": "Citez les cinq temps, dans l'ordre.",
+     "r": "Le couvert, la radio, le sang, le pouls, l'infirmier."
+    }
+   ],
+   "valider": [
+    "Cite les cinq temps dans l'ordre",
+    "Sait pour qui est son matériel de soin",
+    "Sait ce qu'on annonce à la radio pour un blessé"
+   ],
+   "pieges": [
+    "Entrer dans les gestes avancés : c'est la certification infirmier.",
+    "Oublier de dire que le couvert passe avant tout."
+   ],
+   "etapes": [
+    {
+     "type": "dire",
+     "titre": "Votre matériel de soin",
+     "points": [
+      "Matériel de soin : pas pour vous, pour votre binôme.",
+      "Coup grave : à terre, inconscient ou le cœur arrêté.",
+      "Délai : quelques minutes pour agir, pas plus."
+     ],
+     "mot_pour_mot": "Le matériel de soin que vous portez n'est pas pour vous : il est pour votre binôme, et c'est le sien qui vous sauvera.",
+     "sources": [
+      "G1.1",
+      "G1.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Les cinq temps, dans l'ordre",
+     "points": [
+      "Cinq temps : le couvert, la radio, le sang, le pouls, l'infirmier.",
+      "Rappel : les cinq temps se redisent à chaque fois.",
+      "Couvert d'abord : à découvert, le sauveteur devient le deuxième blessé.",
+      "Radio ensuite : prévenez l'infirmier, avec le carré et l'état du blessé.",
+      "Infirmier : il prend le relais ; vous lui donnez votre solution saline."
+     ],
+     "consigne": "Insiste : le couvert passe avant tout.",
+     "sources": [
+      "G2.1",
+      "G2.2",
+      "G2.3"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Le sang, puis le pouls",
+     "points": [
+      "Sang : garrot sur un membre qui saigne fort, bandage ensuite.",
+      "Plaie au thorax : pansement thoracique.",
+      "Garrot : retiré une fois la plaie bandée.",
+      "Pas de pouls : patient sur le dos, massage cardiaque sans s'arrêter.",
+      "Inconscient avec un pouls : position latérale, tête en arrière, vomissures dégagées."
+     ],
+     "consigne": "Reste à ces gestes : le reste relève de la certification infirmier.",
+     "sources": [
+      "G3.1",
+      "G3.2",
+      "G4.1",
+      "G4.2"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Les gestes à l'écran",
+     "points": [
+      "À lire : « Examiner le patient », « Prendre le pouls ».",
+      "Puis : « Faire un massage cardiaque », « Mettre en PLS ».",
+      "Et : « Basculer la tête en arrière », « Dégager les vomissures ».",
+      "Personne ne joue le blessé : lecture seulement."
+     ],
+     "consigne": "Lis chaque libellé une fois à voix haute : ce sont les mots du menu de soin.",
+     "sources": [
+      "M2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Vos produits, rien de plus",
+     "points": [
+      "Morphine : une seule, pas davantage.",
+      "Solution saline : donnez-la à l'infirmier, c'est lui qui perfuse.",
+      "Reste du matériel médical : il appartient aux soignants, pas à vous."
+     ],
+     "sources": [
+      "G5.1",
+      "G5.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Ramener le blessé",
+     "points": [
+      "Traîner : pour sortir du feu.",
+      "Porter : pour aller vite.",
+      "Blessé : ne jamais le lâcher."
+     ],
+     "sources": [
+      "G6.1"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Le poste de secours",
+     "points": [
+      "Poste de secours : le lit et ses deux actions.",
+      "Première action : se faire soigner.",
+      "Seconde action : soigner le blessé allongé."
+     ],
+     "consigne": "Montre le lit, nomme ses deux actions ; personne ne joue le blessé.",
+     "sources": [
+      "M1",
+      "G6.2"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "Vers l'arsenal",
+     "points": [
+      "Destination : l'arsenal, pour le module 5.",
+      "En marchant : chacune redit les cinq temps, dans l'ordre."
+     ],
+     "consigne": "Corrige tout oubli : le couvert passe avant tout.",
+     "sources": [
+      "G2.1",
+      "G2.2"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Libellés à l'écran : lus d'une traite, sans commentaire.",
+    "Poste de secours : montrer le lit sans s'y attarder."
+   ]
+  },
+  {
+   "n": "5",
+   "titre": "Se repérer, puis parler : carte, montre, capé, radio",
+   "duree": 12,
+   "lieu": "Arsenal, puis un point inconnu sur le terrain",
+   "objectif": "Donner sa position sans se tromper, rejoindre un point donné, et passer un compte rendu compris du premier coup.",
+   "groupes": [
+    {
+     "titre": "Dans quel ordre",
+     "points": [
+      {
+       "texte": "Commencer par le repérage : la carte, puis la montre, puis les appels radio.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Lire la carte",
+     "points": [
+      {
+       "texte": "La carte : repérer Levie et comprendre le carroyage.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Une position se dit en deux groupes de trois chiffres : 087 028.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Premier groupe de gauche à droite, second de bas en haut : à droite, puis en haut.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Un carré fait cent mètres de côté.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Le capé précise l'endroit dans le carré : 1 à 9 comme sur un clavier, le 2 en bas au milieu.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "La montre et l'azimut",
+     "points": [
+      {
+       "texte": "La montre Tactix Bravo donne la position et le cap : elle se lit en marchant.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "L'azimut se prend sur la carte : on trace du départ vers l'arrivée, on lit la direction, on la suit à la montre.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "La radio",
+     "points": [
+      {
+       "texte": "Radio ER328 prise à l'arsenal, allumée, sur la fréquence du groupe.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Touche F9 pour la portée de voix, touche F8 pour les bouchons : chacun règle ses contrôles.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "On écoute avant de parler, une seule personne à la fois.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Parler au réseau",
+     "points": [
+      {
+       "texte": "On nomme d'abord celui qu'on appelle, puis soi-même.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Mister, ici Jack, parlez.",
+       "mot_pour_mot": true
+      },
+      {
+       "texte": "« Parlez » attend une réponse, « Terminé » ferme. Jamais les deux ensemble.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le compte rendu",
+     "points": [
+      {
+       "texte": "Compte rendu en trois temps, toujours dans cet ordre : qui, où, quoi.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Un compte rendu sans position est inutilisable : personne ne peut venir.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [
+    "La carte ouverte : carroyage, base de Levie, lecture d'un carré.",
+    "La montre : position et cap, lus à voix haute.",
+    "Le capé, expliqué sur un carré décrit case par case."
+   ],
+   "faire": [
+    "Chacune repère la base sur sa carte et lit le carré où elle se trouve.",
+    "Les recrues sont emmenées à un endroit précis qu'elles ne connaissent pas.",
+    "Chacune donne sa position à la radio, dans la bonne forme.",
+    "Position juste : l'instructeur donne des coordonnées, la recrue s'y rend seule.",
+    "Radio vérifiée sur chacune : allumée, bonne fréquence."
+   ],
+   "questions": [],
+   "valider": [
+    "Donne sa position en carré sans inverser les deux groupes",
+    "Rejoint seule un point donné par ses coordonnées",
+    "Passe un compte rendu qui, où, quoi compris du premier coup"
+   ],
+   "pieges": [
+    "Accepter un carré inversé parce qu'on a compris quand même.",
+    "Laisser commenter au lieu de rendre compte."
+   ],
+   "etapes": [
+    {
+     "type": "montrer",
+     "titre": "La carte et un carré",
+     "points": [
+      "Ordre : la carte, puis la montre, puis les appels radio.",
+      "Carte : la base de Levie, le carroyage, carrés de cent mètres de côté.",
+      "Position : deux groupes de trois chiffres, par exemple 087 028.",
+      "Premier groupe de gauche à droite, second de bas en haut.",
+      "Retenez : à droite, puis en haut."
+     ],
+     "consigne": "Ils ne voient pas ta carte : décris-la à voix haute, ils suivent sur la leur.",
+     "sources": [
+      "G1.1",
+      "G2.1",
+      "G2.2",
+      "G2.3",
+      "G2.4",
+      "M1"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Votre carré sur la carte",
+     "points": [
+      "Ouvrez votre carte, repérez la base de Levie.",
+      "Lisez à voix haute le carré où vous êtes."
+     ],
+     "consigne": "Lis d'abord le tien : c'est la réponse attendue. Carré inversé : fais refaire, même compris.",
+     "sources": [
+      "F1"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "Le capé dans le carré",
+     "points": [
+      "Capé : il précise l'endroit dans le carré.",
+      "Chiffres 1 à 9, comme sur un clavier.",
+      "Le 2 : en bas au milieu.",
+      "Pavé numérique : 7 8 9 en haut, 1 2 3 en bas, 5 au centre."
+     ],
+     "consigne": "Décris un carré case par case, à voix haute.",
+     "sources": [
+      "M3",
+      "G2.5"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "La montre, puis l'azimut",
+     "points": [
+      "Montre Tactix Bravo : elle donne la position et le cap.",
+      "Lecture : elle se lit en marchant.",
+      "Azimut : sur la carte, tracez du départ vers l'arrivée.",
+      "Lisez la direction, puis suivez-la à la montre."
+     ],
+     "consigne": "Lis à voix haute ta position et ton cap, comme exemple.",
+     "sources": [
+      "M2",
+      "G3.1",
+      "G3.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "La radio en main",
+     "points": [
+      "Sortez votre radio ER328, prise au module 2.",
+      "Allumez-la, réglez-la sur la fréquence du groupe.",
+      "Réglez vos contrôles : F9 portée de voix, F8 bouchons."
+     ],
+     "consigne": "Vérifie chacune : radio allumée, bonne fréquence. F9 et F8 : cite-les seulement.",
+     "sources": [
+      "G4.1",
+      "G4.2",
+      "F5"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Parler au réseau, rendre compte",
+     "points": [
+      "Écoutez avant de parler ; une seule personne à la fois.",
+      "Appel : nommez d'abord celui que vous appelez, puis vous-même.",
+      "« Parlez » attend une réponse, « Terminé » ferme : jamais les deux ensemble.",
+      "Compte rendu en trois temps, toujours dans l'ordre : qui, où, quoi.",
+      "Sans position, compte rendu inutilisable : personne ne peut venir."
+     ],
+     "mot_pour_mot": "Mister, ici Jack, parlez.",
+     "sources": [
+      "G4.3",
+      "G5.1",
+      "G5.2",
+      "G5.3",
+      "G6.1",
+      "G6.2"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "Vers un point inconnu",
+     "points": [
+      "Destination : un endroit précis que les recrues ne connaissent pas.",
+      "Départ : de l'arsenal, radios allumées sur la fréquence du groupe."
+     ],
+     "consigne": "Choisis le point toi-même ; ne l'annonce pas aux recrues.",
+     "sources": [
+      "F2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Position à la radio, puis rejoindre",
+     "points": [
+      "Chacune, à son tour, appelle l'instructeur à la radio.",
+      "Appel : le nom de l'instructeur, puis le sien, puis « Parlez ».",
+      "Compte rendu : qui, où, quoi, avec le carré en deux groupes.",
+      "Position juste : l'instructeur donne des coordonnées à chacune.",
+      "Chacune s'y rend seule, à la carte et à la montre."
+     ],
+     "consigne": "Même point à rejoindre pour toutes, noté avant la séance. Carré inversé ou commentaire : fais refaire. Pas de chronomètre.",
+     "sources": [
+      "F3",
+      "F4"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "Vers la zone dégagée",
+     "points": [
+      "Destination : la zone dégagée en bordure de base, module 6.",
+      "En marchant : chacune lit sa position et son cap à la montre."
+     ],
+     "consigne": "Regroupe les recrues, puis emmène le groupe vers la zone dégagée.",
+     "sources": [
+      "G3.1"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Capé et azimut : un seul exemple chacun.",
+    "Point inconnu choisi plus près de l'arsenal."
+   ]
+  },
+  {
+   "n": "6",
+   "titre": "Marcher en groupe, tirer juste, les civils",
+   "duree": 7,
+   "lieu": "Zone dégagée en bordure de base",
+   "objectif": "Tenir sa place et son secteur sans qu'on le dise, et ne tirer que sur une cible identifiée.",
+   "groupes": [
+    {
+     "titre": "Comment on marche",
+     "points": [
+      {
+       "texte": "Commencer par la mise en formation, encadré bleu ci-dessous.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Trois formations : colonne pour avancer, ligne pour faire face, file en terrain serré.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Cinq mètres entre chaque soldat : une grenade, un seul blessé.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Secteurs : premier devant, les suivants alternent, dernier derrière ; à la halte, genou à terre.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "L'arme",
+     "points": [
+      {
+       "texte": "Dans la base, canon vers le sol ; jamais d'arme pointée sur un camarade, même pour rire.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "On ne tire que sur ordre ou en légitime défense, et seulement sur une cible identifiée.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le contact",
+     "points": [
+      {
+       "texte": "Au contact : « Contact ! », direction, distance, nature ; se poster d'abord, rendre compte ensuite avec le carré.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Se faire voir ou non",
+     "points": [
+      {
+       "texte": "Accroupi ou couché, on se fait bien moins voir tant que l'ennemi ne se doute de rien.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Les civils",
+     "points": [
+      {
+       "texte": "Des civils circulent partout : dans le doute, on ne tire pas.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Civil tué : infraction, officiers prévenus, mille euros pris sur le coffre de la base.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Contrôle routier : ça existe, mais sur ordre seulement.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "En véhicule",
+     "points": [
+      {
+       "texte": "En véhicule : monter dans l'ordre, couvrir son côté au débarquement, bouchons en camion.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [
+    "Colonne, ligne et file, formées devant elles.",
+    "La halte : genou à terre, secteurs répartis."
+   ],
+   "faire": [
+    "Parcours de deux cents mètres en colonne, une halte, un changement de cap.",
+    "Passage en ligne au commandement.",
+    "Annonce de contact exercée pendant le déplacement : le groupe se poste et rend compte."
+   ],
+   "questions": [],
+   "valider": [
+    "Garde cinq mètres sur tout le parcours, sans rappel",
+    "Prend son secteur à chaque halte",
+    "Ne pointe son arme sur aucun camarade",
+    "Annonce un contact dans le bon ordre"
+   ],
+   "pieges": [
+    "Trop de théorie : trois minutes de marche valent dix minutes d'explication.",
+    "Oublier le secteur à la halte : c'est le réflexe le plus long à venir."
+   ],
+   "etapes": [
+    {
+     "type": "montrer",
+     "titre": "Mise en formation",
+     "points": [
+      "Dans la base : canon vers le sol, jamais pointé sur un camarade, même pour rire.",
+      "Colonne : la formation pour avancer.",
+      "Ligne : la formation pour faire face.",
+      "File : la formation en terrain serré.",
+      "Cinq mètres entre chaque soldat : une grenade, un seul blessé."
+     ],
+     "consigne": "Tu es seul : place-les toi-même dans chaque formation, nomme-la, puis passe à la suivante.",
+     "sources": [
+      "G1.1",
+      "G1.2",
+      "G1.3",
+      "G2.1",
+      "M1"
+     ]
+    },
+    {
+     "type": "montrer",
+     "titre": "La halte et les secteurs",
+     "points": [
+      "Halte : genou à terre, chacun dans son secteur.",
+      "Secteurs : premier devant, les suivants alternent, dernier derrière.",
+      "Accroupi ou couché : bien moins visible tant que l'ennemi ne se doute de rien."
+     ],
+     "consigne": "Mets-toi genou à terre, puis place chaque recrue et nomme son secteur.",
+     "sources": [
+      "G1.4",
+      "G4.1",
+      "M2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Parcours en colonne",
+     "points": [
+      "Colonne : deux cents mètres, cinq mètres entre chacun.",
+      "Secteurs tenus pendant toute la marche.",
+      "Halte : genou à terre, chacun prend son secteur.",
+      "Changement de cap : la colonne tourne, distances gardées."
+     ],
+     "consigne": "Tout le groupe marche ensemble ; tu commandes et corriges aussitôt distance ou secteur.",
+     "sources": [
+      "F1",
+      "G1.3",
+      "G1.4"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Passage en ligne",
+     "points": [
+      "Au commandement : passer de la colonne à la ligne.",
+      "Ligne : pour faire face, cinq mètres entre chacun."
+     ],
+     "consigne": "Commande en marchant, court : « En ligne ! ». Refais-le jusqu'à ce que la ligne se forme sans rappel.",
+     "sources": [
+      "F2",
+      "G1.2",
+      "G1.3"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Tirer juste, annoncer le contact",
+     "points": [
+      "Tir : seulement sur ordre ou en légitime défense.",
+      "Cible : toujours identifiée avant de tirer.",
+      "Civils partout : dans le doute, on ne tire pas.",
+      "Contact : annoncer « Contact ! », puis direction, distance, nature.",
+      "Se poster d'abord, rendre compte ensuite avec le carré."
+     ],
+     "sources": [
+      "G2.2",
+      "G5.1",
+      "G3.1"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Annonce de contact en marche",
+     "points": [
+      "Colonne reprise : cinq mètres, secteurs tenus.",
+      "Annonce : « Contact ! », direction, distance, nature.",
+      "Groupe : se poster d'abord, rendre compte ensuite avec le carré.",
+      "Chaque recrue fait l'annonce au moins une fois."
+     ],
+     "consigne": "En marchant, désigne un point de contact ; chaque recrue annonce à son tour.",
+     "sources": [
+      "F3",
+      "G3.1"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "Civils et véhicule",
+     "points": [
+      "Civil tué : infraction, officiers prévenus, mille euros pris sur le coffre de la base.",
+      "Contrôle routier : ça existe, mais sur ordre seulement.",
+      "Véhicule : monter dans l'ordre, couvrir son côté au débarquement.",
+      "Bouchons : on les met en camion."
+     ],
+     "sources": [
+      "G5.2",
+      "G5.3",
+      "G6.1"
+     ]
+    },
+    {
+     "type": "deplacement",
+     "titre": "Vers la boucle de patrouille",
+     "points": [
+      "Direction : la boucle de 300 m autour de la base.",
+      "En marchant : colonne, cinq mètres, secteurs, sans rappel."
+     ],
+     "sources": [
+      "G1.3",
+      "G1.4"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Halte montrée pendant le parcours en colonne, pas avant.",
+    "Passage en ligne commandé pendant le parcours, sans arrêt à part."
+   ]
+  },
+  {
+   "n": "F",
+   "titre": "Patrouille d'examen : contact, blessé, civil",
+   "duree": 8,
+   "lieu": "Boucle de 300 m autour de la base",
+   "objectif": "Tout enchaîner sans une parole de l'instructeur.",
+   "groupes": [
+    {
+     "titre": "Règle du jeu",
+     "points": [
+      {
+       "texte": "Annonce d'ouverture : plus de parole, plus de démonstration, plus de correction.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "L'instructeur suit en retrait et note.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Exercice à blanc : le contact est annoncé à la voix, personne ne tire.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le départ",
+     "points": [
+      {
+       "texte": "Chef de patrouille désigné parmi les recrues.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Ordre donné une seule fois : patrouille à pied jusqu'au carré désigné, reconnaissance, retour.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Préparation laissée au groupe : dotation annoncée, caméras allumées, contrôle radio, départ annoncé.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Ce qui arrive en route",
+     "points": [
+      {
+       "texte": "À mi-parcours : contact annoncé à la voix, fantassins ennemis, deux cents mètres.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Aucun tir nécessaire : on se poste, on annonce, on rend compte avec le carré.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Juste après : un blessé désigné, annonce radio seulement, carré et état, demande d'infirmier.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Un civil croisé si l'occasion se présente : arme basse, on le laisse passer.",
+       "mot_pour_mot": false
+      }
+     ]
+    },
+    {
+     "titre": "Le retour",
+     "points": [
+      {
+       "texte": "Retour en formation, compte rendu du chef : effectif, blessé, position du contact.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "Débriefing à chaud, deux minutes : un point fort et un point à travailler par recrue.",
+       "mot_pour_mot": false
+      },
+      {
+       "texte": "On parle du geste, jamais de la personne, et on commence par ce qui a tenu.",
+       "mot_pour_mot": false
+      }
+     ]
+    }
+   ],
+   "montrer": [],
+   "faire": [],
+   "questions": [],
+   "valider": [
+    "Départ annoncé à la radio",
+    "Distances et secteurs tenus sur tout le parcours",
+    "Contact : se poste, annonce, rend compte avec le carré",
+    "Blessé annoncé à la radio avec le carré",
+    "Compte rendu final du chef complet"
+   ],
+   "pieges": [
+    "Reprendre la main dès la première erreur : c'est l'exercice qui enseigne.",
+    "Oublier de prévenir que l'exercice est à blanc."
+   ],
+   "etapes": [
+    {
+     "type": "dire",
+     "titre": "Règles de l'examen",
+     "points": [
+      "Dès maintenant : plus de parole, plus de démonstration, plus de correction.",
+      "Exercice à blanc : le contact est annoncé à la voix, personne ne tire.",
+      "Instructeur : suit en retrait et note.",
+      "Vrais tirs ou vrai ennemi : tout le monde à l'abri, l'exercice s'arrête."
+     ],
+     "sources": [
+      "G1.1",
+      "G1.3",
+      "G1.2"
+     ]
+    },
+    {
+     "type": "dire",
+     "titre": "L'ordre, une seule fois",
+     "points": [
+      "Chef de patrouille : désigné parmi les recrues.",
+      "Ordre : patrouille à pied jusqu'au carré désigné, reconnaissance, retour.",
+      "Ordre donné une seule fois.",
+      "Casque et chargement : l'ordre est donné maintenant, juste avant le départ."
+     ],
+     "consigne": "Donne l'ordre une seule fois ; ensuite, plus un mot jusqu'au contact.",
+     "sources": [
+      "G2.1",
+      "G2.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Préparation par le groupe",
+     "points": [
+      "Dotation annoncée par le groupe.",
+      "Caméras allumées.",
+      "Contrôle radio fait par le groupe.",
+      "Départ annoncé à la radio."
+     ],
+     "consigne": "Pas un mot, sauf « Reçu » quand on t'appelle à la radio : le chef et le groupe se préparent seuls ; tu notes.",
+     "sources": [
+      "G2.3"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Patrouille vers le carré",
+     "points": [
+      "Patrouille à pied vers le carré désigné, en formation.",
+      "Distances et secteurs tenus sur tout le parcours.",
+      "Civil croisé, si l'occasion se présente : arme basse, on le laisse passer."
+     ],
+     "consigne": "Suis en retrait et note ; aucune correction, même à la première erreur.",
+     "sources": [
+      "G2.2",
+      "G3.4"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Le contact",
+     "points": [
+      "Se poster aussitôt : aucun tir nécessaire.",
+      "Annoncer le contact.",
+      "Rendre compte avec le carré."
+     ],
+     "consigne": "À mi-parcours, tes deux seules interventions, coup sur coup. D'abord le contact, à la voix : fantassins ennemis, deux cents mètres.",
+     "sources": [
+      "G3.1",
+      "G3.2"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Le blessé",
+     "points": [
+      "Blessé : annonce à la radio seulement.",
+      "Annonce : carré et état du blessé.",
+      "Demande d'infirmier à la radio."
+     ],
+     "consigne": "Juste après le contact, désigne un blessé et dis son état ; ensuite, plus un mot.",
+     "sources": [
+      "G3.3"
+     ]
+    },
+    {
+     "type": "faire",
+     "titre": "Retour et compte rendu",
+     "points": [
+      "Retour en formation, distances et secteurs tenus.",
+      "Compte rendu du chef : effectif, blessé, position du contact.",
+      "À la base : arme déchargée, balle déchambrée, casque dans le sac."
+     ],
+     "consigne": "Toujours en retrait : écoute le compte rendu sans le compléter.",
+     "sources": [
+      "G4.1"
+     ]
+    },
+    {
+     "type": "controle"
+    },
+    {
+     "type": "dire",
+     "titre": "Débriefing à chaud",
+     "points": [
+      "Deux minutes, à chaud, là où finit la patrouille.",
+      "Commencer par ce qui a tenu.",
+      "Par recrue : un point fort, un point à travailler.",
+      "Parler du geste, jamais de la personne."
+     ],
+     "consigne": "Tu reprends la parole ; appuie-toi sur tes notes.",
+     "sources": [
+      "G4.2",
+      "G4.3"
+     ]
+    }
+   ],
+   "raccourcir": [
+    "Carré désigné plus proche : aller et retour plus courts."
+   ]
+  }
+ ],
+ "eliminatoires": [
+  "Tir volontaire sur un camarade ou un civil ; un deuxième tir, même accidentel.",
+  "Refus d'obéir, dont une perturbation qui continue après un avertissement.",
+  "Insultes ou comportement toxique.",
+  "Quitter la séance sans prévenir.",
+  "Triche ou exploitation d'un bug pour s'équiper."
+ ],
+ "preparation": {
+  "dix_minutes_avant": [
+   "Connecte-toi en avance, en tenue complète et béret amarante : l'exemple commence là.",
+   "La séance a été annoncée dans le salon des formations, avec la date, l'heure et le nombre de places.",
+   "Vérifie que tu es bien <strong>habilité instructeur FGI</strong> : sans habilitation, tu ne peux pas accorder la certification. Un Adjudant ou le Staff la donne.",
+   "Ton parcours : salle d'attente, arsenal, tour de la base, poste de secours, zone dégagée, boucle de patrouille.",
+   "Choisis le point où tu emmèneras les recrues au module 5, et le carré de la patrouille.",
+   "Deux à quatre recrues : chacune exécute chaque geste devant toi, il n'y a pas de binôme.",
+   "Tu es seul : pas d'assistant. Tu joues tous les rôles et tu observes en même temps.",
+   "Ouvre ce guide sur un second écran : rien à imprimer."
+  ],
+  "posture": [
+   "Tu montres d'abord, ils font ensuite, tu corriges enfin. Jamais l'inverse.",
+   "Des phrases courtes. Une seule idée à la fois.",
+   "Tu corriges le geste, jamais la personne.",
+   "Le ton est sérieux sans être sec : on est en semi-RP, un sourire ne coûte rien.",
+   "Tu vouvoies le groupe, toujours.",
+   "Un geste raté se refait tout de suite, mais il ne recale personne : la FGI est une mise à niveau."
+  ]
+ },
+ "validation": {
+  "accorder": [
+   "La séance est allée à son terme et aucune faute éliminatoire n'a été commise : la FGI s'accorde.",
+   "Place-toi face à la recrue, regarde-la et prends l'action <strong>« Gestion du soldat »</strong>.",
+   "Dans le menu, clique sur <strong>« Accorder Formation Générale Initiale »</strong>, puis sur <strong>Appliquer</strong>.",
+   "Le serveur fait le reste : la recrue passe <strong>Soldat de 2e classe</strong>, c'est inscrit au journal, et son rôle Discord suit si son compte est lié.",
+   "Annonce au groupe : « À partir de maintenant, vous portez le béret bleu foncé. Les règles, vous les connaissez : les incivilités ne passeront plus. »",
+   "Vérifie toi-même, sur ton écran, que le grade a bien changé.",
+   "Photo de groupe avec les nouveaux soldats, puis annonce dans le salon des promotions du Discord."
+  ],
+  "fragile": [
+   "Un geste raté se refait sur-le-champ, puis tu accordes quand même la FGI.",
+   "Ce qui n'est pas acquis se dit au débriefing, en face, sans détour.",
+   "Préviens le chef de groupe de ce qu'il devra surveiller à la première sortie : un soldat mal assuré se rattrape sur le terrain, accompagné."
+  ],
+  "dire_au_soldat": [
+   "« Votre première sortie, faites-la accompagnée d'un ancien : c'est un conseil, pas une obligation. »",
+   "« Votre fiche de soldat : <kbd>/fiche</kbd> sur Discord, avec votre grade et vos certifications. »",
+   "« Le guide des dotations est dans le salon dotations. Relisez-le avant votre première mission. »"
+  ],
+  "apres": [
+   "Pas de compte rendu écrit à faire : la validation en jeu et l'annonce des promotions suffisent.",
+   "Signale au Staff tout comportement qui t'a inquiété, même si la FGI est accordée.",
+   "Dis ce qui a coincé dans le déroulé : ce guide s'améliore avec tes retours."
+  ],
+  "ecrans": [
+   {
+    "type": "validation",
+    "titre": "Accorder la FGI en jeu",
+    "ordonne": true,
+    "html": [
+     "La séance est allée à son terme et aucune faute éliminatoire n'a été commise : la FGI s'accorde.",
+     "Place-toi face à la recrue, regarde-la et prends l'action <strong>« Gestion du soldat »</strong>.",
+     "Dans le menu, clique sur <strong>« Accorder Formation Générale Initiale »</strong>, puis sur <strong>Appliquer</strong>.",
+     "Le serveur fait le reste : la recrue passe <strong>Soldat de 2e classe</strong>, c'est inscrit au journal, et son rôle Discord suit si son compte est lié.",
+     "Vérifie toi-même, sur ton écran, que le grade a bien changé."
+    ]
+   },
+   {
+    "type": "validation",
+    "titre": "Annoncer, puis la photo",
+    "ordonne": true,
+    "html": [
+     "Annonce au groupe, mot pour mot : « À partir de maintenant, vous portez le béret bleu foncé. Les règles, vous les connaissez : les incivilités ne passeront plus. »",
+     "Béret bleu foncé pris à l'arsenal, tenue réenregistrée.",
+     "Photo de groupe, béret bleu foncé sur la tête."
+    ]
+   },
+   {
+    "type": "validation",
+    "titre": "Ce que tu dis au nouveau soldat",
+    "html": [
+     "« Votre première sortie, faites-la accompagnée d'un ancien : c'est un conseil, pas une obligation. »",
+     "« Votre fiche de soldat : <kbd>/fiche</kbd> sur Discord, avec votre grade et vos certifications. »",
+     "« Le guide des dotations est dans le salon dotations. Relisez-le avant votre première mission. »"
+    ]
+   },
+   {
+    "type": "validation",
+    "titre": "Annonce des promotions",
+    "annonce": true
+   },
+   {
+    "type": "validation",
+    "titre": "Après la séance",
+    "html": [
+     "Un geste raté se refait sur-le-champ, puis tu accordes quand même la FGI.",
+     "Ce qui n'est pas acquis se dit au débriefing, en face, sans détour.",
+     "Préviens le chef de groupe de ce qu'il devra surveiller à la première sortie : un soldat mal assuré se rattrape sur le terrain, accompagné.",
+     "Pas de compte rendu écrit à faire : la validation en jeu et l'annonce des promotions suffisent.",
+     "Signale au Staff tout comportement qui t'a inquiété, même si la FGI est accordée.",
+     "Dis ce qui a coincé dans le déroulé : ce guide s'améliore avec tes retours."
+    ]
+   }
+  ]
+ },
+ "aide_memoire": [
+  {
+   "titre": "Touches de la PAG",
+   "ordonnee": false,
+   "items": [
+    "<kbd>F9</kbd> portée de voix : chuchoté 5 m, normal 30 m, fort 68 m",
+    "<kbd>F8</kbd> bouchons d'oreilles : −30 %, −60 %, −90 %, retirés",
+    "Menu radial RHS (<kbd>*</kbd> par défaut) : caméra de casque",
+    "Réglables dans Paramètres > Contrôles > PAG"
+   ]
+  },
+  {
+   "titre": "Compte rendu radio",
+   "ordonnee": false,
+   "items": [
+    "<strong>QUI</strong> : « Alpha 1, ici Alpha 2 » : on nomme celui qu'on appelle en premier",
+    "<strong>OÙ</strong> : « carré 087 028 »",
+    "<strong>QUOI</strong> : « trois fantassins, à l'arrêt, direction nord »",
+    "« Parlez » : j'attends ta réponse · « Terminé » : fin",
+    "« Reçu » · « Répétez »"
+   ]
+  },
+  {
+   "titre": "Contact",
+   "ordonnee": false,
+   "items": [
+    "« Contact ! » puis direction, distance, nature",
+    "Se poster, ne tirer que sur ordre ou pour se défendre",
+    "Cible identifiée, jamais un civil"
+   ]
+  },
+  {
+   "titre": "Blessé : les cinq temps",
+   "ordonnee": true,
+   "items": [
+    "Le couvert, pour lui et pour toi",
+    "La radio : carré et état, demande l'infirmier",
+    "Le sang : garrot, bandage, pansement thoracique",
+    "Le pouls : sinon sur le dos, massage cardiaque ; inconscient avec pouls : PLS, tête en arrière",
+    "L'infirmier : il prend le relais, on lui donne la solution saline"
+   ]
+  },
+  {
+   "titre": "Dotation commune",
+   "ordonnee": false,
+   "items": [
+    "ER328 · carte · montre Tactix Bravo · lampe",
+    "4 bandages, 1 garrot, 1 morphine, 1 pansement thoracique",
+    "1 solution saline, pour l'infirmier",
+    "2 grenades au plus, 1 fumigène blanc",
+    "Écusson PAG · caméra de casque",
+    "300 cartouches : 10 chargeurs de 30, ou 12 de 25"
+   ]
+  },
+  {
+   "titre": "Repérage",
+   "ordonnee": false,
+   "items": [
+    "Deux groupes de trois chiffres : 087 028",
+    "À droite, puis en haut · un carré = 100 m",
+    "Capé 1 à 9, comme le pavé numérique : 2 = bas au milieu",
+    "Montre Tactix Bravo : position et cap, lue en marchant",
+    "Azimut : tracé sur la carte, suivi à la montre"
+   ]
+  },
+  {
+   "titre": "Les civils",
+   "ordonnee": false,
+   "items": [
+    "Un civil qui court n'est pas un ennemi",
+    "Civil tué : infraction, officiers prévenus, 1 000 € sur le coffre",
+    "Dans le doute, on ne tire pas",
+    "Quatre dépôts : soute, citerne, atelier, intendance",
+    "Corps laissé 15 min à la déconnexion"
+   ]
+  },
+  {
+   "titre": "Bérets",
+   "ordonnee": false,
+   "items": [
+    "Marron : recrue · Bleu foncé : soldat",
+    "Vert : officier · Rouge : logisticien",
+    "Amarante : instructeur · Noir : 100 missions",
+    "Bleu ciel : invité d'un autre groupe"
+   ]
+  }
+ ],
+ "checklist": [
+  {
+   "id": "annonce",
+   "html": "<strong>Séance annoncée</strong> dans le salon des formations : date, heure, nombre de places."
+  },
+  {
+   "id": "habilite",
+   "html": "<strong>Habilité instructeur FGI</strong> : sinon, impossible d'accorder la FGI. Un Adjudant ou le Staff la donne."
+  },
+  {
+   "id": "tenue",
+   "html": "<strong>En jeu dix minutes avant</strong>, en tenue complète et béret amarante."
+  },
+  {
+   "id": "parcours",
+   "html": "<strong>Parcours repéré</strong> : salle d'attente, arsenal, tour de la base, poste de secours, zone dégagée, patrouille."
+  },
+  {
+   "id": "point5",
+   "html": "<strong>Module 5 préparé</strong> : point inconnu et point à rejoindre, coordonnées notées."
+  },
+  {
+   "id": "patrouille",
+   "html": "<strong>Boucle de patrouille choisie</strong> : environ 300 m autour de la base, et son carré."
+  },
+  {
+   "id": "frequence",
+   "html": "<strong>Fréquence radio de la séance choisie</strong>, pour les ER328 des recrues."
+  },
+  {
+   "id": "gestes",
+   "html": "<strong>Gestes refaits une fois</strong> : tenue enregistrée puis rechargée, lecture du carré, radio."
+  },
+  {
+   "id": "guide",
+   "html": "<strong>Ce guide ouvert</strong> ; les recrues en salle d'attente, quatre au plus."
+  }
+ ],
+ "imprevus": [
+  {
+   "id": "retard",
+   "categorie": "Au début",
+   "situation": "Une recrue arrive en retard",
+   "conduite": [
+    "Le groupe ne recommence pas : elle ne rejoint pas la séance en cours.",
+    "Dis-lui calmement que la prochaine séance sera annoncée dans le salon des formations.",
+    "Continue avec les autres."
+   ],
+   "mots": "retardataire en retard arrive tard",
+   "pause": false
+  },
+  {
+   "id": "micro",
+   "categorie": "Au début",
+   "situation": "Un micro ne marche pas ou sature",
+   "conduite": [
+    "Deux minutes de dépannage au plus.",
+    "Vérifier le micro choisi dans Windows et dans les réglages audio du jeu.",
+    "Vérifier la touche pour parler, dans les contrôles du jeu.",
+    "Sur console : une party Xbox ou PlayStation garde la voix, il faut la quitter.",
+    "Toujours rien après deux minutes : séance reportée pour elle, les autres continuent."
+   ],
+   "mots": "micro son voix entend sature grésille inaudible",
+   "pause": true
+  },
+  {
+   "id": "seule",
+   "categorie": "Au début",
+   "situation": "Une seule recrue au rendez-vous",
+   "conduite": [
+    "La séance a lieu : chaque question et chaque geste sont pour elle.",
+    "Au module F, elle est cheffe de patrouille et patrouille seule."
+   ],
+   "mots": "seul une recrue personne",
+   "pause": false
+  },
+  {
+   "id": "trop",
+   "categorie": "Au début",
+   "situation": "Plus de quatre recrues",
+   "conduite": [
+    "Quatre au maximum : chacune doit exécuter chaque geste devant toi.",
+    "Les recrues en trop repassent à la prochaine séance, annoncée dans le salon des formations."
+   ],
+   "mots": "cinq trop nombreux beaucoup",
+   "pause": false
+  },
+  {
+   "id": "charte",
+   "categorie": "Au début",
+   "situation": "Une recrue n'a pas accepté la charte",
+   "conduite": [
+    "Tant qu'elle ne l'a pas acceptée, elle reste consignée à son point de départ.",
+    "Elle ne suit pas la séance ; les autres commencent."
+   ],
+   "mots": "charte règlement consigné",
+   "pause": false
+  },
+  {
+   "id": "deco",
+   "categorie": "Pendant la séance",
+   "situation": "Une recrue plante, se déconnecte ou ne répond plus",
+   "conduite": [
+    "Mets la séance en pause.",
+    "Appelle-la par son nom, puis à la radio.",
+    "Au bout de cinq minutes, reprends sans elle.",
+    "Elle revient avant la patrouille : elle rattrape avec le groupe. Sinon, elle repasse une autre séance."
+   ],
+   "mots": "plante crash déconnecté déco afk répond plus absent",
+   "pause": true
+  },
+  {
+   "id": "bloque",
+   "categorie": "Pendant la séance",
+   "situation": "Une recrue ne comprend pas ou bloque",
+   "conduite": [
+    "Redonne la bonne réponse ou refais le geste lentement, puis elle le refait seule.",
+    "Ne le fais jamais à sa place.",
+    "Toujours bloquée au deuxième essai : on continue, personne n'est recalé.",
+    "Tu le dis au débriefing et tu préviens le chef de groupe de sa première sortie."
+   ],
+   "mots": "comprend pas bloque perdu erreur n'y arrive pas",
+   "pause": false
+  },
+  {
+   "id": "silence",
+   "categorie": "Pendant la séance",
+   "situation": "Une recrue ne dit presque rien",
+   "conduite": [
+    "Pose-lui une question simple, par son nom, pour qu'elle réussisse.",
+    "Passe-la en premier à la question suivante."
+   ],
+   "mots": "silencieuse timide parle pas participe muette discrète",
+   "pause": false
+  },
+  {
+   "id": "perdue",
+   "categorie": "Pendant la séance",
+   "situation": "Une recrue se perd à l'exercice de repérage",
+   "conduite": [
+    "C'est l'exercice : « Donnez-moi votre position au carré. »",
+    "Puis guide-la par la carte et l'azimut, sans y aller à sa place."
+   ],
+   "mots": "perdue égarée module 5 repérage point inconnu coordonnées",
+   "pause": false
+  },
+  {
+   "id": "sais-pas",
+   "categorie": "Pendant la séance",
+   "situation": "Une question dont tu ne connais pas la réponse",
+   "conduite": [
+    "Ne l'invente pas : « Je vérifie et je reviens vers vous. »",
+    "Note la question.",
+    "Après la séance, demande à un officier et réponds sur Discord."
+   ],
+   "mots": "question réponse sais pas connais pas",
+   "pause": false
+  },
+  {
+   "id": "hors-sujet",
+   "categorie": "Pendant la séance",
+   "situation": "Une question hors sujet, ou la discussion dérive",
+   "conduite": [
+    "Question sur le module en cours : on y répond tout de suite.",
+    "Hors sujet : « Bonne question, on la garde pour la fin. »",
+    "Réponds-y après la validation."
+   ],
+   "mots": "hors sujet discussion dérive bavarde",
+   "pause": false
+  },
+  {
+   "id": "retard-seance",
+   "categorie": "Pendant la séance",
+   "situation": "La séance prend du retard",
+   "conduite": [
+    "Pas de limite d'heure : finis chaque module correctement.",
+    "La patrouille et la validation ne sautent jamais.",
+    "Pour resserrer : moins de parole, plus de pratique, et les conseils du module."
+   ],
+   "mots": "retard temps long déborde minuteur rouge lent",
+   "pause": false
+  },
+  {
+   "id": "tir-volontaire",
+   "categorie": "Comportement",
+   "situation": "Tir volontaire sur un camarade ou un civil",
+   "conduite": [
+    "Faute éliminatoire : la séance s'arrête pour elle.",
+    "Préviens un officier ou le Staff.",
+    "Les autres continuent ; elle pourra se représenter plus tard."
+   ],
+   "mots": "tir tue tué camarade civil volontaire exprès teamkill",
+   "pause": false
+  },
+  {
+   "id": "tir-accident",
+   "categorie": "Comportement",
+   "situation": "Tir accidentel sur un camarade ou un civil",
+   "conduite": [
+    "« Stop. » Tout le monde arme basse.",
+    "Rappel à l'ordre : son arme déchargée, balle déchambrée.",
+    "On continue.",
+    "Un deuxième tir, même accidentel : faute éliminatoire."
+   ],
+   "mots": "tir accident accidentel coup parti erreur",
+   "pause": false
+  },
+  {
+   "id": "armee",
+   "categorie": "Comportement",
+   "situation": "Une recrue s'arme ou se casque sans ordre",
+   "conduite": [
+    "Rappel à l'ordre : arme déchargée, dans le dos ou dans le sac, casque dans le sac.",
+    "Casque et chargement se font sur ordre du chef de groupe ou d'un officier.",
+    "On continue."
+   ],
+   "mots": "arme chargée casque casquée sans ordre",
+   "pause": false
+  },
+  {
+   "id": "perturbe",
+   "categorie": "Comportement",
+   "situation": "Une recrue perturbe, conteste ou coupe la parole",
+   "conduite": [
+    "Un avertissement, par son nom, calmement : « Je vous demande d'arrêter. C'est un avertissement. »",
+    "Si ça continue : refus d'obéir, faute éliminatoire, Staff prévenu."
+   ],
+   "mots": "perturbe blague troll conteste coupe parole insolent",
+   "pause": false
+  },
+  {
+   "id": "doctrine",
+   "categorie": "Comportement",
+   "situation": "« À l'armée, on ne fait pas comme ça »",
+   "conduite": [
+    "« Ici, c'est la méthode PAG ; on en parle volontiers après la séance. »",
+    "Puis reprends. S'il insiste : fiche « Une recrue perturbe »."
+   ],
+   "mots": "armée doctrine discute conteste méthode réel",
+   "pause": false
+  },
+  {
+   "id": "insulte",
+   "categorie": "Comportement",
+   "situation": "Insultes ou propos toxiques",
+   "conduite": [
+    "Faute éliminatoire, sans avertissement : la séance s'arrête pour elle.",
+    "Préviens un officier ou le Staff."
+   ],
+   "mots": "insulte toxique raciste harcèlement injure",
+   "pause": false
+  },
+  {
+   "id": "part",
+   "categorie": "Comportement",
+   "situation": "Une recrue quitte la séance sans prévenir",
+   "conduite": [
+    "Si c'est un plantage, vois la fiche « Une recrue plante ».",
+    "Départ volontaire sans prévenir : faute éliminatoire, Staff prévenu."
+   ],
+   "mots": "part quitte parti partie abandon",
+   "pause": false
+  },
+  {
+   "id": "evenement",
+   "categorie": "Le jeu et le serveur",
+   "situation": "Attaque de la base, joueur extérieur, tirs tout près",
+   "conduite": [
+    "Mets la séance en pause.",
+    "Recrues à l'abri dans la base.",
+    "Préviens un officier ou le Staff.",
+    "On reprend quand c'est calme."
+   ],
+   "mots": "attaque ennemi joueur extérieur gêne tirs base événement",
+   "pause": true
+  },
+  {
+   "id": "serveur",
+   "categorie": "Le jeu et le serveur",
+   "situation": "Le serveur redémarre, tout le monde est déconnecté",
+   "conduite": [
+    "La séance est en pause : le guide a tout gardé.",
+    "Rendez-vous en salle d'attente dès le retour.",
+    "On reprend à l'étape en cours.",
+    "Le serveur ne revient pas : séance reportée et annoncée dans le salon des formations."
+   ],
+   "mots": "serveur redémarre reboot restart coupure crash serveur",
+   "pause": true
+  },
+  {
+   "id": "moi-plante",
+   "categorie": "Toi, l'instructeur",
+   "situation": "Ton jeu plante",
+   "conduite": [
+    "Si tu peux, préviens sur Discord : « Restez sur place, je reviens. »",
+    "Reviens au plus vite ; ce guide garde la séance, mets-la en pause.",
+    "À ton retour, reprends à l'étape en cours."
+   ],
+   "mots": "mon jeu plante crash instructeur déconnecté",
+   "pause": true
+  },
+  {
+   "id": "moi-pars",
+   "categorie": "Toi, l'instructeur",
+   "situation": "Tu ne peux pas finir la séance",
+   "conduite": [
+    "La FGI ne s'accorde qu'à une séance allée à son terme.",
+    "Préviens un officier ou le Staff, et reporte la séance."
+   ],
+   "mots": "partir finir urgence arrêter",
+   "pause": false
+  }
+ ],
+ "retard_module": "Ce module dure plus que prévu : ce n'est pas grave, finis-le correctement.",
+ "annonce_promotions": "FGI du {date} — {noms} {verbe} Soldat de 2e classe et {portent} désormais le béret bleu foncé. Instructeur : {instructeur}.",
+ "version": "23 septembre 2026"
+}

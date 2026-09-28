@@ -1,0 +1,37 @@
+SCR_DestructibleEntity : "{C4A76956504FAF05}Prefabs/Structures/Signs/SignLarge_02/SignLarge_02_345x240_base.et" {
+ ID "50D67C36F4200F97"
+ components {
+  MeshObject "{54969A6AAAADA251}" {
+   Materials {
+    MaterialAssignClass "{6A5AF48EA20F3934}" {
+     SourceMaterial "SignLarge_02_345x240"
+     AssignedMaterial "{F8915AD9915ECF76}Assets/Structures/Signs/SignLarge_02/Data/Panneau_Large_Bienvenue.emat"
+    }
+    MaterialAssignClass "{6A5AF48EA20F3906}" {
+     SourceMaterial "SignLarge_02_345x240_MLOD"
+     AssignedMaterial "{F8915AD9915ECF76}Assets/Structures/Signs/SignLarge_02/Data/Panneau_Large_Bienvenue.emat"
+    }
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{5496C1EF00137501}" {
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{6112D819411B10F5}" : "{C2BD61C5E05B8971}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Light.conf" {
+     m_ModelPrefabs {
+      "{2B36FC423EEDDE6F}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_01.xob" "{B22845DB230AEFFF}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_02.xob" "{C5222D53D7A8008F}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_03.xob" "{C2E5D702B12EBA4C}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_04.xob" "{B5EFBF8A458C553C}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_05.xob" "{2CF10613586B64AC}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01_dbr_06.xob"
+     }
+     m_fMass 10.5
+    }
+    SCR_ParticleSpawnable "{6A5AF48A11BFDED3}" {
+     m_Particle "{66DAEB775AA8CA4C}Particles/Props/Dest_Prop_Metal_Medium.ptc"
+    }
+   }
+   m_bDeleteAfterFinalPhase 0
+   m_aDamagePhases {
+    SCR_DamagePhaseData "{6A5AF48A11BFDE17}" {
+     m_PhaseModel "{5F91939F205ED769}Assets/Structures/Signs/SignLarge_02/Dst/SignLarge_02_345x240_dst_01.xob"
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}

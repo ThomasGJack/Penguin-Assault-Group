@@ -1,0 +1,28 @@
+ARBITRAGES DE JACK (26/09/2026), qui complètent et priment sur les réponses des QCM
+
+A. Plan du front (10 questions avant le go) :
+Q1. Pertes sans combat : seulement deux exceptions.
+    E4 : une zone entière coupée de la base pendant 24 h réelles (serveur éteint compris, minuterie arrêtée pendant un gel) repasse rouge.
+    H2 : une offensive fictive une fois par jour, entre 3 h et 7 h, serveur vide depuis 30 min, sur une seule zone du front (jamais une voisine de la base). Réussite = 10 % + 5 % par point de menace, 60 % au plus. Résultat annoncé sur Discord et à chaque joueur à sa première apparition.
+Q2. Une zone à nous redevient rouge quand l'ennemi a repris ses points clés ET plus de la moitié de ses carrés. Reprise de 1 min par carré, seulement par les soldats de l'attaque, dans la zone visée, sur un carré qui touche du rouge. Pas de repeinte des autres carrés. Un joueur vivant à 100 m d'un point clé le protège.
+Q3. Les blocs à deux villages sont coupés en deux zones (chaque carré va au village le plus proche).
+Q4. Zones sans village : elles tombent à la moitié de leurs carrés bleus. Prime de 200 € sous mission. Pas de production sauf désignation. Elles comptent pour la menace.
+Q5. Erquy : liaison par la mer avec le carré de côte le plus proche (attaquable quand ce carré est bleu, reliée à la base tant qu'il le reste). Une seule zone de 34 carrés.
+Q6. Rythme : on garde les chiffres (15 min par carré, +1 / −1 de menace par zone), on mesure 2 semaines, les chiffres sont réglables dans le fichier du profil.
+Q7. Limite portée à 120 soldats ennemis, dont 12 réservés aux postes du front (4 postes au plus).
+Q8. Points clés posés AU WORKBENCH : un prefab repère (centre et QG) à placer dans le monde, chaque retouche demande de republier. Repli : l'endroit du nom sur la carte. Le menu Staff liste ce qui manque.
+Q9. La mission de capture garde sa récompense, avec une difficulté fixée par la zone : 1 hameau ou zone sans village, 2 village, 3 ville. La prime 300 / 500 / 800 € (200 € sans village) remplace l'ancienne subvention de 500 €. Une zone forcée par le Staff = correction : ni prime, ni menace, ni radio.
+Q10. Contrôle routier seulement sur un carré bleu, mais distance minimale à la base abaissée de 1 500 à 1 000 m.
+Plus : limite d'IA actives du jeu portée à 160 (AIWorld.SetLimitOfActiveAIs au démarrage, réglable dans le fichier du profil).
+
+B. Commandeur (3 questions après le QCM) :
+C1. INFANTERIE GRATUITE : soldats et camions de renfort ne sont PAS comptés en stock. Ils restent limités par la limite des 120 soldats, par la garnison voisine qui se vide quand elle envoie du monde (MA2, regarnissage F12 d'un quart par heure) et par le frein C2. Seuls les OBUS de mortier, les BLINDÉS, les sorties d'HÉLICO, les tirs d'ARTILLERIE LOURDE et la BOMBE sont des stocks ; le dépôt saboté coupe leur revenu. (RE1, RE3, CO2 et CA3 sont à lire dans ce sens : les chiffres « 10 sections, 4 camions » disparaissent, « stock vide, pas de camion » aussi ; les vagues de contre-attaque dépendent de la 1re vague et de la limite des 120, pas d'un stock.)
+C2. FREIN LÉGER sur les renforts demandés dès le premier contact (MA1) : au plus un renfort par zone toutes les 10 min, et la localité voisine qui l'envoie garde toujours au moins la moitié de sa garnison. Réglable sans republier.
+C3. BLINDÉ CAPTURÉ (AP6) : on peut le conduire pour le ramener ; arrivé à la base, prime (BTR-70 ou BRDM-2 : 2 000 €, Typhoon : 5 000 €) puis il est retiré. Non ramené, il disparaît au redémarrage.
+
+C. Commandeur (5 questions après la conception, 26/09) :
+C4. Informateurs civils, réglage prudent : un civil en zone rouge qui voit un joueur à 120 m ou moins a 25 chances sur 100 de le signaler ; une fois par 15 min par civil, un signalement par zone toutes les 10 min ; message 2 à 5 min plus tard, position à 150-300 m près, perdu si le civil est mort, inconscient ou menotté ; il ne déclenche qu'une fouille (unité ou hélico), jamais mortier, artillerie, blindé ni bombe.
+C5. Fumigènes du mortier gratuits : ils ne coûtent pas d'obus, ne comptent ni dans les 2 tirs par heure ni dans la règle des 20 min ; seuls les obus explosifs comptent ; pas de fumée si la pièce de la région est muette.
+C6. Partage des places : la localité attaquée est servie d'abord, à sa taille ; les autres se partagent le reste selon leur taille (part double si un joueur est à 1 km), 8 soldats au moins chacune ; une garnison posée n'est jamais réduite sous les yeux des joueurs.
+C7. Capture de l'officier : si les menottes ACE ne marchent pas sur un officier IA inconscient, AUCUNE action de remplacement ; il ne peut alors qu'être tué (3 h).
+C8. Contre-attaque brisée aux deux tiers de pertes = défense réussie (menace −1, radio « zone défendue ») ; seule la rupture au bout de 60 min laisse la menace inchangée ; les carrés déjà repris restent rouges.

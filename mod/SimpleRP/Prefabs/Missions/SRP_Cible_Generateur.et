@@ -1,0 +1,46 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{15AFE36899DB6807}Generator/rsg_military_Generator.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0FB701}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0FB702}" {
+     UIInfo UIInfo "{6A5B0C0D0E0FB703}" {
+      Name "generateur"
+     }
+     ContextName "generateur"
+     Position PointInfo "{6A5B0C0D0E0FB704}" {
+      Offset 0 0.6 0
+     }
+     Radius 2
+     Omnidirectional 1
+    }
+   }
+   additionalActions {
+    SRP_SabotageAction "{6A5B0C0D0E0FB705}" {
+     ParentContextList {
+      "generateur"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0FB706}" {
+      Name "Saboter"
+     }
+     ActionTitle "Saboter"
+     VisibilityRange 4
+     Duration 5
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}

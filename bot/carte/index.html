@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Carte de situation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+  :root {
+    --fond: #0c1116; --panneau: #121a22; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f;
+    --ami: #4da3ff; --ami-fond: rgba(77,163,255,.28); --mission: #ffb020; --ennemi: #ff4d4d; --nous: #4da3ff; --alerte: #ff7a1a;
+    --en-ligne: #3ddc84; --ambre: #ffb347; --soldat: #ffffff;
+    /* Front : carrés très transparents (I2), contestés en orange (C8) */
+    --front-bleu: rgba(77,163,255,.32); --front-rouge: rgba(255,77,77,.26); --front-conteste: rgba(255,122,26,.55);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: var(--fond); color: var(--texte); font: 14px/1.45 "Segoe UI", system-ui, sans-serif; }
+  #app { display: grid; grid-template-columns: 340px 1fr; height: 100%; }
+  #cote { background: var(--panneau); border-right: 1px solid var(--bord); display: flex; flex-direction: column; min-height: 0; }
+  header { padding: 16px 18px 12px; border-bottom: 1px solid var(--bord); }
+  header h1 { margin: 0; font-size: 17px; letter-spacing: .04em; }
+  header .sous { color: var(--discret); font-size: 12px; margin-top: 2px; }
+  header .liens { display: flex; gap: 6px; margin-bottom: 10px; }
+  header .liens a { color: var(--texte); text-decoration: none; border: 1px solid var(--bord); border-radius: 999px; padding: 3px 11px; font-size: 12px; }
+  header .liens a:hover { border-color: #c9a227; color: #c9a227; }
+  #etat { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 12.5px; }
+  .pastille { width: 9px; height: 9px; border-radius: 50%; background: var(--discret); flex: none; }
+  .pastille.ok { background: var(--en-ligne); box-shadow: 0 0 0 0 rgba(61,220,132,.6); animation: battre 2s infinite; }
+  .pastille.ko { background: var(--ennemi); }
+  @keyframes battre { 70% { box-shadow: 0 0 0 8px rgba(61,220,132,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,132,0); } }
+  #chiffres { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 12px 18px; border-bottom: 1px solid var(--bord); }
+  .chiffre { background: #0e151c; border: 1px solid var(--bord); border-radius: 8px; padding: 8px 6px; text-align: center; }
+  .chiffre b { display: block; font-size: 19px; }
+  .chiffre span { color: var(--discret); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+  #listes { overflow-y: auto; padding: 6px 0 18px; flex: 1; min-height: 0; }
+  h2 { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--discret); margin: 16px 18px 6px; }
+  .ligne { padding: 8px 18px; cursor: pointer; border-left: 3px solid transparent; }
+  .ligne:hover { background: #17212b; border-left-color: var(--ami); }
+  .ligne .titre { display: flex; justify-content: space-between; gap: 8px; font-weight: 600; }
+  .ligne .carre { font-family: Consolas, monospace; color: var(--ami); font-weight: 600; }
+  .ligne .noms { color: var(--discret); font-size: 12.5px; margin-top: 1px; }
+  .ligne.mission:hover { border-left-color: var(--mission); }
+  .ligne.mission .carre { color: var(--mission); }
+  .ligne.secteur .carre.nous { color: var(--nous); } .ligne.secteur .carre.ennemi { color: var(--ennemi); }
+  .ligne .carre.nous { color: var(--nous); } .ligne .carre.ennemi { color: var(--ennemi); } .ligne .carre.alerte { color: var(--alerte); } .ligne .carre.ambre { color: var(--ambre); } .ligne .carre.neutre { color: var(--discret); }
+  .ligne.zone:hover { border-left-color: var(--nous); }
+  .ligne.zone.attaque { border-left-color: var(--alerte); }
+  .vide { color: var(--discret); padding: 4px 18px; font-style: italic; }
+  #gel { margin-top: 8px; font-size: 12px; color: #cfe3ff; background: #16324d; border: 1px solid #2d5b86; border-radius: 6px; padding: 4px 8px; }
+  #zone { position: relative; min-width: 0; min-height: 0; }
+  #carte { background: #0c1424; position: absolute; inset: 0; }
+  /* Outils posés sur la carte : trajets (en haut à droite), frise des photos du front (en bas) */
+  .outil { position: absolute; z-index: 500; background: #0c1116e6; border: 1px solid var(--bord); border-radius: 10px; backdrop-filter: blur(4px); font-size: 12.5px; }
+  #trajets { top: 10px; right: 10px; padding: 8px 10px; max-width: 250px; }
+  #trajets label { color: var(--discret); margin-right: 6px; }
+  #trajets select { background: #18222d; color: var(--texte); border: 1px solid var(--bord); border-radius: 6px; padding: 3px 6px; font: inherit; }
+  #trajets a { color: #c9a227; text-decoration: none; margin-left: 8px; }
+  #trajets a:hover { text-decoration: underline; }
+  #legende { margin-top: 6px; max-height: 190px; overflow-y: auto; }
+  #legende div { display: flex; align-items: center; gap: 7px; padding: 1px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #legende i { width: 14px; height: 4px; border-radius: 2px; flex: none; }
+  #frise { left: 10px; right: 10px; bottom: 10px; padding: 8px 12px 9px; }
+  #frise .haut { display: flex; gap: 10px; align-items: baseline; }
+  #frise .quoi { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #frise .quoi b.nous { color: var(--nous); } #frise .quoi b.ennemi { color: var(--ennemi); } #frise .quoi b.neutre { color: #c9a227; }
+  #frise button { background: none; border: 1px solid var(--bord); color: var(--texte); border-radius: 999px; padding: 2px 11px; font: inherit; cursor: pointer; }
+  #frise button:hover { border-color: #c9a227; color: #c9a227; }
+  #frise input { width: 100%; margin: 6px 0 0; accent-color: #c9a227; }
+  #frise.passe { border-color: #c9a227; }
+  .ligne.histo .noms { font-size: 11.5px; }
+  /* Dépôt de secteur : la caisse où la production du secteur attend d'être ramassée */
+  .depot { width: 14px; height: 11px; border-radius: 2px; background: #c9a227; border: 2px solid #0a0e14; box-shadow: 0 0 0 1px #c9a227aa; }
+  .depot.plein { animation: depot 2s ease-in-out infinite; }
+  @keyframes depot { 50% { box-shadow: 0 0 0 6px #c9a22700; } }
+  .leaflet-container { background: #0c1424; font: inherit; }
+  /* Front : le calque des carrés (une seule image, jamais un rectangle par carré) et les volets du front */
+  .calque-front { image-rendering: pixelated; image-rendering: crisp-edges; }
+  .leaflet-front-pane, .leaflet-frontLignes-pane { pointer-events: none; }
+  .nom-zone-ancre { background: none; border: 0; }
+  .nom-zone { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; font: 600 11.5px "Segoe UI", system-ui, sans-serif; letter-spacing: .02em;
+              color: #fff; text-shadow: 0 0 3px #000, 0 0 3px #000, 0 1px 2px #000; pointer-events: none; }
+  .nom-zone.bleu { color: #cfe6ff; } .nom-zone.rouge { color: #ffc9c9; opacity: .85; } .nom-zone.contact { color: #ff8f8f; font-weight: 700; }
+  .nom-zone.coupee { color: var(--ambre); font-weight: 700; }
+  .nom-zone.attaque { color: var(--alerte); font-weight: 700; animation: clignoter 1s steps(2) infinite; }
+  #infobulle { position: absolute; z-index: 600; pointer-events: none; background: rgba(10,16,22,.92); border: 1px solid var(--bord); border-radius: 6px; padding: 3px 8px; font-size: 12px; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.4); }
+  #infobulle b { font-family: Consolas, monospace; }
+  /* Carrés occupés : les soldats en blanc, pour ne pas se fondre dans le territoire bleu */
+  .carre-occupe { stroke: var(--soldat); stroke-width: 2; fill: var(--soldat); fill-opacity: .22; animation: respirer 2.4s ease-in-out infinite; }
+  @keyframes respirer { 50% { fill-opacity: .42; } }
+  .point { width: 12px; height: 12px; border-radius: 50%; background: var(--soldat); border: 2px solid #0a0e14; box-shadow: 0 0 0 0 rgba(255,255,255,.7); animation: pouls 1.8s infinite; }
+  @keyframes pouls { 70% { box-shadow: 0 0 0 12px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
+  .etiquette { background: rgba(10,16,22,.88); border: 1px solid var(--soldat); color: #fff; border-radius: 6px; padding: 3px 7px; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.4); white-space: nowrap; }
+  .etiquette b { color: var(--soldat); font-family: Consolas, monospace; }
+  .etiquette:before { display: none; }
+  .etiquette.mission { border-color: var(--mission); } .etiquette.mission b { color: var(--mission); }
+  /* Missions et secteurs */
+  .balise { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--mission); background: rgba(255,176,32,.25); position: relative; }
+  .balise:after { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 3px solid var(--mission); animation: onde 1.8s ease-out infinite; }
+  @keyframes onde { from { transform: scale(1); opacity: .9; } to { transform: scale(2.6); opacity: 0; } }
+  .drapeau { width: 14px; height: 14px; transform: rotate(45deg); border: 2px solid #0b0f13; }
+  .drapeau.nous { background: var(--nous); } .drapeau.ennemi { background: var(--ennemi); }
+  .drapeau.attaque { animation: clignoter .8s steps(2) infinite; background: var(--alerte); }
+  @keyframes clignoter { 50% { opacity: .25; } }
+  .nom-lieu { color: #fff; font-weight: 500; font-size: 13px; text-shadow: 0 0 4px #000, 0 0 4px #000, 0 1px 2px #000; white-space: nowrap; background: none; border: 0; box-shadow: none; }
+  .nom-lieu:before { display: none; }
+  .quadrillage-texte { color: rgba(255,255,255,.7); text-shadow: 0 0 3px #000; font: 600 11px Consolas, monospace; background: none; border: 0; box-shadow: none; }
+  @media (max-width: 760px) { #app { grid-template-columns: 1fr; grid-template-rows: 46vh 1fr; } #cote { order: 2; border-right: 0; border-top: 1px solid var(--bord); } }
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="cote">
+    <header>
+      <div class="liens"><a href="/">← Accueil</a><a href="/campagne/">Campagne</a><a href="/effectifs/">Effectifs</a></div>
+      <h1>PAG · CARTE DE SITUATION</h1>
+      <div class="sous">Everon · front par carrés de 200 m · mise à jour toutes les 5 s</div>
+      <div id="etat"><span class="pastille" id="pastille"></span><span id="etat-texte">Connexion…</span></div>
+      <div id="gel" hidden>Front gelé par l'état-major : ni capture ni perte</div>
+    </header>
+    <div id="chiffres">
+      <div class="chiffre"><b id="n-soldats">–</b><span>Soldats</span></div>
+      <div class="chiffre"><b id="n-missions">–</b><span>Missions</span></div>
+      <div class="chiffre"><b id="n-ile">–</b><span id="n-ile-titre">Île tenue</span></div>
+    </div>
+    <div id="listes">
+      <h2>Soldats sur le terrain</h2><div id="l-soldats"></div>
+      <h2>Missions en cours</h2><div id="l-missions"></div>
+      <h2>Zones</h2><div id="l-zones"></div>
+      <h2>Historique du front</h2><div id="l-histo"></div>
+    </div>
+  </aside>
+  <div id="zone">
+    <div id="carte"></div>
+    <div id="infobulle" hidden></div>
+    <div class="outil" id="trajets">
+      <label for="duree">Trajets</label><select id="duree">
+        <option value="0">masqués</option><option value="1">1 h</option><option value="3">3 h</option><option value="6">6 h</option><option value="12">12 h</option><option value="24">24 h</option>
+      </select><a id="lien-image" href="#" target="_blank" rel="noopener" hidden>Image</a>
+      <div id="legende"></div>
+    </div>
+    <div class="outil" id="frise" hidden>
+      <div class="haut"><span class="quoi" id="frise-texte"></span><button id="frise-direct" hidden>Revenir au direct</button></div>
+      <input type="range" id="frise-curseur" min="0" max="0" value="0" step="1">
+    </div>
+  </div>
+</div>
+<script>
+const TAILLE = 12800;                       // Everon : 12,8 km de côté ; latitude = z, longitude = x
+// Tuiles satellite fabriquées depuis le terrain du jeu : monde de 16 384 m, 1 m par pixel au zoom 6, origine du jeu en bas à gauche
+const REPERE = L.extend({}, L.CRS.Simple, { transformation: new L.Transformation(1 / 64, 0, -1 / 64, 256) });
+const carte = L.map('carte', { crs: REPERE, minZoom: 1, maxZoom: 9, zoomSnap: .25, zoomDelta: .5, attributionControl: false, maxBounds: [[-1500, -1500], [TAILLE + 1500, TAILLE + 1500]] });
+L.tileLayer('tuiles/{z}/{x}/{y}.webp', { minZoom: 0, maxNativeZoom: 6, maxZoom: 9, noWrap: true, bounds: [[0, 0], [TAILLE, TAILLE]], keepBuffer: 4 }).addTo(carte);
+// Par-dessus : la photographie aérienne prise en jeu (bâtiments, arbres, notre base), 0,25 m par pixel au zoom 8.
+// Là où elle n'existe pas encore, la tuile manque et le fond satellite reste visible.
+L.tileLayer('tuiles_aerien/{z}/{x}/{y}.webp', { minZoom: 0, maxNativeZoom: 8, maxZoom: 9, noWrap: true, bounds: [[0, 0], [TAILLE, TAILLE]], keepBuffer: 4 }).addTo(carte);
+carte.fitBounds([[2500, 3500], [8500, 10500]]);
+// Deux volets pour le front, entre les tuiles (200) et les couches (400) : les carrés restent sous les soldats, missions et trajets
+carte.createPane('front').style.zIndex = 350;
+carte.createPane('frontLignes').style.zIndex = 360;
+carte.getPane('front').style.pointerEvents = 'none';
+carte.getPane('frontLignes').style.pointerEvents = 'none';
+const renduLignes = L.svg({ pane: 'frontLignes' });
+const FRONT_PX = 8;                 // pixels par carré sur le calque
+const ZOOM_NOMS_ZONES = 2.75;       // tous les noms de zones à partir de ce zoom ; en dessous, seulement les zones tenues, au contact ou attaquées
+const ZOOM_LIEUX = 4;               // noms des localités (pour ne pas doubler les noms de zones)
+
+// ---- quadrillage : lignes de 1 km toujours, de 100 m quand on est assez près
+const quadrillage = L.layerGroup().addTo(carte);
+function tracerQuadrillage() {
+  quadrillage.clearLayers();
+  const b = carte.getBounds(), fin = carte.getZoom() >= 5;
+  const pas = fin ? 100 : 1000;
+  const x0 = Math.max(0, Math.floor(b.getWest() / pas) * pas), x1 = Math.min(TAILLE, b.getEast());
+  const z0 = Math.max(0, Math.floor(b.getSouth() / pas) * pas), z1 = Math.min(TAILLE, b.getNorth());
+  for (let x = x0; x <= x1; x += pas) {
+    const km = x % 1000 === 0;
+    L.polyline([[Math.max(0, b.getSouth()), x], [Math.min(TAILLE, b.getNorth()), x]], { color: '#ffffff', weight: km ? 1 : .5, opacity: km ? .28 : .14, interactive: false }).addTo(quadrillage);
+    if (km || fin && x % 500 === 0) L.marker([Math.max(0, b.getSouth()), x], { opacity: 0, interactive: false }).bindTooltip(String(x / 100).padStart(3, '0'), { permanent: true, direction: 'top', className: 'quadrillage-texte', offset: [0, 0] }).addTo(quadrillage);
+  }
+  for (let z = z0; z <= z1; z += pas) {
+    const km = z % 1000 === 0;
+    L.polyline([[z, Math.max(0, b.getWest())], [z, Math.min(TAILLE, b.getEast())]], { color: '#ffffff', weight: km ? 1 : .5, opacity: km ? .28 : .14, interactive: false }).addTo(quadrillage);
+    if (km || fin && z % 500 === 0) L.marker([z, Math.max(0, b.getWest())], { opacity: 0, interactive: false }).bindTooltip(String(z / 100).padStart(3, '0'), { permanent: true, direction: 'right', className: 'quadrillage-texte', offset: [0, 0] }).addTo(quadrillage);
+  }
+}
+let dernierEtat = null;
+carte.on('moveend zoomend', tracerQuadrillage);
+function selonZoom() {
+  // De loin, on allège : pas de noms de localités, étiquettes réduites, seulement les zones qui comptent
+  if (carte.getZoom() >= ZOOM_LIEUX) cLieux.addTo(carte); else cLieux.remove();
+  poserNoms();
+}
+carte.on('zoomend', () => {
+  selonZoom();
+  if (dernierEtat) afficher(dernierEtat);
+});
+tracerQuadrillage();
+
+// ---- couches vivantes
+const cSecteurs = L.layerGroup().addTo(carte), cMissions = L.layerGroup().addTo(carte), cSoldats = L.layerGroup().addTo(carte), cLieux = L.layerGroup().addTo(carte);
+const centre = g => { const [gx, gz] = g.split(' ').map(Number); return [gz * 100 + 50, gx * 100 + 50]; };
+const coins = g => { const [gx, gz] = g.split(' ').map(Number); return [[gz * 100, gx * 100], [gz * 100 + 100, gx * 100 + 100]]; };
+const propre = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const aller = (g, z = 5) => carte.flyTo(centre(g), Math.max(carte.getZoom(), z), { duration: .8 });
+
+let lieuxPoses = false, dernier = 0;
+function afficher(etat) {
+  dernierEtat = etat;
+  // soldats regroupés par carré
+  const carres = new Map();
+  for (const s of etat.soldats || []) { if (!s.carre) continue; if (!carres.has(s.carre)) carres.set(s.carre, []); carres.get(s.carre).push(s); }
+  cSoldats.clearLayers();
+  const lignes = [];
+  for (const [g, liste] of [...carres].sort((a, b) => b[1].length - a[1].length)) {
+    const noms = liste.map(s => propre(s.grade ? s.grade + ' ' + s.nom : s.nom));
+    // De loin : un point qui bat et « carré · effectif » ; de près : le carré de 100 m et les noms
+    const pres = carte.getZoom() >= 3.5;
+    const texte = pres ? `<b>${g}</b> · ${noms.join(', ')}` : `<b>${g}</b> · ${liste.length}`;
+    L.rectangle(coins(g), { className: 'carre-occupe' }).addTo(cSoldats);
+    L.marker(centre(g), { icon: L.divIcon({ className: '', html: '<div class="point"></div>', iconSize: [12, 12] }), interactive: false }).addTo(cSoldats)
+      .bindTooltip(texte, { permanent: true, direction: 'right', className: 'etiquette', offset: [8, 0] });
+    lignes.push(`<div class="ligne" data-g="${g}"><div class="titre"><span>${liste.length} soldat${liste.length > 1 ? 's' : ''}</span><span class="carre">${g}</span></div><div class="noms">${noms.join(' · ')}</div></div>`);
+  }
+  const horsCarte = (etat.soldats || []).filter(s => !s.carre).map(s => propre(s.nom));
+  document.getElementById('l-soldats').innerHTML = (lignes.join('') || '<div class="vide">Personne sur le terrain</div>') + (horsCarte.length ? `<div class="vide">Sans position : ${horsCarte.join(', ')}</div>` : '');
+
+  // missions
+  cMissions.clearLayers();
+  document.getElementById('l-missions').innerHTML = (etat.missions || []).map(m => {
+    if (m.carre) L.marker(centre(m.carre), { icon: L.divIcon({ className: '', html: '<div class="balise"></div>', iconSize: [22, 22] }) }).addTo(cMissions)
+      .bindTooltip(carte.getZoom() >= 3.5 ? `<b>${propre(m.id)}</b> · ${propre(m.titre)}` : `<b>${propre(m.id)}</b>`, { permanent: true, direction: 'top', className: 'etiquette mission', offset: [0, -10] });
+    return `<div class="ligne mission" data-g="${m.carre || ''}"><div class="titre"><span>${propre(m.id)} · ${propre(m.titre)}</span><span class="carre">${m.carre || '—'}</span></div><div class="noms">${propre(m.lieu)} · difficulté ${m.difficulte}${m.chef ? ' · prise par ' + propre(m.chef) : ''}</div></div>`;
+  }).join('') || '<div class="vide">Aucune mission</div>';
+
+  // ancien mod (secteurs) : tant qu'aucun front n'est reçu, ou s'il est remis après le front (front_v vide), les
+  // drapeaux des secteurs comme avant
+  cSecteurs.clearLayers();
+  const secteurs = (!front || !etat.front_v) && !archive ? (etat.secteurs || []) : [];
+  for (const s of secteurs) {
+    if (!s.carre) continue;
+    const classe = s.attaque ? 'attaque' : (s.nous ? 'nous' : 'ennemi');
+    L.marker(centre(s.carre), { icon: L.divIcon({ className: '', html: `<div class="drapeau ${classe}"></div>`, iconSize: [14, 14] }) }).addTo(cSecteurs)
+      .bindTooltip(propre(s.nom) + (s.attaque ? ' — ATTAQUE' : ''), { direction: 'top', offset: [0, -8] });
+    if (s.depot && s.nous) L.marker(centre(s.depot), { icon: L.divIcon({ className: '', html: `<div class="depot${s.stock > 0 ? ' plein' : ''}"></div>`, iconSize: [14, 11] }) }).addTo(cSecteurs)
+      .bindTooltip(`Dépôt de ${propre(s.nom)} · ${s.stock > 0 ? s.stock + ' paquet' + (s.stock > 1 ? 's' : '') + ' à ramasser' : 'vide'}`, { direction: 'top', offset: [0, -8] });
+  }
+  if ((!front || !etat.front_v) && !archive) {
+    document.getElementById('l-zones').innerHTML = secteurs.filter(s => s.nous || s.attaque).map(s =>
+      `<div class="ligne secteur" data-g="${s.depot || s.carre || ''}"><div class="titre"><span>${propre(s.nom)}${s.attaque ? ' — attaque' : ''}</span><span class="carre ${s.nous ? 'nous' : 'ennemi'}">${s.nous ? 'à nous' : 'ennemi'}</span></div></div>`).join('')
+      || '<div class="vide">Front pas encore reçu</div>';
+    document.getElementById('n-ile').textContent = secteurs.length ? secteurs.filter(s => s.nous).length + ' / ' + secteurs.length : '–';
+    document.getElementById('n-ile-titre').textContent = secteurs.length ? 'Secteurs' : 'Île tenue';
+  }
+
+  // noms des localités, posés une fois
+  if (!lieuxPoses && (etat.lieux || []).length) {
+    lieuxPoses = true;
+    for (const l of etat.lieux) L.marker([l.z, l.x], { opacity: 0, interactive: false }).bindTooltip(propre(l.nom), { permanent: true, direction: 'center', className: 'nom-lieu' }).addTo(cLieux);
+  }
+
+  document.getElementById('n-soldats').textContent = (etat.soldats || []).length;
+  document.getElementById('n-missions').textContent = (etat.missions || []).length;
+  for (const el of document.querySelectorAll('.ligne[data-g]')) el.onclick = () => el.dataset.g && aller(el.dataset.g, 5);
+}
+
+// ---- le front : calque des carrés (une toile, n x FRONT_PX pixels de côté), lignes, noms des zones, liste
+let front = null, frontV = '', frontRecu = 0;        // dernier /carte/api/front reçu, sa version, l'heure de sa réception
+let contestes = [], attaquesDirect = new Map(), signeDirect = '';
+let archive = null;                                  // ?archive=<nom> : une campagne archivée rejouée par sa frise
+let photos = [], masque = '', position = 0;          // frise : position = index de la photo ; photos.length = le direct
+let vue = null;                                      // ce qui est dessiné : {g, n, k, zm, zones, passe}
+const toile = document.createElement('canvas'), pinceau = toile.getContext('2d');
+let calque = null, cleLignes = '';
+const cFront = L.layerGroup().addTo(carte), cNoms = L.layerGroup().addTo(carte), cDepots = L.layerGroup().addTo(carte);
+const styleRacine = getComputedStyle(document.documentElement);
+const COULEUR = {
+  B: styleRacine.getPropertyValue('--front-bleu').trim() || 'rgba(77,163,255,.32)',
+  R: styleRacine.getPropertyValue('--front-rouge').trim() || 'rgba(255,77,77,.26)',
+  C: styleRacine.getPropertyValue('--front-conteste').trim() || 'rgba(255,122,26,.55)'
+};
+const trois = v => String(v).padStart(3, '0');
+// pas = carrés de 100 m par carré du front, d'après la taille k envoyée par le pont (200 m par défaut : pas 2), même calcul que campagne.py
+const pasRef = k => Math.max(1, Math.round((Number(k) || 200) / 100));
+const refCarre = (i, n, k) => { const p = pasRef(k); return trois((i % n) * p) + ' ' + trois(Math.floor(i / n) * p); };        // coin sud-ouest en carrés de 100 m (A7)
+const indexRef = (ref, n, k) => { const p = pasRef(k), [a, b] = String(ref).split(' ').map(Number); return Math.floor(b / p) * n + Math.floor(a / p); };
+const zoneDe = (zm, i) => parseInt(zm.substr(2 * i, 2), 16);
+const duree = s => s >= 3600 ? Math.round(s / 3600) + ' h' : Math.max(1, Math.round(s / 60)) + ' min';
+const pourcent = p => Number(p || 0).toFixed(1).replace('.', ',') + ' %';
+
+// Même calcul que campagne.segments (Python) : arêtes entre carrés de terre voisins quand differe(i, j), fusionnées en plages
+function segmentsFront(g, n, k, differe) {
+  const traits = [], horiz = new Map(), vert = new Map();
+  for (let gz = 0; gz < n; gz++) for (let gx = 0; gx < n; gx++) {
+    const i = gz * n + gx;
+    if (g[i] === '.') continue;
+    if (gx + 1 < n && g[i + 1] !== '.' && differe(i, i + 1)) { if (!vert.has(gx + 1)) vert.set(gx + 1, []); vert.get(gx + 1).push(gz); }
+    if (gz + 1 < n && g[i + n] !== '.' && differe(i, i + n)) { if (!horiz.has(gz + 1)) horiz.set(gz + 1, []); horiz.get(gz + 1).push(gx); }
+  }
+  const fusion = (liste, poser) => {
+    let premier = liste[0], precedent = liste[0];
+    for (const v of liste.slice(1).concat([null])) {
+      if (v !== null && v === precedent + 1) { precedent = v; continue; }
+      poser(premier, precedent + 1);
+      if (v !== null) { premier = v; precedent = v; }
+    }
+  };
+  for (const [r, xs] of horiz) fusion(xs, (a, b) => traits.push([[r * k, a * k], [r * k, b * k]]));      // [z, x] pour Leaflet
+  for (const [c, zs] of vert) fusion(zs, (a, b) => traits.push([[a * k, c * k], [b * k, c * k]]));
+  return traits;
+}
+
+// La grille d'une photo : masque (« . » mer, « x » terre) et bits (1 = bleu, 4 carrés par caractère hexadécimal)
+function decoder(masqueTxt, b) {
+  let sortie = '', rang = 0;
+  for (let i = 0; i < masqueTxt.length; i++) {
+    if (masqueTxt[i] === '.') { sortie += '.'; continue; }
+    const v = parseInt(b[rang >> 2], 16) || 0;
+    sortie += (v >> (3 - (rang & 3))) & 1 ? 'B' : 'R';
+    rang++;
+  }
+  return sortie;
+}
+
+function peindre() {
+  if (!vue) { if (calque) { calque.remove(); calque = null; } return; }
+  const { g, n, k } = vue;
+  toile.width = toile.height = n * FRONT_PX;
+  pinceau.clearRect(0, 0, toile.width, toile.height);
+  const conteste = new Set(vue.passe ? [] : contestes.map(r => indexRef(r, n, k)));
+  for (let i = 0; i < g.length; i++) {
+    const c = g[i];
+    if (c === '.') continue;
+    pinceau.fillStyle = conteste.has(i) ? COULEUR.C : COULEUR[c] || COULEUR.R;
+    pinceau.fillRect((i % n) * FRONT_PX, (n - 1 - Math.floor(i / n)) * FRONT_PX, FRONT_PX, FRONT_PX);
+  }
+  const url = toile.toDataURL();
+  if (calque) calque.setUrl(url);
+  else calque = L.imageOverlay(url, [[0, 0], [n * k, n * k]], { pane: 'front', interactive: false, className: 'calque-front' }).addTo(carte);
+}
+
+function tracerLignes() {
+  if (!vue) { cFront.clearLayers(); cleLignes = ''; return; }
+  const { g, n, k, zm } = vue;
+  const cle = g + '|' + zm;
+  if (cle === cleLignes) return;
+  cleLignes = cle;
+  cFront.clearLayers();
+  const contours = zm && zm.length === 2 * g.length ? segmentsFront(g, n, k, (i, j) => zm.substr(2 * i, 2).toUpperCase() !== zm.substr(2 * j, 2).toUpperCase()) : [];
+  if (contours.length) L.polyline(contours, { renderer: renduLignes, pane: 'frontLignes', color: '#ffffff', weight: 1.2, opacity: .45, dashArray: '4 4', interactive: false }).addTo(cFront);
+  const ligne = segmentsFront(g, n, k, (i, j) => g[i] !== g[j]);
+  if (ligne.length) {
+    L.polyline(ligne, { renderer: renduLignes, pane: 'frontLignes', color: '#0a0e14', weight: 7, opacity: .8, lineCap: 'square', interactive: false }).addTo(cFront);
+    L.polyline(ligne, { renderer: renduLignes, pane: 'frontLignes', color: '#ffd640', weight: 3.5, opacity: 1, lineCap: 'square', interactive: false }).addTo(cFront);
+  }
+}
+
+// Les zones telles qu'on les dessine : en direct (attaques du direct, décompte de coupure qui court) ou sur une photo passée
+function zonesVue() {
+  if (!vue) return [];
+  return vue.zones.map(z => {
+    if (vue.passe) { const c = vue.compte.get(z.i) || [0, 0]; return { ...z, a: 0, k: 0, f: 0, o: vue.tenues.has(z.c) ? 1 : 0, b: c[0], t: c[1] }; }
+    const a = attaquesDirect.has(z.c) ? attaquesDirect.get(z.c) : 0;
+    let kr = z.kr;
+    if (z.k && kr >= 0 && !(dernierEtat && dernierEtat.gele)) kr = Math.max(0, kr - Math.round((Date.now() - frontRecu) / 1000));
+    return { ...z, a, kr };
+  });
+}
+
+function poserNoms() {
+  cNoms.clearLayers();
+  cDepots.clearLayers();
+  const tous = carte.getZoom() >= ZOOM_NOMS_ZONES;
+  for (const z of zonesVue()) {
+    const classe = z.a ? 'attaque' : (z.k && z.o ? 'coupee' : (z.o ? 'bleu' : (z.f ? 'contact' : 'rouge')));
+    if (!tous && !z.o && !z.f && !z.a) continue;
+    if (z.lx === undefined || z.lz === undefined) continue;
+    let texte = z.base ? propre(z.n || z.l) : `${propre(z.n || z.l)} · ${propre(z.c)}`;
+    if (z.a) texte += z.a === 2 ? ' — assaut' : ' — attaque annoncée';
+    else if (z.k && z.o) texte += z.kr >= 0 ? ` — coupée : ${duree(z.kr)}` : ' — coupée';
+    L.marker([z.lz, z.lx], { icon: L.divIcon({ className: 'nom-zone-ancre', html: `<span class="nom-zone ${classe}">${texte}</span>`, iconSize: [0, 0] }), interactive: false, keyboard: false }).addTo(cNoms);
+    // Le dépôt de la zone (#49), s'il a été posé : il clignote quand des paquets attendent
+    if (z.o && z.dp && !vue.passe) L.marker(centre(z.dp), { icon: L.divIcon({ className: '', html: `<div class="depot${z.st > 0 ? ' plein' : ''}"></div>`, iconSize: [14, 11] }) }).addTo(cDepots)
+      .bindTooltip(`Dépôt de ${propre(z.l)} · ${z.st > 0 ? z.st + ' paquet' + (z.st > 1 ? 's' : '') + ' à ramasser' : 'vide'}`, { direction: 'top', offset: [0, -8] });
+  }
+}
+
+function listerZones() {
+  if (!vue) return;
+  const zones = zonesVue().filter(z => !z.base);
+  const attaquees = zones.filter(z => z.a), tenues = zones.filter(z => z.o && !z.a), contact = zones.filter(z => !z.o && z.f && !z.a);
+  const ligne = (z, genre, etiquette) => {
+    const details = [`${z.b} / ${z.t} carrés`];
+    if (z.o && z.dp) details.push(z.st > 0 ? `dépôt : ${z.st} paquet${z.st > 1 ? 's' : ''}` : 'dépôt vide');
+    if (z.k && z.o) details.push(z.kr >= 0 ? `coupée de la base : ${duree(z.kr)} avant la perte` : 'coupée de la base');
+    return `<div class="ligne zone${z.a ? ' attaque' : ''}" data-x="${z.lx}" data-z="${z.lz}"><div class="titre"><span>${propre(z.l)}</span><span class="carre ${genre}">${etiquette}</span></div><div class="noms">${details.join(' · ')}</div></div>`;
+  };
+  const html = attaquees.map(z => ligne(z, 'alerte', z.a === 2 ? 'assaut' : 'attaque annoncée'))
+    .concat(tenues.map(z => ligne(z, z.k ? 'ambre' : 'nous', z.k ? 'coupée' : 'à nous')))
+    .concat(contact.map(z => ligne(z, 'ennemi', 'au contact')));
+  document.getElementById('l-zones').innerHTML = html.join('') || '<div class="vide">Aucune zone tenue ni au contact</div>';
+  for (const el of document.querySelectorAll('.ligne.zone')) el.onclick = () => carte.flyTo([Number(el.dataset.z), Number(el.dataset.x)], Math.max(carte.getZoom(), 4), { duration: .8 });
+}
+
+// Ce qui est dessiné : le direct (dernier front reçu, contestés, attaques) ou une photo de la frise (ou d'une archive)
+function choisirVue() {
+  const base = archive || front;
+  if (!base) { vue = null; return; }
+  const n = base.n, k = base.k, zm = base.zm || '';
+  const zones = base.zonesVue || [];
+  if (position < photos.length && masque) {
+    const p = photos[position], g = decoder(masque, p.b || ''), compte = new Map();
+    // carrés bleus et carrés de terre de chaque zone sur la photo
+    if (zm.length === 2 * g.length) for (let i = 0; i < g.length; i++) {
+      if (g[i] === '.') continue;
+      const zi = zoneDe(zm, i), c = compte.get(zi) || [0, 0];
+      c[1]++;
+      if (g[i] === 'B') c[0]++;
+      compte.set(zi, c);
+    }
+    vue = { g, n, k, zm, zones, passe: true, tenues: new Set(p.zt || []), compte };
+  } else if (front && !archive) {
+    vue = { g: front.g, n, k, zm, zones, passe: false };
+  } else vue = null;
+}
+
+function dessinerFront() {
+  choisirVue();
+  peindre();
+  tracerLignes();
+  poserNoms();
+  listerZones();
+  if (vue && !vue.passe && front) {
+    document.getElementById('n-ile').textContent = pourcent(front.part);
+    document.getElementById('n-ile-titre').textContent = 'Île tenue';
+  } else if (vue && vue.passe) {
+    const g = vue.g, terre = g.replace(/\./g, '').length, bleus = g.split('B').length - 1;
+    document.getElementById('n-ile').textContent = terre ? pourcent(100 * bleus / terre) : '–';
+    document.getElementById('n-ile-titre').textContent = 'Île tenue alors';
+  }
+  document.getElementById('gel').hidden = !(front && !archive && dernierEtat && dernierEtat.gele);
+}
+
+// ---- infobulle : le carré sous la souris (ou le doigt), sa zone et son camp
+const infobulle = document.getElementById('infobulle');
+carte.on('mousemove click', e => {
+  if (!vue) { infobulle.hidden = true; return; }
+  const { g, n, k, zm } = vue;
+  const gx = Math.floor(e.latlng.lng / k), gz = Math.floor(e.latlng.lat / k);
+  const i = gz * n + gx;
+  if (gx < 0 || gz < 0 || gx >= n || gz >= n || g[i] === '.') { infobulle.hidden = true; return; }
+  const zi = zm ? zoneDe(zm, i) : -1;
+  const zone = vue.zones.find(z => z.i === zi);
+  const conteste = !vue.passe && contestes.some(r => indexRef(r, n, k) === i);
+  infobulle.innerHTML = `Carré <b>${refCarre(i, n, k)}</b>${zone ? ' · ' + propre(zone.l) : ''} · ${g[i] === 'B' ? 'bleu' : 'rouge'}${conteste ? ' (contesté)' : ''}`;
+  infobulle.style.left = (e.containerPoint.x + 16) + 'px';
+  infobulle.style.top = (e.containerPoint.y - 10) + 'px';
+  infobulle.hidden = false;
+});
+carte.on('mouseout', () => { infobulle.hidden = true; });
+
+// Prépare les zones d'un front reçu pour l'affichage (index de zone du découpage zm, libellé, position du nom)
+function preparerZones(base) {
+  base.zonesVue = (base.zones || []).map(z => ({ ...z, i: z.i !== undefined ? z.i : -1 }));
+}
+
+// ---- frise (I8) : une photo à chaque zone prise ou perdue, plus une par jour ; le bout du curseur est le direct
+const quand = t => { const d = new Date(t * 1000), z = n => String(n).padStart(2, '0'); return `${z(d.getDate())}/${z(d.getMonth() + 1)} à ${z(d.getHours())} h ${z(d.getMinutes())}`; };
+const GENRES_PHOTO = { prise: ['prise', 'nous'], perte: ['perdue', 'ennemi'], debut: ['début', 'neutre'], restauration: ['retour', 'neutre'], victoire: ['victoire', 'nous'], jour: ['du soir', 'neutre'] };
+const fin = () => archive ? Math.max(0, photos.length - 1) : photos.length;      // une archive n'a pas de direct
+function afficherFrise() {
+  const frise = document.getElementById('frise'), curseur = document.getElementById('frise-curseur');
+  // pas de frise sans front à montrer : ni tant qu'il n'est pas reçu, ni quand un ancien mod est remis (front_v vide)
+  frise.hidden = photos.length === 0 || (!archive && !front);
+  curseur.max = fin();
+  if (position > fin()) position = fin();
+  curseur.value = position;
+  const passe = !archive && position < photos.length;
+  frise.classList.toggle('passe', passe || !!archive);
+  document.getElementById('frise-direct').hidden = !passe && !archive;
+  document.getElementById('frise-direct').textContent = archive ? 'Revenir à la carte en direct' : 'Revenir au direct';
+  const p = position < photos.length ? photos[position] : null;
+  if (p && (passe || archive)) {
+    const genre = GENRES_PHOTO[p.type] || ['', 'neutre'];
+    document.getElementById('frise-texte').innerHTML = `<b class="${genre[1]}">Situation au ${quand(p.t)}</b>${p.texte ? ' — ' + propre(p.texte) : ''}`;
+  } else {
+    const derniere = [...photos].reverse().find(x => x.type !== 'jour');
+    document.getElementById('frise-texte').innerHTML = 'En direct' + (derniere ? ` · dernier mouvement : <b class="${(GENRES_PHOTO[derniere.type] || ['', 'neutre'])[1]}">${propre(derniere.texte || '')}</b> le ${quand(derniere.t)}` : '');
+  }
+  // Liste « Historique du front » : les 12 dernières photos, sauf celles du jour
+  const liste = photos.map((x, i) => [x, i]).filter(([x]) => x.type !== 'jour').slice(-12).reverse();
+  document.getElementById('l-histo').innerHTML = liste.map(([x, i]) => {
+    const genre = GENRES_PHOTO[x.type] || [x.type, 'neutre'];
+    return `<div class="ligne histo" data-pos="${i}" data-zone="${propre(x.zone || '')}"><div class="titre"><span>${propre(x.texte || genre[0])}</span><span class="carre ${genre[1]}">${genre[0]}</span></div><div class="noms">${quand(x.t)}</div></div>`;
+  }).join('') || '<div class="vide">Aucun mouvement du front enregistré pour le moment</div>';
+  for (const el of document.querySelectorAll('.ligne.histo')) el.onclick = () => {
+    position = Number(el.dataset.pos);
+    afficherFrise();
+    dessinerFront();
+    const zone = vue && vue.zones.find(z => z.c === el.dataset.zone);
+    if (zone && zone.lx !== undefined) carte.flyTo([zone.lz, zone.lx], Math.max(carte.getZoom(), 4), { duration: .8 });
+  };
+}
+document.getElementById('frise-curseur').oninput = e => { position = Number(e.target.value); afficherFrise(); dessinerFront(); };
+document.getElementById('frise-direct').onclick = () => {
+  if (archive) { location.href = location.pathname; return; }
+  position = photos.length; afficherFrise(); dessinerFront();
+};
+async function lireFrise() {
+  if (archive) return;
+  try {
+    const data = await (await fetch('api/frise', { cache: 'no-store' })).json();
+    const direct = position >= photos.length;
+    photos = data.photos || [];
+    masque = data.masque || '';
+    if (direct) position = photos.length;
+    afficherFrise();
+    if (!direct) dessinerFront();
+  } catch (e) { /* la carte marche sans la frise */ }
+}
+
+// ?archive=<nom> : la frise d'une campagne archivée (K1, B3), rejouée photo par photo sur son propre découpage
+async function lireArchive(nom) {
+  try {
+    const r = await fetch('/campagne/api/archives/' + encodeURIComponent(nom), { cache: 'no-cache' });
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    if (data.type !== 'front' || !data.masque || !data.n) {
+      etatServeur(false, 'Cette archive (secteurs) se consulte sur la page Campagne');
+      return;
+    }
+    const idx = data.idx || {}, pos = data.pos || {};
+    archive = { n: data.n, k: data.k, zm: data.zm || '', titre: data.titre || nom,
+                zones: Object.entries(data.zones || {}).map(([c, l]) => ({ c, l, n: String(l).replace(/\s*\([^)]*\)\s*$/, ''), i: idx[c] !== undefined ? idx[c] : -1,
+                                                                        lx: pos[c] ? pos[c][0] : undefined, lz: pos[c] ? pos[c][1] : undefined, base: idx[c] === 0 ? 1 : 0 })) };
+    archive.zonesVue = archive.zones;
+    photos = data.photos || [];
+    masque = data.masque;
+    position = Math.max(0, photos.length - 1);
+    const jour = t => { const d = new Date(t * 1000); return d.toLocaleDateString('fr-FR'); };
+    etatServeur(false, `Archive : ${archive.titre}, du ${jour(data.debut)} au ${jour(data.fin)}`);
+    afficherFrise();
+    dessinerFront();
+  } catch (e) { etatServeur(false, 'Archive introuvable'); }
+}
+
+// ---- trajets : les carrés traversés par chaque soldat, reliés ; un trou de 10 min ou un saut de 1,5 km coupe le trait
+const cTrajets = L.layerGroup().addTo(carte);
+const COULEURS = ['#4da3ff', '#ffb020', '#3ddc84', '#ff7a59', '#9b8cff', '#37c2c2', '#ff5d5d', '#f0dc5a', '#e682dc', '#96c85a', '#ffffff', '#78a0c8'];
+const demande = new URLSearchParams(location.search);
+const periodeFixe = demande.has('debut') ? { debut: Number(demande.get('debut')), fin: Number(demande.get('fin') || Date.now() / 1000) } : null;
+if (periodeFixe) {
+  const option = new Option('opération', 'fixe', true, true);
+  document.getElementById('duree').add(option, 0);
+}
+async function lireTrajets() {
+  const choix = document.getElementById('duree').value, lien = document.getElementById('lien-image');
+  cTrajets.clearLayers();
+  document.getElementById('legende').innerHTML = '';
+  lien.hidden = choix === '0';
+  if (choix === '0') return;
+  const requete = choix === 'fixe' ? `debut=${periodeFixe.debut}&fin=${periodeFixe.fin}` : `heures=${choix}`;
+  lien.href = 'api/trace.jpg?' + requete;
+  try {
+    const data = await (await fetch('api/trajets?' + requete, { cache: 'no-store' })).json();
+    const soldats = Object.values(data.trajets || {}).sort((a, b) => a.nom.localeCompare(b.nom));
+    cTrajets.clearLayers();
+    const tous = [];
+    soldats.forEach((s, n) => {
+      const couleur = COULEURS[n % COULEURS.length];
+      let trait = [];
+      const poser = () => { if (trait.length > 1) { L.polyline(trait, { color: '#0a0e14', weight: 6, opacity: .7, interactive: false }).addTo(cTrajets); L.polyline(trait, { color: couleur, weight: 3, opacity: .95 }).addTo(cTrajets).bindTooltip(propre(s.nom), { sticky: true }); } trait = []; };
+      let avant = null;
+      for (const [t, gx, gz] of s.points) {
+        if (avant && (t - avant[0] > 600 || Math.abs(gx - avant[1]) > 15 || Math.abs(gz - avant[2]) > 15)) poser();
+        trait.push([gz * 100 + 50, gx * 100 + 50]);
+        tous.push([gz * 100 + 50, gx * 100 + 50]);
+        avant = [t, gx, gz];
+      }
+      const bout = trait[trait.length - 1];
+      poser();
+      if (bout) L.circleMarker(bout, { radius: 5, color: '#0a0e14', weight: 2, fillColor: couleur, fillOpacity: 1, interactive: false }).addTo(cTrajets);
+    });
+    document.getElementById('legende').innerHTML = soldats.map((s, n) => `<div><i style="background:${COULEURS[n % COULEURS.length]}"></i>${propre(s.nom)}</div>`).join('') || '<div>Aucun déplacement sur cette période</div>';
+    if (choix === 'fixe' && tous.length && !lireTrajets.cadre) { lireTrajets.cadre = true; carte.fitBounds(L.latLngBounds(tous).pad(.15)); }
+  } catch (e) { document.getElementById('legende').innerHTML = '<div>Trajets indisponibles</div>'; }
+}
+document.getElementById('duree').onchange = lireTrajets;
+if (periodeFixe) lireTrajets();
+setInterval(() => { if (document.getElementById('duree').value !== '0' && document.getElementById('duree').value !== 'fixe') lireTrajets(); }, 30000);
+
+function etatServeur(enLigne, texte) {
+  document.getElementById('pastille').className = 'pastille ' + (enLigne ? 'ok' : 'ko');
+  document.getElementById('etat-texte').textContent = texte;
+}
+
+// Toutes les 5 s : l'état en direct. Le front (grille complète) n'est rechargé que si front_v a changé ; sinon, si les
+// contestés ou les attaques ont bougé, on repeint seulement la toile et les étiquettes ; sinon rien. Serveur éteint : le
+// dernier front reste affiché.
+async function actualiser() {
+  try {
+    const etat = await (await fetch('api/carte', { cache: 'no-store' })).json();
+    dernier = Date.now();
+    dernierEtat = etat;
+    let complet = false;
+    if (etat.front_v && etat.front_v !== frontV) {
+      const r = await fetch('api/front', { cache: 'no-store' });
+      if (r.ok) {
+        front = await r.json();
+        preparerZones(front);
+        frontV = etat.front_v;
+        frontRecu = Date.now();
+        complet = true;
+        cleLignes = '';
+        afficherFrise();
+      }
+    } else if (!etat.front_v && front && !archive) {
+      // ancien mod remis après le front : le front figé n'est plus montré, les secteurs reprennent (afficher, plus bas)
+      front = null;
+      frontV = '';
+      cleLignes = '';
+      position = photos.length;
+      afficherFrise();
+      dessinerFront();
+    }
+    const signe = JSON.stringify([etat.contestes || [], etat.attaques || [], !!etat.gele]);
+    if (!archive && (complet || signe !== signeDirect)) {
+      signeDirect = signe;
+      contestes = etat.contestes || [];
+      attaquesDirect = new Map((etat.attaques || []).map(x => [x.c, x.a]));
+      if (complet || position >= photos.length) dessinerFront();
+    }
+    if (!archive) afficher(etat);
+    const auFront = front ? ` · front au ${quand(front.recu || front.maj)}` : ' · front pas encore reçu';
+    if (!archive) etatServeur(etat.en_ligne, etat.en_ligne ? `Serveur en ligne · ${etat.heure_jeu || ''} en jeu${front ? '' : auFront}` : `Serveur hors ligne${auFront}`);
+  } catch (e) { if (!archive) etatServeur(false, 'Site injoignable, nouvel essai…'); }
+}
+selonZoom();
+const archiveDemandee = demande.get('archive');
+if (archiveDemandee !== null) {
+  // campagne archivée : ni direct, ni soldats, seulement sa frise
+  if (/^[A-Za-z0-9-]{1,60}$/.test(archiveDemandee)) lireArchive(archiveDemandee);
+  else etatServeur(false, 'Archive introuvable');
+  document.getElementById('l-soldats').innerHTML = document.getElementById('l-missions').innerHTML = '<div class="vide">Archive : pas de direct</div>';
+} else {
+  lireFrise();
+  setInterval(lireFrise, 60000);
+  actualiser();
+  setInterval(actualiser, 5000);
+  // le décompte des zones coupées court entre deux envois : étiquettes et liste rafraîchies chaque minute
+  setInterval(() => { if (front && position >= photos.length) { poserNoms(); listerZones(); } }, 60000);
+}
+</script>
+</body>
+</html>

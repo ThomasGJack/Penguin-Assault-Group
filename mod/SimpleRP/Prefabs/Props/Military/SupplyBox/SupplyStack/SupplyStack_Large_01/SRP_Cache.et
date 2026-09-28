@@ -1,0 +1,28 @@
+GenericEntity : "{BD2934A1F1EFE742}Prefabs/Props/Military/SupplyBox/SupplyStack/SupplyStack_Large_01/SupplyStack_Large_01_storage_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  ActionsManagerComponent "{5E16BA46778FEC66}" {
+   ActionContexts {
+    UserActionContext "{6A4F3027F57404CF}" {
+     UIInfo UIInfo "{6A4F3027F66972B4}" {
+      Name "cache"
+     }
+     ContextName "cache"
+    }
+   }
+   additionalActions {
+    SRP_SabotageAction "{6A4F3027E9481DF6}" {
+     ParentContextList {
+      "cache"
+     }
+    }
+   }
+  }
+ }
+ {
+  GenericEntity : "{08E8B9AF7705D72B}Prefabs/Props/Military/AmmoBoxes/EquipmentBoxStack/FIA/EquipmentBoxStack_FIA_01_V4_cover.et" {
+   ID "6A4F3027CF804122"
+   coords 0 0 0
+  }
+ }
+}

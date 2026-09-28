@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Suivi du développement</title>
+<meta name="description" content="Tableau de suivi du développement du mod de la PAG : idées, chantier, essais et historique des mises à jour.">
+<!-- Police de secours pour les appareils sans Bahnschrift (Android, Linux) ; Windows garde Bahnschrift comme le reste du site -->
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ Maquette 1 : « Kanban tactique » ============ */
+  :root {
+    --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227;
+    --idee: #9b8cff; --a_faire: #4da3ff; --a_developper: #37c2c2; --en_cours: #ffb020; --a_tester: #ff7a59; --termine: #3ddc84;
+    --clair: #b4c1cc; --fond-2: #0e151c; --rouge: #ff5d5d;
+    --haut: 60px; /* hauteur de la barre du haut, sert aux en-têtes de colonnes collants */
+    --police-titre: Bahnschrift, "DIN Alternate", "Barlow Semi Condensed", "Segoe UI", system-ui, sans-serif;
+    --police-mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  * { scrollbar-color: #2b3a47 var(--fond); scrollbar-width: thin; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh; overflow-x: clip; color: var(--texte); font: 15px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    background-color: var(--fond);
+    background-image:
+      radial-gradient(900px 360px at 10% -140px, #c9a22716, transparent 70%),
+      linear-gradient(#ffffff05 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+    background-size: auto, 48px 48px, 48px 48px;
+  }
+  body.fige { overflow: hidden; }
+  a { color: inherit; }
+  button { font: inherit; }
+  .conteneur { max-width: 1760px; margin: 0 auto; padding: 0 24px; }
+  .or { color: var(--or); }
+
+  /* ---------- barre du haut ---------- */
+  .barre { position: sticky; top: 0; z-index: 30; height: var(--haut); display: flex; align-items: center; gap: 14px; padding: 0 24px;
+           background: #0c1116ed; border-bottom: 1px solid var(--bord); backdrop-filter: blur(8px); }
+  .marque { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+  .marque svg { flex: none; }
+  .marque b { font: 700 17px/1 var(--police-titre); letter-spacing: .14em; }
+  .marque i { width: 1px; height: 18px; background: var(--bord); flex: none; }
+  .marque span { font: 600 13px/1.6 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--discret); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .barre nav { margin-left: auto; display: flex; gap: 8px; }
+  .barre nav a { text-decoration: none; border: 1px solid var(--bord); background: #0c1116aa; border-radius: 999px; padding: 5px 14px; font-size: 13px; white-space: nowrap; transition: border-color .15s, color .15s; }
+  .barre nav a:hover, .barre nav a:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+
+  /* ---------- introduction ---------- */
+  .intro { padding: 34px 0 20px; display: grid; grid-template-columns: 1fr auto; gap: 14px 32px; align-items: end; }
+  .surtitre { margin: 0 0 10px; font: 600 12px/1.45 var(--police-titre); letter-spacing: .24em; text-transform: uppercase; color: var(--or); }
+  h1 { margin: 0; font: 700 clamp(26px, 3.4vw, 40px)/1.05 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; }
+  .chapeau { margin: 10px 0 0; color: var(--clair); max-width: 680px; }
+  .resume { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: 13.5px; color: var(--discret); }
+  .resume span + span:before { content: "·"; margin: 0 10px; color: #3a4a58; }
+  .resume b { color: var(--texte); font-weight: 600; }
+  .releve { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--bord); background: #0c1116cc; border-radius: 999px; padding: 7px 15px; font-size: 13px; color: var(--clair); white-space: nowrap; }
+  .releve i { width: 8px; height: 8px; border-radius: 50%; background: var(--or); flex: none; }
+  .releve.direct i { background: var(--termine); animation: pouls 2s infinite; }
+  .releve.panne i { background: var(--rouge); }
+  @keyframes pouls { 0% { box-shadow: 0 0 0 0 #3ddc8499; } 100% { box-shadow: 0 0 0 9px #3ddc8400; } }
+
+  /* ---------- poste de commande : répartition, filtres, recherche ---------- */
+  .poste { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 14px 16px; display: grid; gap: 12px; }
+  .poste-titre { display: flex; justify-content: space-between; gap: 12px; font-size: 12.5px; color: var(--discret); }
+  .poste-titre b { font: 700 12px/1.3 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--clair); }
+  .repartition { display: flex; gap: 2px; height: 8px; border-radius: 99px; overflow: hidden; background: var(--fond-2); }
+  .repartition i { flex: 0 1 0; min-width: 4px; background: var(--c); transition: flex-grow .4s ease-out; }
+  .puces { display: flex; flex-wrap: wrap; gap: 8px; }
+  .puce { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord);
+          border-radius: 999px; padding: 4px 5px 4px 11px; cursor: pointer; transition: border-color .15s, opacity .15s; }
+  .puce:before { content: ""; width: 9px; height: 9px; border-radius: 3px; background: var(--c); flex: none; }
+  .puce b { min-width: 26px; text-align: center; font: 700 12px/20px var(--police-mono); border-radius: 99px; padding: 0 7px; background: color-mix(in srgb, var(--c) 20%, transparent); color: var(--c); }
+  .puce:hover { border-color: var(--c); }
+  .puce:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .puce[aria-pressed="false"] { opacity: .55; }
+  .puce[aria-pressed="false"]:before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--c); }
+  .puce[aria-pressed="false"] span { text-decoration: line-through; }
+  .separateur { height: 1px; background: var(--bord); margin: 2px 0; }
+  .outils { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .champ { position: relative; flex: 1 1 280px; max-width: 480px; }
+  .champ svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--discret); pointer-events: none; }
+  .champ input { width: 100%; font: inherit; font-size: 14.5px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 9px; padding: 9px 40px 9px 38px; outline: none; transition: border-color .15s, box-shadow .15s; }
+  .champ input::placeholder { color: #6c7c8a; }
+  .champ input:focus { border-color: var(--or); box-shadow: 0 0 0 3px #c9a22726; }
+  .champ kbd { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font: 600 11px/1 var(--police-mono); color: var(--discret); border: 1px solid var(--bord); border-bottom-width: 2px; border-radius: 4px; padding: 3px 6px; pointer-events: none; }
+  .champ input:not(:placeholder-shown) ~ kbd, .champ input:focus ~ kbd { display: none; }
+  .bascule { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--clair); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 14px; cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+  .bascule b { font: 700 12px/1 var(--police-mono); color: var(--or); }
+  .bascule:hover { border-color: var(--or); }
+  .bascule:focus-visible, .tri select:focus-visible, .lien-bouton:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .bascule[aria-pressed="true"] { color: #15120a; background: var(--or); border-color: var(--or); }
+  .bascule[aria-pressed="true"] b { color: #15120a; }
+  .tri { position: relative; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--discret); }
+  .tri select { font: inherit; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 32px 7px 14px; appearance: none; -webkit-appearance: none; cursor: pointer; }
+  .tri svg { position: absolute; right: 12px; pointer-events: none; color: var(--discret); }
+  .lien-bouton { background: none; border: 0; padding: 4px 2px; color: var(--or); font-size: 13px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .compte { margin-left: auto; font-size: 13px; color: var(--discret); }
+  .archives { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; font-size: 13px; color: var(--discret); }
+  .archives a { text-decoration: none; border: 1px dashed #3a4a58; border-radius: 6px; padding: 3px 9px; color: var(--clair); max-width: 100%; overflow-wrap: anywhere; }
+  .archives a:hover, .archives a:focus-visible { border-color: var(--or); color: var(--texte); outline: none; }
+  .archives a b { color: var(--or); font-weight: 600; margin-right: 4px; }
+
+  /* ---------- onglets (téléphone) ---------- */
+  .onglets { display: none; }
+  .onglet { flex: none; display: inline-flex; align-items: center; gap: 8px; font: 600 13px/1 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; color: var(--discret);
+            background: transparent; border: 1px solid var(--bord); border-radius: 8px; padding: 9px 10px 9px 12px; cursor: pointer; position: relative; }
+  .onglet b { font: 700 12px/18px var(--police-mono); letter-spacing: 0; padding: 0 6px; border-radius: 99px; background: color-mix(in srgb, var(--c) 22%, transparent); color: var(--c); }
+  .onglet[aria-selected="true"] { color: var(--texte); border-color: var(--c); background: color-mix(in srgb, var(--c) 14%, var(--panneau)); box-shadow: inset 0 -3px 0 var(--c); }
+  .onglet.touche:after { content: ""; position: absolute; top: -3px; right: -3px; width: 8px; height: 8px; border-radius: 50%; background: var(--or); box-shadow: 0 0 0 2px var(--fond); }
+  .onglet:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+
+  /* ---------- tableau ---------- */
+  .zone-tableau { margin-top: 16px; }
+  .tableau { display: grid; gap: 12px; align-items: stretch; }
+  .colonne { --c: var(--discret); position: relative; min-width: 0; display: flex; flex-direction: column; background: linear-gradient(180deg, #121a22, #0f161d); border: 1px solid var(--bord); border-radius: 10px; }
+  .col-tete { position: sticky; top: var(--haut); z-index: 5; padding: 12px 12px 10px; background: #121a22f7; border-bottom: 1px solid var(--bord); border-radius: 10px 10px 0 0;
+              box-shadow: inset 0 3px 0 var(--c), 0 8px 14px -12px #000; backdrop-filter: blur(6px); }
+  .col-ligne { display: flex; align-items: center; gap: 8px; }
+  .col-num { font: 600 11px/1 var(--police-mono); color: var(--discret); }
+  .col-nom { margin: 0; flex: 1; min-width: 0; font: 700 14px/1.5 var(--police-titre); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .col-compte { font: 700 12px/20px var(--police-mono); padding: 0 8px; border-radius: 99px; background: color-mix(in srgb, var(--c) 20%, transparent); color: var(--c); white-space: nowrap; }
+  .col-compte small { font-size: 11px; opacity: .75; }
+  .col-legende { margin-top: 5px; font-size: 12px; color: var(--discret); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .col-plier { flex: none; width: 28px; height: 28px; display: grid; place-items: center; border-radius: 7px; border: 1px solid var(--bord); background: transparent; color: var(--discret); cursor: pointer; }
+  .col-plier:hover, .col-plier:focus-visible { color: var(--c); border-color: var(--c); outline: none; }
+  .col-corps { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+  .vide { border: 1px dashed #2c3a47; border-radius: 8px; padding: 16px 10px; text-align: center; color: var(--discret); font-size: 12.5px; }
+  .vide button { margin-top: 6px; }
+
+  /* colonne Idée repliée */
+  .colonne.repliee { cursor: pointer; transition: border-color .15s, background .15s; }
+  .colonne.repliee:hover { border-color: color-mix(in srgb, var(--c) 60%, var(--bord)); background: color-mix(in srgb, var(--c) 7%, var(--panneau)); }
+  .rail { flex: 1; min-height: 320px; border-radius: 10px; box-shadow: inset 0 3px 0 var(--c); outline: none; }
+  .rail:focus-visible { box-shadow: inset 0 3px 0 var(--c), 0 0 0 2px var(--or); }
+  .rail-interne { position: sticky; top: calc(var(--haut) + 10px); display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 14px 0; }
+  .rail-icone { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; border: 1px solid var(--bord); color: var(--c); }
+  .rail .col-compte { padding: 0 6px; }
+  .rail .vertical { writing-mode: vertical-rl; transform: rotate(180deg); font: 700 14px/1 var(--police-titre); letter-spacing: .2em; text-transform: uppercase; }
+  .rail .vertical.petit { font: 500 12px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .02em; text-transform: none; color: var(--discret); }
+
+  /* cartes */
+  .fiche { --c: var(--discret); display: block; text-decoration: none; color: inherit; background: var(--carte); border: 1px solid var(--bord); border-left: 3px solid var(--c); border-radius: 8px;
+           padding: 10px 11px 9px; transition: border-color .15s, transform .15s, box-shadow .15s, background .15s; }
+  .fiche:hover { border-color: color-mix(in srgb, var(--c) 55%, var(--bord)); border-left-color: var(--c); background: #1b2733; transform: translateY(-1px); box-shadow: 0 12px 24px -14px #000; }
+  .fiche:focus-visible { outline: 2px solid var(--or); outline-offset: 2px; }
+  .fiche-haut { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .num { font: 600 11.5px/1 var(--police-mono); color: var(--discret); }
+  .badge { font: 700 10px/1 var(--police-titre); letter-spacing: .1em; text-transform: uppercase; padding: 3px 6px 2px; border-radius: 4px; white-space: nowrap; }
+  .badge.nouveau { background: var(--or); color: #15120a; }
+  .badge.maj { color: var(--or); box-shadow: inset 0 0 0 1px #c9a227a6; }
+  .fiche .titre { margin-top: 5px; font-size: 14px; font-weight: 600; line-height: 1.35; color: #e6edf3; overflow-wrap: anywhere; }
+  .extrait { margin: 5px 0 0; font-size: 12.5px; line-height: 1.45; color: var(--discret); overflow-wrap: anywhere;
+             display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .progression { display: flex; align-items: center; gap: 8px; margin-top: 9px; }
+  .jauge { display: block; flex: 1; height: 4px; border-radius: 99px; background: var(--fond-2); overflow: hidden; }
+  .jauge i { display: block; height: 100%; border-radius: 99px; background: var(--c); transition: width .5s ease-out; }
+  .progression > span:last-child { font: 600 11.5px/1 var(--police-mono); color: var(--clair); }
+  .progression.complet .jauge i { background: var(--termine); }
+  .progression.complet > span:last-child { color: var(--termine); }
+  .fiche-bas { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: 11.5px; color: var(--discret); }
+  .fiche-bas .ouvrir { color: var(--c); opacity: 0; transition: opacity .15s; white-space: nowrap; }
+  .fiche:hover .ouvrir, .fiche:focus-visible .ouvrir { opacity: 1; }
+  @media (hover: none) { .fiche-bas .ouvrir { opacity: 1; } }
+  mark { background: #c9a22747; color: #fff; border-radius: 2px; padding: 0 1px; box-shadow: 0 1px 0 var(--or); }
+  .tableau.premier .fiche { animation: arrivee .35s ease-out both; animation-delay: calc(var(--i, 0) * 28ms); }
+  .fiche.flash { animation: flash 1.8s ease-out; }
+  @keyframes arrivee { from { opacity: 0; transform: translateY(6px); } }
+  @keyframes flash { from { box-shadow: 0 0 0 2px var(--or), 0 0 26px -4px var(--or); } }
+
+  /* ---------- historique : frise ---------- */
+  .historique { margin-top: 56px; scroll-margin-top: calc(var(--haut) + 16px); }
+  .h-tete { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 14px; }
+  .historique h2 { margin: 0; font: 700 22px/1.1 var(--police-titre); letter-spacing: .08em; text-transform: uppercase; }
+  .h-chapeau { margin: 6px 0 0; color: var(--discret); font-size: 14px; }
+  .frise-cadre { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 14px 8px 8px; overflow-x: auto; }
+  .frise { display: flex; min-width: max-content; }
+  .jalon { position: relative; flex: 1 0 150px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 4px 8px 10px; background: none; border: 0; border-radius: 8px; color: inherit; text-align: center; cursor: pointer; }
+  .jalon:before { content: ""; position: absolute; top: 12px; left: 0; right: 0; height: 2px; background: #2f3e4b; }
+  .jalon:first-child:before { left: 50%; }
+  .jalon:last-child:before { right: 50%; }
+  .jalon:only-child:before { display: none; }
+  .jalon.avenir:before { background: repeating-linear-gradient(90deg, #3ddc84aa 0 6px, transparent 6px 12px); }
+  .jalon .point { position: relative; z-index: 1; width: 18px; height: 18px; border-radius: 50%; background: var(--fond); border: 2px solid var(--or); margin-bottom: 6px; transition: transform .2s, box-shadow .2s, background .2s; }
+  .jalon .v { font: 700 17px/1.1 var(--police-titre); letter-spacing: .06em; color: var(--or); }
+  .jalon .d { font-size: 12.5px; color: var(--discret); }
+  .jalon .n { font-size: 12px; color: var(--clair); }
+  .jalon:hover .point { transform: scale(1.12); }
+  .jalon:focus-visible { outline: 2px solid var(--or); outline-offset: -2px; }
+  .jalon[aria-pressed="true"] { background: #c9a2270f; }
+  .jalon[aria-pressed="true"] .point { background: var(--or); box-shadow: 0 0 0 5px #c9a22733; }
+  .jalon.avenir .point { border-style: dashed; border-color: var(--termine); }
+  .jalon.avenir .v { color: var(--termine); }
+  .jalon.avenir[aria-pressed="true"] { background: #3ddc840d; }
+  .jalon.avenir[aria-pressed="true"] .point { background: var(--termine); border-style: solid; box-shadow: 0 0 0 5px #3ddc8433; }
+
+  .version { --c: var(--or); margin-top: 14px; background: var(--panneau); border: 1px solid var(--bord); border-left: 3px solid var(--c); border-radius: 12px; padding: 18px 20px 20px; animation: arrivee .3s ease-out; }
+  .version.avenir { --c: var(--termine); }
+  .v-tete { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .v-nom { margin: 0; font: 700 26px/1.1 var(--police-titre); letter-spacing: .04em; color: var(--c); }
+  .v-date { color: var(--discret); font-size: 13.5px; }
+  .v-nb { font: 700 12px/20px var(--police-mono); padding: 0 8px; border-radius: 99px; background: color-mix(in srgb, var(--c) 18%, transparent); color: var(--c); }
+  .v-notes { max-width: 880px; }
+  .v-notes p { margin: 10px 0 0; color: var(--clair); overflow-wrap: anywhere; }
+  .v-notes b { color: var(--texte); font-weight: 600; }
+  .v-notes a { color: var(--or); }
+  .v-sous { margin: 20px 0 8px; font: 700 12px/1.2 var(--police-titre); letter-spacing: .16em; text-transform: uppercase; color: var(--discret); }
+  .v-cartes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 8px; }
+  .v-cartes a { display: flex; align-items: baseline; gap: 10px; height: 100%; text-decoration: none; background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: 9px 12px; transition: border-color .15s, background .15s; }
+  .v-cartes a:hover, .v-cartes a:focus-visible { border-color: color-mix(in srgb, var(--c) 60%, var(--bord)); background: #1b2733; outline: none; }
+  .v-titre { flex: 1; min-width: 0; font-size: 14px; overflow-wrap: anywhere; }
+  .v-plus { color: var(--c); }
+
+  footer { margin-top: 56px; border-top: 1px solid var(--bord); color: #6c7c8a; font-size: 12.5px; padding: 22px 0 30px; text-align: center; }
+  footer code { font-family: var(--police-mono); color: var(--clair); }
+
+  /* ---------- tiroir de détail ---------- */
+  .voile { position: fixed; inset: 0; z-index: 40; background: #05080bb8; opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .voile.ouvert { opacity: 1; pointer-events: auto; }
+  .tiroir { --c: var(--or); position: fixed; z-index: 41; top: 0; right: 0; bottom: 0; width: min(640px, 100%); display: flex; flex-direction: column; background: var(--panneau);
+            border-left: 1px solid var(--bord); box-shadow: -30px 0 60px -24px #000; transform: translateX(104%); visibility: hidden;
+            transition: transform .3s cubic-bezier(.2, .8, .2, 1), visibility 0s linear .3s; outline: none; }
+  .tiroir.ouvert { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.2, .8, .2, 1), visibility 0s; }
+  .t-tete { padding: 18px 22px 16px; border-bottom: 1px solid var(--bord); box-shadow: inset 0 4px 0 var(--c); background: linear-gradient(180deg, color-mix(in srgb, var(--c) 9%, var(--panneau)), var(--panneau)); }
+  .t-ligne { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .t-phase { font: 700 11.5px/1 var(--police-titre); letter-spacing: .12em; text-transform: uppercase; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 60%, transparent); border-radius: 4px; padding: 4px 7px 3px; }
+  .t-fermer { margin-left: auto; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 9px; border: 1px solid var(--bord); background: var(--fond-2); color: var(--texte); cursor: pointer; }
+  .t-fermer:hover, .t-fermer:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+  #t-titre { margin: 12px 0 6px; font-size: 22px; line-height: 1.25; font-weight: 650; overflow-wrap: anywhere; }
+  .t-meta { font-size: 13px; color: var(--discret); }
+  .t-corps { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 18px 22px 30px; }
+  .t-bloc { background: var(--fond-2); border: 1px solid var(--bord); border-radius: 10px; padding: 12px 14px; margin-bottom: 12px; }
+  .t-etapes { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+  .t-etapes i { height: 6px; border-radius: 2px; background: #22303c; }
+  .t-etapes i.passe { background: #3d4d5b; }
+  .t-etapes i.ici { background: var(--c); box-shadow: 0 0 12px -2px var(--c); }
+  .t-etapes i.publie { background: var(--or); }
+  .t-etiquettes { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 6px; }
+  .t-etiquettes span { font: 600 10.5px/1.2 var(--police-titre); letter-spacing: .06em; text-transform: uppercase; color: #5f707e; overflow-wrap: anywhere; }
+  .t-etiquettes span.ici { color: var(--c); }
+  .t-etape-texte { margin: 9px 0 0; font-size: 13px; color: var(--discret); }
+  .t-etape-texte b { color: var(--texte); font-weight: 600; }
+  .t-av-haut { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; font-size: 13px; color: var(--discret); }
+  .t-av-haut b { font: 700 14px/1 var(--police-mono); color: var(--texte); }
+  .t-bloc .jauge { height: 6px; background: #22303c; }   /* piste visible : le bloc a déjà le fond --fond-2 */
+  .t-bloc.complet .jauge i { background: var(--termine); }
+  .t-bloc.complet .t-av-haut b { color: var(--termine); }
+  .t-pied { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 12px 22px; border-top: 1px solid var(--bord); background: #0f161d; }
+  .t-pied button { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--texte); background: var(--fond-2); border: 1px solid var(--bord); border-radius: 999px; padding: 7px 13px; cursor: pointer; }
+  .t-pied button:hover:not(:disabled), .t-pied button:focus-visible { border-color: var(--or); color: var(--or); outline: none; }
+  .t-pied button:disabled { opacity: .4; cursor: default; }
+  #t-position { margin-right: auto; font-size: 12.5px; color: var(--discret); }
+
+  /* mise en forme du détail : « # Titre », « - puce », « [ ] à faire », « [x] fait » */
+  .detail { font-size: 14.5px; line-height: 1.62; color: #c3ced8; overflow-wrap: anywhere; }
+  .detail p { margin: 0 0 10px; }
+  .detail h4 { display: flex; align-items: center; gap: 10px; margin: 22px 0 8px; font: 700 12.5px/1.25 var(--police-titre); letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
+  .detail h4:after { content: ""; flex: 1; height: 1px; background: var(--bord); }
+  .detail > h4:first-child { margin-top: 4px; }
+  .detail ul { margin: 0 0 12px; padding-left: 20px; }
+  .detail li { margin: 4px 0; padding-left: 2px; }
+  .detail li::marker { color: var(--c); }
+  .detail li.case { list-style: none; position: relative; margin-left: -20px; padding-left: 28px; }
+  .detail li.case:before { content: ""; position: absolute; left: 2px; top: 4px; width: 15px; height: 15px; border: 1.5px solid var(--c); border-radius: 4px; box-sizing: border-box; }
+  .detail li.case.fait { color: var(--discret); text-decoration: line-through; text-decoration-color: #7f909f99; }
+  .detail li.case.fait:before { background: var(--termine); border-color: var(--termine); }
+  .detail li.case.fait:after { content: ""; position: absolute; left: 7.5px; top: 6.5px; width: 4px; height: 8px; border: solid #0c1116; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .detail p.journal { padding-left: 12px; border-left: 2px solid #c9a22766; }
+  .tampon { display: inline-block; margin-right: 5px; padding: 0 6px; font: 700 11px/1.55 var(--police-mono); letter-spacing: .06em; color: var(--or); border: 1px solid #c9a22799; border-radius: 3px; vertical-align: 1px; }
+  .detail a { color: var(--or); }
+  .sans-detail { color: var(--discret); font-style: italic; }
+
+  @media (max-width: 1299px) { .col-num { display: none; } .col-nom { font-size: 13.5px; letter-spacing: .05em; } }
+  /* ---------- téléphone et petite tablette : colonnes en onglets ---------- */
+  @media (max-width: 959px) {
+    :root { --haut: 0px; }
+    .conteneur { padding: 0 16px; }
+    .barre { position: static; height: auto; flex-wrap: wrap; gap: 10px 12px; padding: 12px 16px; backdrop-filter: none; }
+    .barre nav { margin-left: 0; width: 100%; flex-wrap: wrap; gap: 6px; }
+    .barre nav a { padding: 5px 11px; font-size: 12.5px; }
+    .intro { grid-template-columns: 1fr; padding-top: 24px; }
+    .resume { gap: 2px 16px; }
+    .resume span + span:before { content: none; }
+    .releve { white-space: normal; justify-self: start; }
+    .puces, .poste-titre small, .champ kbd { display: none; }
+    .champ input { padding-right: 12px; }
+    .compte { margin-left: 0; width: 100%; }
+    .onglets { display: flex; position: sticky; top: 0; z-index: 25; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 10px 16px;
+               background: #0c1116f2; border-bottom: 1px solid var(--bord); backdrop-filter: blur(8px); }
+    .onglets::-webkit-scrollbar { display: none; }
+    .tableau { margin-top: 12px; }
+    .col-tete { position: static; }
+    .col-nom { font-size: 15px; }
+    .t-tete, .t-corps { padding-left: 16px; padding-right: 16px; }
+    .t-pied { padding: 10px 16px; }
+    #t-titre { font-size: 19px; }
+    .version { padding: 16px; }
+    .v-nom { font-size: 22px; }
+  }
+  @media (max-width: 520px) {
+    .marque span { display: none; }
+    .marque i { display: none; }
+    .t-etiquettes { display: none; }
+    .champ { flex-basis: 100%; max-width: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *:before, *:after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="barre">
+  <a class="marque" href="/" aria-label="PAG, retour à l'accueil">
+    <img src="/site/favicon.png" width="32" height="32" alt="">
+    <b>PAG</b><i></i><span>Suivi du développement</span>
+  </a>
+  <nav aria-label="Navigation du site">
+    <a href="/">← Accueil</a>
+    <a href="/carte/">Carte de situation</a>
+    <a href="#historique">Mises à jour</a>
+  </nav>
+</header>
+
+<main class="conteneur">
+  <section class="intro">
+    <div>
+      <p class="surtitre">Tableau des opérations · mod du serveur</p>
+      <h1>Suivi du développement</h1>
+      <p class="chapeau">Tout ce qui avance sur le mod de la PAG, de l'idée jusqu'à la mise à jour publiée. Cliquez sur une carte pour lire son détail complet.</p>
+      <div class="resume" id="resume"></div>
+    </div>
+    <div class="releve" id="releve" role="status"><i></i><span>Chargement…</span></div>
+  </section>
+
+  <section class="poste" aria-label="Filtres du tableau">
+    <div class="poste-titre"><b>Répartition des cartes</b><small>Cliquez sur une colonne pour la masquer ou l'afficher</small></div>
+    <div class="repartition" id="repartition" aria-hidden="true"></div>
+    <div class="puces" id="puces"></div>
+    <div class="separateur"></div>
+    <div class="outils">
+      <label class="champ">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m11 11 3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input type="search" id="recherche" placeholder="Rechercher une carte (mot, n°)" autocomplete="off" spellcheck="false" aria-label="Rechercher une carte">
+        <kbd>/</kbd>
+      </label>
+      <button type="button" class="bascule" id="recentes" aria-pressed="false" title="Cartes créées ou modifiées depuis moins de 48 heures">Modifiées depuis 48 h <b>0</b></button>
+      <label class="tri"><span>Trier</span>
+        <select id="tri">
+          <option value="recent">dernière modification</option>
+          <option value="numero">numéro de carte</option>
+        </select>
+        <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="m1.5 3.5 3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </label>
+      <button type="button" class="lien-bouton" id="effacer" hidden>Effacer les filtres</button>
+      <span class="compte" id="compte" aria-live="polite"></span>
+    </div>
+    <div class="archives" id="archives" hidden></div>
+  </section>
+
+  <section class="zone-tableau" aria-label="Tableau des cartes">
+    <div class="onglets" id="onglets" role="tablist" aria-label="Colonnes du tableau"></div>
+    <div class="tableau" id="tableau"></div>
+  </section>
+
+  <section class="historique" id="historique" aria-labelledby="h-titre">
+    <div class="h-tete">
+      <div>
+        <h2 id="h-titre">Historique des mises à jour</h2>
+        <p class="h-chapeau">Chaque version publiée, ses notes et les cartes qu'elle contient. Choisissez un jalon sur la frise.</p>
+      </div>
+      <button type="button" class="bascule" id="toutes" aria-pressed="false">Afficher toutes les versions</button>
+    </div>
+    <div class="frise-cadre" id="frise-cadre"><div class="frise" id="frise" role="group" aria-label="Versions publiées"></div></div>
+    <div id="versions"></div>
+  </section>
+
+  <footer>
+    Le tableau se gère depuis le Discord de la PAG (commande <code>/suivi</code>). Cette page se met à jour toute seule.<br>
+    PAG · Penguin Assault Group — communauté de joueurs, sans lien avec l'armée française ni avec Bohemia Interactive.
+  </footer>
+</main>
+
+<div class="voile" id="voile"></div>
+<aside class="tiroir" id="tiroir" role="dialog" aria-modal="true" aria-labelledby="t-titre" tabindex="-1">
+  <div class="t-tete">
+    <div class="t-ligne">
+      <span class="num" id="t-num"></span>
+      <span class="t-phase" id="t-phase"></span>
+      <span id="t-badges"></span>
+      <button type="button" class="t-fermer" id="t-fermer" aria-label="Fermer le détail (Échap)">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 3.5 9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <h2 id="t-titre"></h2>
+    <div class="t-meta" id="t-meta"></div>
+  </div>
+  <div class="t-corps" id="t-corps"></div>
+  <div class="t-pied">
+    <button type="button" id="t-prec" aria-label="Carte précédente">‹ Précédente</button>
+    <button type="button" id="t-suiv" aria-label="Carte suivante">Suivante ›</button>
+    <span id="t-position"></span>
+    <button type="button" id="t-lien">
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5a3 3 0 0 0 4.2 0l2.6-2.6a3 3 0 0 0-4.2-4.2L8 3.8M9.5 6.5a3 3 0 0 0-4.2 0L2.7 9.1a3 3 0 0 0 4.2 4.2L8 12.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Copier le lien</span>
+    </button>
+  </div>
+</aside>
+
+<noscript><p style="padding:16px">Cette page a besoin de JavaScript pour afficher le tableau.</p></noscript>
+
+<script>
+'use strict';
+/* =====================================================================================
+   MAQUETTE : les données ci-dessous sont une copie de la réponse de l'API au 24/09/2026 19:13.
+   EN PRODUCTION : passer MAQUETTE à false et supprimer DONNEES. La page appelle alors
+   fetch('api') toutes les 15 s, comme la page actuelle (voir la fonction actualiser()),
+   et accepte aussi bien { cartes: [...] } que { colonnes: [{ cle, nom, cartes }] }.
+   ===================================================================================== */
+const MAQUETTE = false;
+const RELEVE_MAQUETTE = '2026-09-24 19:13';   // « maintenant » de la maquette (sert aux badges et aux « il y a … »)
+const DONNEES = null;
+
+const COLONNES = [
+  { cle: 'idee',         nom: 'Idée',         legende: 'Proposées, pas encore retenues' },
+  { cle: 'a_faire',      nom: 'À faire',      legende: 'Retenues, à préparer' },
+  { cle: 'a_developper', nom: 'À développer', legende: 'Prêtes à être codées' },
+  { cle: 'en_cours',     nom: 'En cours',     legende: 'En chantier en ce moment' },
+  { cle: 'a_tester',     nom: 'À tester',     legende: 'À compiler et essayer en jeu' },
+  { cle: 'termine',      nom: 'Terminé',      legende: 'Faites, pas encore publiées' },
+];
+const INDEX_COL = Object.fromEntries(COLONNES.map((c, i) => [c.cle, i]));
+const H48 = 48 * 3600 * 1000;
+const $ = id => document.getElementById(id);
+const propre = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pluriel = (n, un, plusieurs) => `${n} ${n > 1 ? (plusieurs || un + 's') : un}`;
+const deux = n => String(n).padStart(2, '0');
+const ICONE_DROITE = '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICONE_GAUCHE = '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* ---------- préférences du visiteur (confort seulement, la page marche sans) ---------- */
+const memoire = {
+  lire(cle, defaut) { try { const v = localStorage.getItem('pag-suivi-kanban-' + cle); return v === null ? defaut : JSON.parse(v); } catch (e) { return defaut; } },
+  ecrire(cle, valeur) { try { localStorage.setItem('pag-suivi-kanban-' + cle, JSON.stringify(valeur)); } catch (e) { /* stockage indisponible : tant pis */ } },
+};
+
+/* ---------- dates ---------- */
+function lireDate(s) { const m = /^(\d{4})-(\d\d)-(\d\d)(?:[ T](\d\d):(\d\d))?/.exec(s || ''); return m ? new Date(+m[1], m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0)) : null; }
+function jour(s) { const d = lireDate(s); return d ? `${deux(d.getDate())}/${deux(d.getMonth() + 1)}/${d.getFullYear()}` : ''; }
+function jourHeure(s) { const d = lireDate(s); if (!d) return ''; return jour(s) + (/[ T]\d\d:\d\d/.test(s) ? ` à ${deux(d.getHours())}:${deux(d.getMinutes())}` : ''); }
+const maintenant = () => MAQUETTE ? lireDate(RELEVE_MAQUETTE).getTime() : Date.now();
+function depuis(s) {
+  const d = lireDate(s); if (!d) return '';
+  const n = maintenant(), min = Math.round((n - d.getTime()) / 60000);
+  if (min < 1) return "à l'instant";
+  if (min < 60) return `il y a ${min} min`;
+  if (min < 24 * 60) return `il y a ${Math.floor(min / 60)} h`;
+  const minuit = x => { const t = new Date(x); t.setHours(0, 0, 0, 0); return t.getTime(); };
+  const jours = Math.round((minuit(n) - minuit(d.getTime())) / 86400000);
+  if (jours <= 1) return `hier à ${deux(d.getHours())}:${deux(d.getMinutes())}`;
+  if (jours < 7) return `il y a ${jours} jours`;
+  return 'le ' + jour(s);
+}
+function fraicheur(c) {
+  const n = maintenant(), cr = lireDate(c.cree), mo = lireDate(c.modifie);
+  if (cr && n - cr.getTime() < H48) return 'nouveau';
+  if (mo && n - mo.getTime() < H48) return 'maj';
+  return '';
+}
+function badgeHTML(c) {
+  const f = fraicheur(c);
+  if (f === 'nouveau') return '<span class="badge nouveau" title="Carte créée il y a moins de 48 h">Nouveau</span>';
+  if (f === 'maj') return '<span class="badge maj" title="Carte modifiée il y a moins de 48 h">Mis à jour</span>';
+  return '';
+}
+
+/* ---------- cases à cocher du détail : [ ] et [x] ---------- */
+function taches(detail) {
+  let fait = 0, total = 0;
+  for (const l of String(detail || '').split(/\r?\n/)) { const m = /^\s*(?:[-*•]\s*)?\[( |x|X)\]\s*\S/.exec(l); if (m) { total++; if (m[1] !== ' ') fait++; } }
+  return { fait, total };
+}
+
+/* ---------- recherche : sans tenir compte des accents ni des majuscules ---------- */
+const plier = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/[’‘]/g, "'");
+let termes = [];
+const correspond = c => !termes.length || termes.every(t => plier(`#${c.id} ${c.titre} ${c.detail || ''}`).includes(t));
+function surligner(texte) {
+  texte = String(texte ?? '');
+  if (!termes.length) return propre(texte);
+  let norme = ''; const pos = [];
+  for (let i = 0; i < texte.length; i++) { const p = plier(texte[i]); for (let k = 0; k < p.length; k++) { norme += p[k]; pos.push(i); } }
+  const plages = [];
+  for (const t of termes) { let k = norme.indexOf(t); while (k !== -1) { plages.push([pos[k], pos[k + t.length - 1] + 1]); k = norme.indexOf(t, k + t.length); } }
+  if (!plages.length) return propre(texte);
+  plages.sort((a, b) => a[0] - b[0]);
+  let sortie = '', curseur = 0;
+  for (const [a, b] of plages) {
+    if (b <= curseur) continue;
+    const debut = Math.max(a, curseur);
+    sortie += propre(texte.slice(curseur, debut)) + '<mark>' + propre(texte.slice(debut, b)) + '</mark>';
+    curseur = b;
+  }
+  return sortie + propre(texte.slice(curseur));
+}
+// texte échappé + surligné + adresses web cliquables
+function texteRiche(t) {
+  return String(t ?? '').split(/(https?:\/\/[^\s<>"]+)/g).map((morceau, i) => {
+    if (i % 2 === 0) return surligner(morceau);
+    const m = /^(.*?)([.,;:!?)»]*)$/.exec(morceau);
+    return `<a href="${propre(m[1])}" target="_blank" rel="noopener">${surligner(m[1])}</a>${surligner(m[2])}`;
+  }).join('');
+}
+
+/* ---------- mise en forme du détail : « # Titre », « - puce », « [ ] à faire », « [x] fait », le reste en paragraphes ---------- */
+function mettreEnForme(texte) {
+  const sortie = []; let liste = null;
+  const fermer = () => { if (liste) { sortie.push('<ul>' + liste.join('') + '</ul>'); liste = null; } };
+  for (const brute of String(texte || '').split(/\r?\n/)) {
+    const ligne = brute.trim(); let m;
+    if (!ligne) { fermer(); continue; }
+    if ((m = /^#+\s*(.+)$/.exec(ligne))) { fermer(); sortie.push('<h4>' + texteRiche(m[1]) + '</h4>'); }
+    else if ((m = /^(?:[-*•]\s*)?\[( |x|X)\]\s*(.+)$/.exec(ligne))) (liste = liste || []).push(`<li class="case${m[1] === ' ' ? '' : ' fait'}">${texteRiche(m[2])}</li>`);
+    else if ((m = /^[-*•]\s+(.+)$/.exec(ligne))) (liste = liste || []).push('<li>' + texteRiche(m[1]) + '</li>');
+    else {
+      fermer();
+      // Paragraphe de journal qui commence par un mot en capitales (CODÉ, ANALYSE, ESSAI DE JACK…) : le mot devient un tampon
+      const t = /^([A-ZÀ-ÖØ-Þ]{4,}(?:\s+[A-ZÀ-ÖØ-Þ]{2,})*)(?=[\s,.:;(]|$)/.exec(ligne);
+      sortie.push(t ? `<p class="journal"><span class="tampon">${surligner(t[1])}</span>${texteRiche(ligne.slice(t[1].length))}</p>` : '<p>' + texteRiche(ligne) + '</p>');
+    }
+  }
+  fermer();
+  return sortie.join('');
+}
+// Notes de version : une ligne = un paragraphe ; « En jeu : », « Sur le web : »… en gras
+function notesEnForme(notes) {
+  return String(notes || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => {
+    const m = /^([A-ZÀ-ÖØ-Þ][^:\d]{1,20}?)\s:\s(.+)$/.exec(l);
+    return m && m[1].split(/\s+/).length <= 3 ? `<p><b>${texteRiche(m[1])}</b> : ${texteRiche(m[2])}</p>` : `<p>${texteRiche(l)}</p>`;
+  }).join('');
+}
+// Aperçu de deux lignes sous le titre (ou le passage trouvé par la recherche)
+function extrait(c) {
+  const lignes = String(c.detail || '').split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  if (!lignes.length) return '';
+  const nette = l => l.replace(/^#+\s*/, '').replace(/^(?:[-*•]\s*)?\[( |x|X)\]\s*/, '').replace(/^[-*•]\s+/, '');
+  if (termes.length) {
+    const titre = plier(c.titre);
+    const cherches = termes.filter(t => !titre.includes(t));
+    for (const l of lignes) {
+      const p = plier(l); const t = cherches.find(x => p.includes(x));
+      if (t) { const i = p.indexOf(t), a = Math.max(0, i - 45); return (a ? '…' : '') + surligner(nette(l.slice(a)).slice(0, 200)); }
+    }
+  }
+  const premiere = lignes.find(l => !/^#/.test(l)) || lignes[0];
+  return surligner(nette(premiere).slice(0, 220));
+}
+
+/* ---------- état de la page ---------- */
+const modeOnglets = matchMedia('(max-width: 959px)');
+const grandEcran = matchMedia('(min-width: 1400px)');
+const etat = {
+  cartes: [], versions: [], charge: false, changees: new Set(),
+  recherche: '', recentes: false,
+  tri: memoire.lire('tri', 'recent'),
+  masquees: new Set(memoire.lire('masquees', [])),
+  ideeRepliee: memoire.lire('idee-repliee', null),   // null : repliée sauf sur grand écran
+  onglet: memoire.lire('onglet', null),
+  version: null, toutes: false,
+  tiroir: null,
+};
+const ideeRepliee = () => etat.ideeRepliee === null ? !grandEcran.matches : etat.ideeRepliee;
+const filtreActif = () => termes.length > 0 || etat.recentes;
+const filtrer = c => correspond(c) && (!etat.recentes || fraicheur(c) !== '');
+const cartesDe = cle => etat.cartes.filter(c => c.colonne === cle);
+function trier(liste) {
+  return liste.slice().sort(etat.tri === 'numero'
+    ? (a, b) => a.id - b.id
+    : (a, b) => String(b.modifie || '').localeCompare(String(a.modifie || '')) || b.id - a.id);
+}
+
+function normaliser(brut) {
+  const cartes = [];
+  if (Array.isArray(brut.cartes)) for (const c of brut.cartes) cartes.push({ ...c, id: Number(c.id) });
+  else if (Array.isArray(brut.colonnes)) for (const col of brut.colonnes) for (const c of col.cartes || []) cartes.push({ ...c, id: Number(c.id), colonne: c.colonne || col.cle });
+  const versions = (brut.versions || []).map(v => ({ ...v, cartes: (v.cartes || []).map(c => ({ ...c, id: Number(c.id) })) }))
+    .sort((a, b) => String(a.date || '').localeCompare(String(b.date || '')));
+  return { cartes, versions };
+}
+
+/* ---------- rendu ---------- */
+function construire() {
+  $('puces').innerHTML = COLONNES.map(c => `<button type="button" class="puce" data-cle="${c.cle}" style="--c: var(--${c.cle})" aria-pressed="true"><span>${c.nom}</span><b>0</b></button>`).join('');
+  $('onglets').innerHTML = COLONNES.map(c => `<button type="button" class="onglet" role="tab" id="onglet-${c.cle}" data-cle="${c.cle}" style="--c: var(--${c.cle})" aria-selected="false" aria-controls="tableau"><span>${c.nom}</span><b>0</b></button>`).join('');
+  $('repartition').innerHTML = COLONNES.map(c => `<i data-cle="${c.cle}" style="--c: var(--${c.cle})"></i>`).join('');
+  $('tri').value = etat.tri === 'numero' ? 'numero' : 'recent';
+}
+
+function rendreResume() {
+  const n = etat.cartes.length, nv = etat.versions.length, der = etat.versions[nv - 1];
+  $('resume').innerHTML = `<span><b>${n}</b> carte${n > 1 ? 's' : ''} au tableau</span>`
+    + `<span><b>${nv}</b> mise${nv > 1 ? 's' : ''} à jour publiée${nv > 1 ? 's' : ''}</span>`
+    + (der ? `<span>Dernière : <b class="or">${propre(der.version)}</b> le ${jour(der.date)}</span>` : '');
+}
+
+function rendreReleve(etatConnexion) {
+  const r = $('releve');
+  if (MAQUETTE) { r.className = 'releve'; r.lastElementChild.textContent = `Données figées du ${jourHeure(RELEVE_MAQUETTE)} · maquette « Kanban tactique »`; return; }
+  r.className = 'releve ' + (etatConnexion === false ? 'panne' : 'direct');
+  r.lastElementChild.textContent = etatConnexion === false ? 'Site injoignable, nouvel essai…' : 'En direct · actualisé toutes les 15 s';
+}
+
+function rendreCompteurs() {
+  const filtre = filtreActif();
+  for (const col of COLONNES) {
+    const toutes = cartesDe(col.cle), n = toutes.length, vis = toutes.filter(filtrer).length;
+    const texte = filtre ? `${vis}/${n}` : String(n);
+    const masquee = etat.masquees.has(col.cle);
+    const p = document.querySelector(`.puce[data-cle="${col.cle}"]`);
+    p.querySelector('b').textContent = texte;
+    p.setAttribute('aria-pressed', String(!masquee));
+    p.title = `${col.nom} : ${pluriel(n, 'carte')}. ${masquee ? 'Colonne masquée : cliquer pour l\u2019afficher' : 'Cliquer pour masquer la colonne'}`;
+    const o = $('onglet-' + col.cle);
+    o.querySelector('b').textContent = texte;
+    o.setAttribute('aria-selected', String(etat.onglet === col.cle));
+    o.tabIndex = etat.onglet === col.cle ? 0 : -1;
+    o.classList.toggle('touche', filtre && vis > 0 && etat.onglet !== col.cle);
+    const seg = document.querySelector(`#repartition i[data-cle="${col.cle}"]`);
+    seg.style.flexGrow = n; seg.hidden = !n; seg.title = `${col.nom} : ${n}`;
+  }
+  const total = etat.cartes.length;
+  const colsVues = modeOnglets.matches ? COLONNES : COLONNES.filter(c => !etat.masquees.has(c.cle));
+  const nVues = etat.cartes.filter(c => colsVues.some(k => k.cle === c.colonne) && filtrer(c)).length;
+  $('compte').textContent = (filtre || (!modeOnglets.matches && etat.masquees.size))
+    ? `${nVues} carte${nVues > 1 ? 's' : ''} affichée${nVues > 1 ? 's' : ''} sur ${total}`
+    : `${total} carte${total > 1 ? 's' : ''} au tableau`;
+  $('effacer').hidden = !(etat.recherche || etat.recentes || etat.masquees.size);
+  $('recentes').querySelector('b').textContent = etat.cartes.filter(c => fraicheur(c)).length;
+  $('recentes').setAttribute('aria-pressed', String(etat.recentes));
+}
+
+function ficheHTML(c, i) {
+  const t = taches(c.detail), ex = extrait(c);
+  const pct = t.total ? Math.round(100 * t.fait / t.total) : 0;
+  return `<a class="fiche${etat.changees.has(c.id) ? ' flash' : ''}" href="#carte-${c.id}" data-id="${c.id}" data-focus="fiche-${c.id}" style="--c: var(--${c.colonne}); --i: ${i}">
+    <div class="fiche-haut"><span class="num">#${c.id}</span>${badgeHTML(c)}</div>
+    <div class="titre">${surligner(c.titre)}</div>
+    ${ex ? `<p class="extrait">${ex}</p>` : ''}
+    ${t.total ? `<div class="progression${t.fait === t.total ? ' complet' : ''}" title="${pluriel(t.fait, 'tâche cochée', 'tâches cochées')} sur ${t.total}"><span class="jauge"><i style="width: ${pct}%"></i></span><span>${t.fait}/${t.total}</span></div>` : ''}
+    <div class="fiche-bas"><span title="Modifiée le ${jourHeure(c.modifie)}">${depuis(c.modifie)}</span><span class="ouvrir">Détail →</span></div>
+  </a>`;
+}
+
+function colonneHTML(col, replie, onglets) {
+  const i = INDEX_COL[col.cle];
+  const toutes = cartesDe(col.cle), vues = trier(toutes.filter(filtrer));
+  const filtre = filtreActif();
+  const compte = filtre ? `${vues.length}<small>/${toutes.length}</small>` : String(toutes.length);
+  if (replie) {
+    return `<section class="colonne repliee" style="--c: var(--${col.cle})">
+      <div class="rail" role="button" tabindex="0" data-action="deplier" data-focus="rail-${col.cle}" aria-expanded="false" aria-label="Déplier la colonne ${col.nom} (${pluriel(toutes.length, 'carte')})" title="Déplier la colonne ${col.nom}">
+        <div class="rail-interne">
+          <span class="rail-icone">${ICONE_DROITE}</span>
+          <span class="col-compte">${compte}</span>
+          <span class="vertical">${col.nom}</span>
+          <span class="vertical petit">Déplier la colonne</span>
+        </div>
+      </div>
+    </section>`;
+  }
+  const corps = vues.map(ficheHTML).join('')
+    || `<div class="vide">${filtre ? 'Aucune carte ne correspond' : 'Rien ici pour le moment'}</div>`;
+  return `<section class="colonne" style="--c: var(--${col.cle})" aria-labelledby="col-${col.cle}">
+    <header class="col-tete">
+      <div class="col-ligne">
+        <span class="col-num">${deux(i + 1)}</span>
+        <h2 class="col-nom" id="col-${col.cle}">${col.nom}</h2>
+        <span class="col-compte" title="${pluriel(toutes.length, 'carte')}">${compte}</span>
+        ${col.cle === 'idee' && !onglets ? `<button type="button" class="col-plier" data-action="replier" data-focus="plier-${col.cle}" aria-expanded="true" aria-label="Replier la colonne ${col.nom}" title="Replier la colonne ${col.nom}">${ICONE_GAUCHE}</button>` : ''}
+      </div>
+      <div class="col-legende">${col.legende}</div>
+    </header>
+    <div class="col-corps">${corps}</div>
+  </section>`;
+}
+
+function rendreTableau(focus) {
+  const tab = $('tableau'), onglets = modeOnglets.matches;
+  const avant = focus || (document.activeElement && tab.contains(document.activeElement) ? document.activeElement.dataset.focus : null);
+  const cols = onglets ? COLONNES.filter(c => c.cle === etat.onglet) : COLONNES.filter(c => !etat.masquees.has(c.cle));
+  const replie = !onglets && ideeRepliee();
+  tab.style.gridTemplateColumns = onglets ? 'minmax(0, 1fr)' : (cols.map(c => c.cle === 'idee' && replie ? '58px' : 'minmax(0, 1fr)').join(' ') || '1fr');
+  tab.setAttribute('role', onglets ? 'tabpanel' : 'region');
+  if (onglets) tab.setAttribute('aria-labelledby', 'onglet-' + etat.onglet); else tab.removeAttribute('aria-labelledby');
+  tab.innerHTML = cols.map(col => colonneHTML(col, replie && col.cle === 'idee', onglets)).join('')
+    || '<div class="vide">Toutes les colonnes sont masquées.<br><button type="button" class="lien-bouton" data-action="tout-afficher">Tout afficher</button></div>';
+  if (avant) { const el = tab.querySelector(`[data-focus="${avant}"]`); if (el) el.focus({ preventScroll: true }); }
+}
+
+function rendreArchives() {
+  const el = $('archives');
+  if (!termes.length) { el.hidden = true; el.innerHTML = ''; return; }
+  const trouvees = [];
+  for (const v of etat.versions.slice().reverse()) for (const c of v.cartes) if (correspond(c)) trouvees.push([v, c]);
+  el.hidden = false;
+  el.innerHTML = trouvees.length
+    ? '<span>Aussi dans les mises à jour publiées :</span>' + trouvees.slice(0, 8).map(([v, c]) => `<a href="#carte-${c.id}" data-id="${c.id}"><b>${propre(v.version)}</b>#${c.id} ${surligner(c.titre)}</a>`).join('')
+      + (trouvees.length > 8 ? `<span>et ${trouvees.length - 8} autres</span>` : '')
+    : '<span>Rien de correspondant dans les mises à jour publiées.</span>';
+}
+
+function itemCarte(c) {
+  return `<li><a href="#carte-${c.id}" data-id="${c.id}"><span class="num">#${c.id}</span><span class="v-titre">${propre(c.titre)}</span><span class="v-plus" aria-hidden="true">›</span></a></li>`;
+}
+function panneauVersion(cle) {
+  if (cle === '__avenir') {
+    const t = trier(cartesDe('termine'));
+    return `<article class="version avenir">
+      <header class="v-tete"><h3 class="v-nom">Prochaine mise à jour</h3><span class="v-date">en préparation</span><span class="v-nb">${pluriel(t.length, 'carte terminée', 'cartes terminées')}</span></header>
+      <div class="v-notes"><p>Ces cartes sont dans la colonne Terminé : elles ne figurent encore dans aucune mise à jour publiée.</p></div>
+      <h4 class="v-sous">Cartes en attente</h4><ul class="v-cartes">${t.map(itemCarte).join('')}</ul>
+    </article>`;
+  }
+  const v = etat.versions.find(x => x.version === cle);
+  if (!v) return '';
+  return `<article class="version">
+    <header class="v-tete"><h3 class="v-nom">${propre(v.version)}</h3><span class="v-date">Publiée le ${jourHeure(v.date)}</span><span class="v-nb">${pluriel(v.cartes.length, 'carte')}</span></header>
+    ${v.notes ? `<div class="v-notes">${notesEnForme(v.notes)}</div>` : ''}
+    ${v.cartes.length ? `<h4 class="v-sous">Contenu de la version</h4><ul class="v-cartes">${v.cartes.map(itemCarte).join('')}</ul>` : ''}
+  </article>`;
+}
+
+let friseCalee = false;
+function rendreHistorique() {
+  const vs = etat.versions, nTermine = cartesDe('termine').length;
+  const jalons = vs.map(v => `<button type="button" class="jalon" data-version="${propre(v.version)}" aria-pressed="false"><span class="point"></span><span class="v">${propre(v.version)}</span><span class="d">${jour(v.date)}</span><span class="n">${pluriel(v.cartes.length, 'carte')}</span></button>`);
+  if (nTermine) jalons.push(`<button type="button" class="jalon avenir" data-version="__avenir" aria-pressed="false"><span class="point"></span><span class="v">À venir</span><span class="d">prochaine version</span><span class="n">${pluriel(nTermine, 'carte terminée', 'cartes terminées')}</span></button>`);
+  $('frise').innerHTML = jalons.join('');
+  $('frise-cadre').hidden = !jalons.length;
+  $('toutes').hidden = jalons.length < 2;
+  rendreVersions();
+  if (!friseCalee) { friseCalee = true; const f = $('frise-cadre'); f.scrollLeft = f.scrollWidth; }
+}
+function rendreVersions() {
+  const vs = etat.versions, nTermine = cartesDe('termine').length;
+  for (const j of document.querySelectorAll('.jalon')) j.setAttribute('aria-pressed', String(etat.toutes || j.dataset.version === etat.version));
+  $('toutes').setAttribute('aria-pressed', String(etat.toutes));
+  $('toutes').textContent = etat.toutes ? 'Une version à la fois' : 'Afficher toutes les versions';
+  const liste = etat.toutes ? [...(nTermine ? ['__avenir'] : []), ...vs.slice().reverse().map(v => v.version)] : (etat.version ? [etat.version] : []);
+  $('versions').innerHTML = liste.map(panneauVersion).join('') || '<div class="vide" style="margin-top:14px">Aucune mise à jour publiée pour le moment.</div>';
+}
+
+/* ---------- tiroir de détail ---------- */
+function trouverCarte(id) {
+  const c = etat.cartes.find(x => x.id === id);
+  if (c) return { carte: c, version: null };
+  for (const v of etat.versions) { const a = v.cartes.find(x => x.id === id); if (a) return { carte: a, version: v }; }
+  return null;
+}
+function listeVoisine(r) {
+  if (r.version) return r.version.cartes;
+  const cle = r.carte.colonne;
+  const vues = trier(cartesDe(cle).filter(filtrer));
+  return vues.some(x => x.id === r.carte.id) ? vues : trier(cartesDe(cle));
+}
+function rendreTiroir() {
+  const r = trouverCarte(etat.tiroir);
+  const tir = $('tiroir');
+  if (!r) {
+    tir.style.setProperty('--c', 'var(--discret)');
+    $('t-num').textContent = '#' + etat.tiroir; $('t-phase').textContent = 'Introuvable'; $('t-badges').innerHTML = '';
+    $('t-titre').textContent = 'Cette carte n\u2019existe plus';
+    $('t-meta').textContent = 'Elle a peut-être été supprimée ou fusionnée avec une autre depuis le Discord.';
+    $('t-corps').innerHTML = ''; $('t-prec').disabled = $('t-suiv').disabled = true; $('t-position').textContent = '';
+    return;
+  }
+  const { carte: c, version: v } = r;
+  const col = v ? null : COLONNES[INDEX_COL[c.colonne]];
+  tir.style.setProperty('--c', v ? 'var(--or)' : `var(--${c.colonne})`);
+  $('t-num').textContent = '#' + c.id;
+  $('t-phase').textContent = v ? `Publiée · ${v.version}` : (col ? col.nom : c.colonne);
+  $('t-badges').innerHTML = v ? '' : badgeHTML(c);
+  $('t-titre').innerHTML = surligner(c.titre);
+  $('t-meta').textContent = v
+    ? `Publiée le ${jourHeure(v.date)} dans la mise à jour ${v.version}`
+    : [c.cree ? `Créée le ${jourHeure(c.cree)}` : '', c.modifie ? `modifiée le ${jourHeure(c.modifie)} (${depuis(c.modifie)})` : ''].filter(Boolean).join(' · ');
+
+  const ici = v ? 6 : (INDEX_COL[c.colonne] ?? 0) + 1;
+  const segments = COLONNES.map((k, n) => `<i class="${v ? 'publie' : n < ici - 1 ? 'passe' : n === ici - 1 ? 'ici' : ''}"></i>`).join('');
+  const etiquettes = COLONNES.map((k, n) => `<span class="${!v && n === ici - 1 ? 'ici' : ''}">${k.nom}</span>`).join('');
+  const texteEtape = v ? `Terminée et publiée dans la mise à jour <b>${propre(v.version)}</b>` : `Étape ${ici} sur 6 : <b>${col ? col.nom : ''}</b> — ${col ? col.legende.toLowerCase() : ''}`;
+  const t = taches(c.detail);
+  const avancement = t.total ? `<div class="t-bloc${t.fait === t.total ? ' complet' : ''}"><div class="t-av-haut"><span>Tâches cochées</span><b>${t.fait} / ${t.total}</b></div><span class="jauge"><i style="width: ${Math.round(100 * t.fait / t.total)}%"></i></span></div>` : '';
+  $('t-corps').innerHTML = `<div class="t-bloc"><div class="t-etapes">${segments}</div><div class="t-etiquettes">${etiquettes}</div><p class="t-etape-texte">${texteEtape}</p></div>`
+    + avancement
+    + `<div class="detail">${c.detail ? mettreEnForme(c.detail) : '<p class="sans-detail">Pas de détail pour cette carte.</p>'}</div>`;
+
+  const liste = listeVoisine(r), pos = liste.findIndex(x => x.id === c.id);
+  $('t-prec').disabled = pos <= 0;
+  $('t-suiv').disabled = pos < 0 || pos >= liste.length - 1;
+  $('t-position').textContent = pos >= 0 ? `${pos + 1} / ${liste.length} · ${v ? v.version : (col ? col.nom : '')}` : '';
+}
+
+let tiroirPousse = false, focusAvant = null;
+const fond = () => [document.querySelector('.barre'), document.querySelector('main')];
+function ouvrirTiroir(id, pousser) {
+  if (!trouverCarte(id) && !pousser && etat.tiroir === null) return;   // lien vers une carte inconnue : on ignore
+  const dejaOuvert = etat.tiroir !== null;
+  if (!dejaOuvert) focusAvant = document.activeElement;
+  etat.tiroir = id;
+  if (pousser && !dejaOuvert) { try { history.pushState({ tiroir: id }, '', '#carte-' + id); tiroirPousse = true; } catch (e) { tiroirPousse = false; } }
+  else if (dejaOuvert) { try { history.replaceState(history.state, '', '#carte-' + id); } catch (e) {} }
+  rendreTiroir();
+  $('t-corps').scrollTop = 0;
+  $('tiroir').classList.add('ouvert'); $('voile').classList.add('ouvert');
+  document.body.classList.add('fige');
+  for (const el of fond()) el.inert = true;
+  if (!dejaOuvert) $('t-fermer').focus({ preventScroll: true });
+}
+function fermerTiroir(depuisHistorique) {
+  if (etat.tiroir === null) return;
+  if (!depuisHistorique) {
+    if (tiroirPousse) { tiroirPousse = false; history.back(); return; }        // popstate refermera le tiroir
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
+  tiroirPousse = false;
+  etat.tiroir = null;
+  $('tiroir').classList.remove('ouvert'); $('voile').classList.remove('ouvert');
+  document.body.classList.remove('fige');
+  for (const el of fond()) el.inert = false;
+  if (focusAvant && document.contains(focusAvant)) focusAvant.focus({ preventScroll: true });
+  focusAvant = null;
+}
+function voisine(sens) {
+  const r = trouverCarte(etat.tiroir); if (!r) return;
+  const liste = listeVoisine(r), pos = liste.findIndex(x => x.id === r.carte.id), cible = liste[pos + sens];
+  if (cible) ouvrirTiroir(cible.id, false);
+}
+function lireAncre() {
+  const m = /^#carte-(\d+)$/.exec(location.hash);
+  if (m) ouvrirTiroir(Number(m[1]), false); else fermerTiroir(true);
+}
+
+/* ---------- tout redessiner ---------- */
+function toutRendre() {
+  rendreResume(); rendreCompteurs(); rendreTableau(); rendreArchives(); rendreHistorique();
+  if (etat.tiroir !== null) rendreTiroir();
+}
+function apresFiltre() {
+  rendreCompteurs(); rendreTableau(); rendreArchives();
+  if (etat.tiroir !== null) rendreTiroir();
+}
+
+let anciennes = null;
+function recevoir(brut) {
+  const { cartes, versions } = normaliser(brut);
+  etat.changees = new Set();
+  if (anciennes) for (const c of cartes) if (anciennes.get(c.id) !== `${c.modifie}|${c.colonne}`) etat.changees.add(c.id);
+  anciennes = new Map(cartes.map(c => [c.id, `${c.modifie}|${c.colonne}`]));
+  etat.cartes = cartes; etat.versions = versions;
+  if (!INDEX_COL.hasOwnProperty(etat.onglet)) etat.onglet = ['en_cours', 'a_tester', 'a_developper', 'a_faire', 'termine', 'idee'].find(k => cartesDe(k).length) || 'idee';
+  const cles = versions.map(v => v.version);
+  if (!etat.version || (etat.version === '__avenir' ? !cartesDe('termine').length : !cles.includes(etat.version))) etat.version = cles[cles.length - 1] || (cartesDe('termine').length ? '__avenir' : null);
+  const premier = !etat.charge;
+  if (premier) $('tableau').classList.add('premier');
+  toutRendre();
+  etat.changees = new Set();
+  if (premier) {
+    etat.charge = true;
+    setTimeout(() => $('tableau').classList.remove('premier'), 1200);
+    centrerOnglet(false);
+    if (/^#carte-\d+$/.test(location.hash)) lireAncre();
+    else if (location.hash === '#historique') $('historique').scrollIntoView();
+  }
+}
+
+/* ---------- actualisation (production) ---------- */
+let empreinte = '';
+async function actualiser() {
+  try {
+    const texte = await (await fetch('api', { cache: 'no-store' })).text();
+    rendreReleve(true);
+    if (texte !== empreinte) { empreinte = texte; recevoir(JSON.parse(texte)); }
+  } catch (e) { rendreReleve(false); }
+}
+
+/* ---------- événements ---------- */
+function changerOnglet(cle, defiler) {
+  if (!INDEX_COL.hasOwnProperty(cle) || cle === etat.onglet) return;
+  etat.onglet = cle; memoire.ecrire('onglet', cle);
+  rendreCompteurs(); rendreTableau();
+  centrerOnglet(true);
+  if (defiler) { const haut = $('tableau').getBoundingClientRect().top - $('onglets').offsetHeight - 10; if (haut < 0) window.scrollBy({ top: haut }); }
+}
+function centrerOnglet(doux) {
+  const barre = $('onglets'), o = $('onglet-' + etat.onglet);
+  if (!o || !modeOnglets.matches) return;
+  const gauche = o.offsetLeft - (barre.clientWidth - o.offsetWidth) / 2;
+  barre.scrollTo({ left: Math.max(0, gauche), behavior: doux ? 'smooth' : 'auto' });
+}
+function basculerIdee(replier) {
+  etat.ideeRepliee = replier; memoire.ecrire('idee-repliee', replier);
+  rendreTableau(replier ? 'rail-idee' : 'plier-idee');
+}
+function ouvrirDepuisLien(e) {
+  const a = e.target.closest('a[data-id]');
+  if (!a || e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  ouvrirTiroir(Number(a.dataset.id), true);
+}
+
+function brancher() {
+  $('recherche').addEventListener('input', e => {
+    etat.recherche = e.target.value;
+    termes = plier(etat.recherche.trim()).split(/\s+/).filter(Boolean);
+    apresFiltre();
+  });
+  $('recherche').addEventListener('keydown', e => { if (e.key === 'Escape' && e.target.value) { e.target.value = ''; e.target.dispatchEvent(new Event('input')); } });
+  $('recentes').addEventListener('click', () => { etat.recentes = !etat.recentes; apresFiltre(); });
+  $('tri').addEventListener('change', e => { etat.tri = e.target.value; memoire.ecrire('tri', etat.tri); apresFiltre(); rendreVersions(); });
+  $('effacer').addEventListener('click', () => {
+    etat.recherche = ''; $('recherche').value = ''; termes = []; etat.recentes = false; etat.masquees.clear(); memoire.ecrire('masquees', []);
+    apresFiltre();
+  });
+  $('puces').addEventListener('click', e => {
+    const p = e.target.closest('.puce'); if (!p) return;
+    const cle = p.dataset.cle;
+    etat.masquees.has(cle) ? etat.masquees.delete(cle) : etat.masquees.add(cle);
+    memoire.ecrire('masquees', [...etat.masquees]);
+    rendreCompteurs(); rendreTableau();
+  });
+  $('onglets').addEventListener('click', e => { const o = e.target.closest('.onglet'); if (o) changerOnglet(o.dataset.cle, true); });
+  $('onglets').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    const i = INDEX_COL[etat.onglet] + (e.key === 'ArrowRight' ? 1 : -1);
+    if (COLONNES[i]) { e.preventDefault(); changerOnglet(COLONNES[i].cle, false); $('onglet-' + COLONNES[i].cle).focus(); }
+  });
+  const tab = $('tableau');
+  tab.addEventListener('click', e => {
+    const act = e.target.closest('[data-action]');
+    if (act) {
+      if (act.dataset.action === 'deplier') basculerIdee(false);
+      else if (act.dataset.action === 'replier') basculerIdee(true);
+      else if (act.dataset.action === 'tout-afficher') { etat.masquees.clear(); memoire.ecrire('masquees', []); rendreCompteurs(); rendreTableau(); }
+      return;
+    }
+    ouvrirDepuisLien(e);
+  });
+  tab.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.dataset.action === 'deplier') { e.preventDefault(); basculerIdee(false); } });
+  // Sur téléphone : glisser le doigt à gauche ou à droite change de colonne
+  let tx = null, ty = null;
+  tab.addEventListener('touchstart', e => { if (!modeOnglets.matches || e.touches.length !== 1) { tx = null; return; } tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  tab.addEventListener('touchend', e => {
+    if (tx === null) return;
+    const dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty; tx = null;
+    if (Math.abs(dx) > 70 && Math.abs(dx) > 1.6 * Math.abs(dy)) { const c = COLONNES[INDEX_COL[etat.onglet] + (dx < 0 ? 1 : -1)]; if (c) changerOnglet(c.cle, true); }
+  }, { passive: true });
+
+  $('archives').addEventListener('click', ouvrirDepuisLien);
+  $('versions').addEventListener('click', ouvrirDepuisLien);
+  $('frise').addEventListener('click', e => {
+    const j = e.target.closest('.jalon'); if (!j) return;
+    etat.version = j.dataset.version; etat.toutes = false; rendreVersions();
+  });
+  $('toutes').addEventListener('click', () => { etat.toutes = !etat.toutes; rendreVersions(); });
+
+  $('t-fermer').addEventListener('click', () => fermerTiroir(false));
+  $('voile').addEventListener('click', () => fermerTiroir(false));
+  $('t-prec').addEventListener('click', () => voisine(-1));
+  $('t-suiv').addEventListener('click', () => voisine(1));
+  $('t-lien').addEventListener('click', async () => {
+    const url = location.href.split('#')[0] + '#carte-' + etat.tiroir;
+    let ok = false;
+    try { await navigator.clipboard.writeText(url); ok = true; }
+    catch (e) {
+      try { const z = document.createElement('textarea'); z.value = url; z.setAttribute('readonly', ''); z.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(z); z.select(); ok = document.execCommand('copy'); z.remove(); } catch (e2) {}
+    }
+    const s = $('t-lien').querySelector('span'); s.textContent = ok ? 'Lien copié' : 'Copie impossible';
+    setTimeout(() => { s.textContent = 'Copier le lien'; }, 2000);
+  });
+
+  document.addEventListener('keydown', e => {
+    const dansChamp = e.target.closest && e.target.closest('input, textarea, select');
+    if (etat.tiroir !== null) {
+      if (e.key === 'Escape') { e.preventDefault(); fermerTiroir(false); }
+      else if (!dansChamp && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) { e.preventDefault(); voisine(e.key === 'ArrowLeft' ? -1 : 1); }
+      return;
+    }
+    if (e.key === '/' && !dansChamp && !e.ctrlKey && !e.metaKey) { e.preventDefault(); $('recherche').focus(); }
+  });
+  window.addEventListener('popstate', lireAncre);
+  const auChangement = () => { rendreCompteurs(); rendreTableau(); centrerOnglet(false); };
+  modeOnglets.addEventListener('change', auChangement);
+  grandEcran.addEventListener('change', () => { if (etat.ideeRepliee === null) rendreTableau(); });
+}
+
+/* ---------- démarrage ---------- */
+construire();
+brancher();
+rendreReleve();
+if (MAQUETTE) {
+  recevoir(DONNEES);
+} else {
+  actualiser();
+  setInterval(actualiser, 15000);
+  setInterval(() => { if (etat.charge) { rendreCompteurs(); rendreTableau(); } }, 60000);   // « il y a … » et badges 48 h restent justes
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+Vehicle : "{2ABE194A9629D3BE}Prefabs/Vehicles/Helicopters/NH90/NH90.et" {
+ ID "57DA6675519A417B"
+ components {
+  SCR_EditableVehicleComponent "{50DEB7C26B5EB312}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "NH90 Caïman TTH (PAG)"
+    Description "Hélicoptère de manœuvre NH90 Caïman de l'ALAT, camouflage Centre Europe. 2 pilotes, 16 passagers."
+    m_sFaction "FR"
+   }
+  }
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 2036
+    }
+   }
+  }
+  SCR_VehicleFactionAffiliationComponent "{5882CBD9AC741CEC}" {
+   "faction affiliation" "FR"
+  }
+ }
+}

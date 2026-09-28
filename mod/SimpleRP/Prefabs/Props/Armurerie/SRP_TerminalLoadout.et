@@ -1,0 +1,46 @@
+GenericEntity : "{98079765627F6EA3}Prefabs/Props/Civilian/Computer_E_01/Computer_E_01_case.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  StaticSoundComponent "{6A4D16DB3D11A0AB}" {
+   Filenames {
+    "{5FC6F9522FDC06B3}Sounds/Props/Civilian/Computer_E_01/Props_Computer_E_01.acp"
+   }
+   Signals 0x6 0
+  }
+  ActionsManagerComponent "{6A4D16DB2467752D}" {
+   ActionContexts {
+    UserActionContext "{6A4D16DB20FFA71B}" {
+     ContextName "terminal"
+     Position PointInfo "{6A4D16DB5ECA8B16}" {
+      Offset 0 1 0
+     }
+     Radius 2
+    }
+   }
+   additionalActions {
+    SRP_LoadoutSaveAction "{6A4D16DB57B91E2E}" {
+     ParentContextList {
+      "terminal"
+     }
+     UIInfo UIInfo "{6A4D16DB67997FA5}" {
+      Name "Enregistrer mon loadout"
+     }
+     ActionTitle "Enregistrer mon loadout"
+     VisibilityRange 3
+     Duration 1
+    }
+    SRP_LoadoutLoadAction "{6A4D16DB8FF64D50}" {
+     ParentContextList {
+      "terminal"
+     }
+     UIInfo UIInfo "{6A4D16DBBAED8771}" {
+      Name "Reprendre mon loadout"
+     }
+     ActionTitle "Reprendre mon loadout"
+     VisibilityRange 3
+     Duration 1
+    }
+   }
+  }
+ }
+}

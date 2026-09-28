@@ -1,0 +1,26 @@
+GameEntity : "{BBD784F8B7D859C2}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_SERVAL_Base.et" {
+ ID "64E91E46686E7ACB"
+ components {
+  InventoryItemComponent "{64E91E46686E7ADF}" {
+   Attributes SCR_ItemAttributeCollection "{64E91E46686E7AE0}" {
+    ItemDisplayName SCR_InventoryUIInfo "{64E91E46686E7AE2}" {
+     Description "Patch Veste De Combat F3"
+     m_aItemHints {
+      SCR_InventoryItemHintUIInfo "{65629353C514D1CA}" {
+       Name "#AMF-InventoryHint-Patch-F3VestOnly"
+      }
+     }
+    }
+    CommonItemType "AMF_PATCH_VESTEF3_RIGHT_NORMAL_01"
+   }
+  }
+  BaseLoadoutClothComponent "{64E91E46686E7AF9}" {
+   WornModel "{B8DFA78FA7640DAC}Assets/Items/Patchs/Patch_OPEX_VesteF3.xob"
+   ItemModel "{B8DFA78FA7640DAC}Assets/Items/Patchs/Patch_OPEX_VesteF3.xob"
+   ItemMaterialsOverride {
+    "{6A5B0C0D0E0FA002}Assets/Ecussons/PAG_Ecusson.emat"
+   }
+  }
+ }
+ coords 1382.394 36.231 2384.797
+}

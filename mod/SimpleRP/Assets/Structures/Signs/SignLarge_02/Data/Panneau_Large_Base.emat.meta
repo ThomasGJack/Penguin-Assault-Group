@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{F6D2D2909C81283D}Assets/Structures/Signs/SignLarge_02/Data/Panneau_Large_Base.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

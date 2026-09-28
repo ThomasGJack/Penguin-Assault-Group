@@ -1,0 +1,1014 @@
+[
+ {
+  "mod": "ACE Ballistics Dev",
+  "dossier": "ACEBallisticsDev_68F77A54920B80AF",
+  "chemin": "Language/ACE_Ballistics_localization.fr_fr.conf",
+  "guid": "C8F610AFB71A9338",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Ballistics-Item_BallisticTables_Mrads_Description\"\r\n  \"ACE_Ballistics-Item_BallisticTables_Mrads_Name\"\r\n  \"ACE_Ballistics-Item_BallisticTables_WpMils_Description\"\r\n  \"ACE_Ballistics-Item_BallisticTables_WpMils_Name\"\r\n }\r\n Texts {\r\n  \"Collection of ballistic tables in milliradians for bullets compatible with your rifle.\"\r\n  \"Ballistic Tables in mrads\"\r\n  \"Collection of ballistic tables in Warsaw Pact mils for bullets compatible with your rifle.\"\r\n  \"Ballistic Tables in WP mils\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Ballistics-Item_BallisticTables_Mrads_Description",
+    "en": "Collection of ballistic tables in milliradians for bullets compatible with your rifle.",
+    "fr_mod": "Collection of ballistic tables in milliradians for bullets compatible with your rifle."
+   },
+   {
+    "id": "ACE_Ballistics-Item_BallisticTables_Mrads_Name",
+    "en": "Ballistic Tables in mrads",
+    "fr_mod": "Ballistic Tables in mrads"
+   },
+   {
+    "id": "ACE_Ballistics-Item_BallisticTables_WpMils_Description",
+    "en": "Collection of ballistic tables in Warsaw Pact mils for bullets compatible with your rifle.",
+    "fr_mod": "Collection of ballistic tables in Warsaw Pact mils for bullets compatible with your rifle."
+   },
+   {
+    "id": "ACE_Ballistics-Item_BallisticTables_WpMils_Name",
+    "en": "Ballistic Tables in WP mils",
+    "fr_mod": "Ballistic Tables in WP mils"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Captives Dev",
+  "dossier": "ACECaptivesDev_65AD7C249E4ECDFB",
+  "chemin": "Language/ACE_Captives_localization.fr_fr.conf",
+  "guid": "454D2F8D6E432375",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Captives-Editor_ContextAction_ToggleCaptive_Name\"\r\n  \"ACE_Captives-Editor_ContextAction_ToggleSurrender_Name\"\r\n  \"ACE_Captives-Emotes_Emote_Surrender_Name\"\r\n  \"ACE_Captives-UserAction_EscortCaptive\"\r\n  \"ACE_Captives-UserAction_ReleasePrisoner\"\r\n  \"ACE_Captives-UserAction_TakeAsPrisoner\"\r\n  \"ACE_Captives-UserAction_UnloadCaptive\"\r\n }\r\n Texts {\r\n  \"Activer/désactiver la prise de prisonniers\"\r\n  \"Basculer la reddition\"\r\n  \"Se rendre\"\r\n  \"Escorté le prisonnier\"\r\n  \"Libérer le prisonnier\"\r\n  \"Faire prisonnier\"\r\n  \"Libérer le prisonnier\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Captives-Editor_ContextAction_ToggleCaptive_Name",
+    "en": "Toggle take prisoner",
+    "fr_mod": "Activer/désactiver la prise de prisonniers"
+   },
+   {
+    "id": "ACE_Captives-Editor_ContextAction_ToggleSurrender_Name",
+    "en": "Toggle surrender",
+    "fr_mod": "Basculer la reddition"
+   },
+   {
+    "id": "ACE_Captives-Emotes_Emote_Surrender_Name",
+    "en": "Surrender",
+    "fr_mod": "Se rendre"
+   },
+   {
+    "id": "ACE_Captives-UserAction_EscortCaptive",
+    "en": "Escort prisoner",
+    "fr_mod": "Escorté le prisonnier"
+   },
+   {
+    "id": "ACE_Captives-UserAction_ReleasePrisoner",
+    "en": "Release prisoner",
+    "fr_mod": "Libérer le prisonnier"
+   },
+   {
+    "id": "ACE_Captives-UserAction_TakeAsPrisoner",
+    "en": "Take as prisoner",
+    "fr_mod": "Faire prisonnier"
+   },
+   {
+    "id": "ACE_Captives-UserAction_UnloadCaptive",
+    "en": "Unload prisoner:",
+    "fr_mod": "Libérer le prisonnier"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Carrying Dev",
+  "dossier": "ACECarryingDev_65AD7C379CBD394D",
+  "chemin": "Language/ACE_Carrying_localization.fr_fr.conf",
+  "guid": "9B8D239D172802B3",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Carrying-UserAction_Drag\"\r\n }\r\n Texts {\r\n  \"Traîner\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Carrying-UserAction_Drag",
+    "en": "Drag",
+    "fr_mod": "Traîner"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Chopping Dev",
+  "dossier": "ACEChoppingDev_65AD7BCC9F6B3B4E",
+  "chemin": "Language/ACE_Chopping_localization.fr_fr.conf",
+  "guid": "80459E0AF3F4276E",
+  "source": "StringTableRuntime {\n Ids {\n  \"ACE_Chopping_RemoveBush\"\n  \"ACE_Chopping_RemoveTree\"\n }\n Texts {\n  \"Retirer le buisson\"\n  \"Retirer l'arbre\"\n }\n}",
+  "lignes": [
+   {
+    "id": "ACE_Chopping_RemoveBush",
+    "en": "Remove Bush",
+    "fr_mod": "Retirer le buisson"
+   },
+   {
+    "id": "ACE_Chopping_RemoveTree",
+    "en": "Remove Tree",
+    "fr_mod": "Retirer l'arbre"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Core Dev",
+  "dossier": "ACECoreDev_65AD7D0D9941A380",
+  "chemin": "Language/ACE_localization.fr_fr.conf",
+  "guid": "FDC979CD6B32CAAD",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE-Acronym\"\r\n  \"ACE-ControlsHint_InspectTurret\"\r\n  \"ACE-Emotes_Emote_MetalClanging_Name\"\r\n  \"ACE-Item_AnvilPatch_Name\"\r\n  \"ACE-Item_Banana_Description\"\r\n  \"ACE-Item_Banana_Name\"\r\n  \"ACE-RadialMenu_ChangeMagazine\"\r\n  \"ACE-Item_CbrnPatch_Name\"\r\n  \"ACE-Item_EngineerPatch_Name\"\r\n  \"ACE-Item_MedicPatch_Name\"\r\n  \"ACE-UserAction_Carry\"\r\n  \"ACE-UserAction_Carrying\"\r\n  \"ACE-UserAction_LoadCarried\"\r\n  \"ACE-UserAction_Release\"\r\n  \"ACE-Weapon_FragBanana_Description\"\r\n  \"ACE-Weapon_FragBanana_Name\"\r\n  \"ACE_Core-AddonName\"\r\n }\r\n Texts {\r\n  \"ACE\"\r\n  \"Inspect Turret\"\r\n  \"Metal clanging\"\r\n  \"ACE Anvil Patch\"\r\n  \"Potassium bon pour la santé !\"\r\n  \"Banane\"\r\n  \"Change magazine\"\r\n  \"ACE CBRN Patch\"\r\n  \"ACE Engineer Patch\"\r\n  \"ACE Medic Patch\"\r\n  \"Porter\"\r\n  \"Porter\"\r\n  \"Charge transportée\"\r\n  \"Déposer\"\r\n  \"Potassium explosif !\"\r\n  \"Banane à fragmentation\"\r\n  \"Core\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE-Acronym",
+    "en": "ACE",
+    "fr_mod": "ACE"
+   },
+   {
+    "id": "ACE-ControlsHint_InspectTurret",
+    "en": "Inspect Turret",
+    "fr_mod": "Inspect Turret"
+   },
+   {
+    "id": "ACE-Emotes_Emote_MetalClanging_Name",
+    "en": "Metal clanging",
+    "fr_mod": "Metal clanging"
+   },
+   {
+    "id": "ACE-Item_AnvilPatch_Name",
+    "en": "ACE Anvil Patch",
+    "fr_mod": "ACE Anvil Patch"
+   },
+   {
+    "id": "ACE-Item_Banana_Description",
+    "en": "Healthy potassium!",
+    "fr_mod": "Potassium bon pour la santé !"
+   },
+   {
+    "id": "ACE-Item_Banana_Name",
+    "en": "Banana",
+    "fr_mod": "Banane"
+   },
+   {
+    "id": "ACE-RadialMenu_ChangeMagazine",
+    "en": "Change magazine",
+    "fr_mod": "Change magazine"
+   },
+   {
+    "id": "ACE-Item_CbrnPatch_Name",
+    "en": "ACE CBRN Patch",
+    "fr_mod": "ACE CBRN Patch"
+   },
+   {
+    "id": "ACE-Item_EngineerPatch_Name",
+    "en": "ACE Engineer Patch",
+    "fr_mod": "ACE Engineer Patch"
+   },
+   {
+    "id": "ACE-Item_MedicPatch_Name",
+    "en": "ACE Medic Patch",
+    "fr_mod": "ACE Medic Patch"
+   },
+   {
+    "id": "ACE-UserAction_Carry",
+    "en": "Carry",
+    "fr_mod": "Porter"
+   },
+   {
+    "id": "ACE-UserAction_Carrying",
+    "en": "Carrying",
+    "fr_mod": "Porter"
+   },
+   {
+    "id": "ACE-UserAction_LoadCarried",
+    "en": "Load carried:",
+    "fr_mod": "Charge transportée"
+   },
+   {
+    "id": "ACE-UserAction_Release",
+    "en": "Release",
+    "fr_mod": "Déposer"
+   },
+   {
+    "id": "ACE-Weapon_FragBanana_Description",
+    "en": "Explosive Potassium!",
+    "fr_mod": "Potassium explosif !"
+   },
+   {
+    "id": "ACE-Weapon_FragBanana_Name",
+    "en": "Frag Banana",
+    "fr_mod": "Banane à fragmentation"
+   },
+   {
+    "id": "ACE_Core-AddonName",
+    "en": "Core",
+    "fr_mod": "Core"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Explosives Dev",
+  "dossier": "ACEExplosivesDev_65AD7D1E9EEAFA53",
+  "chemin": "Language/ACE_Explosives_Localization.fr_fr.conf",
+  "guid": "F4A4D90706A8CFAB",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE-Explosives_FailReason_Buried\"\r\n  \"ACE-Explosives_FailReason_HardSurface\"\r\n  \"ACE-Explosives_Item_DeadManSwitch_Name\"\r\n  \"ACE-Explosives_Item_VMM3_Description\"\r\n  \"ACE-Explosives_Item_VMM3_Name\"\r\n  \"ACE-Explosives_UserAction_Bury_Name\"\r\n  \"ACE-Explosives_UserAction_ConnectToInventoryExplosives_Name\"\r\n  \"ACE-Explosives_UserAction_Disarm_Name\"\r\n  \"ACE-Explosives_UserAction_Unbury_Name\"\r\n }\r\n Texts {\r\n  \"Enterré\"\r\n  \"Surface dure\"\r\n  \"Détonateur par relâchement de pression\"\r\n  \"Metal and mine detector used for clearing landmines and UXO.\"\r\n  \"BMM3 Metal/Mine Detector\"\r\n  \"Enterrer\"\r\n  \"Connect to explosives in inventory\"\r\n  \"Désarmer\"\r\n  \"Déterrer\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE-Explosives_FailReason_Buried",
+    "en": "Buried",
+    "fr_mod": "Enterré"
+   },
+   {
+    "id": "ACE-Explosives_FailReason_HardSurface",
+    "en": "Hard surface",
+    "fr_mod": "Surface dure"
+   },
+   {
+    "id": "ACE-Explosives_Item_DeadManSwitch_Name",
+    "en": "Dead man's switch",
+    "fr_mod": "Détonateur par relâchement de pression"
+   },
+   {
+    "id": "ACE-Explosives_Item_VMM3_Description",
+    "en": "Metal and mine detector used for clearing landmines and UXO.",
+    "fr_mod": "Metal and mine detector used for clearing landmines and UXO."
+   },
+   {
+    "id": "ACE-Explosives_Item_VMM3_Name",
+    "en": "BMM3 Metal/Mine Detector",
+    "fr_mod": "BMM3 Metal/Mine Detector"
+   },
+   {
+    "id": "ACE-Explosives_UserAction_Bury_Name",
+    "en": "Bury",
+    "fr_mod": "Enterrer"
+   },
+   {
+    "id": "ACE-Explosives_UserAction_ConnectToInventoryExplosives_Name",
+    "en": "Connect to explosives in inventory",
+    "fr_mod": "Connect to explosives in inventory"
+   },
+   {
+    "id": "ACE-Explosives_UserAction_Disarm_Name",
+    "en": "Disarm",
+    "fr_mod": "Désarmer"
+   },
+   {
+    "id": "ACE-Explosives_UserAction_Unbury_Name",
+    "en": "Unbury",
+    "fr_mod": "Déterrer"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Facepaint Dev",
+  "dossier": "ACEFacepaintDev_68EAA4B96976D557",
+  "chemin": "Languages/ACE_Facepaint_Localisation_01.fr_fr.conf",
+  "guid": "72569ABBA89E753F",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ace-item-facepaint-uk-description\"\r\n  \"ace-item-facepaint-uk-name\"\r\n  \"ace-item-facepaint-us-description\"\r\n  \"ace-item-facepaint-us-name\"\r\n  \"ace-item-facepaint-ussr-description\"\r\n  \"ace-item-facepaint-ussr-name\"\r\n }\r\n Texts {\r\n  \"Stick de crème camouflage pour le visage, fabriqué au Royaume-Uni. Chaque extrémité contient une crème camouflage de couleur différente\"\r\n  \"Crème de Camouflage\"\r\n  \"Stick de crème camouflage pour le visage, fabriqué aux États-Unis. Chaque extrémité contient une crème camouflage de couleur différente.\"\r\n  \"Crème de Camouflage\"\r\n  \"stick de crème de camouflage pour le visage, de fabrication soviétique\"\r\n  \"Crème de Camouflage\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ace-item-facepaint-uk-description",
+    "en": "UK manufactured camouflage face cream stick. Either end has a different colour camouflage cream.",
+    "fr_mod": "Stick de crème camouflage pour le visage, fabriqué au Royaume-Uni. Chaque extrémité contient une crème camouflage de couleur différente"
+   },
+   {
+    "id": "ace-item-facepaint-uk-name",
+    "en": "Camouflage Face Cream",
+    "fr_mod": "Crème de Camouflage"
+   },
+   {
+    "id": "ace-item-facepaint-us-description",
+    "en": "US manufactured camouflage face cream stick. Either end has a different colour camouflage cream.",
+    "fr_mod": "Stick de crème camouflage pour le visage, fabriqué aux États-Unis. Chaque extrémité contient une crème camouflage de couleur différente."
+   },
+   {
+    "id": "ace-item-facepaint-us-name",
+    "en": "Camouflage Face Cream",
+    "fr_mod": "Crème de Camouflage"
+   },
+   {
+    "id": "ace-item-facepaint-ussr-description",
+    "en": "Soviet manufactured camouflage face cream stick.",
+    "fr_mod": "stick de crème de camouflage pour le visage, de fabrication soviétique"
+   },
+   {
+    "id": "ace-item-facepaint-ussr-name",
+    "en": "Camouflage Face Cream",
+    "fr_mod": "Crème de Camouflage"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Finger Dev",
+  "dossier": "ACEFingerDev_65AD7D2E9866FA6E",
+  "chemin": "Language/ACE_Finger_localization.fr_fr.conf",
+  "guid": "7BCB15EE938CB63F",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Finger-AddonName\"\r\n  \"ACE_Finger-Keybind_PointOnMap\"\r\n  \"ACE_Finger-Notification_PlayerPointsAtEntity\"\r\n  \"ACE_Finger-Notification_PlayerPointsAtPosition\"\r\n }\r\n Texts {\r\n  \"Doigt\"\r\n  \"Pointer sur la carte\"\r\n  \"%1 désigne %2\"\r\n  \"%1 indique une position\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Finger-AddonName",
+    "en": "Finger",
+    "fr_mod": "Doigt"
+   },
+   {
+    "id": "ACE_Finger-Keybind_PointOnMap",
+    "en": "Point on map",
+    "fr_mod": "Pointer sur la carte"
+   },
+   {
+    "id": "ACE_Finger-Notification_PlayerPointsAtEntity",
+    "en": "%1 points at %2",
+    "fr_mod": "%1 désigne %2"
+   },
+   {
+    "id": "ACE_Finger-Notification_PlayerPointsAtPosition",
+    "en": "%1 points at position",
+    "fr_mod": "%1 indique une position"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Medical Breathing Dev",
+  "dossier": "ACEMedicalBreathingDev_671F73D99978B4F2",
+  "chemin": "Language/ACE_Medical_Breathing_localization.fr_fr.conf",
+  "guid": "D42E3638EBAD3845",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Medical-InfoWidget_ChestSeal\"\r\n  \"ACE_Medical-InfoWidget_KingLT\"\r\n  \"ACE_Medical-InfoWidget_NCDKit\"\r\n  \"ACE_Medical-InfoWidget_OxygenMask\"\r\n  \"ACE_Medical-Item_ChestSeal_Description\"\r\n  \"ACE_Medical-Item_ChestSeal_Name\"\r\n  \"ACE_Medical-Item_KingLT_Description\"\r\n  \"ACE_Medical-Item_KingLT_Name\"\r\n  \"ACE_Medical-Item_NCDKit_Description\"\r\n  \"ACE_Medical-Item_NCDKit_Name\"\r\n  \"ACE_Medical-Item_OxygenMask_Description\"\r\n  \"ACE_Medical-Item_OxygenMask_Name\"\r\n  \"ACE_Medical-Notification_BREATHING_RESULT\"\r\n  \"ACE_Medical-Notification_SPO2_RESULT\"\r\n  \"ACE_Medical-OpenPneumothorax\"\r\n  \"ACE_Medical-RadialMenu_AirwayThoraxManagement\"\r\n  \"ACE_Medical-TensionPneumothorax\"\r\n  \"ACE_Medical-UserAction_CheckBreathing\"\r\n  \"ACE_Medical-UserAction_CheckSpO2\"\r\n  \"ACE_Medical-UserAction_ChestSeal\"\r\n  \"ACE_Medical-UserAction_ClearVomit\"\r\n  \"ACE_Medical-UserAction_KingLT\"\r\n  \"ACE_Medical-UserAction_NeedleDecompression\"\r\n  \"ACE_Medical-UserAction_OxygenMask\"\r\n  \"ACE_Medical-UserAction_TiltHead\"\r\n }\r\n Texts {\r\n  \"Prevents tension pneumothorax\"\r\n  \"Prevents obstruction and occlusion of airways\"\r\n  \"Used for treating tension pneumothorax\"\r\n  \"Provides supplemental oxygen\"\r\n  \"Special dressing for open chest wounds\"\r\n  \"Chest Seal\"\r\n  \"Airway management device inserted into throat\"\r\n  \"King LT\"\r\n  \"Kit for performing needle decompression\"\r\n  \"NCD Kit\"\r\n  \"Mask for oxygen therapy\"\r\n  \"Oxygen Mask\"\r\n  \"You find a respiratory rate of %1 breaths per minute\"\r\n  \"You find a SpO2 of %1%\"\r\n  \"Open pneumothorax\"\r\n  \"Airway/Thorax management\"\r\n  \"Tension pneumothorax\"\r\n  \"Check respiratory rate\"\r\n  \"Check SpO2\"\r\n  \"Use chest seal\"\r\n  \"Clear vomit\"\r\n  \"Insert King LT\"\r\n  \"Perform needle decompression\"\r\n  \"Put on oxygen mask\"\r\n  \"Lift chin\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Medical-InfoWidget_ChestSeal",
+    "en": "Prevents tension pneumothorax",
+    "fr_mod": "Prevents tension pneumothorax"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_KingLT",
+    "en": "Prevents obstruction and occlusion of airways",
+    "fr_mod": "Prevents obstruction and occlusion of airways"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_NCDKit",
+    "en": "Used for treating tension pneumothorax",
+    "fr_mod": "Used for treating tension pneumothorax"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_OxygenMask",
+    "en": "Provides supplemental oxygen",
+    "fr_mod": "Provides supplemental oxygen"
+   },
+   {
+    "id": "ACE_Medical-Item_ChestSeal_Description",
+    "en": "Special dressing for open chest wounds",
+    "fr_mod": "Special dressing for open chest wounds"
+   },
+   {
+    "id": "ACE_Medical-Item_ChestSeal_Name",
+    "en": "Chest Seal",
+    "fr_mod": "Chest Seal"
+   },
+   {
+    "id": "ACE_Medical-Item_KingLT_Description",
+    "en": "Airway management device inserted into throat",
+    "fr_mod": "Airway management device inserted into throat"
+   },
+   {
+    "id": "ACE_Medical-Item_KingLT_Name",
+    "en": "King LT",
+    "fr_mod": "King LT"
+   },
+   {
+    "id": "ACE_Medical-Item_NCDKit_Description",
+    "en": "Kit for performing needle decompression",
+    "fr_mod": "Kit for performing needle decompression"
+   },
+   {
+    "id": "ACE_Medical-Item_NCDKit_Name",
+    "en": "NCD Kit",
+    "fr_mod": "NCD Kit"
+   },
+   {
+    "id": "ACE_Medical-Item_OxygenMask_Description",
+    "en": "Mask for oxygen therapy",
+    "fr_mod": "Mask for oxygen therapy"
+   },
+   {
+    "id": "ACE_Medical-Item_OxygenMask_Name",
+    "en": "Oxygen Mask",
+    "fr_mod": "Oxygen Mask"
+   },
+   {
+    "id": "ACE_Medical-Notification_BREATHING_RESULT",
+    "en": "You find a respiratory rate of %1 breaths per minute",
+    "fr_mod": "You find a respiratory rate of %1 breaths per minute"
+   },
+   {
+    "id": "ACE_Medical-Notification_SPO2_RESULT",
+    "en": "You find a SpO2 of %1%",
+    "fr_mod": "You find a SpO2 of %1%"
+   },
+   {
+    "id": "ACE_Medical-OpenPneumothorax",
+    "en": "Open pneumothorax",
+    "fr_mod": "Open pneumothorax"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_AirwayThoraxManagement",
+    "en": "Airway/Thorax management",
+    "fr_mod": "Airway/Thorax management"
+   },
+   {
+    "id": "ACE_Medical-TensionPneumothorax",
+    "en": "Tension pneumothorax",
+    "fr_mod": "Tension pneumothorax"
+   },
+   {
+    "id": "ACE_Medical-UserAction_CheckBreathing",
+    "en": "Check respiratory rate",
+    "fr_mod": "Check respiratory rate"
+   },
+   {
+    "id": "ACE_Medical-UserAction_CheckSpO2",
+    "en": "Check SpO2",
+    "fr_mod": "Check SpO2"
+   },
+   {
+    "id": "ACE_Medical-UserAction_ChestSeal",
+    "en": "Use chest seal",
+    "fr_mod": "Use chest seal"
+   },
+   {
+    "id": "ACE_Medical-UserAction_ClearVomit",
+    "en": "Clear vomit",
+    "fr_mod": "Clear vomit"
+   },
+   {
+    "id": "ACE_Medical-UserAction_KingLT",
+    "en": "Insert King LT",
+    "fr_mod": "Insert King LT"
+   },
+   {
+    "id": "ACE_Medical-UserAction_NeedleDecompression",
+    "en": "Perform needle decompression",
+    "fr_mod": "Perform needle decompression"
+   },
+   {
+    "id": "ACE_Medical-UserAction_OxygenMask",
+    "en": "Put on oxygen mask",
+    "fr_mod": "Put on oxygen mask"
+   },
+   {
+    "id": "ACE_Medical-UserAction_TiltHead",
+    "en": "Lift chin",
+    "fr_mod": "Lift chin"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Medical Circulation Dev",
+  "dossier": "ACEMedicalCirculationDev_65AD7D4F994EA327",
+  "chemin": "Language/ACE_Medical_Circulation_localization.fr_fr.conf",
+  "guid": "9C69F13E858E40AF",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Medical-AmmoniumCarbonatePackageAction\"\r\n  \"ACE_Medical-BloodState_Class1\"\r\n  \"ACE_Medical-BloodState_Class2\"\r\n  \"ACE_Medical-BloodState_Class3\"\r\n  \"ACE_Medical-BloodState_Class4\"\r\n  \"ACE_Medical-CheckBloodPressureAction\"\r\n  \"ACE_Medical-CheckPulseAction\"\r\n  \"ACE_Medical-CPRAction\"\r\n  \"ACE_Medical-Editor_TooltipDetail_Brain_Name\"\r\n  \"ACE_Medical-Editor_TooltipDetail_VitalSigns_Name\"\r\n  \"ACE_Medical-FailReason_NotOnBack\"\r\n  \"ACE_Medical-InfoWidget_AmmoniumCarbonate\"\r\n  \"ACE_Medical-InfoWidget_Epinephrine\"\r\n  \"ACE_Medical-InfoWidget_Metoprolol\"\r\n  \"ACE_Medical-InfoWidget_Naloxone\"\r\n  \"ACE_Medical-InfoWidget_Phenylephrine\"\r\n  \"ACE_Medical-Item_AmmoniumCarbonate_Description\"\r\n  \"ACE_Medical-Item_AmmoniumCarbonate_Name\"\r\n  \"ACE_Medical-Item_Epinephrine_Description\"\r\n  \"ACE_Medical-Item_Epinephrine_Name\"\r\n  \"ACE_Medical-Item_Metoprolol_Description\"\r\n  \"ACE_Medical-Item_Metoprolol_Name\"\r\n  \"ACE_Medical-Item_Naloxone_Description\"\r\n  \"ACE_Medical-Item_Naloxone_Name\"\r\n  \"ACE_Medical-Item_Phenylephrine_Description\"\r\n  \"ACE_Medical-Item_Phenylephrine_Name\"\r\n  \"ACE_Medical-MetoprololInjectionAction\"\r\n  \"ACE_Medical-NaloxoneInjectionAction\"\r\n  \"ACE_Medical-Notification_BLOOD_PRESSURE_RESULT\"\r\n  \"ACE_Medical-Notification_PULSE_RESULT\"\r\n  \"ACE_Medical-PhenylephrineInjectionAction\"\r\n }\r\n Texts {\r\n  \"Hold under nose\"\r\n  \"Class I hemorrhage\"\r\n  \"Class II hemorrhage\"\r\n  \"Class III hemorrhage\"\r\n  \"Class IV hemorrhage\"\r\n  \"Check blood pressure\"\r\n  \"Check pulse\"\r\n  \"Perform CPR\"\r\n  \"Brain\"\r\n  \"Vital signs\"\r\n  \"Not on back\"\r\n  \"Increases wake-up chance\"\r\n  \"Increases heart rate\"\r\n  \"Decreases heart rate\"\r\n  \"Antagonist for opioids like morphine\"\r\n  \"Increases blood pressure and slows down bleeding and transfusion\"\r\n  \"Administered to unconscious patients.\"\r\n  \"Ammonium Carbonate\"\r\n  \"Administered to patients in cardiac arrest\"\r\n  \"Epinephrine\"\r\n  \"Administered to patients with too high heart rate\"\r\n  \"Metoprolol\"\r\n  \"Administered to patients with opioid overdose\"\r\n  \"Naloxone\"\r\n  \"Administered to patients for raising blood pressure\"\r\n  \"Phenylephrine\"\r\n  \"Inject metoprolol\"\r\n  \"Inject naloxone\"\r\n  \"You find a blood pressure of %1/%2 mmHg\"\r\n  \"You find a heart rate of %1\"\r\n  \"Inject phenylephrine\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Medical-AmmoniumCarbonatePackageAction",
+    "en": "Hold under nose",
+    "fr_mod": "Hold under nose"
+   },
+   {
+    "id": "ACE_Medical-BloodState_Class1",
+    "en": "Class I hemorrhage",
+    "fr_mod": "Class I hemorrhage"
+   },
+   {
+    "id": "ACE_Medical-BloodState_Class2",
+    "en": "Class II hemorrhage",
+    "fr_mod": "Class II hemorrhage"
+   },
+   {
+    "id": "ACE_Medical-BloodState_Class3",
+    "en": "Class III hemorrhage",
+    "fr_mod": "Class III hemorrhage"
+   },
+   {
+    "id": "ACE_Medical-BloodState_Class4",
+    "en": "Class IV hemorrhage",
+    "fr_mod": "Class IV hemorrhage"
+   },
+   {
+    "id": "ACE_Medical-CheckBloodPressureAction",
+    "en": "Check blood pressure",
+    "fr_mod": "Check blood pressure"
+   },
+   {
+    "id": "ACE_Medical-CheckPulseAction",
+    "en": "Check pulse",
+    "fr_mod": "Check pulse"
+   },
+   {
+    "id": "ACE_Medical-CPRAction",
+    "en": "Perform CPR",
+    "fr_mod": "Perform CPR"
+   },
+   {
+    "id": "ACE_Medical-Editor_TooltipDetail_Brain_Name",
+    "en": "Brain",
+    "fr_mod": "Brain"
+   },
+   {
+    "id": "ACE_Medical-Editor_TooltipDetail_VitalSigns_Name",
+    "en": "Vital signs",
+    "fr_mod": "Vital signs"
+   },
+   {
+    "id": "ACE_Medical-FailReason_NotOnBack",
+    "en": "Not on back",
+    "fr_mod": "Not on back"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_AmmoniumCarbonate",
+    "en": "Increases wake-up chance",
+    "fr_mod": "Increases wake-up chance"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Epinephrine",
+    "en": "Increases heart rate",
+    "fr_mod": "Increases heart rate"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Metoprolol",
+    "en": "Decreases heart rate",
+    "fr_mod": "Decreases heart rate"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Naloxone",
+    "en": "Antagonist for opioids like morphine",
+    "fr_mod": "Antagonist for opioids like morphine"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Phenylephrine",
+    "en": "Increases blood pressure and slows down bleeding and transfusion",
+    "fr_mod": "Increases blood pressure and slows down bleeding and transfusion"
+   },
+   {
+    "id": "ACE_Medical-Item_AmmoniumCarbonate_Description",
+    "en": "Administered to unconscious patients.",
+    "fr_mod": "Administered to unconscious patients."
+   },
+   {
+    "id": "ACE_Medical-Item_AmmoniumCarbonate_Name",
+    "en": "Ammonium Carbonate",
+    "fr_mod": "Ammonium Carbonate"
+   },
+   {
+    "id": "ACE_Medical-Item_Epinephrine_Description",
+    "en": "Administered to patients in cardiac arrest",
+    "fr_mod": "Administered to patients in cardiac arrest"
+   },
+   {
+    "id": "ACE_Medical-Item_Epinephrine_Name",
+    "en": "Epinephrine",
+    "fr_mod": "Epinephrine"
+   },
+   {
+    "id": "ACE_Medical-Item_Metoprolol_Description",
+    "en": "Administered to patients with too high heart rate",
+    "fr_mod": "Administered to patients with too high heart rate"
+   },
+   {
+    "id": "ACE_Medical-Item_Metoprolol_Name",
+    "en": "Metoprolol",
+    "fr_mod": "Metoprolol"
+   },
+   {
+    "id": "ACE_Medical-Item_Naloxone_Description",
+    "en": "Administered to patients with opioid overdose",
+    "fr_mod": "Administered to patients with opioid overdose"
+   },
+   {
+    "id": "ACE_Medical-Item_Naloxone_Name",
+    "en": "Naloxone",
+    "fr_mod": "Naloxone"
+   },
+   {
+    "id": "ACE_Medical-Item_Phenylephrine_Description",
+    "en": "Administered to patients for raising blood pressure",
+    "fr_mod": "Administered to patients for raising blood pressure"
+   },
+   {
+    "id": "ACE_Medical-Item_Phenylephrine_Name",
+    "en": "Phenylephrine",
+    "fr_mod": "Phenylephrine"
+   },
+   {
+    "id": "ACE_Medical-MetoprololInjectionAction",
+    "en": "Inject metoprolol",
+    "fr_mod": "Inject metoprolol"
+   },
+   {
+    "id": "ACE_Medical-NaloxoneInjectionAction",
+    "en": "Inject naloxone",
+    "fr_mod": "Inject naloxone"
+   },
+   {
+    "id": "ACE_Medical-Notification_BLOOD_PRESSURE_RESULT",
+    "en": "You find a blood pressure of %1/%2 mmHg",
+    "fr_mod": "You find a blood pressure of %1/%2 mmHg"
+   },
+   {
+    "id": "ACE_Medical-Notification_PULSE_RESULT",
+    "en": "You find a heart rate of %1",
+    "fr_mod": "You find a heart rate of %1"
+   },
+   {
+    "id": "ACE_Medical-PhenylephrineInjectionAction",
+    "en": "Inject phenylephrine",
+    "fr_mod": "Inject phenylephrine"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Medical Core Dev",
+  "dossier": "ACEMedicalCoreDev_6586079789278413",
+  "chemin": "Language/ACE_Medical_Core_localization.fr_fr.conf",
+  "guid": "1B1D52F35D553826",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Medical-AddonName\"\r\n  \"ACE_Medical-Editor_TooltipDetail_Resilience_Name\"\r\n  \"ACE_Medical-EpinephrineInjectionAction\"\r\n  \"ACE_Medical-FailReason_NoPain\"\r\n  \"ACE_Medical-FailReason_NotUnconscious\"\r\n  \"ACE_Medical-FailReason_TooInjured\"\r\n  \"ACE_Medical-InfoWidget_Epinephrine\"\r\n  \"ACE_Medical-InfoWidget_Morphine\"\r\n  \"ACE_Medical-Item_Epinephrine_Description\"\r\n  \"ACE_Medical-Item_Epinephrine_Name\"\r\n  \"ACE_Medical-Item_Morphine_Description\"\r\n  \"ACE_Medical-KeyBind_OpenRadialMenu\"\r\n  \"ACE_Medical-RadialMenu_ExaminePatient\"\r\n  \"ACE_Medical-RadialMenu_FluidReplacement\"\r\n  \"ACE_Medical-RadialMenu_FractureManagement\"\r\n  \"ACE_Medical-RadialMenu_HemorrhageControl\"\r\n  \"ACE_Medical-RadialMenu_Medication\"\r\n  \"ACE_Medical-UserAction_BackPosition\"\r\n  \"ACE_Medical-UserAction_LeftRecoveryPosition\"\r\n  \"ACE_Medical-UserAction_RightRecoveryPosition\"\r\n }\r\n Texts {\r\n  \"Médecin\"\r\n  \"Résilience\"\r\n  \"Injecter de l'épiméphine\"\r\n  \"Ne ressent pas de douleur\"\r\n  \"Conscient\"\r\n  \"Grièvement blessé\"\r\n  \"Augmente les chances de reprise de connaissance\"\r\n  \"Soulage les douleurs intenses\"\r\n  \"Administrée à des patients inconscients.\"\r\n  \"Épinéphrine\"\r\n  \"Administré aux patients souffrant de douleurs intenses.\"\r\n  \"Ouvrir le menu radial médical\"\r\n  \"Examiner le patient\"\r\n  \"Remplacement du fluide\"\r\n  \"Gestion des fractures\"\r\n  \"Contrôle des hémorragies\"\r\n  \"Médication\"\r\n  \"Mettre sur le dos\"\r\n  \"Mettre en position de récupération gauche\"\r\n  \"Mettre en position de récupération droite\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Medical-AddonName",
+    "en": "Medical",
+    "fr_mod": "Médecin"
+   },
+   {
+    "id": "ACE_Medical-Editor_TooltipDetail_Resilience_Name",
+    "en": "Resilience",
+    "fr_mod": "Résilience"
+   },
+   {
+    "id": "ACE_Medical-EpinephrineInjectionAction",
+    "en": "Inject epinephrine",
+    "fr_mod": "Injecter de l'épiméphine"
+   },
+   {
+    "id": "ACE_Medical-FailReason_NoPain",
+    "en": "Not in pain",
+    "fr_mod": "Ne ressent pas de douleur"
+   },
+   {
+    "id": "ACE_Medical-FailReason_NotUnconscious",
+    "en": "Not unconscious",
+    "fr_mod": "Conscient"
+   },
+   {
+    "id": "ACE_Medical-FailReason_TooInjured",
+    "en": "Too injured",
+    "fr_mod": "Grièvement blessé"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Epinephrine",
+    "en": "Increases wake-up chance",
+    "fr_mod": "Augmente les chances de reprise de connaissance"
+   },
+   {
+    "id": "ACE_Medical-InfoWidget_Morphine",
+    "en": "Alleviates severe pain",
+    "fr_mod": "Soulage les douleurs intenses"
+   },
+   {
+    "id": "ACE_Medical-Item_Epinephrine_Description",
+    "en": "Administered to unconscious patients.",
+    "fr_mod": "Administrée à des patients inconscients."
+   },
+   {
+    "id": "ACE_Medical-Item_Epinephrine_Name",
+    "en": "Epinephrine",
+    "fr_mod": "Épinéphrine"
+   },
+   {
+    "id": "ACE_Medical-Item_Morphine_Description",
+    "en": "Administered to patients in severe pain.",
+    "fr_mod": "Administré aux patients souffrant de douleurs intenses."
+   },
+   {
+    "id": "ACE_Medical-KeyBind_OpenRadialMenu",
+    "en": "Open medical radial menu",
+    "fr_mod": "Ouvrir le menu radial médical"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_ExaminePatient",
+    "en": "Examine patient",
+    "fr_mod": "Examiner le patient"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_FluidReplacement",
+    "en": "Fluid Replacement",
+    "fr_mod": "Remplacement du fluide"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_FractureManagement",
+    "en": "Fracture management",
+    "fr_mod": "Gestion des fractures"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_HemorrhageControl",
+    "en": "Hemorrhage control",
+    "fr_mod": "Contrôle des hémorragies"
+   },
+   {
+    "id": "ACE_Medical-RadialMenu_Medication",
+    "en": "Medication",
+    "fr_mod": "Médication"
+   },
+   {
+    "id": "ACE_Medical-UserAction_BackPosition",
+    "en": "Put on back",
+    "fr_mod": "Mettre sur le dos"
+   },
+   {
+    "id": "ACE_Medical-UserAction_LeftRecoveryPosition",
+    "en": "Put in left recovery position",
+    "fr_mod": "Mettre en position de récupération gauche"
+   },
+   {
+    "id": "ACE_Medical-UserAction_RightRecoveryPosition",
+    "en": "Put in right recovery position",
+    "fr_mod": "Mettre en position de récupération droite"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Overheating Dev",
+  "dossier": "ACEOverheatingDev_65B8EA178A3E94E3",
+  "chemin": "Language/ACE_Overheating_localization.fr_fr.conf",
+  "guid": "025AF554CF061DA3",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Overheating-AddonName\"\r\n  \"ACE_Overheating-CheckBarrelTemperaturAction\"\r\n  \"ACE_Overheating-CoolBarrelInWaterAction\"\r\n  \"ACE_Overheating-Notification_BARREL_TEMPERATURE_RESULT\"\r\n  \"ACE_Overheating-SwapBarrelAction\"\r\n  \"ACE_Overheating_TryClearWeaponJam\"\r\n }\r\n Texts {\r\n  \"Overheating\"\r\n  \"Check barrel temperature\"\r\n  \"Cool barrel in water\"\r\n  \"You find a barrel temperature of %1 °C\"\r\n  \"Swap barrel\"\r\n  \"Try clear weapon jam\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Overheating-AddonName",
+    "en": "Overheating",
+    "fr_mod": "Overheating"
+   },
+   {
+    "id": "ACE_Overheating-CheckBarrelTemperaturAction",
+    "en": "Check barrel temperature",
+    "fr_mod": "Check barrel temperature"
+   },
+   {
+    "id": "ACE_Overheating-CoolBarrelInWaterAction",
+    "en": "Cool barrel in water",
+    "fr_mod": "Cool barrel in water"
+   },
+   {
+    "id": "ACE_Overheating-Notification_BARREL_TEMPERATURE_RESULT",
+    "en": "You find a barrel temperature of %1 °C",
+    "fr_mod": "You find a barrel temperature of %1 °C"
+   },
+   {
+    "id": "ACE_Overheating-SwapBarrelAction",
+    "en": "Swap barrel",
+    "fr_mod": "Swap barrel"
+   },
+   {
+    "id": "ACE_Overheating_TryClearWeaponJam",
+    "en": "Try clear weapon jam",
+    "fr_mod": "Try clear weapon jam"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Radio Dev",
+  "dossier": "ACERadioDev_65AD7C75826B46C6",
+  "chemin": "Language/ACE_Radio_language.fr_fr.conf",
+  "guid": "4A7408D4920F75FD",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Radio-FailReason_NotLoaded\"\r\n  \"ACE_Radio-Item_KYK13_Description\"\r\n  \"ACE_Radio-Item_KYK13_Name\"\r\n  \"ACE_Radio-Settings-Radio\"\r\n  \"ACE_Radio-Settings-Radio_Beep_Ch1\"\r\n  \"ACE_Radio-Settings-Radio_Beep_Ch2\"\r\n  \"ACE_Radio-Settings-Radio_Beep_High\"\r\n  \"ACE_Radio-Settings-Radio_Beep_Low\"\r\n  \"ACE_Radio-Settings-Radio_Beep_Off\"\r\n  \"ACE_Radio-Settings_Beep_Cycle\"\r\n  \"ACE_Radio-Settings_Click_Off\"\r\n  \"ACE_Radio-UserAction_Address\"\r\n  \"ACE_Radio-UserAction_ClearAll\"\r\n  \"ACE_Radio-UserAction_CopyKey\"\r\n  \"ACE_Radio-UserAction_LoadKey\"\r\n }\r\n Texts {\r\n  \"Not loaded\"\r\n  \"A module used for transferring cryptographic keys to radios.\"\r\n  \"KYK-13 Fill Device\"\r\n  \"Radio\"\r\n  \"Signal de transmission audible pour le canal 1\"\r\n  \"Signal de transmission audible pour le canal 2\"\r\n  \"Haut\"\r\n  \"Bas\"\r\n  \"Désactivé\"\r\n  \"bip de cycle de l'émetteur-récepteur\"\r\n  \"Click-off sound when transmission ends\"\r\n  \"Address: %1\"\r\n  \"Clear all\"\r\n  \"Copy %1 to %2\"\r\n  \"Load %1\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Radio-FailReason_NotLoaded",
+    "en": "Not loaded",
+    "fr_mod": "Not loaded"
+   },
+   {
+    "id": "ACE_Radio-Item_KYK13_Description",
+    "en": "A module used for transferring cryptographic keys to radios.",
+    "fr_mod": "A module used for transferring cryptographic keys to radios."
+   },
+   {
+    "id": "ACE_Radio-Item_KYK13_Name",
+    "en": "KYK-13 Fill Device",
+    "fr_mod": "KYK-13 Fill Device"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio",
+    "en": "Radio",
+    "fr_mod": "Radio"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio_Beep_Ch1",
+    "en": "Ch.1 transmission beep",
+    "fr_mod": "Signal de transmission audible pour le canal 1"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio_Beep_Ch2",
+    "en": "Ch.2 transmission beep",
+    "fr_mod": "Signal de transmission audible pour le canal 2"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio_Beep_High",
+    "en": "High",
+    "fr_mod": "Haut"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio_Beep_Low",
+    "en": "Low",
+    "fr_mod": "Bas"
+   },
+   {
+    "id": "ACE_Radio-Settings-Radio_Beep_Off",
+    "en": "Off",
+    "fr_mod": "Désactivé"
+   },
+   {
+    "id": "ACE_Radio-Settings_Beep_Cycle",
+    "en": "Transceiver cycle beep",
+    "fr_mod": "bip de cycle de l'émetteur-récepteur"
+   },
+   {
+    "id": "ACE_Radio-Settings_Click_Off",
+    "en": "Click-off sound when transmission ends",
+    "fr_mod": "Click-off sound when transmission ends"
+   },
+   {
+    "id": "ACE_Radio-UserAction_Address",
+    "en": "Address: %1",
+    "fr_mod": "Address: %1"
+   },
+   {
+    "id": "ACE_Radio-UserAction_ClearAll",
+    "en": "Clear all",
+    "fr_mod": "Clear all"
+   },
+   {
+    "id": "ACE_Radio-UserAction_CopyKey",
+    "en": "Copy %1 to %2",
+    "fr_mod": "Copy %1 to %2"
+   },
+   {
+    "id": "ACE_Radio-UserAction_LoadKey",
+    "en": "Load %1",
+    "fr_mod": "Load %1"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Scopes Dev",
+  "dossier": "ACEScopesDev_68FC0EDE9F677A3C",
+  "chemin": "Language/ACE_Scopes_localization.fr_fr.conf",
+  "guid": "CD82C37E1FDC0B9D",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Scopes-AddonName\"\r\n  \"ACE_Scopes-KeyBind_ACE_HorizontalZeroingLeft_Name\"\r\n  \"ACE_Scopes-KeyBind_ACE_HorizontalZeroingRight_Name\"\r\n  \"ACE_Scopes-KeyBind_VerticalZeroingDown_Name\"\r\n  \"ACE_Scopes-KeyBind_VerticalZeroingUp_Name\"\r\n }\r\n Texts {\r\n  \"Scopes\"\r\n  \"Adjust windage left\"\r\n  \"Adjust windage right\"\r\n  \"Adjust elevation down\"\r\n  \"Adjust elevation up \"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Scopes-AddonName",
+    "en": "Scopes",
+    "fr_mod": "Scopes"
+   },
+   {
+    "id": "ACE_Scopes-KeyBind_ACE_HorizontalZeroingLeft_Name",
+    "en": "Adjust windage left",
+    "fr_mod": "Adjust windage left"
+   },
+   {
+    "id": "ACE_Scopes-KeyBind_ACE_HorizontalZeroingRight_Name",
+    "en": "Adjust windage right",
+    "fr_mod": "Adjust windage right"
+   },
+   {
+    "id": "ACE_Scopes-KeyBind_VerticalZeroingDown_Name",
+    "en": "Adjust elevation down",
+    "fr_mod": "Adjust elevation down"
+   },
+   {
+    "id": "ACE_Scopes-KeyBind_VerticalZeroingUp_Name",
+    "en": "Adjust elevation up ",
+    "fr_mod": "Adjust elevation up "
+   }
+  ]
+ },
+ {
+  "mod": "ACE Tactical Ladder Dev",
+  "dossier": "ACETacticalLadderDev_65AD7CB89F219E38",
+  "chemin": "Language/ACE_TacticalLadder_localization.fr_fr.conf",
+  "guid": "8FB68A3955F54973",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_TacticalLadder-Item_Description\"\r\n  \"ACE_TacticalLadder-Item_Name\"\r\n  \"ACE_TacticalLadder-UserAction_Extend\"\r\n  \"ACE_TacticalLadder-UserAction_TooShort\"\r\n  \"ACE_TacticalLadder-UserAction_TopExitObstructed\"\r\n }\r\n Texts {\r\n  \"Échelle portable pour franchir des obstacles ou pour une entrée tactique\"\r\n  \"Echelle télescopique\"\r\n  \"Ajuster\"\r\n  \"Trop court\"\r\n  \"Sortie supérieure obstruée\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_TacticalLadder-Item_Description",
+    "en": "Portable ladder for scaling obstacles or tactical entry.",
+    "fr_mod": "Échelle portable pour franchir des obstacles ou pour une entrée tactique"
+   },
+   {
+    "id": "ACE_TacticalLadder-Item_Name",
+    "en": "Telescopic Ladder",
+    "fr_mod": "Echelle télescopique"
+   },
+   {
+    "id": "ACE_TacticalLadder-UserAction_Extend",
+    "en": "Extend",
+    "fr_mod": "Ajuster"
+   },
+   {
+    "id": "ACE_TacticalLadder-UserAction_TooShort",
+    "en": "Too short",
+    "fr_mod": "Trop court"
+   },
+   {
+    "id": "ACE_TacticalLadder-UserAction_TopExitObstructed",
+    "en": "Top exit obstructed",
+    "fr_mod": "Sortie supérieure obstruée"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Tactical Periscope Dev",
+  "dossier": "ACETacticalPeriscopeDev_65AD7CD09CAEC4E2",
+  "chemin": "Language/ACE_TacticalPeriscope_localization.fr_fr.conf",
+  "guid": "659650ACAC7CAEDB",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_TacticalPeriscope-Item_Periscope_Description\"\r\n  \"ACE_TacticalPeriscope-Item_Periscope_Name\"\r\n }\r\n Texts {\r\n  \"Périscope portatif pour observer derrière un abri\"\r\n  \"Périscope\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_TacticalPeriscope-Item_Periscope_Description",
+    "en": "Handheld periscope for peaking from behind cover.",
+    "fr_mod": "Périscope portatif pour observer derrière un abri"
+   },
+   {
+    "id": "ACE_TacticalPeriscope-Item_Periscope_Name",
+    "en": "Periscope",
+    "fr_mod": "Périscope"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Trenches Dev",
+  "dossier": "ACETrenchesDev_65AD7CE59E8DB349",
+  "chemin": "Language/ACE_Trenches_localization.fr_fr.conf",
+  "guid": "65CC6E27D400D8F6",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Trenches-EditableEntity_PersonalTrench_01_big_Name\"\r\n  \"ACE_Trenches-EditableEntity_PersonalTrench_01_giant_Name\"\r\n  \"ACE_Trenches-EditableEntity_PersonalTrench_01_small_Name\"\r\n  \"ACE_Trenches-EditableEntity_TrenchSegment_01_short_Name\"\r\n  \"ACE_Trenches-EditableEntity_VehicleTrench_01_Name\"\r\n  \"ACE_Trenches-Item_SandbagContainer_Description\"\r\n  \"ACE_Trenches-Item_SandbagContainer_Name\"\r\n }\r\n Texts {\r\n  \"Personal Trench (Big)\"\r\n  \"Personal Trench (Giant)\"\r\n  \"Personal Trench (Small)\"\r\n  \"Trench Segment (Short)\"\r\n  \"Vehicle Trench\"\r\n  \"Storage container for transporting empty sandbags.\"\r\n  \"Sandbag Container\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Trenches-EditableEntity_PersonalTrench_01_big_Name",
+    "en": "Personal Trench (Big)",
+    "fr_mod": "Personal Trench (Big)"
+   },
+   {
+    "id": "ACE_Trenches-EditableEntity_PersonalTrench_01_giant_Name",
+    "en": "Personal Trench (Giant)",
+    "fr_mod": "Personal Trench (Giant)"
+   },
+   {
+    "id": "ACE_Trenches-EditableEntity_PersonalTrench_01_small_Name",
+    "en": "Personal Trench (Small)",
+    "fr_mod": "Personal Trench (Small)"
+   },
+   {
+    "id": "ACE_Trenches-EditableEntity_TrenchSegment_01_short_Name",
+    "en": "Trench Segment (Short)",
+    "fr_mod": "Trench Segment (Short)"
+   },
+   {
+    "id": "ACE_Trenches-EditableEntity_VehicleTrench_01_Name",
+    "en": "Vehicle Trench",
+    "fr_mod": "Vehicle Trench"
+   },
+   {
+    "id": "ACE_Trenches-Item_SandbagContainer_Description",
+    "en": "Storage container for transporting empty sandbags.",
+    "fr_mod": "Storage container for transporting empty sandbags."
+   },
+   {
+    "id": "ACE_Trenches-Item_SandbagContainer_Name",
+    "en": "Sandbag Container",
+    "fr_mod": "Sandbag Container"
+   }
+  ]
+ },
+ {
+  "mod": "ACE Weather Dev",
+  "dossier": "ACEWeatherDev_667B230F9505C8BA",
+  "chemin": "Language/ACE_Weather_localization.fr_fr.conf",
+  "guid": "8605CE2DD30C6F7D",
+  "source": "StringTableRuntime {\r\n Ids {\r\n  \"ACE_Weather-AddonName\"\r\n  \"ACE_Weather-Item_Kacestrel4500_Description\"\r\n  \"ACE_Weather-Item_Kacestrel4500_Name\"\r\n  \"ACE_Weather-Keybind_WindInfoToggle\"\r\n }\r\n Texts {\r\n  \"ACE Weather\"\r\n  \"Pocket weather tracker\"\r\n  \"Kacetrel 4500\"\r\n  \"Afficher les informations sur le vent\"\r\n }\r\n}",
+  "lignes": [
+   {
+    "id": "ACE_Weather-AddonName",
+    "en": "ACE Weather",
+    "fr_mod": "ACE Weather"
+   },
+   {
+    "id": "ACE_Weather-Item_Kacestrel4500_Description",
+    "en": "Pocket weather tracker",
+    "fr_mod": "Pocket weather tracker"
+   },
+   {
+    "id": "ACE_Weather-Item_Kacestrel4500_Name",
+    "en": "Kacetrel 4500",
+    "fr_mod": "Kacetrel 4500"
+   },
+   {
+    "id": "ACE_Weather-Keybind_WindInfoToggle",
+    "en": "Show wind info",
+    "fr_mod": "Afficher les informations sur le vent"
+   }
+  ]
+ }
+]

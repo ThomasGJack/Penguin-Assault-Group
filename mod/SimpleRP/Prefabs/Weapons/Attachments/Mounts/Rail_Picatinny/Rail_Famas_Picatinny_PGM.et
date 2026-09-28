@@ -1,0 +1,8 @@
+GenericEntity : "{056D00C3C8ED3C0B}Prefabs/Weapons/Attachments/Mounts/Dovetail_AK/Dovetail_AK_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  RplComponent "{557E85EEE1B6031A}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+}

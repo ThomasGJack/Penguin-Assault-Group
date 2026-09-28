@@ -1,0 +1,37 @@
+GenericEntity : "{98079765627F6EA3}Prefabs/Props/Civilian/Computer_E_01/Computer_E_01_case.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  StaticSoundComponent "{6A592C0B34354D50}" {
+   Filenames {
+    "{5FC6F9522FDC06B3}Sounds/Props/Civilian/Computer_E_01/Props_Computer_E_01.acp"
+   }
+   Signals 0x6 0
+  }
+  ActionsManagerComponent "{6A592C0B5EAFBEE4}" {
+   ActionContexts {
+    UserActionContext "{6A592C0B5987987E}" {
+     ContextName "default"
+     Position PointInfo "{6A592C0B55C665BA}" {
+      Offset 0 0.3202 0.0636
+     }
+    }
+   }
+   additionalActions {
+    SRP_PCAction "{6A592C0B4C6E2659}" {
+     ParentContextList {
+      "default"
+     }
+     VisibilityRange 3
+     Duration 1
+    }
+   }
+  }
+ }
+ {
+  GenericEntity : "{2595F6426CDFDBBB}Prefabs/Props/Civilian/Computer_E_01/Computer_E_01_Monitor_on.et" {
+   ID "6A592C0B34354D7D"
+   coords 0 0.116 -0.08
+   angles 0 -1.906 0
+  }
+ }
+}

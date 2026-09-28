@@ -1,0 +1,46 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{F4C6DC5B975330F4}120mm Mortar Tube/rsg_military_120mm_Tube.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0FB301}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0FB302}" {
+     UIInfo UIInfo "{6A5B0C0D0E0FB303}" {
+      Name "mortier120"
+     }
+     ContextName "mortier120"
+     Position PointInfo "{6A5B0C0D0E0FB304}" {
+      Offset 0 0.8 0
+     }
+     Radius 2
+     Omnidirectional 1
+    }
+   }
+   additionalActions {
+    SRP_SabotageAction "{6A5B0C0D0E0FB305}" {
+     ParentContextList {
+      "mortier120"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0FB306}" {
+      Name "Saboter"
+     }
+     ActionTitle "Saboter"
+     VisibilityRange 4
+     Duration 5
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}

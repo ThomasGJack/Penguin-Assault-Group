@@ -1,0 +1,12 @@
+GenericEntity {
+ ID "6A5B0C0D0E0FB045"
+ components {
+  SignalsManagerComponent "{6A5B0C0D0E0FB043}" {
+  }
+  SoundComponent "{6A5B0C0D0E0FB044}" {
+   Filenames {
+    "{852528B9C262A607}Sounds/Structures/Military/Sirens/Structures_Siren.acp"
+   }
+  }
+ }
+}

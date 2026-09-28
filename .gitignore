@@ -1,0 +1,43 @@
+# Secrets : jamais dans le dépôt
+config.json
+discord.json
+webhooks.json
+*.env
+.env
+CLE_SERVEUR*
+cle_serveur*
+
+# Données du serveur et des joueurs
+players/
+journal/
+archives/
+bannis.json
+*.log
+
+# Générés ou lourds (se refont avec les scripts)
+bot/carte/tuiles/
+bot/carte/tuiles_aerien/
+venv/
+__pycache__/
+*.pyc
+
+# Caches du Workbench et sauvegardes de travail
+*.rdb
+.claude-flow/
+*.avant-*
+*.bak
+
+# Données et jeton du bot (créés à côté de bot.py au lancement)
+state.json
+token.txt
+suivi.json
+donnees_web/
+outbox/
+*.tmp
+
+# Adresse du VPS (recréée par autoriser_cle_vps.ps1 ; modèle : bot/vps/hote.example.txt)
+bot/vps/hote.txt
+
+# Textures du jeu extraites telles quelles (se refont depuis le jeu installé, voir le README)
+bot/carte/relief_everon.png
+bot/carte/everon.webp

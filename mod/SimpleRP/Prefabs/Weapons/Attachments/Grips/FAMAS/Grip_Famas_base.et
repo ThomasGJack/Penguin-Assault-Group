@@ -1,0 +1,8 @@
+GenericEntity : "{E31A09A668EC0E8B}Prefabs/Weapons/Core/Handguard_base.et" {
+ ID "557E85EEE1B603F1"
+ components {
+  RplComponent "{557E85EEE1B6031A}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+}

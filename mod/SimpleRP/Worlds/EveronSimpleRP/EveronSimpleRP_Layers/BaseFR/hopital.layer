@@ -1,0 +1,68 @@
+$grp GenericEntity : "{02BADAE3C4AEA5F1}Prefabs/Structures/Signs/Large/Dst/SRP_Panneau_Affiche_Secours.et" {
+ {
+  coords 7449.394 163.818 4273.25
+  angles 0 104.268 0
+ }
+ {
+  coords 7420.243 163.817 4280.716
+  angles 0 -74.575 0
+ }
+ {
+  coords 7443.21 164 4279.197
+  angles 0 12.434 0
+ }
+ {
+  coords 7429.014 164 4282.893
+  angles 0 12.434 0
+ }
+}
+$grp GenericEntity : "{9DEAEF173C906596}Prefabs/Props/Hopital/SRP_PosteDeSecours.et" {
+ {
+  coords 7433.027 164.866 4274.866
+ }
+ {
+  coords 7438.523 164.826 4266.912
+ }
+ {
+  coords 7437.154 164.856 4278.705
+ }
+ {
+  coords 7430.071 164.85 4280.335
+ }
+ {
+  coords 7434.323 164.822 4268.075
+ }
+ {
+  coords 7433.998 164.843 4279.386
+ }
+ {
+  coords 7434.921 164.818 4269.961
+ }
+ {
+  coords 7447.984 164.868 4273.826
+ }
+ {
+  coords 7448.253 164.857 4275.867
+ }
+ {
+  coords 7438.938 164.823 4268.859
+ }
+ {
+  coords 7436.703 164.85 4276.574
+ }
+ {
+  coords 7429.008 164.868 4270.049
+ }
+ {
+  coords 7444.353 164.867 4276.75
+ }
+ {
+  coords 7440.693 164.861 4275.616
+ }
+ {
+  coords 7433.406 164.84 4277.215
+ }
+ {
+  coords 7441.162 164.858 4277.643
+ }
+}

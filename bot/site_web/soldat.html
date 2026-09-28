@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Fiche du soldat</title>
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227; --nous: #3ddc84; --ami: #4da3ff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--fond); color: var(--texte); font: 15px/1.5 "Segoe UI", system-ui, sans-serif; }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 26px; border-bottom: 1px solid var(--bord); }
+  header img { width: 40px; height: 40px; }
+  header b { font-size: 16px; }
+  header nav { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  header nav a { color: var(--texte); text-decoration: none; border: 1px solid var(--bord); border-radius: 999px; padding: 5px 14px; font-size: 13px; }
+  header nav a:hover { border-color: var(--or); color: var(--or); }
+  main { max-width: 860px; margin: 0 auto; padding: 26px; }
+  .fiche { background: var(--panneau); border: 1px solid var(--bord); border-radius: 16px; overflow: hidden; }
+  .tete { display: flex; gap: 20px; align-items: center; padding: 26px 28px; background: linear-gradient(135deg, #18222d, #121a22); border-bottom: 1px solid var(--bord); position: relative; }
+  .tete:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(#0055a4 33%, #fff 33% 66%, #ef4135 66%); }
+  .tete img { width: 92px; height: auto; filter: drop-shadow(0 6px 14px #000a); }
+  .tete h1 { margin: 0; font-size: clamp(24px, 5vw, 36px); line-height: 1.1; overflow-wrap: anywhere; }
+  .tete .grade { color: var(--or); font-size: 15px; margin-top: 4px; letter-spacing: .12em; text-transform: uppercase; }
+  .tete .service { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; color: var(--discret); margin-top: 8px; }
+  .tete .service i { width: 8px; height: 8px; border-radius: 50%; background: var(--discret); } .tete .service.oui i { background: var(--nous); box-shadow: 0 0 0 3px #3ddc8426; } .tete .service.oui { color: var(--nous); }
+  .corps { padding: 22px 28px 26px; }
+  .chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .chiffre { background: var(--carte); border: 1px solid var(--bord); border-radius: 10px; padding: 12px 14px; }
+  .chiffre b { display: block; font: 700 28px/1.1 Bahnschrift, "Segoe UI", sans-serif; color: #fff; }
+  .chiffre span { color: var(--discret); font-size: 12.5px; }
+  h2 { margin: 26px 0 10px; font-size: 13px; color: var(--discret); }
+  .puces { display: flex; flex-wrap: wrap; gap: 7px; }
+  .puces span, .puces a { border: 1px solid var(--bord); background: var(--carte); border-radius: 999px; padding: 4px 13px; font-size: 13.5px; color: var(--texte); text-decoration: none; }
+  .puces a:hover { border-color: var(--or); color: var(--or); }
+  .puces span.instructeur { border-color: #c9a22766; color: var(--or); }
+  .ligne { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid #1b2630; } .ligne:first-child { border-top: 0; }
+  .ligne small { color: var(--discret); }
+  .vide { color: #4f5f6d; font-style: italic; font-size: 14px; }
+  #erreur { text-align: center; padding: 60px 20px; color: var(--discret); }
+  @media (max-width: 560px) { main { padding: 14px; } .tete { padding: 20px 18px 20px 22px; gap: 14px; } .tete img { width: 64px; } .corps { padding: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <img src="/site/favicon.png" alt="">
+  <b class="titre">PAG · Fiche du soldat</b>
+  <nav><a href="/effectifs/">← Effectifs</a><a href="/certifications/">Certifications</a><a href="/dotations/">Dotations</a><a href="/">Accueil</a></nav>
+</header>
+<main>
+  <div id="erreur" hidden></div>
+  <article class="fiche" id="fiche" hidden>
+    <div class="tete">
+      <img src="/site/logo.webp" alt="">
+      <div><h1 class="titre" id="nom"></h1><div class="grade" id="grade"></div><div class="service" id="service"><i></i><span></span></div></div>
+    </div>
+    <div class="corps">
+      <div class="chiffres">
+        <div class="chiffre"><b id="heures">–</b><span>heures de service</span></div>
+        <div class="chiffre"><b id="missions">–</b><span>missions réussies</span></div>
+        <div class="chiffre"><b id="votes">–</b><span>votes top-serveurs</span></div>
+        <div class="chiffre"><b id="anciennete">–</b><span>dans les rangs depuis</span></div>
+      </div>
+      <h2 class="titre">Certifications</h2><div class="puces" id="certifs"></div>
+      <div id="bloc-instructeur" hidden><h2 class="titre">Habilitations d'instructeur</h2><div class="puces" id="instructeur"></div></div>
+    </div>
+  </article>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+const propre = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const NOMS = { 'FGI': 'Formation générale initiale', 'Infirmier': 'Infirmier', 'Sapeur': 'Sapeur', 'VL': 'Conducteur VL', 'PL': 'Conducteur PL', 'Blindé': 'Chef d\'engin blindé', 'Pilote': 'Pilote',
+  'MG': 'Mitrailleur', 'AT': 'Antichar', 'TP': 'Tireur de précision', 'OR': 'Opérateur radio', 'LG': 'Lance-grenades', 'Logi': 'Logisticien', 'CDG': 'Chef de groupe', 'Instructeur': 'Instructeur', 'Médecin': 'Médecin' };
+const liste = texte => String(texte || '').split(',').map(x => x.trim()).filter(x => x && x !== 'aucune');
+const jour = t => { const d = new Date(t * 1000), z = n => String(n).padStart(2, '0'); return `${z(d.getDate())}/${z(d.getMonth() + 1)}/${d.getFullYear()}`; };
+const code = decodeURIComponent(location.pathname.split('/').filter(Boolean).pop() || '');
+
+function afficher(f) {
+  document.title = 'PAG · ' + f.nom;
+  $('nom').textContent = f.nom;
+  $('grade').textContent = f.grade_nom || '';
+  const enService = Date.now() / 1000 - f.dernier < 150;
+  $('service').className = 'service' + (enService ? ' oui' : '');
+  $('service').lastElementChild.textContent = enService ? 'En service en ce moment' : (f.dernier ? 'Dernière connexion le ' + jour(f.dernier) : '');
+  $('heures').textContent = Math.floor(f.minutes / 60);
+  $('missions').textContent = f.missions;
+  $('votes').textContent = f.votes || 0;
+  $('anciennete').textContent = f.premier ? jour(f.premier) : '–';
+  $('anciennete').style.fontSize = '20px';
+  $('certifs').innerHTML = liste(f.certifs).map(c => `<a href="/certifications/#${encodeURIComponent(c)}" title="Ce que cette certification ouvre">${propre(NOMS[c] || c)}</a>`).join('') || '<div class="vide">Aucune certification pour le moment</div>';
+  const inst = liste(f.instructeur);
+  $('bloc-instructeur').hidden = !inst.length;
+  $('instructeur').innerHTML = inst.map(c => `<span class="instructeur">${propre(NOMS[c] || c)}</span>`).join('');
+  $('fiche').hidden = false;
+}
+(async () => {
+  try {
+    const r = await fetch('/effectifs/api/soldat/' + encodeURIComponent(code), { cache: 'no-store' });
+    if (!r.ok) throw new Error();
+    afficher(await r.json());
+  } catch (e) { $('erreur').hidden = false; $('erreur').innerHTML = 'Soldat introuvable. <a href="/effectifs/" style="color:#c9a227">Retour aux effectifs</a>'; }
+})();
+</script>
+</body>
+</html>

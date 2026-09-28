@@ -1,0 +1,29 @@
+GameEntity : "{BBD784F8B7D859C2}Prefabs/Items/Equipment/Patches/F3 Ubas/Patch_SERVAL_Base.et" {
+ ID "64E91E46686E7ACB"
+ components {
+  InventoryItemComponent "{64E91E46686E7ADF}" {
+   Attributes SCR_ItemAttributeCollection "{64E91E46686E7AE0}" {
+    ItemDisplayName SCR_InventoryUIInfo "{64E91E46686E7AE2}" {
+     Name "Écusson PAG"
+     Description "Penguin Assault Group — chemise de combat F3"
+    }
+   }
+  }
+  MeshObject "{64E91E46686E7AEC}" {
+   Materials {
+    MaterialAssignClass "{64E91E46578D6DC1}" {
+     SourceMaterial "AMF_Patch_Round"
+     AssignedMaterial "{6A5B0C0D0E0FA002}Assets/Ecussons/PAG_Ecusson.emat"
+    }
+   }
+  }
+  BaseLoadoutClothComponent "{64E91E46686E7AF9}" {
+   WornMaterialsOverride {
+    "{6A5B0C0D0E0FA002}Assets/Ecussons/PAG_Ecusson.emat"
+   }
+   ItemMaterialsOverride {
+    "{6A5B0C0D0E0FA002}Assets/Ecussons/PAG_Ecusson.emat"
+   }
+  }
+ }
+}

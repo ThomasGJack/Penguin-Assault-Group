@@ -1,0 +1,689 @@
+[
+ {
+  "capture": "cap_01.png",
+  "famille": "Casques MSA TC 3000 / 3001",
+  "noms": [
+   "MSA TC 3000 Black",
+   "MSA TC 3000 Multi-Snake",
+   "MSA TC 3000 OD",
+   "MSA TC 3000 TAN",
+   "MSA TC 3001 Black",
+   "MSA TC 3001 Multi-Snake",
+   "MSA TC 3001 OD",
+   "MSA TC 3001 TAN"
+  ]
+ },
+ {
+  "capture": "cap_02.png",
+  "famille": "Casques Ops-Core FAST / BUMP",
+  "noms": [
+   "Casque Ops-Core FAST Noir",
+   "Casque Ops-Core FAST Gris",
+   "Casque Ops-Core FAST Multicam",
+   "Casque Ops-Core FAST RG",
+   "Casque Ops-Core FAST TAN",
+   "Casque Ops-Core BUMP Noir",
+   "Casque Ops-Core BUMP Gris",
+   "Casque Ops-Core BUMP Multicam",
+   "Casque Ops-Core BUMP OD",
+   "Casque Ops-Core BUMP TAN"
+  ]
+ },
+ {
+  "capture": "cap_03.png",
+  "famille": "Bérets",
+  "noms": [
+   "Béret amarante – Parachutistes de l’armée de Terre",
+   "Béret bleu foncé – Béret standard de l’armée de Terre",
+   "Béret bleu roi – Aviation Légère de l’Armée de Terre (ALAT)",
+   "Béret noir – Troupes blindées et de cavalerie",
+   "Béret bleu ciel – Missions des Nations Unies",
+   "Béret Rouge",
+   "Béret vert - Commandos marine (forces spéciales de la marine)",
+   "Béret vert – Légion étrangère Française",
+   "Béret des chasseurs alpins – Infanterie de montagne",
+   "Beret Marron"
+  ]
+ },
+ {
+  "capture": "cap_04.png",
+  "famille": "Casques français, équipage et pilotes",
+  "noms": [
+   "Casque de Combat F3",
+   "Casque de Combat FELIN",
+   "MSA TCNVG CCE",
+   "MSA TCNVG DA",
+   "Casque Mle 78",
+   "Casque Mle 78 UN",
+   "Gentex Alpha 900",
+   "ELNO DH 586",
+   "Thales TopOwl"
+  ]
+ },
+ {
+  "capture": "cap_05.png",
+  "famille": "Vestes de combat F3",
+  "noms": [
+   "Veste de combat F3 - Centre Europe",
+   "Veste de combat F3 manche relevée (Centre Europe)",
+   "Veste de combat F3 - Bariolage Multi Environnement",
+   "Veste de combat F3 manche relevée Bariolage Multi Environnement",
+   "Veste de combat F3 - Daguet",
+   "Veste de combat F3 manche relevée Daguet",
+   "Veste de combat F3 - Tundra"
+  ]
+ },
+ {
+  "capture": "cap_09.png",
+  "famille": "Chemises de combat F3 (UBAS)",
+  "noms": [
+   "Chemise de combat F3 - Centre Europe",
+   "Chemise de combat F3 manche relever - Centre Europe",
+   "Chemise de combat F3 - Centre Europe OD",
+   "Chemise de combat F3 manche relever - Centre Europe OD",
+   "Chemise de combat F3 - Bariolage Multi Environnement",
+   "Chemise de combat F3 - Bariolage Multi Environnement||doublon de nom : sans doute la version manche relevée",
+   "Chemise de combat F3 manche relever - Daguet",
+   "Chemise de combat F3 - Tundra"
+  ]
+ },
+ {
+  "capture": "cap_08.png",
+  "famille": "Vestes T4S2",
+  "noms": [
+   "Veste T4S2 CCE",
+   "Veste T4S2 manche relevée CCE",
+   "Veste T4S2 DA",
+   "Veste T4S2 manche relevée DA"
+  ]
+ },
+ {
+  "capture": "cap_06.png",
+  "famille": "Chemises Crye G3",
+  "noms": [
+   "Cry G3 Multicam",
+   "Cry G3 CCE",
+   "Cry G3 Arktis DA",
+   "Cry G3 BLK",
+   "Cry G3 RG",
+   "Cry G3 TAN",
+   "Cry G3 Manche levée Multicam",
+   "Cry G3 Manche levée RG||nom à vérifier : l'image est en CCE, et « Manche levée RG » existe déjà plus bas",
+   "Cry G3 Manche levée Arktis DA",
+   "Cry G3 BLK||doublon de nom : version manche levée noire",
+   "Cry G3 Manche levée RG",
+   "Cry G3 Manche levée TAN"
+  ]
+ },
+ {
+  "capture": "cap_07.png",
+  "famille": "T-shirts et polos",
+  "noms": [
+   "T-shirt Polo Marine Nationale",
+   "T-Shirt TTA Armée de terre Coyote",
+   "T-Shirt TTA Armée de terre Kaki",
+   "T-Shirt Coyote logo armée de terre",
+   "T-Shirt Kaki logo armée de terre"
+  ]
+ },
+ {
+  "capture": "cap_10.png",
+  "famille": "Gilets de combat SMB (par rôle)",
+  "noms": [
+   "Gilet de Combat SMB - Mitrailleur",
+   "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)",
+   "Gilet de Combat SMB - Grenadier Voltigeur (Fusilier)||doublon de nom : deux variantes de Grenadier Voltigeur portent le même nom",
+   "Gilet de Combat SMB - Pilote d'hélicopthère",
+   "Gilet de Combat SMB - Tireur d'hélicopthère léger",
+   "Gilet de Combat SMB - Tireur de précision SCAR-H",
+   "Gilet de Combat SMB - Tireur d'élite PGM Hecate",
+   "Gilet de Combat SMB - Chef de groupe",
+   "Gilet de Combat SMB - Auxiliaire sanitaire"
+  ]
+ },
+ {
+  "capture": "cap_11.png",
+  "famille": "Porte-plaques Crye JPC / WAS DCS",
+  "boites": [
+   [
+    34,
+    0,
+    90,
+    46
+   ],
+   [
+    34,
+    80,
+    90,
+    126
+   ],
+   [
+    34,
+    165,
+    90,
+    211
+   ],
+   [
+    6,
+    255,
+    118,
+    347
+   ],
+   [
+    6,
+    351,
+    118,
+    443
+   ],
+   [
+    6,
+    437,
+    118,
+    527
+   ]
+  ],
+  "noms": [
+   "Cry JPC Multicam||aperçu tronqué dans le jeu : seul le bas du gilet est visible",
+   "Cry JPC RG||aperçu tronqué dans le jeu",
+   "WAS DCS TAN||aperçu tronqué, nom à vérifier : sans doute « Cry JPC TAN », « WAS DCS TAN » existe déjà plus bas",
+   "WAS DCS Multicam",
+   "WAS DCS OD",
+   "WAS DCS TAN"
+  ]
+ },
+ {
+  "capture": "cap_12.png",
+  "famille": "Pantalons",
+  "noms": [
+   "FELIN T4S2 CCE",
+   "FELIN T4S2 DA",
+   "Pantalon de combat F3 - Centre Europe",
+   "Pantalon de combat F3 - Bariolage Multi Environnement",
+   "Pantalon de combat F3 - Daguet",
+   "Pantalon de combat F3 - Tundra",
+   "Marine_Pantalon||nom technique non traduit, à renommer (ex. « Pantalon Marine Nationale »)",
+   "Tenue de protection de base (blocked)||bloquée dans l'arsenal : combinaison, pas un pantalon",
+   "Pantalon Cry G3 Multicam",
+   "Pantalon Cry G3 CCE",
+   "Pantalon Cry G3 Arkits DA||faute de frappe dans le nom : « Arktis »",
+   "Pantalon Cry G3 BLK"
+  ]
+ },
+ {
+  "capture": "cap_13.png",
+  "famille": "Pantalons",
+  "noms": [
+   "Pantalon Cry G3 RG",
+   "Pantalon Cry G3 TAN"
+  ]
+ },
+ {
+  "capture": "cap_14.png",
+  "famille": "Gants",
+  "noms": [
+   "gants de combat",
+   "gants de combat V2"
+  ]
+ },
+ {
+  "capture": "cap_15.png",
+  "famille": "Ceintures de combat",
+  "boites": [
+   [
+    8,
+    13,
+    118,
+    95
+   ],
+   [
+    8,
+    98,
+    118,
+    180
+   ],
+   [
+    8,
+    184,
+    118,
+    266
+   ],
+   [
+    8,
+    269,
+    118,
+    351
+   ]
+  ],
+  "noms": [
+   "Ceinture De Combat SMB",
+   "WAS Ceinture de combat Multicam",
+   "WAS Ceinture de combat OD",
+   "WAS Ceinture de combat TAN"
+  ]
+ },
+ {
+  "capture": "cap_16.png",
+  "famille": "Sacs à dos",
+  "noms": [
+   "Tecpack 45L ER314||variante radio ER314",
+   "TECPACK 70L",
+   "TECPACK 30L.",
+   "TECPACK 45L",
+   "TECPACK 45L AuxSan",
+   "TECPACK 45L Grenadier",
+   "TECPACK 45L Minimi",
+   "TECPACK 70L||doublon de nom : version unie (coyote), l'autre 70L est camouflée CCE",
+   "RUSH 511 Black",
+   "RUSH 511 Multicam",
+   "RUSH 511 OD",
+   "RUSH 511 TAN",
+   "RUSH 511 TDF"
+  ]
+ },
+ {
+  "capture": "cap_17.png",
+  "famille": "Chaussures",
+  "noms": [
+   "BMJA",
+   "Haix Nepal Pro",
+   "Haix Nepal Pro Sable",
+   "Meindl",
+   "Timberland Pro",
+   "Lowa Zephyr Noir||nom à vérifier : l'image est beige, identique au TAN",
+   "Lowa Zephyr TAN"
+  ]
+ },
+ {
+  "capture": "cap_18.png",
+  "famille": "Fusils d'assaut FAMAS",
+  "grille": [
+   138,
+   85.33,
+   10
+  ],
+  "noms": [
+   "FAMAS F1",
+   "FAMAS F1 RIS",
+   "FAMAS F1 Infanterie",
+   "FAMAS F1 Infanterie RIS",
+   "FAMAS G2",
+   "FAMAS G2||doublon de nom : variante (optique ou couleur), à renommer",
+   "FAMAS G2 PGMP",
+   "FAMAS G2 PGMP||doublon de nom : variante (optique ou couleur), à renommer",
+   "Famas Valorisé",
+   "Famas FELIN"
+  ]
+ },
+ {
+  "capture": "cap_21.png",
+  "famille": "Fusils d'assaut HK416 F",
+  "grille": [
+   45,
+   85.33,
+   13
+  ],
+  "noms": [
+   "HK416 F-C",
+   "HK416 F-C Aim M5",
+   "HK416 F-C||doublon de nom : variante (optique ou couleur), à renommer",
+   "HK416 F-C||doublon de nom : variante (optique ou couleur), à renommer",
+   "HK416 F-C Custom V2",
+   "HK416 F-C||doublon de nom : variante (optique ou couleur), à renommer",
+   "HK416 F-C HK269",
+   "HK416 F-C HK269 Aim M5",
+   "HK416 F-C HK269 EoTech 512",
+   "HK416 F-C HK269||doublon de nom : variante (optique ou couleur), à renommer",
+   "HK416 F-S",
+   "HK416 F-S Aim M5",
+   "HK416 F-S EO 512"
+  ]
+ },
+ {
+  "capture": "cap_20.png",
+  "famille": "Fusils d'assaut HK416 F",
+  "grille": [
+   37,
+   85.33,
+   1
+  ],
+  "noms": [
+   "HK416 F-S HK269"
+  ]
+ },
+ {
+  "capture": "cap_18.png",
+  "famille": "Mitrailleuses",
+  "grille": [
+   53,
+   85.33,
+   1
+  ],
+  "noms": [
+   "AAN-F1"
+  ]
+ },
+ {
+  "capture": "cap_19.png",
+  "famille": "Mitrailleuses",
+  "grille": [
+   61,
+   85.33,
+   10
+  ],
+  "noms": [
+   "FN Minimi F1",
+   "FN Minimi F1||doublon de nom : variante (optique ou couleur), à renommer",
+   "FN Minimi FELIN",
+   "FN Minimi FELIN J4",
+   "FN Minimi FELIN RIS",
+   "FN Minimi FELIN Ris J4",
+   "FN Minimi FELIN MK2",
+   "FN Minimi FELIN MK2 Specter",
+   "FN Minimi MK3",
+   "FN MAG58"
+  ]
+ },
+ {
+  "capture": "cap_20.png",
+  "famille": "Fusils de précision",
+  "grille": [
+   122,
+   85.33,
+   9
+  ],
+  "noms": [
+   "PGM Hécate II Bois J10",
+   "PGM Hécate II Bois RIS",
+   "PGM Hécate II Bois RIS||doublon de nom : variante (optique ou couleur), à renommer",
+   "PGM Hécate II Polymer J10",
+   "PGM Hécate II Polymer RIS",
+   "PGM Hécate II Polymer RIS||doublon de nom : variante (optique ou couleur), à renommer",
+   "FN SCAR-H PR",
+   "FN SCAR-H PR||doublon de nom : variante (optique ou couleur), à renommer",
+   "FR-F2"
+  ]
+ },
+ {
+  "capture": "cap_26.png",
+  "famille": "Armes de poing",
+  "noms": [
+   "Glock 17 Gen 5",
+   "PAMAS G1",
+   "PA MAC 50"
+  ]
+ },
+ {
+  "capture": "cap_24.png",
+  "famille": "Grenades",
+  "grille": [
+   142,
+   85.2,
+   6
+  ],
+  "noms": [
+   "GR MA FUM Blanche",
+   "GR MA FUM Vert",
+   "GR MA FUM Rouge",
+   "GR MA FUM Jaune",
+   "GR MA OF F1",
+   "GR MA DEF"
+  ]
+ },
+ {
+  "capture": "cap_23.png",
+  "famille": "Jumelles et télémètres",
+  "noms": [
+   "APX M241",
+   "Leica Vector IV",
+   "Thales OB 72 Sophie"
+  ]
+ },
+ {
+  "capture": "cap_22.png",
+  "famille": "Montres",
+  "noms": [
+   "Montre",
+   "Tactix Bravo GPS Smartwatch Black"
+  ]
+ },
+ {
+  "capture": "cap_28.png",
+  "famille": "Optiques",
+  "colonnes": [
+   -4,
+   551,
+   1106
+  ],
+  "grille": [
+   54,
+   85.4,
+   12
+  ],
+  "noms": [
+   "Optiques@@Aimpoint CompM5",
+   "Optiques@@Aimpoint CompM PGMP",
+   "Optiques@@Aimpoint Pro Patrol",
+   "Optiques@@Aimpoint Micro T1",
+   "Optiques@@Aimpoint Micro T2",
+   "Optiques@@Eotech 512",
+   "Optiques@@Eotech 552",
+   "Optiques@@Eotech 553",
+   "Optiques@@Eotech EXPS3-0",
+   "Optiques@@Elcan Specter",
+   "Optiques@@Scrome J4 F1 PGMP",
+   "Optiques@@Scrome J4 F1 PGMP sans bonette",
+   "Optiques@@Scrome J4 F1 RIS",
+   "Optiques@@Scrome J4 F1 RIS sans bonette",
+   "Optiques@@Scrome J4 F1 Minimi F1",
+   "Optiques@@Scrome J4 F1 Minimi F1||doublon de nom dans l'arsenal : sans doute la version sans bonnette",
+   "Organes de visée de secours@@Guidon HK-416F",
+   "Organes de visée de secours@@Guidon Magpul MBUS Noir",
+   "Organes de visée de secours@@Guidon Magpul MBUS Dark Earth",
+   "Organes de visée de secours@@Guidon Magpul MBUS Olive",
+   "Organes de visée de secours@@Oeilleton HK-416F",
+   "Organes de visée de secours@@Oeilleton Magpul MBUS Noir",
+   "Organes de visée de secours@@Oeilleton Magpul MBUS Dark Earth",
+   "Organes de visée de secours@@Oeilleton Magpul MBUS Olive",
+   "Bouche et baïonnette@@Baïonnette Famas",
+   "Poignées et interfaces@@Interface poignée Famas",
+   "Poignées et interfaces@@Interface poignée HK Famas",
+   "Poignées et interfaces@@Interface poignée Famas Magpul RVG Noir",
+   "Poignées et interfaces@@Interface poignée Famas Magpul RVG Dark Erath||faute de frappe : « Earth »",
+   "Poignées et interfaces@@Interface poignée Famas Magpul RVG Olive Drab",
+   "Poignées et interfaces@@Interface poignée bipied Famas Noir",
+   "Poignées et interfaces@@Interface poignée bipied Famas Dark Earth",
+   "Poignées et interfaces@@Interface poignée bipied Famas Olive Drab",
+   "Poignées et interfaces@@Interface poignée Minimi F1",
+   "Poignées et interfaces@@Interface poignée HK Minimi F1",
+   "Poignées et interfaces@@Interface poignée Minimi F1 Magpul RVG Noir"
+  ]
+ },
+ {
+  "capture": "cap_27.png",
+  "famille": "Poignées et interfaces",
+  "colonnes": [
+   0,
+   555,
+   1110
+  ],
+  "grille": [
+   42,
+   85.4,
+   10
+  ],
+  "noms": [
+   "Poignées et interfaces@@Interface poignée Minimi F1 Magpul RVG Dark Earth",
+   "Poignées et interfaces@@Interface poignée Minimi F1 Magpul RVG Olive Drab",
+   "Poignées et interfaces@@Interface poignée Minimi F1 poignée bipied Dark Earth",
+   "Poignées et interfaces@@Interface poignée Minimi F1 poignée bipied Dark Earth||doublon de nom dans l'arsenal : l'une des deux est sans doute la version Noir",
+   "Poignées et interfaces@@Interface poignée Minimi F1 poignée bipied Olive Drab",
+   "Poignées et interfaces@@Poignée Vertical",
+   "Poignées et interfaces@@Poignée Vertical HK",
+   "Poignées et interfaces@@Poignée Bipied Noir",
+   "Poignées et interfaces@@Poignée Bipied Dark Earth",
+   "Poignées et interfaces@@Poignée Bipied Olive Drab",
+   "Poignées et interfaces@@Magpul RVG Noir",
+   "Poignées et interfaces@@Magpul RVG Dark Earth",
+   "Poignées et interfaces@@Magpul RVG Olive Drab",
+   "Poignées et interfaces@@Magpul AFG 2 Noir",
+   "Poignées et interfaces@@Magpul AFG 2 Dark Earth",
+   "Poignées et interfaces@@Magpul AFG 2 Olive Drab",
+   "Poignées et interfaces@@Magpul AFG Noir",
+   "Poignées et interfaces@@Magpul AFG Dark Earth",
+   "Poignées et interfaces@@Magpul AFG Olive Drab",
+   "Bouche et baïonnette@@Cache Flame Famas F1",
+   "Bouche et baïonnette@@Cache Flame Famas G2",
+   "Bouche et baïonnette@@Vortex CF-22",
+   "Bouche et baïonnette@@RDS Zastava Famas",
+   "Optiques@@Schmidt & Bender 8X24 Mildot CC",
+   "Optiques@@Schmidt & Bender 3-20x50",
+   "Optiques@@Scrome J8",
+   "Optiques@@Scrome J8 NoCover",
+   "Optiques@@Scrome J10",
+   "Optiques@@Scrome J10 NoCover"
+  ]
+ },
+ {
+  "capture": "cap_30.png",
+  "famille": "Équipement",
+  "colonnes": [
+   -3,
+   552,
+   1107
+  ],
+  "grille": [
+   55,
+   85.4,
+   10
+  ],
+  "noms": [
+   "Navigation et éclairage@@Carte (OTAN)",
+   "Navigation et éclairage@@Boussole",
+   "Vision nocturne@@Thalès BI-NYX Tan",
+   "Vision nocturne@@Thalès BI-NYX Tan sans bonnettes",
+   "Vision nocturne@@Thalès BI-NYX Tan||doublon de nom dans l'arsenal",
+   "Vision nocturne@@Thalès BI-NYX Tan sans bonnettes||doublon de nom dans l'arsenal",
+   "Vision nocturne@@Thalès BI-NYX Tan sans string",
+   "Vision nocturne@@Thalès BI-NYX Tan sans string||doublon de nom dans l'arsenal : l'image est noire, sans doute la version Black",
+   "Vision nocturne@@Thalès BI-NYX Tan sans bonettes et sans string",
+   "Vision nocturne@@Thalès O-NYX Tan",
+   "Vision nocturne@@Thalès O-NYX Tan sans bonnettes",
+   "Vision nocturne@@Thalès O-NYX Tan sans bonnettes et sans string",
+   "Vision nocturne@@Thalès O-NYX Tan sans string",
+   "Navigation et éclairage@@Lampe-torche",
+   "",
+   "",
+   "",
+   "",
+   "Radio@@Thalès ER328",
+   "Outils@@Pelle M1967",
+   "Outils@@Récipient à carburant",
+   "Outils@@Clé de réparation",
+   "Écussons et poches@@Écusson PAG",
+   "Écussons et poches@@Écusson PAG (veste)",
+   "",
+   "Écussons et poches@@Poche Chargeur Double",
+   "Écussons et poches@@Poche Chargeur Double FAMAS",
+   "Écussons et poches@@Poche Chargeur Simple",
+   "Écussons et poches@@Affaires personnelles"
+  ]
+ },
+ {
+  "capture": "cap_29.png",
+  "famille": "Matériel médical",
+  "colonnes": [
+   -10,
+   545,
+   1100
+  ],
+  "grille": [
+   52,
+   85.4,
+   2
+  ],
+  "noms": [
+   "Bandage",
+   "Garrot",
+   "Morphine auto-injectable",
+   "Solution saline",
+   "Épinéphrine",
+   "Kit médical"
+  ]
+ },
+ {
+  "capture": "cap_31.png",
+  "famille": "Munitions de mitrailleuse",
+  "colonnes": [
+   -2,
+   553,
+   1108
+  ],
+  "grille": [
+   41,
+   85.4,
+   3
+  ],
+  "noms": [
+   "200Rnd AAN-F1 7.62X51mm 4BO/1TRC",
+   "200Rnd MAG 58 7.62X51mm 4BO/1TRC",
+   "105Rnd 12.7X99 M2HB 2BO/1PEI/1AP/1TRC||munition de 12,7 mm de véhicule",
+   "Munitions de 40 mm@@AMF 40mm HE M406",
+   "Munitions de 40 mm@@AMF HEDP M433",
+   "Munitions de 40 mm@@Fusée blanche M583A1 40 mm",
+   "Munitions de 40 mm@@Fusée verte M661 40 mm",
+   "Munitions de 40 mm@@Fusée rouge M662 40 mm"
+  ]
+ },
+ {
+  "capture": "cap_32.png",
+  "famille": "Chargeurs",
+  "colonnes": [
+   -6,
+   549,
+   1104
+  ],
+  "grille": [
+   57,
+   85.4,
+   12
+  ],
+  "noms": [
+   "Chargeur SCAR-H (7,62 × 51 mm OTAN)",
+   "Munitions de mitrailleuse@@100Rnd Minimi BO",
+   "Munitions de mitrailleuse@@100Rnd Minimi BO/BT",
+   "Munitions de mitrailleuse@@200rnd M249 Belt (M855A1)||aucune M249 dans l'arsenal : sert à la Minimi ?",
+   "30Rnd HK416 BO F5",
+   "30Rnd HK416 BO/BT F5",
+   "30Rnd PMAG BO F5",
+   "30Rnd PMAG BO/BT F5",
+   "30Rnd PMAG BT F5",
+   "30Rnd PMAG TAN BO F5",
+   "30Rnd PMAG TAN BO/BT F5",
+   "30Rnd PMAG BT F5 TAN",
+   "BO 25Rnd FMJ SS109||chargeur FAMAS",
+   "BO/TR 25Rnd FMJ SS109||chargeur FAMAS",
+   "25Rnd BT SS109||chargeur FAMAS",
+   "BO 25Rnd FMJ F1||chargeur FAMAS",
+   "BO/TR 25Rnd FMJ F1/F1A||chargeur FAMAS",
+   "25Rnd BT F1A||chargeur FAMAS",
+   "Chargeur Glock 9x19 17 cps",
+   "Chargeur 15 balles M9 9 × 19 mm||chargeur du PAMAS G1",
+   "9Rnd PA-MAC 50 FMJ",
+   "10Rnd FRF2 BO M62",
+   "10Rnd FRF2 AP",
+   "Chargeur 20 balles M14 7,62 × 51 mm||aucun M14 dans l'arsenal : chargeur orphelin ?",
+   "7Rnd 12.7X99 PGM Hecate II PEI",
+   "",
+   "",
+   "Munitions de mitrailleuse@@Bande 100 balles M60 antiblindage 7,62 × 51 mm||aucune M60 dans l'arsenal : sert à la MAG 58 ?",
+   "Munitions de mitrailleuse@@Bande 100 balles M60 7,62 × 51 mm",
+   "",
+   "Munitions de mitrailleuse@@50Rnd AAN-F1 7.62X51 BO/BT",
+   "Munitions de mitrailleuse@@50Rnd AAN-F1 7.62X51 BO",
+   "Munitions de mitrailleuse@@75Rnd AAN-F1 7.62X51 BO/BT",
+   "",
+   "",
+   "Munitions de mitrailleuse@@100Rnd AAN-F1 7.62X51 BO"
+  ]
+ }
+]

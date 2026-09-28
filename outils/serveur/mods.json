@@ -1,0 +1,148 @@
+{
+  "game": {
+    "name": "[FR] PAG | Penguin Assault Group | Milsim RP Armée Française",
+    "scenarioId": "{DFE9686597D2F980}Missions/SimpleRP_Everon.conf",
+    "mods": [
+      {
+        "modId": "65D2BD1BD7EA7BF6",
+        "name": "AMF - CORE"
+      },
+      {
+        "modId": "64CF25A41DCBDBE0",
+        "name": "AMF - FANTASSIN"
+      },
+      {
+        "modId": "6A0AE2F91546B18A",
+        "name": "AMF - FORCES SPECIALES"
+      },
+      {
+        "modId": "65DB713038B8533C",
+        "name": "AMF_VEHICULE01"
+      },
+      {
+        "modId": "5C9758250C8C56F1",
+        "name": "Bon Action Animations"
+      },
+      {
+        "modId": "60C4CE4888FF4621",
+        "name": "ACE Core"
+      },
+      {
+        "modId": "60C4E0B49618CC62",
+        "name": "ACE All in One"
+      },
+      {
+        "modId": "60E573C9B04CC408",
+        "name": "ACE Backblast"
+      },
+      {
+        "modId": "646D52AF8BB3FF15",
+        "name": "ACE Captives"
+      },
+      {
+        "modId": "5DBD560C5148E1DA",
+        "name": "ACE Carrying"
+      },
+      {
+        "modId": "5EB744C5F42E0800",
+        "name": "ACE Chopping"
+      },
+      {
+        "modId": "60C53A9372ED3964",
+        "name": "ACE Compass"
+      },
+      {
+        "modId": "61B7763A8AEB53B7",
+        "name": "ACE Explosives"
+      },
+      {
+        "modId": "68EAA4976497C46A",
+        "name": "ACE Facepaint"
+      },
+      {
+        "modId": "606C369BAC3F6CC3",
+        "name": "ACE Finger"
+      },
+      {
+        "modId": "611CB1D409001EB0",
+        "name": "ACE Magazine Repack"
+      },
+      {
+        "modId": "60C4C12DAE90727B",
+        "name": "ACE Medical Core"
+      },
+      {
+        "modId": "65860252A17554C7",
+        "name": "ACE Medical Hitzones"
+      },
+      {
+        "modId": "64475DC102F2BDA4",
+        "name": "ACE Radio"
+      },
+      {
+        "modId": "61226BB18D360BDD",
+        "name": "ACE Tactical Ladder"
+      },
+      {
+        "modId": "62F802951CC8A37E",
+        "name": "ACE Tactical Periscope"
+      },
+      {
+        "modId": "60EAEA0389DB3CC2",
+        "name": "ACE Trenches"
+      },
+      {
+        "modId": "606B100247F5C709",
+        "name": "Bacon Loadout Editor"
+      },
+      {
+        "modId": "5F268647F8A1A1F4",
+        "name": "CRX Enfusion A.I."
+      },
+      {
+        "modId": "68FAFAEBDEB4C6C7",
+        "name": "CRX Enfusion A.I. Translation"
+      },
+      {
+        "modId": "595F2BF2F44836FB",
+        "name": "RHS: Status Quo"
+      },
+      {
+        "modId": "1337C0DE5DABBEEF",
+        "name": "RHS: Status Quo - Content Pack 01"
+      },
+      {
+        "modId": "BADC0DEDABBEDA5E",
+        "name": "RHS: Status Quo - Content Pack 02"
+      },
+      {
+        "modId": "5F207DD6271E2799",
+        "name": "Collectable Intel"
+      },
+      {
+        "modId": "656AC01634459D8D",
+        "name": "Map Drawing"
+      },
+      {
+        "modId": "62E0B4EB51FCE050",
+        "name": "KeepMarkersOnDisconnect"
+      },
+      {
+        "modId": "61C8AD57503CA770",
+        "name": "No SL Markers"
+      },
+      {
+        "modId": "62D023385506C7FF",
+        "name": "Nomedicalicon"
+      },
+      {
+        "modId": "6636C78F673A7DEE",
+        "name": "BoltRack System"
+      },
+      {
+        "modId": "6A4C763A0E445508",
+        "name": "PAG - Penguin Assault Group"
+      }
+    ]
+  }
+}

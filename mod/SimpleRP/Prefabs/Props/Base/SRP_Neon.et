@@ -1,0 +1,58 @@
+GenericEntity : "{8F17372BAB5A9CF8}Prefabs/Structures/BuildingParts/Lights/LightIndustrial_02.et" {
+ ID "5111E74D4E7A8DB6"
+ components {
+  MeshObject "{5111E74D5E891458}" {
+   Materials {
+    MaterialAssignClass "{6A5B0C0D0E0FE021}" {
+     SourceMaterial "Glass"
+     AssignedMaterial "{FC236CB65AE3141F}Assets/Structures/BuildingsParts/Lights/LampIndustrial_01/Data/Glass_on_white.emat"
+    }
+   }
+  }
+  SCR_BaseInteractiveLightComponent "{6A5B0C0D0E0FE022}" {
+   m_aLightData {
+    SCR_BaseLightData "{6A5B0C0D0E0FE023}" {
+     m_eLightType POINT
+     m_vLightOffset 0.006 -0.013 0.521
+     m_vLightColor 1 1 1
+     m_fRadius 5
+     m_fIntensityClipEV -10
+     m_eFlareType Disabled
+     m_eLightFlags 3
+    }
+    SCR_BaseLightData "{6A5B0C0D0E0FE024}" {
+     m_eLightType POINT
+     m_vLightOffset -0.008 -0.052 0.12
+     m_vLightColor 1 1 1
+     m_fRadius 6
+     m_fIntensityClipEV -10
+     m_eFlareType Disabled
+     m_eLightFlags 3
+    }
+   }
+   m_fLV 3
+   m_eInitialLightState LIT
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0FE025}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0FE026}" {
+     ContextName "Switch"
+     Position PointInfo "{6A5B0C0D0E0FE027}" {
+      Offset 0 -0.3 0.3
+     }
+     Radius 1.5
+    }
+   }
+   additionalActions {
+    SCR_SwitchLightUserAction "{6A5B0C0D0E0FE028}" {
+     ParentContextList {
+      "Switch"
+     }
+     Duration 0
+     m_sLightDescription "Allumer le néon"
+     m_sExtinguishDescription "Éteindre le néon"
+    }
+   }
+  }
+ }
+}

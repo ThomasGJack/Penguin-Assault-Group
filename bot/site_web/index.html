@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Penguin Assault Group</title>
+<meta name="description" content="La PAG, Penguin Assault Group : serveur Arma Reforger milsim semi-RP, armée française sur l'île d'Everon. Carte de situation en direct et suivi du développement.">
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227; --vert: #3ddc84; --rouge: #ff5d5d; --bleu: #4da3ff;
+          --idee: #9b8cff; --a_faire: #4da3ff; --a_developper: #37c2c2; --en_cours: #ffb020; --a_tester: #ff7a59; --termine: #3ddc84; }
+  * { box-sizing: border-box; }
+  * { scrollbar-color: #2b3a47 #0c1116; scrollbar-width: thin; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; background: var(--fond); color: var(--texte); font: 15px/1.55 "Segoe UI", system-ui, sans-serif; }
+  a { color: inherit; }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+
+  /* ---------- barre du haut ---------- */
+  .barre { position: fixed; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 12px; padding: 10px 28px;
+           background: linear-gradient(#0c1116e6, #0c111600); transition: background .3s; }
+  .barre.pleine { background: #0c1116f2; border-bottom: 1px solid var(--bord); backdrop-filter: blur(6px); }
+  .barre img { width: 34px; height: 34px; }
+  .barre b { font-size: 15px; }
+  .barre nav { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .barre nav a { text-decoration: none; border: 1px solid var(--bord); background: #0c1116aa; border-radius: 999px; padding: 5px 14px; font-size: 13px; }
+  .barre nav a:hover { border-color: var(--or); color: var(--or); }
+
+  /* ---------- en-tête ---------- */
+  .tete { position: relative; min-height: 86vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 96px 20px 70px; overflow: hidden; }
+  .tete:before { content: ""; position: absolute; inset: -4%; background: url(/site/fond.webp) center/cover no-repeat; filter: saturate(.85); animation: derive 60s ease-in-out infinite alternate; }
+  .tete:after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, #0c111655 0%, #0c1116cc 62%, var(--fond) 100%), linear-gradient(#0c111600 60%, var(--fond)); }
+  @keyframes derive { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.08) translate(-1.5%, 1.2%); } }
+  .tete > div { position: relative; z-index: 1; max-width: 860px; }
+  .tete img.logo { width: min(300px, 58vw); height: auto; filter: drop-shadow(0 14px 34px #000c); animation: arrivee .9s ease-out; }
+  .tete h1 { margin: 18px 0 4px; font-size: clamp(30px, 6vw, 58px); line-height: 1.05; text-shadow: 0 3px 18px #000; }
+  .tete .devise { color: var(--or); font-size: clamp(13px, 2vw, 17px); letter-spacing: .22em; text-transform: uppercase; text-shadow: 0 2px 8px #000; }
+  .tete p { margin: 18px auto 0; max-width: 640px; font-size: 16.5px; color: #e4ebf1; text-shadow: 0 2px 8px #000; }
+  @keyframes arrivee { from { opacity: 0; transform: translateY(14px); } }
+
+  .etat { margin: 26px auto 0; display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .pastille { display: inline-flex; align-items: center; gap: 8px; background: #0c1116d9; border: 1px solid var(--bord); border-radius: 999px; padding: 7px 16px; font-size: 13.5px; }
+  .pastille i { width: 9px; height: 9px; border-radius: 50%; background: var(--discret); }
+  .pastille.oui i { background: var(--vert); box-shadow: 0 0 0 0 #3ddc8499; animation: pouls 2s infinite; }
+  .pastille.non i { background: var(--rouge); }
+  .pastille b { color: #fff; }
+  @keyframes pouls { to { box-shadow: 0 0 0 9px #3ddc8400; } }
+
+  .boutons { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .bouton { text-decoration: none; font-weight: 600; border-radius: 10px; padding: 13px 26px; border: 1px solid var(--bord); background: #121a22e6; transition: transform .15s, border-color .15s, background .15s; }
+  .bouton:hover { transform: translateY(-2px); border-color: var(--or); }
+  .bouton.fort { background: var(--or); border-color: var(--or); color: #14110a; }
+  .bouton.fort:hover { background: #dfb83a; }
+  .bouton.discord { background: #5865f2; border-color: #5865f2; color: #fff; }
+
+  /* ---------- corps ---------- */
+  main { max-width: 1180px; margin: 0 auto; padding: 0 28px 60px; }
+  h2 { font-size: 22px; margin: 64px 0 6px; }
+  h2 + .chapeau { color: var(--discret); margin: 0 0 22px; }
+  .portes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: -30px; position: relative; z-index: 2; }
+  .porte { display: flex; flex-direction: column; text-decoration: none; background: var(--panneau); border: 1px solid var(--bord); border-radius: 14px; overflow: hidden; transition: transform .2s, border-color .2s, box-shadow .2s; }
+  .porte:hover { transform: translateY(-4px); border-color: var(--or); box-shadow: 0 16px 40px #0009; }
+  .porte .vue { height: 190px; background: #0e151c center/cover no-repeat; position: relative; border-bottom: 1px solid var(--bord); overflow: hidden; }
+  .porte .vue.carte { background-image: url(/site/vignette_carte.webp); }
+  .porte .vue.carte:after { content: ""; position: absolute; inset: 0; background-image: linear-gradient(#ffffff2e 1px, transparent 1px), linear-gradient(90deg, #ffffff2e 1px, transparent 1px); background-size: 25% 33.34%; }
+  .porte .vue .carre { position: absolute; left: 25%; top: 33.34%; width: 25%; height: 33.34%; background: #4da3ff40; border: 2px solid #4da3ff; animation: clignote 2.4s ease-in-out infinite; z-index: 1; }
+  @keyframes clignote { 50% { background: #4da3ff1a; } }
+  .porte .vue.suivi { display: flex; align-items: flex-end; gap: 7px; padding: 18px 18px 0; }
+  .porte .vue.suivi span { flex: 1; min-height: 8px; border-radius: 6px 6px 0 0; background: var(--c); opacity: .85; transition: height .6s ease-out; position: relative; }
+  .porte .vue.suivi span b { position: absolute; top: -20px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--c); }
+  .porte .vue.campagne { display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at 50% 60%, #16241d, #0e151c 70%); }
+  .anneau { --part: 0; width: 132px; height: 132px; border-radius: 50%; background: conic-gradient(var(--bleu) calc(var(--part) * 1%), #3a1a1d 0); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; }
+  .anneau:before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #0e151c; }
+  .anneau b, .anneau span { position: relative; } .anneau b { font: 700 26px/1 Bahnschrift, "Segoe UI", sans-serif; color: #fff; } .anneau span { font-size: 11px; color: var(--discret); margin-top: 3px; }
+  .porte .vue.effectifs { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a2430, #0e151c); }
+  .porte .vue.effectifs img { height: 150px; width: auto; filter: drop-shadow(0 8px 18px #000a); }
+  .porte .vue.certifs { display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 9px; padding: 22px 34px; background: linear-gradient(135deg, #16202a, #0e151c); }
+  .porte .vue.certifs span { font: 700 13px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .1em; background: var(--c); color: #0c1116; border-radius: 6px; padding: 8px 11px; }
+  .porte .vue.dotations { display: flex; flex-direction: column; align-items: center; justify-content: center; background: repeating-linear-gradient(135deg, #1d2a1f 0 22px, #243324 22px 44px, #1a241c 44px 66px); }
+  .porte .vue.dotations b { font: 700 54px/1 Bahnschrift, "Segoe UI", sans-serif; color: #e8ecd8; letter-spacing: .08em; text-shadow: 0 4px 14px #000a; }
+  .porte .vue.dotations span { color: #c9d2b4; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; margin-top: 6px; }
+  .porte .vue.discord { background: linear-gradient(135deg, #5865f2, #2c3380); display: flex; align-items: center; justify-content: center; }
+  .porte .vue.discord svg { width: 92px; height: 92px; fill: #fff; opacity: .95; }
+  .porte .texte { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; }
+  .porte h3 { margin: 0 0 4px; font-size: 17px; }
+  .porte p { margin: 0 0 12px; color: #a9b6c2; font-size: 14px; flex: 1; }
+  .porte .vif { color: var(--discret); font-size: 12.5px; margin-bottom: 10px; min-height: 18px; }
+  .porte .aller { color: var(--or); font-weight: 600; font-size: 14px; }
+  .porte:hover .aller:after { margin-left: 10px; }
+  .porte .aller:after { content: "→"; margin-left: 6px; transition: margin .2s; }
+
+  .chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .chiffre { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 16px 18px; }
+  .chiffre .n { font-size: 30px; font-weight: 700; color: #fff; line-height: 1.1; font-family: Bahnschrift, "Segoe UI", sans-serif; }
+  .chiffre .n small { font-size: 16px; color: var(--discret); font-weight: 400; }
+  .chiffre .l { color: var(--discret); font-size: 13px; margin-top: 3px; }
+  .jauge { height: 5px; background: #0e151c; border-radius: 99px; margin-top: 10px; overflow: hidden; }
+  .jauge i { display: block; height: 100%; width: 0; background: var(--or); border-radius: 99px; transition: width .8s ease-out; }
+  .jauge.ile { background: #3a1a1d; } .jauge.ile i { background: var(--bleu); }
+
+  .piliers { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .pilier { background: var(--panneau); border: 1px solid var(--bord); border-left: 3px solid var(--or); border-radius: 10px; padding: 16px 18px; }
+  .pilier h3 { margin: 0 0 6px; font-size: 15px; }
+  .pilier p { margin: 0; color: #a9b6c2; font-size: 14px; }
+
+  .etapes { counter-reset: e; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; padding: 0; margin: 0; list-style: none; }
+  .etapes li { counter-increment: e; background: var(--panneau); border: 1px solid var(--bord); border-radius: 10px; padding: 16px 18px 16px 62px; position: relative; color: #a9b6c2; font-size: 14px; }
+  .etapes li:before { content: counter(e); position: absolute; left: 16px; top: 14px; width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--or); color: var(--or); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .etapes li b { display: block; color: var(--texte); font-size: 15px; margin-bottom: 2px; }
+
+  .maj { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 16px 18px; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+  .maj .nom { color: var(--or); font-weight: 700; font-size: 17px; }
+  .maj .date { color: var(--discret); font-size: 13px; }
+  .maj a { margin-left: auto; color: var(--or); text-decoration: none; font-weight: 600; font-size: 14px; }
+
+  footer { border-top: 1px solid var(--bord); color: #5d6d7b; font-size: 12.5px; padding: 22px 28px 30px; text-align: center; }
+  footer a { color: var(--discret); }
+  .cache { display: none !important; }
+  @media (max-width: 700px) { .barre { padding: 8px 14px; } .barre b { display: none; } main { padding: 0 16px 40px; } .tete { min-height: 78vh; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="barre" id="barre">
+  <img src="/site/favicon.png" alt="">
+  <b class="titre">PAG</b>
+  <nav>
+    <a href="/carte/">Carte</a>
+    <a href="/campagne/">Campagne</a>
+    <a href="/effectifs/">Effectifs</a>
+    <a href="/certifications/">Certifications</a>
+    <a href="/dotations/">Dotations</a>
+    <a href="/suivi/">Développement</a>
+    <a href="#rejoindre">Nous rejoindre</a>
+    <a class="lien-discord cache" href="#" target="_blank" rel="noopener">Discord</a>
+  </nav>
+</div>
+
+<section class="tete">
+  <div>
+    <img class="logo" src="/site/logo.webp" alt="Écusson de la PAG : un manchot en béret vert, FAMAS en main" width="480" height="483">
+    <h1 class="titre">Penguin Assault Group</h1>
+    <div class="devise">Milsim semi-RP · Armée française · Everon</div>
+    <p>La PAG est une unité francophone sur Arma Reforger. On y sert sous l'uniforme français, on y monte en grade, et on reprend l'île d'Everon zone après zone, en section, avec méthode et bonne humeur.</p>
+    <div class="etat">
+      <span class="pastille" id="p-serveur"><i></i><span>Serveur : vérification…</span></span>
+      <span class="pastille cache" id="p-soldats"><span><b>0</b> soldat déployé</span></span>
+      <span class="pastille cache" id="p-heure"><span>Heure sur l'île : <b></b></span></span>
+    </div>
+    <div class="boutons">
+      <a class="bouton fort" href="/carte/">Carte de situation</a>
+      <a class="bouton" href="/suivi/">Suivi du développement</a>
+      <a class="bouton discord lien-discord cache" href="#" target="_blank" rel="noopener">Rejoindre le Discord</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="portes">
+    <a class="porte" href="/carte/">
+      <div class="vue carte"><div class="carre"></div></div>
+      <div class="texte">
+        <h3 class="titre">Carte de situation</h3>
+        <p>Toute l'île en photographie aérienne : le front et les zones tenues, les carrés de 100 m occupés par nos soldats et les missions ouvertes, actualisés toutes les 5 secondes.</p>
+        <div class="vif" id="vif-carte"></div>
+        <span class="aller">Ouvrir la carte</span>
+      </div>
+    </a>
+    <a class="porte" href="/campagne/">
+      <div class="vue campagne"><div class="anneau" id="anneau"><b id="anneau-texte">–</b><span id="anneau-sous">de l'île tenue</span></div></div>
+      <div class="texte">
+        <h3 class="titre">La campagne</h3>
+        <p>L'état de la guerre sur un seul écran : territoire, menace ennemie, missions, trésorerie, dépôts et parc de véhicules. Fait pour rester ouvert sur un second moniteur.</p>
+        <div class="vif" id="vif-campagne"></div>
+        <span class="aller">Voir la campagne</span>
+      </div>
+    </a>
+    <a class="porte" href="/effectifs/">
+      <div class="vue effectifs"><img src="/site/logo.webp" alt=""></div>
+      <div class="texte">
+        <h3 class="titre">Les effectifs</h3>
+        <p>Tous les soldats de la PAG, par grade. Chaque nom ouvre sa fiche : certifications, heures de service, missions réussies.</p>
+        <div class="vif"></div>
+        <span class="aller">Voir les effectifs</span>
+      </div>
+    </a>
+    <a class="porte" href="/certifications/">
+      <div class="vue certifs"><span style="--c:#c9a227">FGI</span><span style="--c:#4da3ff">CDG</span><span style="--c:#3ddc84">INF</span><span style="--c:#ff7a59">MG</span><span style="--c:#ff7a59">TP</span><span style="--c:#9b8cff">SAP</span><span style="--c:#37c2c2">VL</span><span style="--c:#37c2c2">PIL</span><span style="--c:#9b8cff">LOGI</span></div>
+      <div class="texte">
+        <h3 class="titre">Certifications et grades</h3>
+        <p>Ce que chaque certification ouvre, ce qu'il faut avoir avant, comment on l'obtient, et les conditions de chaque grade, de la recrue à l'adjudant.</p>
+        <div class="vif"></div>
+        <span class="aller">Voir les certifications</span>
+      </div>
+    </a>
+    <a class="porte" href="/dotations/">
+      <div class="vue dotations"><b>CE</b><span>Centre Europe</span></div>
+      <div class="texte">
+        <h3 class="titre">Dotations et habillement</h3>
+        <p>La tenue du soldat, les bérets par classe, la dotation commune et celle de chaque rôle : fusilier, mitrailleur, infirmier, chef de groupe… Illustré, pièce par pièce.</p>
+        <div class="vif"></div>
+        <span class="aller">Voir les dotations</span>
+      </div>
+    </a>
+    <a class="porte" href="/suivi/">
+      <div class="vue suivi" id="barres"></div>
+      <div class="texte">
+        <h3 class="titre">Suivi du développement</h3>
+        <p>Le serveur tourne sur un mod fait maison, qui avance chaque semaine. Les idées, ce qui est en chantier, ce qui reste à tester et l'historique des mises à jour.</p>
+        <div class="vif" id="vif-suivi"></div>
+        <span class="aller">Voir le tableau</span>
+      </div>
+    </a>
+    <a class="porte lien-discord cache" href="#" target="_blank" rel="noopener">
+      <div class="vue discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></div>
+      <div class="texte">
+        <h3 class="titre">Le Discord</h3>
+        <p>Le quartier général de l'unité : recrutement, opérations programmées, formations, annonces des mises à jour. Le passage obligé pour s'engager.</p>
+        <div class="vif"></div>
+        <span class="aller">Rejoindre le Discord</span>
+      </div>
+    </a>
+  </div>
+
+  <h2 class="titre">En ce moment sur Everon</h2>
+  <p class="chapeau">Les chiffres viennent du serveur de jeu, en direct.</p>
+  <div class="chiffres">
+    <div class="chiffre"><div class="n" id="n-soldats">–</div><div class="l">soldats déployés</div><div class="jauge"><i id="j-soldats"></i></div></div>
+    <div class="chiffre"><div class="n" id="n-ile">–</div><div class="l" id="l-ile">de l'île tenue par la PAG</div><div class="jauge ile"><i id="j-ile"></i></div></div>
+    <div class="chiffre"><div class="n" id="n-missions">–</div><div class="l">missions ouvertes</div></div>
+    <div class="chiffre"><div class="n" id="n-heure">–</div><div class="l">heure sur l'île</div></div>
+  </div>
+
+  <h2 class="titre">Ce qui vous attend</h2>
+  <p class="chapeau">Du sérieux dans la manœuvre, pas dans l'ambiance.</p>
+  <div class="piliers">
+    <div class="pilier"><h3>Une île à reprendre</h3><p>Everon est découpée en zones tenues par l'ennemi. On avance carré par carré sur une vraie ligne de front, on tient ce qu'on a pris, et l'ennemi contre-attaque. L'effectif adverse s'adapte au nombre de soldats engagés : on peut partir à quatre comme à vingt.</p></div>
+    <div class="pilier"><h3>Des missions, pas du farm</h3><p>Reconnaissance, libération, documents à saisir, livraisons. Les missions se demandent au tableau de la base de Levie et s'accordent par le commandement, à pied ou motorisé.</p></div>
+    <div class="pilier"><h3>L'infiltration récompensée</h3><p>Un ennemi qui ne vous a pas repéré ne vous voit pas à travers la forêt. Approche discrète, alerte, patrouilles qui fouillent, fusées éclairantes la nuit : le contact se mérite.</p></div>
+    <div class="pilier"><h3>Une carrière</h3><p>Recrue, soldat, sous-officier, officier. Une formation générale initiale à l'arrivée, des <a href="/certifications/" style="color:var(--or)">certifications</a> ensuite, et des états de service qui vous suivent.</p></div>
+    <div class="pilier"><h3>Matériel français</h3><p>FAMAS, tenues et bérets de l'armée française, véhicules et hélicoptères de la base. Médical ACE : un blessé se stabilise, se transporte et se soigne.</p></div>
+    <div class="pilier"><h3>Un monde vivant</h3><p>Des civils dans les villages et sur les routes, qu'il faut protéger. Les règles d'engagement comptent : ici, un crime de guerre a des conséquences.</p></div>
+  </div>
+
+  <h2 class="titre" id="rejoindre">Nous rejoindre</h2>
+  <p class="chapeau">Trois étapes, et vous êtes sur le terrain.</p>
+  <ol class="etapes">
+    <li><b>Passez sur le Discord</b>Présentez-vous, lisez le règlement. C'est là que tout se passe entre deux opérations.<span class="lien-discord cache"> <a class="lien-discord" href="#" target="_blank" rel="noopener" style="color:var(--or)">Ouvrir l'invitation</a></span></li>
+    <li><b>Connectez-vous au serveur</b><span id="txt-serveur">Arma Reforger, sur PC. Les mods se téléchargent tout seuls à la connexion.</span></li>
+    <li><b>Faites votre formation initiale</b>Un instructeur vous prend en main : déplacements, radio, secourisme, tir. Ensuite, place aux missions.</li>
+  </ol>
+
+  <div id="bloc-maj" class="cache">
+    <h2 class="titre">Dernière mise à jour</h2>
+    <p class="chapeau">Publiée depuis le tableau de suivi.</p>
+    <div class="maj"><span class="nom" id="maj-nom"></span><span class="date" id="maj-date"></span><span id="maj-nb" class="date"></span><a href="/suivi/#historique">Tout l'historique →</a></div>
+  </div>
+</main>
+
+<footer>
+  PAG · Penguin Assault Group — communauté de joueurs, sans lien avec l'armée française ni avec Bohemia Interactive.<br>
+  <a href="/carte/">Carte de situation</a> · <a href="/campagne/">Campagne</a> · <a href="/effectifs/">Effectifs</a> · <a href="/certifications/">Certifications</a> · <a href="/dotations/">Dotations</a> · <a href="/suivi/">Suivi du développement</a>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const pluriel = (n, mot) => `${n} ${mot}${n > 1 ? 's' : ''}`;
+const jour = d => { const m = /^(\d{4})-(\d\d)-(\d\d)/.exec(d || ''); return m ? `${m[3]}/${m[2]}/${m[1]}` : ''; };
+addEventListener('scroll', () => $('barre').classList.toggle('pleine', scrollY > 40), { passive: true });
+
+function afficher(e) {
+  // état du serveur
+  const p = $('p-serveur');
+  p.className = 'pastille ' + (e.en_ligne ? 'oui' : 'non');
+  p.lastElementChild.textContent = e.en_ligne ? 'Serveur en ligne' : 'Serveur hors ligne';
+  $('p-soldats').classList.toggle('cache', !e.en_ligne);
+  $('p-soldats').lastElementChild.innerHTML = `<b>${e.soldats}</b> soldat${e.soldats > 1 ? 's' : ''} déployé${e.soldats > 1 ? 's' : ''}`;
+  $('p-heure').classList.toggle('cache', !e.heure_jeu);
+  $('p-heure').querySelector('b').textContent = e.heure_jeu;
+
+  // chiffres
+  $('n-soldats').innerHTML = e.en_ligne ? `${e.soldats}<small> / ${e.places}</small>` : '–';
+  $('j-soldats').style.width = e.en_ligne && e.places ? Math.min(100, 100 * e.soldats / e.places) + '%' : '0';
+  // part de l'île tenue : lue dans le front gardé par le bot, visible serveur éteint (ancien mod : les secteurs)
+  const part = e.ile_part === null || e.ile_part === undefined ? null : Number(e.ile_part);
+  const pc = p => p.toFixed(1).replace('.', ',') + ' %';
+  if (part !== null) {
+    $('n-ile').innerHTML = `${pc(part)}<small> · ${pluriel(e.zones_nous || 0, 'zone')}</small>`;
+    $('l-ile').textContent = 'de l\'île tenue par la PAG';
+    $('j-ile').style.width = Math.min(100, part) + '%';
+    $('anneau').style.setProperty('--part', part);
+    $('anneau-texte').textContent = pc(part);
+    $('anneau-sous').textContent = 'de l\'île tenue';
+  } else if (e.secteurs_total) {
+    $('n-ile').innerHTML = `${e.secteurs_nous}<small> / ${e.secteurs_total}</small>`;
+    $('l-ile').textContent = 'secteurs tenus par la PAG';
+    $('j-ile').style.width = (100 * e.secteurs_nous / e.secteurs_total) + '%';
+    $('anneau').style.setProperty('--part', 100 * e.secteurs_nous / e.secteurs_total);
+    $('anneau-texte').textContent = `${e.secteurs_nous} / ${e.secteurs_total}`;
+    $('anneau-sous').textContent = 'secteurs tenus';
+  } else {
+    $('n-ile').textContent = '–';
+    $('j-ile').style.width = '0';
+    $('anneau').style.setProperty('--part', 0);
+    $('anneau-texte').textContent = '–';
+  }
+  $('n-missions').textContent = e.en_ligne ? e.missions : '–';
+  $('n-heure').textContent = e.heure_jeu || '–';
+  $('vif-campagne').textContent = [e.en_ligne ? `${pluriel(e.missions, 'mission')} en cours` : '', e.gele ? 'front gelé' : ''].filter(Boolean).join(' · ');
+  $('vif-carte').textContent = e.en_ligne ? `En direct : ${pluriel(e.soldats, 'soldat')} sur l'île, ${pluriel(e.missions, 'mission')}` : 'Serveur hors ligne : le front reste consultable';
+
+  // tableau de suivi : une barre par colonne
+  const colonnes = (e.suivi && e.suivi.colonnes) || [];
+  const max = Math.max(1, ...colonnes.map(c => c.n));
+  $('barres').innerHTML = colonnes.map(c => `<span title="${c.nom} : ${c.n}" style="--c: var(--${c.cle}); height: ${Math.round(8 + 130 * c.n / max)}px"><b>${c.n}</b></span>`).join('');
+  const n = cle => (colonnes.find(c => c.cle === cle) || { n: 0 }).n;
+  $('vif-suivi').textContent = colonnes.length ? `${pluriel(n('idee'), 'idée')} · ${n('en_cours') + n('a_developper') + n('a_faire')} en chantier · ${n('a_tester')} à tester` : '';
+
+  const v = e.suivi && e.suivi.derniere;
+  $('bloc-maj').classList.toggle('cache', !v);
+  if (v) { $('maj-nom').textContent = v.version; $('maj-date').textContent = jour(v.date); $('maj-nb').textContent = pluriel(v.cartes, 'nouveauté'); }
+
+  // Discord et nom du serveur : réglés dans la configuration du bot, cachés tant qu'ils sont vides
+  for (const el of document.querySelectorAll('.lien-discord')) { el.classList.toggle('cache', !e.discord); if (e.discord && el.tagName === 'A') el.href = e.discord; }
+  if (e.serveur) $('txt-serveur').innerHTML = `Arma Reforger, sur PC. Cherchez <b style="display:inline;color:var(--or)"></b> dans la liste des serveurs : les mods se téléchargent tout seuls.`, $('txt-serveur').querySelector('b').textContent = '« ' + e.serveur + ' »';
+}
+
+async function actualiser() {
+  try { afficher(await (await fetch('/api/accueil', { cache: 'no-store' })).json()); }
+  catch (err) { $('p-serveur').className = 'pastille'; $('p-serveur').lastElementChild.textContent = 'Site injoignable, nouvel essai…'; }
+}
+actualiser();
+setInterval(actualiser, 20000);
+</script>
+</body>
+</html>

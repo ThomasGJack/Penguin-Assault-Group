@@ -1,0 +1,48 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{8C8D2EF181A72B14}Assets/Props/Civilian/Suitcase_01/Suitcase_01.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "TinyDestructible"
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   m_eMaterialSoundType BREAK_SANDBAG
+  }
+  SRP_MoneyComponent "{6A4E86681FC70483}" {
+  }
+  ActionsManagerComponent "{6A4EA18250DE0A04}" {
+   ActionContexts {
+    UserActionContext "{6A4EF72E455AA236}" {
+     UIInfo UIInfo "{6A4EF72E436B8414}" {
+      Name "cash"
+     }
+     ContextName "cash"
+     Position PointInfo "{6A4EF72E7DFEF7CE}" {
+      Offset 0 0.3991 0
+     }
+     Radius 1
+    }
+   }
+   additionalActions {
+    SRP_CashPickupAction "{6A4EF72E77E319BA}" {
+     ParentContextList {
+      "cash"
+     }
+     UIInfo UIInfo "{6A4EF72E7365A063}" {
+      Name "Cash"
+     }
+     ActionTitle "Cash"
+     VisibilityRange 1
+     Duration 0.5
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}

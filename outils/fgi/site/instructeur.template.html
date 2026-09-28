@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0c1116">
+<title>PAG · FGI · Instructeur</title>
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #e3e9ef; --doux: #b4c0cb; --discret: #8a9aa8;
+          --or: #c9a227; --dire: #c9a227; --montrer: #4da3ff; --faire: #3ddc84; --questions: #b48cff; --controle: #e0b84a; --alerte: #ff7a59; --retard: #ffb020;
+          --pied: 0px; }
+  * { box-sizing: border-box; scrollbar-color: #2b3a47 #0c1116; scrollbar-width: thin; }
+  html, body { margin: 0; background: var(--fond); color: var(--texte); font: 17px/1.5 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+  body { min-height: 100vh; min-height: 100dvh; padding-bottom: calc(var(--pied) + env(safe-area-inset-bottom)); }
+  button, input, textarea { font: inherit; color: inherit; }
+  a { color: var(--or); }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+  [hidden] { display: none !important; }
+  .visuel-seul { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* barre du haut */
+  .barre { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 10px; padding: 8px 16px; padding-top: max(8px, env(safe-area-inset-top));
+           background: #0c1116f5; border-bottom: 1px solid var(--bord); backdrop-filter: blur(6px); min-height: 56px; }
+  .barre .marque { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--texte); flex: none; padding: 4px; margin: -4px; }
+  .barre .marque img { width: 32px; height: 32px; }
+  .barre .marque b { font-size: 14px; }
+  .barre .espace { flex: 1; }
+  .horloges { display: flex; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
+  .horloge { display: flex; flex-direction: column; align-items: center; line-height: 1.1; padding: 3px 10px; border: 1px solid var(--bord); border-radius: 9px; background: var(--panneau); min-width: 84px; }
+  .horloge small { font-size: 11px; color: var(--discret); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+  .horloge span { font-size: 18px; font-weight: 700; white-space: nowrap; }
+  .horloge em { font-style: normal; font-weight: 500; font-size: .78em; color: var(--discret); }
+  .horloge.depasse { border-color: var(--retard); background: #2a1d0d; } .horloge.depasse span, .horloge.depasse small { color: var(--retard); }
+  .horloge.gel { border-style: dashed; border-color: var(--doux); } .horloge.gel span { color: var(--doux); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border-radius: 10px; border: 1px solid var(--bord);
+         background: var(--panneau); color: var(--texte); text-decoration: none; cursor: pointer; font-weight: 600; font-size: 15.5px; }
+  .btn:hover { border-color: var(--or); }
+  .btn:focus-visible, .choix:focus-visible, .case:focus-within, .etape-fil:focus-visible { outline: 3px solid var(--or); outline-offset: 2px; }
+  .btn.or { background: var(--or); color: #11161b; border-color: var(--or); }
+  .btn.imprevu { border-color: var(--alerte); color: var(--alerte); }
+  .btn.imprevu:hover { background: #2a1510; }
+  .btn.pause-on { background: #1b2530; border-color: var(--doux); border-style: dashed; }
+  .btn.petit { min-height: 40px; padding: 6px 12px; font-size: 14.5px; }
+  .btn[disabled] { opacity: .35; cursor: default; }
+  kbd { font: 600 12.5px/1 "Segoe UI", sans-serif; border: 1px solid var(--bord); border-bottom-width: 3px; border-radius: 5px; padding: 3px 6px; color: var(--or); background: var(--carte); }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 22px 18px 40px; }
+  h1 { margin: 0 0 6px; font-size: clamp(26px, 5vw, 38px); line-height: 1.1; }
+  h2 { margin: 0 0 10px; font-size: 22px; }
+  .chapeau { color: var(--doux); margin: 0 0 22px; max-width: 760px; }
+  .discret { color: var(--discret); }
+
+  /* accueil */
+  .portes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 8px 0 22px; }
+  .choix { display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 20px 20px 18px; border-radius: 14px; background: var(--panneau); border: 1px solid var(--bord);
+           border-top: 4px solid var(--c, var(--or)); cursor: pointer; color: var(--texte); text-decoration: none; min-height: 140px; }
+  .choix:hover { border-color: var(--c, var(--or)); }
+  .choix .num { font: 700 13px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .12em; color: var(--c, var(--or)); text-transform: uppercase; }
+  .choix b { font-size: 21px; }
+  .choix span { color: var(--doux); font-size: 15px; }
+  .liens { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .reprendre { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 14px 18px; border-radius: 12px; background: #1d1a0d; border: 1px solid var(--or); margin-bottom: 18px; }
+
+  /* listes à cocher */
+  .coches { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .case { display: flex; gap: 14px; align-items: flex-start; padding: 13px 16px; border-radius: 11px; background: var(--panneau); border: 1px solid var(--bord); cursor: pointer; font-size: 17px; }
+  .case input { width: 24px; height: 24px; margin: 1px 0 0; accent-color: var(--or); flex: none; cursor: pointer; }
+  .case.fait { border-color: #3ddc8455; background: #0f1c16; }
+  .case.fait span { color: var(--doux); }
+  .jauge { height: 8px; border-radius: 99px; background: #2b3a47; overflow: hidden; margin: 8px 0 18px; }
+  .jauge i { display: block; height: 100%; background: var(--or); border-radius: 99px; transition: width .2s; }
+  .compte { font-weight: 700; color: var(--or); }
+  .actions-bas { position: sticky; bottom: calc(var(--pied) + 0px); padding: 12px 0 calc(12px + env(safe-area-inset-bottom)); background: #0c1116f2; margin-top: 12px; z-index: 5; }
+
+  /* recrues */
+  .champs { display: grid; gap: 10px; max-width: 560px; }
+  .champs label { display: grid; gap: 4px; font-size: 14px; color: var(--discret); }
+  .champs input { min-height: 48px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--bord); background: var(--panneau); font-size: 18px; }
+  .champs input:focus { border-color: var(--or); outline: none; }
+  .avert { padding: 11px 14px; border-radius: 10px; background: #2a1d0d; border: 1px solid var(--retard); color: #ffd9a0; margin: 12px 0; max-width: 760px; }
+
+  /* séance */
+  .seance { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
+  .fil { position: sticky; top: 80px; background: var(--panneau); border: 1px solid var(--bord); border-radius: 14px; padding: 14px 14px 10px; max-height: calc(100vh - 100px); overflow: auto; }
+  .fil h3, .plan h3 { margin: 0 0 8px; font-size: 13px; color: var(--discret); letter-spacing: .1em; text-transform: uppercase; }
+  .liste-etapes { list-style: none; margin: 0 0 12px; padding: 0; }
+  .etape-fil { display: flex; gap: 8px; align-items: baseline; width: 100%; text-align: left; padding: 6px 8px; border-radius: 7px; border: 0; background: none; font-size: 14.5px; color: var(--doux); cursor: pointer; }
+  .etape-fil:hover { background: var(--carte); }
+  .etape-fil.ici { background: var(--carte); color: var(--texte); font-weight: 600; box-shadow: inset 3px 0 0 var(--or); }
+  .etape-fil.vu { color: var(--discret); }
+  .type { font: 700 10.5px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .05em; text-transform: uppercase; color: var(--c); border: 1px solid var(--c); border-radius: 4px; padding: 3px 5px; flex: none; min-width: 58px; text-align: center; }
+  .modules-mini { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 12px; }
+  .modules-mini button { width: 40px; height: 40px; border-radius: 8px; border: 1px solid var(--bord); background: var(--carte); cursor: pointer; font-weight: 700; font-size: 15px; }
+  .modules-mini button.ici { background: var(--or); color: #0c1116; border-color: var(--or); }
+  .modules-mini button.fini { color: var(--discret); }
+  .recrues { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 6px; }
+  .recrues li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 4px 4px 4px 10px; border-radius: 8px; background: var(--carte); }
+  .recrues li.retiree span { text-decoration: line-through; color: var(--discret); }
+  .outils-etroit { display: none; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
+
+  .entete-module { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+  .pastille { width: 52px; height: 52px; border-radius: 50%; background: var(--or); color: #0c1116; display: flex; align-items: center; justify-content: center; font: 700 24px/1 Georgia, serif; flex: none; }
+  .entete-module small { display: block; color: var(--or); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .entete-module h2 { margin: 2px 0 0; font-size: clamp(20px, 3vw, 27px); line-height: 1.15; }
+  .progression { display: flex; gap: 4px; margin: 0 0 14px; }
+  .progression i { flex: 1; height: 6px; border-radius: 99px; background: #2b3a47; }
+  .progression i.vu { background: #7a6419; } .progression i.ici { background: var(--or); }
+
+  .carte-etape { background: var(--panneau); border: 1px solid var(--bord); border-left: 8px solid var(--c); border-radius: 14px; padding: 18px 22px 20px; }
+  .etiquette { display: inline-block; font: 800 13px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #0c1116; background: var(--c); border-radius: 6px; padding: 7px 10px; }
+  .consigne { color: var(--doux); font-size: 15.5px; margin: 10px 0 2px; }
+  .carte-etape h3 { margin: 12px 0 10px; font-size: clamp(21px, 2.6vw, 28px); line-height: 1.2; }
+  .points { margin: 0; padding-left: 26px; font-size: clamp(18px, 2.1vw, 22px); line-height: 1.42; }
+  .points li { margin: 8px 0; padding-left: 4px; }
+  .points li::marker { color: var(--c); font-weight: 700; }
+  .mpm { margin: 14px 0 4px; padding: 12px 16px; border-radius: 10px; background: #2a230c; border-left: 4px solid var(--or); font-style: italic; font-size: clamp(18px, 2.1vw, 22px); }
+  .mpm small { display: block; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--or); margin-bottom: 4px; }
+  .objectif-grand { font-size: clamp(19px, 2.3vw, 24px); line-height: 1.4; margin: 12px 0 14px; }
+  .infos { display: flex; flex-wrap: wrap; gap: 10px; margin: 6px 0 12px; }
+  .infos span { border: 1px solid var(--bord); background: var(--carte); border-radius: 999px; padding: 5px 13px; font-size: 15px; }
+  .attention { margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: #251413; border: 1px solid #ff7a5966; }
+  .attention b { color: var(--alerte); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+  .attention ul { margin: 6px 0 0; padding-left: 20px; }
+  .qr { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); }
+  .qr li { background: var(--carte); border-radius: 11px; padding: 10px 14px; border: 1px solid var(--bord); }
+  .qr .qui { font: 700 17px/1.1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .05em; text-transform: uppercase; color: var(--questions); }
+  .qr .q { margin: 6px 0 4px; font-size: clamp(17px, 1.9vw, 20px); font-weight: 600; }
+  .qr .r { margin: 0; color: var(--faire); font-size: 16.5px; }
+  .qr .r b { color: var(--doux); font-weight: 600; }
+  .aide-ligne { color: var(--doux); font-size: 15px; margin-top: 12px; }
+  .rappel { margin: 14px 0 0; padding: 10px 14px; border-radius: 10px; background: var(--carte); border: 1px dashed var(--bord); font-size: 15.5px; color: var(--doux); }
+  .rappel b { color: var(--texte); }
+  .ensuite { margin: 12px 2px 0; color: var(--doux); font-size: 15px; }
+  .ensuite span { font: 700 11.5px/1 Bahnschrift, "Segoe UI", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--doux); border: 1px solid var(--bord); border-radius: 5px; padding: 3px 6px; margin-right: 6px; }
+  .eveil { border: 1px solid var(--bord); background: var(--panneau); color: var(--faire); border-radius: 999px; min-height: 40px; padding: 5px 10px; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+  .eveil.eteint { color: var(--retard); border-color: var(--retard); }
+
+  .navigation { display: flex; gap: 12px; margin-top: 16px; }
+  .navigation .btn { min-height: 58px; font-size: 18px; flex: 1; }
+  .navigation .suivant { flex: 2; }
+  .raccourcis { color: var(--discret); font-size: 13px; margin-top: 10px; }
+  .bandeau-retard { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-radius: 12px; background: #2a1d0d; border: 1px solid var(--retard); margin-bottom: 12px; }
+  .bandeau-retard b { color: var(--retard); }
+  .bandeau-retard ul { margin: 4px 0 0; padding-left: 20px; }
+  .bandeau-repet { padding: 8px 14px; border-radius: 10px; background: #102033; border: 1px solid var(--montrer); color: #bcdcff; margin-bottom: 12px; font-size: 15px; }
+  .bandeau-info { padding: 10px 14px; border-radius: 10px; background: #1b2530; border: 1px solid var(--doux); margin-bottom: 12px; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .pause-voile { position: sticky; top: 64px; z-index: 6; padding: 12px 16px; border-radius: 12px; background: #1b2530; border: 2px dashed var(--doux); margin-bottom: 12px; display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .pause-voile b { font-size: 17px; }
+
+  /* voiles : imprévu, vue d'ensemble, plan */
+  .voile { position: fixed; inset: 0; z-index: 50; background: #05080bcc; display: flex; justify-content: center; align-items: flex-start; padding: 24px 14px; overflow: auto; }
+  .fenetre { width: min(980px, 100%); background: var(--panneau); border: 1px solid var(--bord); border-radius: 16px; padding: 0 20px 22px; box-shadow: 0 20px 60px #000a; }
+  .fenetre .haut { position: sticky; top: -24px; z-index: 2; background: var(--panneau); display: flex; align-items: center; gap: 10px; padding: 16px 0 10px; margin-bottom: 6px; }
+  .fenetre .haut h2 { margin: 0; flex: 1; outline: none; }
+  .fenetre .haut .btn { white-space: nowrap; }
+  .situations { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+  .situations button { text-align: left; min-height: 56px; padding: 12px 15px; border-radius: 11px; border: 1px solid var(--bord); background: var(--carte); cursor: pointer; font-size: 16px; }
+  .situations button:hover { border-color: var(--alerte); }
+  .situations h4 { grid-column: 1 / -1; margin: 10px 0 0; font-size: 12.5px; color: var(--discret); letter-spacing: .1em; text-transform: uppercase; }
+  .conduite { font-size: clamp(18px, 2.2vw, 22px); line-height: 1.45; }
+  .conduite ol { padding-left: 26px; } .conduite li { margin: 8px 0; }
+  .recherche { width: 100%; min-height: 46px; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--bord); background: var(--carte); margin-bottom: 12px; font-size: 16px; }
+  .retrait { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--carte); }
+  .retrait p { margin: 0 0 8px; color: var(--doux); font-size: 15px; }
+
+  /* vue d'ensemble d'un module */
+  .ensemble { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; }
+  .bloc { background: var(--carte); border: 1px solid var(--bord); border-top: 3px solid var(--c, var(--bord)); border-radius: 12px; padding: 12px 16px; }
+  .bloc h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--c, var(--doux)); }
+  .bloc h4 { margin: 10px 0 2px; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: #dcc06a; }
+  .bloc ul, .bloc ol { margin: 0; padding-left: 20px; font-size: 15.5px; } .bloc li { margin: 4px 0; }
+  .bloc .exact { font-style: italic; color: #f1dc93; }
+
+  /* aide-mémoire */
+  .memo { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .memo .bloc { --c: var(--or); }
+
+  /* fin */
+  .copier textarea { width: 100%; min-height: 110px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--bord); background: var(--carte); color: var(--texte); font: 16px/1.45 "Segoe UI", sans-serif; resize: vertical; }
+  table.temps { border-collapse: collapse; width: 100%; max-width: 640px; font-variant-numeric: tabular-nums; }
+  table.temps th, table.temps td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--bord); }
+  table.temps td.plus { color: var(--retard); } table.temps td.moins { color: var(--faire); }
+
+  /* grand second écran : lisible de loin */
+  @media (min-width: 1100px) {
+    .horloge { min-width: 110px; padding: 4px 12px; } .horloge span { font-size: 22px; } .horloge small { font-size: 12px; }
+    .consigne, .rappel { font-size: 17px; }
+    .aide-ligne, .ensuite { font-size: 16px; }
+  }
+  /* écran tactile : cibles de 44 px au moins */
+  @media (pointer: coarse) {
+    .btn.petit, .eveil { min-height: 44px; min-width: 44px; }
+    .barre .marque { padding: 6px; margin: -6px; }
+  }
+  /* fenêtre étroite ou téléphone : pas de colonne, barre de navigation en bas */
+  .pied-mobile { display: none; }
+  @media (max-width: 900px), (max-height: 520px) and (pointer: coarse) {
+    :root { --pied: 78px; }
+    .seance { grid-template-columns: 1fr; }
+    .fil { display: none; }
+    .outils-etroit { display: flex; }
+    .navigation.bureau, .raccourcis { display: none; }
+    .pied-mobile { display: flex; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 12px; padding-bottom: max(10px, env(safe-area-inset-bottom));
+                   background: #0c1116f7; border-top: 1px solid var(--bord); }
+    .pied-mobile .btn { min-height: 56px; flex: 1; font-size: 17px; }
+    .pied-mobile .suivant { flex: 2.2; }
+  }
+  @media (max-width: 640px) {
+    main { padding: 12px 12px 24px; }
+    .barre { padding: 6px 10px; gap: 6px; }
+    .barre .marque b { display: none; }
+    .horloge { min-width: 58px; padding: 2px 6px; } .horloge span { font-size: 15.5px; } .horloge em { display: none; } .horloge small { font-size: 10px; }
+    .eveil .long { display: none; } .eveil { padding: 4px 10px; font-size: 16px; }
+    #b-imprevu { padding: 6px 10px; }
+    .entete-module { gap: 10px; margin-bottom: 8px; }
+    .pastille { width: 36px; height: 36px; font-size: 18px; }
+    .entete-module h2 { font-size: 18px; }
+    .entete-module .lieu-long { display: none; }
+    .bandeau-retard, .pause-voile, .bandeau-repet, .bandeau-info { padding: 8px 12px; margin-bottom: 8px; font-size: 14.5px; }
+    .pause-voile { top: 58px; }
+    .carte-etape { padding: 14px 15px 16px; border-left-width: 6px; }
+    .points, .mpm, .objectif-grand { font-size: 20px; }
+    .qr { grid-template-columns: 1fr; } .qr .q { font-size: 18px; } .qr .qui { font-size: 16px; }
+    .case { padding: 10px 12px; gap: 10px; font-size: 16px; line-height: 1.35; } .coches { gap: 6px; }
+    .voile { padding: 10px 8px; }
+    .fenetre { padding: 0 14px 18px; }
+    .fenetre .haut { flex-wrap: wrap; top: -10px; }
+    .fenetre .haut h2 { order: 3; flex-basis: 100%; font-size: 20px; line-height: 1.25; }
+  }
+  @media print { .barre, .pied-mobile, .navigation, .fil, .outils-etroit { display: none !important; } body { background: #fff; color: #000; } }
+</style>
+</head>
+<body>
+<header class="barre">
+  <a class="marque" href="#/" aria-label="Accueil du guide"><img src="/site/favicon.png" alt=""><b class="titre">FGI · Instructeur</b></a>
+  <span class="espace"></span>
+  <div class="horloges" id="horloges" hidden>
+    <div class="horloge" id="h-module" title="Temps passé sur ce module / temps prévu"><small id="h-module-nom">Module</small><span>0:00</span></div>
+    <div class="horloge" id="h-seance" title="Temps de séance écoulé / temps prévu"><small id="h-seance-nom">Séance</small><span>0:00</span></div>
+  </div>
+  <button class="btn petit" id="b-pause" hidden aria-pressed="false" title="Pause des minuteurs (touche P)">⏸<span class="visuel-seul"> Pause</span></button>
+  <button class="eveil" id="eveil" hidden></button>
+  <button class="btn imprevu petit" id="b-imprevu" title="Un imprévu ? (touche I)" aria-label="Imprévu">⚠ <span class="long">Imprévu</span></button>
+</header>
+
+<main id="app"></main>
+
+<div class="pied-mobile" id="pied-mobile" hidden>
+  <button class="btn" id="m-prec" aria-label="Écran précédent">←</button>
+  <button class="btn" id="m-plan">☰ Plan</button>
+  <button class="btn or suivant" id="m-suiv">Suivant →</button>
+</div>
+
+<div class="voile" id="voile" hidden><div class="fenetre" id="fenetre" role="dialog" aria-modal="true"></div></div>
+
+<script>const CONTENU = /*@@CONTENU@@*/null;</script>
+<script>
+"use strict";
+/* ============================================================================================
+   Guide interactif de l'instructeur FGI. Tout le contenu vient de CONTENU (fgi_contenu.json).
+   Rien n'est envoyé au serveur : la séance, les noms et les cases restent dans ce navigateur.
+   ============================================================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const plat = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+const app = $("#app");
+const COULEURS = { dire: "var(--dire)", montrer: "var(--montrer)", faire: "var(--faire)", questions: "var(--questions)", controle: "var(--controle)", deplacement: "var(--doux)", intro: "var(--or)", validation: "var(--or)", fin: "var(--or)" };
+const ETIQUETTES = { dire: "À aborder", montrer: "À montrer", faire: "À faire faire", questions: "Questions", controle: "À valider", deplacement: "Déplacement", intro: "Nouveau module", validation: "Validation", fin: "Fin" };
+const COURTS = { dire: "Aborder", montrer: "Montrer", faire: "Faire", questions: "Questions", controle: "Valider", deplacement: "Trajet", intro: "Début", validation: "Valider", fin: "Fin" };
+const CONSIGNES = {
+  dire: "Avec tes mots, face au groupe, une idée à la fois. Pas plus de deux minutes sans une question ou un geste.",
+  montrer: "« Regardez. » Fais-le une fois en entier sans parler, puis une fois lentement en nommant chaque geste.",
+  faire: "« À vous. » Chaque recrue le fait devant toi, l'une après l'autre. Ne le fais jamais à sa place.",
+  questions: "Pose la question à tous, compte trois dans ta tête, puis nomme la recrue. Jamais « vous avez compris ? ».",
+  controle: "Avant de continuer, coche ce que tu as vu faire, pas ce qu'on t'a dit. Une case vide ne recale personne : tu le dis au débriefing.",
+  deplacement: "Tout le groupe te suit, en silence radio.",
+};
+const RAPPELS = {
+  faire: "<b>Erreur ?</b> « Stop. » + ce qui manque + « Refaites. » — <b>Réussi ?</b> son nom + ce qu'elle a fait + pourquoi c'est bien.",
+  questions: "<b>« Je ne sais pas » ?</b> Un indice, puis une autre recrue répond, puis la première répète la bonne réponse.",
+};
+// Fiches d'imprévu qui peuvent faire sortir une recrue de la séance : on propose de la retirer des questions et de l'annonce
+const FICHES_RETRAIT = ["retard", "micro", "charte", "deco", "tir-volontaire", "tir-accident", "perturbe", "insulte", "part"];
+
+/* -------------------------------------------------------------------- mémoire locale (peut être absente : tout est protégé) */
+const CLES = { reelle: "pag-fgi-seance", repetition: "pag-fgi-repetition", checklist: "pag-fgi-checklist", prefs: "pag-fgi-prefs" };
+function lire(cle, defaut) { try { const v = localStorage.getItem(cle); return v ? JSON.parse(v) : defaut; } catch (e) { return defaut; } }
+function ecrire(cle, v) { try { if (v == null) localStorage.removeItem(cle); else localStorage.setItem(cle, JSON.stringify(v)); } catch (e) {} }
+// la check-list vaut pour le jour même : le lendemain, elle repart à zéro
+function lireChecklist() { const v = lire(CLES.checklist, null); return v && v.jour === new Date().toDateString() && v.c ? v.c : {}; }
+function ecrireChecklist(c) { ecrire(CLES.checklist, { jour: new Date().toDateString(), c }); }
+
+/* -------------------------------------------------------------------- déroulé de la séance */
+function etapesModule(m) {
+  if (Array.isArray(m.etapes) && m.etapes.length) return m.etapes;
+  const et = m.groupes.map(g => ({ type: "dire", titre: g.titre, points: g.points.filter(p => !p.mot_pour_mot).map(p => p.texte),
+                                    mot_pour_mot: (g.points.find(p => p.mot_pour_mot) || {}).texte }));
+  if (m.montrer && m.montrer.length) et.push({ type: "montrer", titre: "À montrer", points: m.montrer });
+  if (m.faire && m.faire.length) et.push({ type: "faire", titre: "À faire faire", points: m.faire });
+  return et;
+}
+function construireEcrans() {
+  const e = [];
+  CONTENU.modules.forEach((m, mi) => {
+    e.push({ mi, type: "intro" });
+    const et = etapesModule(m).slice();
+    const fin = [];              // le déplacement qui clôt un module vient après les questions et le contrôle : on les fait sur place
+    while (et.length && et[et.length - 1].type === "deplacement") fin.unshift(et.pop());
+    et.forEach(x => e.push(Object.assign({ mi }, x)));
+    if (!et.some(x => x.type === "questions") && m.questions && m.questions.length) e.push({ mi, type: "questions" });
+    if (!et.some(x => x.type === "controle")) e.push({ mi, type: "controle" });
+    fin.forEach(x => e.push(Object.assign({ mi }, x)));
+  });
+  const V = CONTENU.modules.length;
+  (CONTENU.validation.ecrans || []).forEach(x => e.push(Object.assign({ mi: V }, x)));
+  e.push({ mi: V, type: "fin" });
+  return e;
+}
+const ECRANS = construireEcrans();
+const NB_MODULES = CONTENU.modules.length;          // le module V vient après
+const DUREE_V = 2;
+function moduleInfo(mi) { return mi < NB_MODULES ? CONTENU.modules[mi] : { n: "V", titre: "Validation en jeu et suite du parcours", duree: DUREE_V, lieu: "Là où finit la patrouille" }; }
+function dureePrevue(mi) { return moduleInfo(mi).duree * 60000; }
+const TOTAL_PREVU = CONTENU.modules.reduce((s, m) => s + m.duree, 0) + DUREE_V;
+function premierEcran(mi) { return ECRANS.findIndex(x => x.mi === mi); }
+function ecransDuModule(mi) { return ECRANS.map((x, i) => [x, i]).filter(([x]) => x.mi === mi); }
+
+/* -------------------------------------------------------------------- séance en cours */
+let S = null;          // séance chargée (réelle ou répétition)
+let MODE = null;
+function nouvelleSeance(mode, instructeur, recrues) {
+  const now = Date.now();
+  return { mode, instructeur, recrues, retirees: [], debut: now, enPause: null, pauseCumul: 0, ecran: 0, entree: now, tempsModules: {}, coches: {},
+           chef: null, rotation: Math.floor(Math.random() * 4), fini: false, vu: now, nbEcrans: ECRANS.length, annonceTexte: null };
+}
+function charger(mode) {
+  MODE = mode; S = lire(CLES[mode], null);
+  if (!S) return null;
+  S.retirees = S.retirees || [];
+  // guide mis à jour depuis le début de la séance : on garde la place la plus proche et on prévient
+  if (S.nbEcrans !== ECRANS.length || !ECRANS[S.ecran]) { S.ecran = Math.min(S.ecran || 0, ECRANS.length - 1); S.nbEcrans = ECRANS.length; S.guideChange = true; }
+  // page restée fermée longtemps (le soir, puis le lendemain) : on met en pause à l'heure où elle a été quittée
+  if (!S.enPause && !S.fini && S.vu && Date.now() - S.vu > 30 * 60000) { S.enPause = S.vu; S.repriseAuto = true; }
+  sauver();
+  return S;
+}
+function sauver() { if (S && MODE) { S.vu = Date.now(); ecrire(CLES[MODE], S); } }
+function actives() { return S ? S.recrues.filter(n => !S.retirees.includes(n)) : []; }
+function maintenant() { return S && S.enPause ? S.enPause : Date.now(); }
+function ecoule() { if (!S) return 0; if (S.fini && S.dureeFinale != null) return S.dureeFinale; return maintenant() - S.debut - S.pauseCumul; }
+function tempsModule(mi) {
+  let t = (S.tempsModules[mi] || 0);
+  if (!S.fini && ECRANS[S.ecran] && ECRANS[S.ecran].mi === mi) t += maintenant() - S.entree;
+  return t;
+}
+function changerEcran(i) {
+  if (!S) return;
+  i = Math.max(0, Math.min(ECRANS.length - 1, i));
+  const now = maintenant(), avant = ECRANS[S.ecran] ? ECRANS[S.ecran].mi : 0;
+  if (!S.fini) S.tempsModules[avant] = (S.tempsModules[avant] || 0) + (now - S.entree);
+  S.entree = now; S.ecran = i;
+  const fin = ECRANS[i].type === "fin";
+  if (fin && !S.fini) S.dureeFinale = now - S.debut - S.pauseCumul;
+  S.fini = fin;
+  sauver(); rendreSeance(); window.scrollTo(0, 0);
+}
+let dernierPas = 0;                         // un double appui ne doit pas sauter un écran
+function pas(d) { if (!S || route().nom !== "seance") return; const t = Date.now(); if (t - dernierPas < 400) return; dernierPas = t; changerEcran(S.ecran + d); }
+function basculerPause() {
+  if (!S || S.fini) return;
+  if (S.enPause) { const d = Date.now() - S.enPause; S.pauseCumul += d; S.entree += d; S.enPause = null; S.repriseAuto = false; }
+  else S.enPause = Date.now();
+  sauver();
+  if (route().nom === "seance") rendreSeance();
+}
+function retirer(nom) {
+  if (!S) return;
+  const k = S.retirees.indexOf(nom);
+  if (k >= 0) S.retirees.splice(k, 1); else { S.retirees.push(nom); if (S.chef === nom) S.chef = null; }
+  S.annonceTexte = null;                     // l'annonce se refait avec les recrues restantes
+  sauver();
+}
+function fmt(ms) { const neg = ms < 0; ms = Math.abs(ms); const m = Math.floor(ms / 60000), s = Math.floor(ms % 60000 / 1000); return (neg ? "−" : "") + m + ":" + String(s).padStart(2, "0"); }
+
+/* -------------------------------------------------------------------- horloges : le temps se lit, il ne presse pas (règle : « le temps qu'il faut ») */
+let dernierBattement = 0;
+function majHorloges() {
+  const bloc = $("#horloges"), bp = $("#b-pause");
+  if (!S || route().nom !== "seance" || S.fini) { bloc.hidden = true; bp.hidden = true; return; }
+  bloc.hidden = false; bp.hidden = false;
+  const pause = !!S.enPause;
+  bp.classList.toggle("pause-on", pause); bp.setAttribute("aria-pressed", String(pause));
+  bp.innerHTML = pause ? '▶<span class="visuel-seul"> Reprendre</span>' : '⏸<span class="visuel-seul"> Pause</span>';
+  const mi = ECRANS[S.ecran].mi, m = moduleInfo(mi);
+  const t = tempsModule(mi), prevu = dureePrevue(mi);
+  const hm = $("#h-module");
+  $("#h-module-nom").textContent = "Module " + m.n + (pause ? " · pause" : t > prevu ? " · +" + Math.ceil((t - prevu) / 60000) + " min" : "");
+  hm.querySelector("span").innerHTML = fmt(t) + '<em> / ' + m.duree + ' min</em>';
+  hm.className = "horloge" + (pause ? " gel" : t > prevu ? " depasse" : "");
+  const e = ecoule();
+  let prevuJusquIci = 0; for (let k = 0; k < mi; k++) prevuJusquIci += dureePrevue(k);
+  const retard = e - (prevuJusquIci + Math.min(t, prevu));
+  $("#h-seance-nom").textContent = pause ? "Séance · pause" : retard > 60000 ? "Séance · +" + Math.round(retard / 60000) + " min" : "Séance";
+  const hs = $("#h-seance");
+  hs.querySelector("span").innerHTML = fmt(e) + '<em> / ' + TOTAL_PREVU + ' min</em>';
+  hs.className = "horloge" + (pause ? " gel" : retard > 2 * 60000 ? " depasse" : "");
+  const br = $("#bandeau-retard"); if (br) br.hidden = pause || !(t > prevu);
+  const dp = $("#duree-pause"); if (dp && pause) dp.textContent = fmt(Date.now() - S.enPause);
+  const dpv = $("#duree-pause-voile"); if (dpv && pause) dpv.textContent = fmt(Date.now() - S.enPause);
+  if (!pause && Date.now() - dernierBattement > 15000) { dernierBattement = Date.now(); sauver(); }   // pour savoir, au retour, quand la page a été quittée
+}
+setInterval(majHorloges, 1000);
+
+/* -------------------------------------------------------------------- empêcher la mise en veille du téléphone */
+let verrou = null;
+async function garderEveille(oui) {
+  try {
+    if (oui && "wakeLock" in navigator && !verrou && document.visibilityState === "visible") { verrou = await navigator.wakeLock.request("screen"); verrou.addEventListener("release", () => { verrou = null; temoinEveil(); }); }
+    if (!oui && verrou) { await verrou.release(); verrou = null; }
+  } catch (e) { verrou = null; }
+  temoinEveil();
+}
+function temoinEveil() {
+  const t = $("#eveil"); if (!t) return;
+  t.hidden = route().nom !== "seance" || !("wakeLock" in navigator) || !matchMedia("(pointer: coarse)").matches;   // utile au téléphone seulement
+  t.innerHTML = verrou ? '☀<span class="long"> Écran allumé</span>' : '☾<span class="long"> Veille possible</span>';
+  t.className = "eveil" + (verrou ? "" : " eteint");
+  t.setAttribute("aria-label", verrou ? "Écran maintenu allumé" : "Veille possible : toucher pour garder l'écran allumé");
+}
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && route().nom === "seance") garderEveille(true); });
+
+/* -------------------------------------------------------------------- routes */
+function route() {
+  const h = location.hash.replace(/^#\/?/, "");
+  const [nom, arg] = h.split("/");
+  return { nom: nom || "accueil", arg: arg || "" };
+}
+window.addEventListener("hashchange", rendre);
+function aller(h) { if (location.hash === h) rendre(); else location.hash = h; }
+
+function rendre() {
+  const r = route();
+  fermerVoile(true);
+  $("#pied-mobile").hidden = true;
+  if (r.nom !== "seance") { S = null; MODE = null; garderEveille(false); }
+  if (r.nom === "seance") { charger(r.arg === "repetition" ? "repetition" : "reelle"); if (!S) return aller("#/"); rendreSeance(); garderEveille(true); }
+  else if (r.nom === "preparer") rendrePreparer();
+  else if (r.nom === "recrues") rendreRecrues(r.arg === "repetition" ? "repetition" : "reelle");
+  else if (r.nom === "module") rendreModule(r.arg);
+  else if (r.nom === "aide-memoire") rendreMemo();
+  else if (r.nom === "imprevus") { rendreAccueil(); ouvrirImprevu(); }
+  else rendreAccueil();
+  majHorloges();
+}
+
+/* -------------------------------------------------------------------- accueil */
+function rendreAccueil() {
+  const encours = lire(CLES.reelle, null), repet = lire(CLES.repetition, null);
+  const ck = lireChecklist(), nbCk = (CONTENU.checklist || []).filter(x => ck[x.id]).length;
+  let h = '<h1 class="titre">Formation Générale Initiale</h1><p class="chapeau">Le guide pas à pas de l\'instructeur : ' + TOTAL_PREVU + ' minutes, 2 à 4 recrues (une seule suffit), tout à la base de Levie. Suis les écrans dans l\'ordre : le guide te dit quoi aborder, quoi montrer et quoi faire faire.</p>';
+  if (encours) h += '<div class="reprendre"><div><b>' + (encours.fini ? "Séance terminée, pas encore close" : "Séance en cours") + '</b><br><span class="discret">' + esc(encours.recrues.join(", ")) + ' · ' + esc(etiquetteEcran(encours.ecran)) + '</span></div><div class="liens"><a class="btn or" href="#/seance">' + (encours.fini ? "Ouvrir" : "Reprendre") + '</a><button class="btn petit" data-effacer="reelle">Abandonner</button></div></div>';
+  if (repet) h += '<div class="reprendre" style="border-color:var(--montrer);background:#0f1a26"><div><b>Répétition en cours</b><br><span class="discret">' + esc(etiquetteEcran(repet.ecran)) + '</span></div><div class="liens"><a class="btn" href="#/seance/repetition">Reprendre</a><button class="btn petit" data-effacer="repetition">Arrêter</button></div></div>';
+  h += '<div class="portes">'
+     + '<a class="choix" href="#/preparer" style="--c:var(--or)"><span class="num">1 · Avant</span><b>Préparer ma séance</b><span>La check-list des dix minutes avant.' + (nbCk ? ' ' + nbCk + ' / ' + CONTENU.checklist.length + ' cochées aujourd\'hui.' : '') + '</span></a>'
+     + '<a class="choix" href="#/recrues/reelle" style="--c:var(--faire)"><span class="num">2 · Pendant</span><b>Lancer la séance</b><span>Tu entres le nom des recrues, puis le guide te mène écran par écran, minuteur compris.</span></a>'
+     + '<a class="choix" href="#/recrues/repetition" style="--c:var(--montrer)"><span class="num">Pour s\'entraîner</span><b>Répétition à blanc</b><span>Déroule la séance seul, avec le minuteur, pour la connaître avant le jour J. Rien n\'est gardé.</span></a>'
+     + '</div>';
+  h += '<h2 style="margin-top:6px">Consulter</h2><div class="liens">';
+  CONTENU.modules.forEach((m, i) => { h += '<a class="btn petit" href="#/module/' + i + '">Module ' + esc(m.n) + '</a>'; });
+  h += '<a class="btn petit" href="#/aide-memoire">Aide-mémoire</a><button class="btn petit imprevu" data-imprevu>⚠ Imprévus</button><a class="btn petit" href="/site/FGI_Guide_instructeur.pdf" download>Télécharger le PDF</a></div>';
+  h += '<p class="discret" style="margin-top:26px;font-size:14px">Rien n\'est envoyé au serveur : les noms des recrues et l\'avancement restent dans ce navigateur. Au clavier : <kbd>→</kbd> ou <kbd>Espace</kbd> suivant, <kbd>←</kbd> précédent, <kbd>I</kbd> imprévu, <kbd>V</kbd> vue d\'ensemble, <kbd>P</kbd> pause.' + (CONTENU.version ? ' Version du guide : ' + esc(CONTENU.version) + '.' : '') + '</p>';
+  app.innerHTML = h;
+  app.querySelectorAll("[data-effacer]").forEach(b => b.onclick = () => { if (confirm(b.dataset.effacer === "reelle" ? "Abandonner la séance ? Les noms et l'avancement seront effacés de cet appareil." : "Arrêter la répétition ?")) { ecrire(CLES[b.dataset.effacer], null); rendre(); } });
+  app.querySelectorAll("[data-imprevu]").forEach(b => b.onclick = () => ouvrirImprevu());
+}
+function etiquetteEcran(i) { const x = ECRANS[Math.min(i || 0, ECRANS.length - 1)]; if (!x) return ""; const m = moduleInfo(x.mi); return "Module " + m.n + " · " + (x.titre || ETIQUETTES[x.type] || ""); }
+
+/* -------------------------------------------------------------------- préparer : check-list du jour */
+function rendrePreparer() {
+  const ck = lireChecklist(), items = CONTENU.checklist || [];
+  let h = '<h1 class="titre">Préparer ma séance</h1><p class="chapeau">Coche au fur et à mesure. Tant qu\'une case reste vide, la séance n\'est pas prête. La liste repart à zéro chaque jour.</p>';
+  h += '<p style="margin:0"><span class="compte" id="ck-compte"></span></p><div class="jauge"><i id="ck-jauge"></i></div><ul class="coches">';
+  items.forEach(x => { h += '<li><label class="case' + (ck[x.id] ? " fait" : "") + '"><input type="checkbox" data-ck="' + esc(x.id) + '"' + (ck[x.id] ? " checked" : "") + '><span>' + x.html + '</span></label></li>'; });
+  h += '</ul><div class="liens actions-bas"><a class="btn" id="ck-go" href="#/recrues/reelle">Passer aux recrues →</a><button class="btn petit" id="ck-vider">Tout décocher</button></div>';
+  if (CONTENU.preparation && CONTENU.preparation.posture) h += '<div class="bloc" style="--c:var(--or);margin-top:24px;max-width:760px"><h3>Ta posture</h3><ul>' + CONTENU.preparation.posture.map(x => '<li>' + x + '</li>').join("") + '</ul></div>';
+  app.innerHTML = h;
+  const maj = () => {
+    const c = lireChecklist(), n = items.filter(x => c[x.id]).length;
+    $("#ck-compte").textContent = n + " / " + items.length + " prêtes";
+    $("#ck-jauge").style.width = (items.length ? 100 * n / items.length : 0) + "%";
+    const go = $("#ck-go"); go.className = "btn" + (n === items.length ? " or" : ""); go.textContent = n === items.length ? "Tout est prêt : les recrues →" : "Passer aux recrues →";
+  };
+  app.querySelectorAll("[data-ck]").forEach(i => i.onchange = () => { const c = lireChecklist(); c[i.dataset.ck] = i.checked; ecrireChecklist(c); i.closest(".case").classList.toggle("fait", i.checked); maj(); });
+  $("#ck-vider").onclick = () => { ecrireChecklist({}); rendrePreparer(); };
+  maj();
+}
+
+/* -------------------------------------------------------------------- recrues */
+function rendreRecrues(mode) {
+  const prefs = lire(CLES.prefs, {}), repet = mode === "repetition";
+  let h = '<h1 class="titre">' + (repet ? "Répétition à blanc" : "Les recrues") + '</h1>';
+  h += repet ? '<p class="chapeau">Tu déroules la séance seul, comme si les recrues étaient là : lis chaque écran à voix haute, fais les gestes, regarde le minuteur. À la fin, le guide te montre où tu as pris du temps.</p>'
+             : '<p class="chapeau">Entre le nom de chaque recrue comme tu l\'appelleras en jeu. Le guide répartit les questions entre elles et prépare l\'annonce des promotions. Les noms restent sur cet appareil.</p>';
+  h += '<div class="champs"><label>Toi : grade et nom (pour « Je suis… » et l\'annonce)<input id="r-instr" autocomplete="off" maxlength="40" value="' + esc(prefs.instructeur || "") + '" placeholder="ex. Sergent Lania"></label>';
+  const defauts = repet ? ["Recrue A", "Recrue B", "", ""] : ["", "", "", ""];
+  for (let k = 0; k < 4; k++) h += '<label>Recrue ' + (k + 1) + (k < 1 ? "" : " (facultatif)") + '<input data-rec maxlength="32" autocomplete="off" value="' + esc(defauts[k]) + '" placeholder="' + (k < 1 ? "nom en jeu" : "—") + '"></label>';
+  h += '</div><div class="avert" id="r-avert" hidden></div><div class="liens" style="margin-top:16px"><button class="btn or" id="r-go">' + (repet ? "Commencer la répétition →" : "Commencer la séance →") + '</button><a class="btn" href="#/">Annuler</a></div>';
+  app.innerHTML = h;
+  const avert = $("#r-avert");
+  $("#r-go").onclick = () => {
+    const noms = [];
+    app.querySelectorAll("[data-rec]").forEach(i => { const v = i.value.trim(); if (v && !noms.includes(v)) noms.push(v); });
+    const instr = $("#r-instr").value.trim();
+    if (!noms.length) { avert.hidden = false; avert.textContent = "Entre au moins un nom de recrue."; return; }
+    const existante = lire(CLES[mode], null);
+    if (existante && !existante.fini && !confirm((repet ? "Une répétition" : "Une séance") + " est déjà en cours (" + existante.recrues.join(", ") + "). La remplacer par celle-ci ?")) return;
+    const p = lire(CLES.prefs, {}); p.instructeur = instr; ecrire(CLES.prefs, p);
+    MODE = mode; S = nouvelleSeance(mode, instr, noms); sauver();
+    aller(repet ? "#/seance/repetition" : "#/seance");
+  };
+}
+
+/* -------------------------------------------------------------------- écrans de séance */
+// Toutes les questions sont posées : une par recrue au moins ; s'il y a plus de questions que de recrues, on refait un tour.
+function questionsPour(mi) {
+  const qs = CONTENU.modules[mi].questions || [], rec = actives(), n = rec.length;
+  if (!qs.length || !n) return [];
+  return Array.from({ length: Math.max(qs.length, n) }, (_, j) => ({ nom: rec[(j + S.rotation + mi) % n], q: qs[j % qs.length] }));
+}
+function remplir(txt) {
+  const nom = esc(S && S.instructeur || "[grade, nom]");
+  return esc(txt).replace(/\[grade, nom\]|\[grade et nom\]/g, () => nom);
+}
+function listeHtml(items, ordonnee, brut) {
+  const b = ordonnee ? "ol" : "ul";
+  return "<" + b + ' class="points">' + items.map(x => "<li>" + (brut ? x : remplir(x)) + "</li>").join("") + "</" + b + ">";
+}
+function annoncePromotions() {
+  const date = new Date(S.debut).toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+  const r = actives();
+  if (!r.length) return "Aucune recrue à promouvoir : toutes ont été retirées de la séance.";
+  const noms = r.length > 1 ? r.slice(0, -1).join(", ") + " et " + r[r.length - 1] : (r[0] || "—");
+  const pl = r.length > 1;
+  return CONTENU.annonce_promotions.replace("{date}", () => date).replace("{noms}", () => noms).replace("{verbe}", () => pl ? "passent" : "passe")
+    .replace("{portent}", () => pl ? "portent" : "porte").replace("{instructeur}", () => S.instructeur || "—");
+}
+function recruesHtml() {
+  return '<h3>Recrues</h3><ul class="recrues">' + S.recrues.map(n => { const r = S.retirees.includes(n);
+    return '<li class="' + (r ? "retiree" : "") + '"><span>' + esc(n) + '</span><button class="btn petit" data-retirer="' + esc(n) + '">' + (r ? "Réintégrer" : "Retirer") + '</button></li>'; }).join("")
+    + '</ul><p class="discret" style="font-size:13.5px;margin:0 0 10px">Une recrue retirée (faute, départ, report) sort des questions et de l\'annonce des promotions.</p>';
+}
+
+function corpsEcran(x) {
+  const m = moduleInfo(x.mi);
+  let h = "";
+  if (x.type === "intro") {
+    h += '<span class="etiquette">Nouveau module</span><p class="objectif-grand">' + esc(m.objectif) + '</p>';
+    h += '<div class="infos"><span>📍 ' + esc(m.lieu) + '</span><span>⏱ ' + m.duree + ' min</span><span>' + etapesModule(m).filter(e => e.points).length + ' étapes</span></div>';
+    if (m.pieges && m.pieges.length) h += '<div class="attention"><b>À éviter dans ce module</b><ul>' + m.pieges.map(p => "<li>" + esc(p) + "</li>").join("") + "</ul></div>";
+    if (m.n === "F") {
+      const a = actives();
+      if (a.length === 1 && S.chef !== a[0]) { S.chef = a[0]; sauver(); }
+      h += '<p class="aide-ligne">Chef de patrouille : ' + (S.chef ? "<b>" + esc(S.chef) + "</b>" : "pas encore désigné") + (a.length > 1 ? ' <button class="btn petit" id="tirer-chef">' + (S.chef ? "Tirer un autre nom" : "Désigner au hasard") + '</button>' : "") + '</p>';
+    }
+  } else if (x.type === "questions") {
+    h += '<span class="etiquette">Questions</span><p class="consigne">' + esc(CONSIGNES.questions) + '</p><ul class="qr">';
+    questionsPour(x.mi).forEach(o => { h += '<li><span class="qui">' + esc(o.nom) + '</span><p class="q">« ' + esc(o.q.q) + ' »</p><p class="r"><b>Réponse attendue :</b> ' + esc(o.q.r) + '</p></li>'; });
+    h += '</ul><p class="rappel">' + RAPPELS.questions + '</p><p class="aide-ligne">Réponse incomplète : dis ce qui manque et fais-la reprendre en entier. Personne n\'est recalé sur une question.</p>';
+  } else if (x.type === "controle") {
+    h += '<span class="etiquette">À valider</span><p class="consigne">' + esc(x.consigne || CONSIGNES.controle) + '</p><ul class="coches">';
+    m.valider.forEach((v, k) => { const id = x.mi + "-" + k; h += '<li><label class="case' + (S.coches[id] ? " fait" : "") + '"><input type="checkbox" data-coche="' + id + '"' + (S.coches[id] ? " checked" : "") + '><span>' + esc(v) + '</span></label></li>'; });
+    h += '</ul>';
+  } else if (x.type === "validation") {
+    h += '<span class="etiquette">Validation</span><h3>' + esc(x.titre) + '</h3>';
+    if (x.annonce) {
+      const texte = S.annonceTexte != null ? S.annonceTexte : annoncePromotions();
+      h += '<p class="consigne">À copier dans le salon des promotions du Discord, après la photo de groupe. N\'y figurent que les recrues allées au bout.</p>';
+      if (S.retirees.length) h += '<p class="aide-ligne">Retirées de la séance, donc absentes de l\'annonce : ' + esc(S.retirees.join(", ")) + '.</p>';
+      h += '<div class="copier"><textarea id="annonce" spellcheck="false" aria-label="Texte de l\'annonce">' + esc(texte) + '</textarea></div><div class="liens" style="margin-top:8px"><button class="btn petit" id="copier-annonce">Copier le texte</button>'
+         + (S.annonceTexte != null ? '<button class="btn petit" id="refaire-annonce">Refaire le texte</button>' : '') + '<span class="discret" id="copie-ok" role="status"></span></div>';
+    } else h += listeHtml(x.html || [], !!x.ordonne, true);
+  } else if (x.type === "fin") {
+    h += '<span class="etiquette">Fin</span><h3>' + (MODE === "repetition" ? "Répétition terminée" : "Séance terminée") + '</h3><p>Durée totale : <b>' + fmt(ecoule()) + '</b> pour ' + TOTAL_PREVU + ' min prévues.</p>';
+    h += '<table class="temps"><tr><th>Module</th><th>Prévu</th><th>Passé</th><th>Écart</th></tr>';
+    for (let k = 0; k <= NB_MODULES; k++) {
+      const mm = moduleInfo(k), t = S.tempsModules[k] || 0, ec = t - dureePrevue(k);
+      h += '<tr><td>' + esc(mm.n) + ' · ' + esc(mm.titre) + '</td><td>' + mm.duree + ' min</td><td>' + fmt(t) + '</td><td class="' + (ec > 60000 ? "plus" : ec < -60000 ? "moins" : "") + '">' + (ec >= 0 ? "+" : "") + fmt(ec) + '</td></tr>';
+    }
+    h += '</table><div class="liens" style="margin-top:18px"><button class="btn or" id="terminer">' + (MODE === "repetition" ? "Effacer la répétition" : "Clore la séance et effacer les noms") + '</button><a class="btn" href="#/">Accueil</a></div>';
+  } else {
+    // dire, montrer, faire, deplacement
+    h += '<span class="etiquette">' + (ETIQUETTES[x.type] || x.type) + '</span>';
+    if (x.consigne || CONSIGNES[x.type]) h += '<p class="consigne">' + esc(x.consigne || CONSIGNES[x.type]) + '</p>';
+    if (x.titre) h += '<h3>' + esc(x.titre) + '</h3>';
+    if (x.points && x.points.length) h += listeHtml(x.points, x.type === "faire" || !!x.ordonne);
+    if (x.mot_pour_mot) h += '<div class="mpm"><small>Mot pour mot</small>« ' + remplir(x.mot_pour_mot) + ' »</div>';
+    if (x.note) h += '<p class="aide-ligne">' + esc(x.note) + '</p>';
+    if (RAPPELS[x.type] && m.n !== "F") h += '<p class="rappel">' + RAPPELS[x.type] + '</p>';     // la patrouille d'examen se déroule sans correction
+    if (m.n === "F" && S.chef) h += '<p class="aide-ligne">Chef de patrouille : <b>' + esc(S.chef) + '</b></p>';
+  }
+  return h;
+}
+
+function rendreSeance() {
+  const x = ECRANS[S.ecran], m = moduleInfo(x.mi);
+  const du = ecransDuModule(x.mi), pos = du.findIndex(([, i]) => i === S.ecran);
+  let h = '';
+  if (MODE === "repetition") h += '<div class="bandeau-repet">Répétition à blanc : lis chaque écran à voix haute et fais les gestes, comme devant des recrues.</div>';
+  if (S.guideChange) h += '<div class="bandeau-info"><span>Le guide a été mis à jour depuis le début de cette séance : vérifie que tu es au bon écran (le plan est à droite ou sous « Plan »).</span><button class="btn petit" id="vu-maj">Compris</button></div>';
+  if (S.enPause) h += '<div class="pause-voile" role="status"><b>⏸ Séance en pause depuis <span id="duree-pause">' + fmt(Date.now() - S.enPause) + '</span>' + (S.repriseAuto ? " (page quittée)" : "") + ' : les minuteurs sont arrêtés.</b><button class="btn or petit" id="reprendre-pause">▶ Reprendre</button></div>';
+  h += '<div class="seance"><section>';
+  h += '<div class="entete-module"><div class="pastille">' + esc(m.n) + '</div><div><small>Module ' + esc(m.n) + ' · étape ' + (pos + 1) + ' / ' + du.length + '<span class="lieu-long"> · ' + m.duree + ' min · ' + esc(m.lieu || "") + '</span></small><h2>' + esc(m.titre) + '</h2></div></div>';
+  h += '<div class="progression" aria-hidden="true">' + du.map(([, i], k) => '<i class="' + (k < pos ? "vu" : k === pos ? "ici" : "") + '"></i>').join("") + '</div>';
+  h += '<div class="outils-etroit"><button class="btn petit" data-pause>' + (S.enPause ? "▶ Reprendre" : "⏸ Pause") + '</button>' + (x.mi < NB_MODULES ? '<button class="btn petit" data-vue>Vue d\'ensemble</button>' : '') + '<button class="btn petit" data-plan>☰ Plan et recrues</button></div>';
+  const racc = x.mi < NB_MODULES ? (CONTENU.modules[x.mi].raccourcir || []) : [];
+  h += '<div class="bandeau-retard" id="bandeau-retard" hidden><span>⏱</span><div><b>' + esc(CONTENU.retard_module || "Ce module dure plus que prévu.") + '</b>' + (racc.length ? " Pour resserrer sans rien perdre :<ul>" + racc.map(r => "<li>" + esc(r) + "</li>").join("") + "</ul>" : "") + '</div></div>';
+  h += '<article class="carte-etape" style="--c:' + (COULEURS[x.type] || "var(--or)") + '">' + corpsEcran(x) + '</article>';
+  const ens = ECRANS[S.ecran + 1];
+  if (ens && ens.type !== "fin") h += '<p class="ensuite"><span>Ensuite</span> ' + esc(ens.type === "intro" ? "Module " + moduleInfo(ens.mi).n + " · " + moduleInfo(ens.mi).titre + (moduleInfo(ens.mi).lieu ? " — 📍 " + moduleInfo(ens.mi).lieu : "") : (ens.titre || ETIQUETTES[ens.type])) + '</p>';
+  const dernier = S.ecran === ECRANS.length - 1;
+  h += '<div class="navigation bureau"><button class="btn" id="prec"' + (S.ecran === 0 ? " disabled" : "") + '>← Précédent</button>'
+     + (dernier ? '' : '<button class="btn or suivant" id="suiv">' + libelleSuivant() + '</button>') + '</div>';
+  h += '<p class="raccourcis"><kbd>→</kbd> suivant · <kbd>←</kbd> précédent · <kbd>V</kbd> vue d\'ensemble · <kbd>I</kbd> imprévu · <kbd>P</kbd> pause</p>';
+  h += '</section><aside class="fil" id="fil">' + filHtml(x.mi) + recruesHtml() + '</aside></div>';
+  app.innerHTML = h;
+  // barre du bas (téléphone) : présente jusqu'au dernier écran, avec « Précédent » même sur l'écran de fin
+  $("#pied-mobile").hidden = false;
+  $("#m-prec").disabled = S.ecran === 0;
+  $("#m-suiv").textContent = libelleSuivant(); $("#m-suiv").disabled = dernier;
+  brancher(app, x.mi);
+  const p = $("#prec"); if (p) p.onclick = () => pas(-1);
+  const s = $("#suiv"); if (s) s.onclick = () => pas(1);
+  const rp = $("#reprendre-pause"); if (rp) rp.onclick = basculerPause;
+  const vm = $("#vu-maj"); if (vm) vm.onclick = () => { S.guideChange = false; sauver(); rendreSeance(); };
+  const tc = $("#tirer-chef"); if (tc) tc.onclick = () => { const a = actives().filter(n => n !== S.chef); S.chef = a[Math.floor(Math.random() * a.length)] || S.chef; sauver(); rendreSeance(); };
+  const ta = $("#annonce"); if (ta) ta.oninput = () => { S.annonceTexte = ta.value; sauver(); };
+  const ra = $("#refaire-annonce"); if (ra) ra.onclick = () => { S.annonceTexte = null; sauver(); rendreSeance(); };
+  const ca = $("#copier-annonce"); if (ca) ca.onclick = async () => {
+    const t = $("#annonce"); let ok = false;
+    try { await navigator.clipboard.writeText(t.value); ok = true; }
+    catch (e) { t.focus(); t.setSelectionRange(0, t.value.length); try { ok = document.execCommand("copy"); } catch (e2) { ok = false; } }
+    $("#copie-ok").textContent = ok ? "Copié." : "Copie impossible : le texte est sélectionné, copie-le à la main.";
+  };
+  const te = $("#terminer"); if (te) te.onclick = () => {
+    if (MODE === "reelle" && !confirm("Clore la séance ? Les noms et les temps seront effacés de cet appareil.")) return;
+    ecrire(CLES[MODE], null); S = null; aller("#/");
+  };
+  majHorloges();
+}
+// branche les commandes communes (fil, plan, recrues, pause, vue d'ensemble) dans une zone : la page ou la fenêtre du plan
+function brancher(zone, mi) {
+  zone.querySelectorAll("[data-coche]").forEach(i => i.onchange = () => { S.coches[i.dataset.coche] = i.checked; sauver(); i.closest(".case").classList.toggle("fait", i.checked); });
+  zone.querySelectorAll("[data-aller]").forEach(el => el.onclick = () => { fermerVoile(); changerEcran(+el.dataset.aller); });
+  zone.querySelectorAll("[data-vue]").forEach(el => el.onclick = () => ouvrirEnsemble(mi));
+  zone.querySelectorAll("[data-pause]").forEach(el => el.onclick = () => { basculerPause(); if (!$("#voile").hidden) ouvrirPlan(); });
+  zone.querySelectorAll("[data-plan]").forEach(el => el.onclick = ouvrirPlan);
+  zone.querySelectorAll("[data-retirer]").forEach(el => el.onclick = () => { retirer(el.dataset.retirer); rendreSeance(); if (!$("#voile").hidden) ouvrirPlan(); });
+}
+function libelleSuivant() {
+  const suiv = ECRANS[S.ecran + 1];
+  if (!suiv) return "Terminé";
+  if (suiv.type === "intro") return "Module " + moduleInfo(suiv.mi).n + " →";
+  if (suiv.type === "fin") return "Terminer →";
+  return "Suivant →";
+}
+function filHtml(mi) {
+  let h = '<h3>Modules</h3><div class="modules-mini">';
+  for (let k = 0; k <= NB_MODULES; k++) h += '<button data-aller="' + premierEcran(k) + '" class="' + (k === mi ? "ici" : k < mi ? "fini" : "") + '" title="' + esc(moduleInfo(k).titre) + '" aria-label="Module ' + esc(moduleInfo(k).n) + ' : ' + esc(moduleInfo(k).titre) + '">' + esc(moduleInfo(k).n) + '</button>';
+  h += '</div><h3>Ce module</h3><ol class="liste-etapes">';
+  ecransDuModule(mi).forEach(([e, i]) => {
+    h += '<li><button type="button" data-aller="' + i + '" class="etape-fil ' + (i === S.ecran ? "ici" : i < S.ecran ? "vu" : "") + '"' + (i === S.ecran ? ' aria-current="step"' : '') + '><span class="type" style="--c:' + (COULEURS[e.type] || "var(--or)") + '">' + COURTS[e.type] + '</span>' + esc(e.titre || ETIQUETTES[e.type]) + '</button></li>';
+  });
+  h += '</ol><div class="liens" style="margin-bottom:12px">' + (mi < NB_MODULES ? '<button class="btn petit" data-vue>Vue d\'ensemble</button>' : '') + '<button class="btn petit" data-pause>' + (S.enPause ? "▶ Reprendre" : "⏸ Pause") + '</button></div>';
+  return h;
+}
+function ouvrirPlan() {
+  if (!S) return;
+  const mi = ECRANS[S.ecran].mi;
+  ouvrirVoile('<div class="haut"><h2>Plan et recrues</h2><button class="btn petit" data-fermer>Fermer ✕</button></div><div class="plan">' + filHtml(mi) + recruesHtml() + '</div>');
+  brancher($("#fenetre"), mi);
+}
+
+/* -------------------------------------------------------------------- vue d'ensemble d'un module */
+function ensembleHtml(mi) {
+  const m = CONTENU.modules[mi];
+  let h = '<p class="objectif-grand" style="margin-top:0">' + esc(m.objectif) + '</p><div class="ensemble">';
+  let n = 1;
+  h += '<div class="bloc" style="--c:var(--dire);grid-column:1/-1"><h3>Points à aborder</h3><div style="columns:3 280px;column-gap:24px">';
+  m.groupes.forEach(g => {
+    h += '<div style="break-inside:avoid"><h4>' + esc(g.titre) + '</h4><ol start="' + n + '">' + g.points.map(p => '<li' + (p.mot_pour_mot ? ' class="exact"' : '') + '>' + (p.mot_pour_mot ? "« " + esc(p.texte) + " »" : esc(p.texte)) + '</li>').join("") + '</ol></div>';
+    n += g.points.length;
+  });
+  h += '</div></div>';
+  if (m.montrer && m.montrer.length) h += '<div class="bloc" style="--c:var(--montrer)"><h3>À montrer</h3><ul>' + m.montrer.map(x => "<li>" + esc(x) + "</li>").join("") + '</ul></div>';
+  if (m.faire && m.faire.length) h += '<div class="bloc" style="--c:var(--faire)"><h3>À faire faire</h3><ul>' + m.faire.map(x => "<li>" + esc(x) + "</li>").join("") + '</ul></div>';
+  if (m.questions && m.questions.length) h += '<div class="bloc" style="--c:var(--questions)"><h3>Questions · réponse attendue</h3><ul>' + m.questions.map(q => "<li><b>« " + esc(q.q) + " »</b><br><span style=\"color:var(--faire)\">Réponse attendue : " + esc(q.r) + "</span></li>").join("") + '</ul></div>';
+  h += '<div class="bloc" style="--c:var(--controle)"><h3>À valider</h3><ul>' + m.valider.map(x => "<li>" + esc(x) + "</li>").join("") + '</ul></div>';
+  h += '<div class="bloc" style="--c:var(--alerte)"><h3>Pièges fréquents</h3><ul>' + m.pieges.map(x => "<li>" + esc(x) + "</li>").join("") + '</ul></div>';
+  return h + '</div>';
+}
+function ouvrirEnsemble(mi) {
+  const m = CONTENU.modules[mi];
+  ouvrirVoile('<div class="haut"><div class="pastille" style="width:42px;height:42px;font-size:19px">' + esc(m.n) + '</div><h2>' + esc(m.titre) + '</h2><button class="btn petit" data-fermer>Fermer ✕</button></div>' + ensembleHtml(mi));
+}
+function rendreModule(arg) {
+  const mi = Math.max(0, Math.min(NB_MODULES - 1, parseInt(arg, 10) || 0)), m = CONTENU.modules[mi];
+  let h = '<div class="entete-module"><div class="pastille">' + esc(m.n) + '</div><div><small>Module ' + esc(m.n) + ' · ' + m.duree + ' min · ' + esc(m.lieu) + '</small><h2>' + esc(m.titre) + '</h2></div></div>' + ensembleHtml(mi);
+  h += '<div class="liens" style="margin-top:18px">' + (mi > 0 ? '<a class="btn" href="#/module/' + (mi - 1) + '">← Module ' + esc(CONTENU.modules[mi - 1].n) + '</a>' : '') + (mi < NB_MODULES - 1 ? '<a class="btn" href="#/module/' + (mi + 1) + '">Module ' + esc(CONTENU.modules[mi + 1].n) + ' →</a>' : '') + '<a class="btn" href="#/">Accueil</a></div>';
+  app.innerHTML = h;
+}
+
+/* -------------------------------------------------------------------- aide-mémoire */
+function rendreMemo() {
+  let h = '<h1 class="titre">Aide-mémoire</h1><p class="chapeau">Tout ce qu\'on te demandera, sur une page.</p><div class="memo">';
+  CONTENU.aide_memoire.forEach(b => { const t = b.ordonnee ? "ol" : "ul"; h += '<div class="bloc"><h3>' + esc(b.titre) + '</h3><' + t + '>' + b.items.map(x => "<li>" + x + "</li>").join("") + '</' + t + '></div>'; });
+  h += '</div><h2 style="margin-top:26px">Fautes éliminatoires</h2><div class="bloc" style="--c:var(--alerte);max-width:760px"><ul>' + CONTENU.eliminatoires.map(x => "<li>" + esc(x) + "</li>").join("") + '</ul></div>';
+  app.innerHTML = h;
+}
+
+/* -------------------------------------------------------------------- imprévus */
+function ouvrirImprevu(id) {
+  const liste = CONTENU.imprevus || [];
+  const enSeance = !!S && route().nom === "seance";
+  if (id != null) {
+    const it = liste.find(x => x.id === id);
+    if (!it) return ouvrirImprevu();
+    let h = '<div class="haut"><button class="btn petit" data-retour>← Imprévus</button><h2>' + esc(it.situation) + '</h2><button class="btn petit" data-fermer>Fermer ✕</button></div>'
+      + '<div class="conduite"><ol>' + it.conduite.map(c => "<li>" + esc(c) + "</li>").join("") + '</ol></div>';
+    if (it.pause && enSeance && !S.fini) h += '<p><button class="btn" data-pause-voile>' + (S.enPause ? '▶ Reprendre (pause depuis <span id="duree-pause-voile">' + fmt(Date.now() - S.enPause) + '</span>)' : "⏸ Mettre la séance en pause") + '</button></p>';
+    if (FICHES_RETRAIT.includes(it.id) && enSeance && S.recrues.length) h += '<div class="retrait"><p>Si une recrue ne continue pas, retire-la : elle sort des questions et de l\'annonce des promotions.</p>' + recruesHtml() + '</div>';
+    h += '<div class="liens" style="margin-top:14px"><button class="btn or" data-fermer>' + (enSeance ? "Retour à la séance" : "Fermer") + '</button></div>';
+    ouvrirVoile(h, true);
+    const f = $("#fenetre");
+    const r = $("[data-retour]", f); if (r) r.onclick = () => ouvrirImprevu();
+    const pv = $("[data-pause-voile]", f); if (pv) pv.onclick = () => { basculerPause(); ouvrirImprevu(id); };
+    f.querySelectorAll("[data-retirer]").forEach(el => el.onclick = () => { retirer(el.dataset.retirer); if (route().nom === "seance") rendreSeance(); ouvrirImprevu(id); });
+    return;
+  }
+  const cats = [];
+  liste.forEach(x => { if (!cats.includes(x.categorie)) cats.push(x.categorie); });
+  let h = '<div class="haut"><h2>⚠ Un imprévu ?</h2><button class="btn petit" data-fermer>Fermer ✕</button></div><input class="recherche" id="imp-cherche" placeholder="Chercher : micro, retard, tir, plantage…" autocomplete="off" aria-label="Chercher une situation"><p class="discret" id="imp-vide" hidden>Aucune fiche ne correspond : parcours la liste ci-dessous.</p><div class="situations" id="imp-liste">';
+  cats.forEach(c => { h += '<h4>' + esc(c) + '</h4>' + liste.filter(x => x.categorie === c).map(x => '<button data-imp="' + esc(x.id) + '" data-mots="' + esc(plat(x.situation + " " + (x.mots || "") + " " + x.categorie)) + '">' + esc(x.situation) + '</button>').join(""); });
+  h += '</div><div class="liens" style="margin-top:14px"><button class="btn" data-fermer>Fermer</button></div>';
+  ouvrirVoile(h, true);
+  const f = $("#fenetre");
+  f.querySelectorAll("[data-imp]").forEach(b => b.onclick = () => ouvrirImprevu(b.dataset.imp));
+  const ch = $("#imp-cherche");
+  ch.oninput = () => {
+    const mots = plat(ch.value).split(/\s+/).filter(Boolean); let n = 0;
+    f.querySelectorAll("[data-imp]").forEach(b => { const ok = mots.every(w => b.dataset.mots.includes(w)); b.hidden = !ok; if (ok) n++; });
+    f.querySelectorAll(".situations h4").forEach(t => t.hidden = mots.length > 0);
+    $("#imp-vide").hidden = !(mots.length && !n);
+    if (mots.length && !n) f.querySelectorAll("[data-imp]").forEach(b => b.hidden = false);
+  };
+  if (window.matchMedia("(min-width: 900px)").matches) ch.focus();
+}
+let focusAvant = null;
+function ouvrirVoile(html, garderFocus) {
+  if ($("#voile").hidden) focusAvant = document.activeElement;
+  const f = $("#fenetre");
+  f.innerHTML = html;
+  $("#voile").hidden = false;
+  f.querySelectorAll("[data-fermer]").forEach(b => b.onclick = () => fermerVoile());
+  const h2 = $("h2", f);
+  if (h2) { h2.id = "voile-titre"; h2.tabIndex = -1; f.setAttribute("aria-labelledby", "voile-titre"); if (!garderFocus || !window.matchMedia("(min-width: 900px)").matches) h2.focus({ preventScroll: true }); }
+  $("#voile").scrollTop = 0;
+}
+function fermerVoile(silencieux) {
+  if ($("#voile").hidden) return;
+  $("#voile").hidden = true;
+  if (!silencieux && focusAvant && focusAvant.isConnected && focusAvant.focus) focusAvant.focus();
+  focusAvant = null;
+}
+$("#voile").addEventListener("click", e => { if (e.target.id === "voile") fermerVoile(); });
+$("#b-imprevu").onclick = () => ouvrirImprevu();
+$("#b-pause").onclick = basculerPause;
+$("#eveil").onclick = () => garderEveille(true);
+$("#m-prec").onclick = () => pas(-1);
+$("#m-suiv").onclick = () => pas(1);
+$("#m-plan").onclick = ouvrirPlan;
+
+/* -------------------------------------------------------------------- clavier */
+document.addEventListener("keydown", e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const t = e.target;
+  const saisie = t.tagName === "TEXTAREA" || t.isContentEditable || (t.tagName === "INPUT" && !["checkbox", "radio"].includes(t.type));
+  if (saisie) { if (e.key === "Escape") { t.blur(); if (!$("#voile").hidden) fermerVoile(); } return; }
+  if (t.type === "checkbox" && e.key === " ") return;          // Espace coche la case qui a le focus
+  const voile = !$("#voile").hidden;
+  if (e.key === "Escape" && voile) { fermerVoile(); return; }
+  if (e.key === "i" || e.key === "I") { e.preventDefault(); ouvrirImprevu(); return; }
+  if (voile || route().nom !== "seance" || !S) return;
+  if (e.key === "ArrowRight" || e.key === " " || e.key === "PageDown") { e.preventDefault(); if (S.ecran < ECRANS.length - 1) changerEcran(S.ecran + 1); }
+  else if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); changerEcran(S.ecran - 1); }
+  else if ((e.key === "v" || e.key === "V") && ECRANS[S.ecran].mi < NB_MODULES) ouvrirEnsemble(ECRANS[S.ecran].mi);
+  else if (e.key === "p" || e.key === "P") basculerPause();
+});
+
+rendre();
+</script>
+</body>
+</html>

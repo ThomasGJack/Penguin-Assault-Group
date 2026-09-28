@@ -1,0 +1,19 @@
+GenericEntity : "{B37F2B14F49A65E8}Prefabs/Weapons/Core/DemoBlock_base.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SCR_ExplosiveChargeInventoryItemComponent "{5AA692DC30B9C62B}" {
+   Attributes SCR_ItemAttributeCollection "{60D6BB563667D737}" {
+    ItemDisplayName WeaponUIInfo "{60D6BB563543F2F2}" {
+     Name "Pétard de tolite 400 g"
+     Description "Charge de tolite (TNT) de 400 g du génie. Se pose, puis se met à feu par un exploseur ou une minuterie."
+    }
+   }
+  }
+  WeaponComponent "{5AA692DC30B9C621}" {
+   UIInfo GrenadeUIInfo "{5F1AD87B63BEEEFD}" {
+    Name "Pétard de tolite"
+    Description "Charge de tolite (TNT) de 400 g du génie. Se pose, puis se met à feu par un exploseur ou une minuterie."
+   }
+  }
+ }
+}

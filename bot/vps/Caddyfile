@@ -1,0 +1,18 @@
+# Site web de la PAG : Caddy reçoit le public (HTTP et HTTPS, certificat Let's Encrypt obtenu et renouvelé tout seul)
+# et passe les demandes au bot, qui ne sert ses PAGES qu'en interne (127.0.0.1:8788).
+# Le pont du jeu (/api/sync) n'est pas ici : il reste sur le port 8787 du bot, que le serveur de jeu appelle directement.
+penguinassaultgroup.fr {
+	encode gzip
+	reverse_proxy 127.0.0.1:8788
+}
+
+# www renvoie vers le nom nu : une seule adresse
+www.penguinassaultgroup.fr {
+	redir https://penguinassaultgroup.fr{uri} permanent
+}
+
+# L'adresse IP continue de marcher, en HTTP simple (pas de certificat possible sur une IP)
+http://IP-DU-VPS {
+	encode gzip
+	reverse_proxy 127.0.0.1:8788
+}

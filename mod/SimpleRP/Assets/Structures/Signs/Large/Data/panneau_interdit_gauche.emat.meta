@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{FC01E9CF09DAB06B}Assets/Structures/Signs/Large/Data/panneau_interdit_gauche.emat"
+ Configurations {
+  EMATResourceClass PC {
+  }
+  EMATResourceClass XBOX_ONE : PC {
+  }
+  EMATResourceClass XBOX_SERIES : PC {
+  }
+  EMATResourceClass PS4 : PC {
+  }
+  EMATResourceClass PS5 : PC {
+  }
+  EMATResourceClass HEADLESS : PC {
+  }
+ }
+}

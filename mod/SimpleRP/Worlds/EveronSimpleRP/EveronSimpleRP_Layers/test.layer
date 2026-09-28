@@ -1,0 +1,14 @@
+GenericEntity : "{093DAD45AAD7EF50}Prefabs/Props/Civilian/SRP_TableauMissions.et" {
+ coords 7509.432 170.025 4329.405
+ angles 0 -136.283 0
+}
+GenericEntity : "{E563B4FCDC8C2739}Prefabs/Props/Civilian/Computer_E_01/SRP_PC.et" {
+ coords 7510.47 170.917 4335.788
+ angles 0 65.336 0
+ {
+  GenericEntity {
+   ID "6A592C0B34354D7D"
+   coords 0 0.116 -0.08
+  }
+ }
+}

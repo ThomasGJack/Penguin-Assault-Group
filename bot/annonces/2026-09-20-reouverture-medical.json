@@ -1,0 +1,32 @@
+{
+  "channel": "📢┃annonces",
+  "content": "@everyone",
+  "everyone": true,
+  "embed": {
+    "title": "🟢 Le serveur est rouvert : le médical change tout",
+    "color": 13214247,
+    "fields": [
+      {
+        "name": "🩺 Un nouveau système de soins",
+        "value": "• Un coup grave ne tue plus : il met à terre, inconscient ou le cœur arrêté.\n• **10 minutes** pour arrêter le sang, **15 minutes** pour relancer le cœur. Après, c'est fini.\n• Pouls, tension, respiration, massage cardiaque, pneumothorax, perfusion.\n• La règle d'or : **ton matériel de soin n'est pas pour toi, il est pour ton binôme.**"
+      },
+      {
+        "name": "🤖 Deux nouvelles commandes du bot, ici ou en message privé",
+        "value": "• `/soins` : coche ce que tu vois sur le blessé, le bot te rend les gestes dans l'ordre.\n• `/guide` : le guide médical complet en 11 chapitres, et la procédure radio."
+      },
+      {
+        "name": "🎒 Les dotations ont changé",
+        "value": "• **Tout soldat** : 4 bandages, 1 garrot, 1 morphine, 1 pansement thoracique, 1 solution saline, et la caméra de casque.\n• **Infirmiers et médecins** : tout le matériel avancé, réservé à leur certification.\n• L'arsenal a été épuré : ce qui n'est pas dans le guide n'y est plus.\n• Vos tenues enregistrées peuvent avoir perdu un objet retiré : refaites-les."
+      },
+      {
+        "name": "📥 Première connexion",
+        "value": "Le jeu va télécharger les nouveaux mods ACE : comptez quelques minutes de plus que d'habitude."
+      },
+      {
+        "name": "🎓 Formations",
+        "value": "Infirmiers et médecins, des formations arrivent : surveillez le salon formations.\n\nÀ très vite sur Everon. 🐧🇫🇷\n— **Jack Lania**"
+      }
+    ],
+    "footer": "La PAG · milsim semi-RP armée française"
+  }
+}

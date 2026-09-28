@@ -1,0 +1,25 @@
+{
+  "channel": "📢┃annonces",
+  "content": "@everyone",
+  "everyone": true,
+  "embed": {
+    "title": "🔧 Serveur hors ligne : grosse mise à jour ACE",
+    "color": 13214247,
+    "description": "Le serveur de la PAG est **fermé** le temps d'une grosse mise à jour.\nPas d'inquiétude : vos fiches, vos grades, vos certifications et la trésorerie sont conservés.",
+    "fields": [
+      {
+        "name": "🩺 Ce qui arrive",
+        "value": "On passe au **médical ACE avancé**. Fini le simple bandage-morphine :\n• **Pouls et tension** à surveiller, hémorragies classées selon leur gravité\n• **Arrêt cardiaque** et **massage cardiaque** : chaque minute compte\n• **Respiration** : voies aériennes à dégager, pneumothorax, oxygène\n• De **nouveaux médicaments** et du nouveau matériel pour les soignants\n\nLes certifications **Infirmier** et **Médecin** vont prendre tout leur sens : un bon soignant fera la différence entre un blessé ramené et un soldat perdu."
+      },
+      {
+        "name": "📥 À prévoir de votre côté",
+        "value": "• À la réouverture, le jeu téléchargera de **nouveaux mods ACE** : la première connexion sera plus longue que d'habitude.\n• Le **guide des dotations** et la **FGI** seront mis à jour avec le nouveau matériel médical.\n• Des **formations Infirmier** seront proposées dans la foulée : surveillez le salon formations."
+      },
+      {
+        "name": "⏳ Réouverture",
+        "value": "La date sera annoncée **ici même** dès que les essais seront concluants. On préfère ouvrir un peu plus tard avec quelque chose de solide.\n\nMerci de votre patience, et à très vite sur Everon. 🐧🇫🇷\n— **Jack Lania**"
+      }
+    ],
+    "footer": "La PAG · milsim semi-RP armée française"
+  }
+}

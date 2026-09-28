@@ -1,0 +1,146 @@
+$grp SCR_SpawnPoint : "{5A2220DD0C16958B}Prefabs/MP/Spawning/SpawnPoint_US.et" {
+ SRP_SpawnBase {
+  coords 7414.731 162.369 4333.72
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase1 {
+  coords 7411.708 162.369 4327.285
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase2 {
+  coords 7408.598 162.369 4320.664
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase3 {
+  coords 7399.767 162.369 4328.76
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase4 {
+  coords 7402.854 162.369 4335.425
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase5 {
+  coords 7405.9 162.369 4342.004
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase6 {
+  coords 7431.464 162.369 4369.862
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase7 {
+  coords 7428.441 162.369 4363.427
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase8 {
+  coords 7425.331 162.369 4356.806
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase9 {
+  coords 7416.5 162.369 4364.902
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase10 {
+  coords 7419.587 162.369 4371.567
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase11 {
+  coords 7422.633 162.369 4378.146
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase12 {
+  coords 7397.949 162.369 4297.472
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase13 {
+  coords 7394.926 162.369 4291.036
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase14 {
+  coords 7391.816 162.369 4284.416
+  angles 0 -64.838 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase15 {
+  coords 7382.985 162.369 4292.512
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase16 {
+  coords 7386.072 162.369 4299.177
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+ SRP_SpawnBase17 {
+  coords 7389.118 162.369 4305.756
+  angles 0 114.843 0
+  m_Info SCR_UIInfo "{56B4CC4ECACA2C37}" {
+   Name "SRP_SpawnBase"
+  }
+ }
+}
+$grp GenericEntity : "{EEFBB0C031640896}Prefabs/Structures/Signs/SRP_Panneau_Bienvenue.et" {
+ {
+  coords 7428.629 162.031 4337.013
+  angles 0 -65.618 0
+ }
+ {
+  coords 7444.538 162.031 4372.112
+  angles 0 -65.618 0
+ }
+ {
+  coords 7412.573 162.031 4301.589
+  angles 0 -65.618 0
+ }
+ {
+  coords 7399.112 162.031 4271.89
+  angles 0 -65.618 0
+ }
+}

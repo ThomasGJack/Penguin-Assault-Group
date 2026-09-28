@@ -1,0 +1,66 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{4F7126C162EEAB14}Assets/Props/Civilian/BoardDrafting_01/BoardDrafting_01.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Mass 10
+   ResponseIndex "LargeDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" : "{76DA308CC9E2AB84}Prefabs/Props/Core/DestructionMultiPhase_Base.ct" {
+   m_fBaseHealth 600
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{6A4F302662A55C4A}" {
+     m_ModelPrefabs {
+      "{BB4D54A24193C1B2}Assets/Props/Civilian/BoardDrafting_01/Dst/BoardDrafting_01_dst_02.xob"
+     }
+     m_eMaterialSoundType WOOD_PLANK_LARGE
+    }
+    SCR_DebrisSpawnable "{6A4F302662A54392}" {
+     m_ModelPrefabs {
+      "{2253ED3B5C74F022}Assets/Props/Civilian/BoardDrafting_01/Dst/BoardDrafting_01_dst_01.xob" "{555985B3A8D61F52}Assets/Props/Civilian/BoardDrafting_01/Dst/BoardDrafting_01_dst_00.xob"
+     }
+     m_eMaterialSoundType METAL_LIGHT
+    }
+   }
+  }
+  ActionsManagerComponent "{6A4F3026937F96B8}" {
+   ActionContexts {
+    UserActionContext "{6A4F3026926445FF}" {
+     UIInfo UIInfo "{6A4F30268E5C3099}" {
+      Name "tableau"
+     }
+     ContextName "tableau"
+     Position PointInfo "{6A4F30268B2856AB}" {
+      Offset 0 1.4212 0.31
+     }
+    }
+   }
+   additionalActions {
+    SRP_MissionBoardAction "{6A4F302682AB3021}" {
+     ParentContextList {
+      "tableau"
+     }
+     ActionTitle "tableau"
+     VisibilityRange 2
+     Duration 1
+    }
+    SRP_MissionRequestAction "{6A5B0C0D0E0FB401}" {
+     ParentContextList {
+      "tableau"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0FB402}" {
+      Name "Demander une mission"
+     }
+     ActionTitle "Demander une mission"
+     VisibilityRange 2
+     Duration 1
+     "Sort Priority" 1
+    }
+   }
+  }
+ }
+}

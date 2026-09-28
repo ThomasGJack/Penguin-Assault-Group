@@ -1,0 +1,15 @@
+GenericEntity : "{90B7CEB4C665B1E2}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1.et" {
+ ID "50C6D20663830070"
+ components {
+  SCR_DestructionMultiPhaseComponent "{51BACBF3C4A56479}" {
+   Enabled 0
+  }
+  SCR_FlagComponent "{5E3C95A1E1EE9681}" {
+   m_sDefaultMaterial "{A5A2A73F368C2C17}Assets/Props/Fabric/Flags/Data/Flag_1_2_FRANCE.emat"
+  }
+  RplComponent "{6A5B0C0D0E0F7A41}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}

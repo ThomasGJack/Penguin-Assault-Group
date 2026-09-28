@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Effectifs</title>
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227; --nous: #3ddc84; }
+  * { box-sizing: border-box; scrollbar-color: #2b3a47 #0c1116; scrollbar-width: thin; }
+  html, body { margin: 0; min-height: 100%; background: var(--fond); color: var(--texte); font: 15px/1.5 "Segoe UI", system-ui, sans-serif; }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 26px; border-bottom: 1px solid var(--bord); }
+  header img { width: 40px; height: 40px; }
+  header h1 { margin: 0; font-size: 21px; }
+  header .sous { color: var(--discret); font-size: 13.5px; }
+  header nav { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  header nav a { color: var(--texte); text-decoration: none; border: 1px solid var(--bord); border-radius: 999px; padding: 5px 14px; font-size: 13px; }
+  header nav a:hover { border-color: var(--or); color: var(--or); }
+  main { max-width: 1100px; margin: 0 auto; padding: 20px 26px 40px; }
+  #recherche { width: 100%; max-width: 360px; background: var(--panneau); border: 1px solid var(--bord); border-radius: 10px; color: var(--texte); padding: 9px 14px; font: inherit; outline: none; }
+  #recherche:focus { border-color: var(--or); }
+  h2 { margin: 30px 0 10px; font-size: 14px; color: var(--or); display: flex; align-items: center; gap: 10px; }
+  h2 span { color: var(--discret); font-weight: 400; letter-spacing: 0; text-transform: none; font-family: "Segoe UI", sans-serif; }
+  h2:after { content: ""; flex: 1; height: 1px; background: var(--bord); }
+  .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+  .soldat { display: block; text-decoration: none; color: var(--texte); background: var(--panneau); border: 1px solid var(--bord); border-radius: 10px; padding: 11px 14px; transition: transform .15s, border-color .15s; }
+  .soldat:hover { transform: translateY(-2px); border-color: var(--or); }
+  .soldat .nom { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .soldat .nom i { width: 8px; height: 8px; border-radius: 50%; background: var(--nous); flex: none; box-shadow: 0 0 0 3px #3ddc8426; }
+  .soldat .chiffres { color: var(--discret); font-size: 12.5px; margin-top: 2px; }
+  .vide { color: #4f5f6d; font-style: italic; margin-top: 24px; }
+</style>
+</head>
+<body>
+<header>
+  <img src="/site/favicon.png" alt="">
+  <h1 class="titre">Effectifs de la PAG</h1>
+  <span class="sous" id="resume">Chargement…</span>
+  <nav><a href="/">← Accueil</a><a href="/certifications/">Certifications</a><a href="/dotations/">Dotations</a><a href="/campagne/">Campagne</a></nav>
+</header>
+<main>
+  <input id="recherche" type="search" placeholder="Chercher un soldat…" autocomplete="off">
+  <div id="liste"></div>
+</main>
+<script>
+const propre = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const heures = m => `${Math.floor(m / 60)} h`;
+let soldats = [];
+
+function afficher() {
+  const filtre = document.getElementById('recherche').value.trim().toLowerCase();
+  const maintenant = Date.now() / 1000;
+  const vus = soldats.filter(s => !filtre || s.nom.toLowerCase().includes(filtre));
+  const groupes = new Map();
+  for (const s of vus) { const cle = s.grade_nom || 'Sans grade'; if (!groupes.has(cle)) groupes.set(cle, []); groupes.get(cle).push(s); }
+  document.getElementById('liste').innerHTML = [...groupes].map(([grade, liste]) => `<h2 class="titre">${propre(grade)} <span>${liste.length}</span></h2><div class="grille">` +
+    liste.map(s => `<a class="soldat" href="/soldat/${encodeURIComponent(s.code)}"><div class="nom">${maintenant - s.dernier < 150 ? '<i title="En service en ce moment"></i>' : ''}${propre(s.nom)}</div>
+      <div class="chiffres">${heures(s.minutes)} de service · ${s.missions} mission${s.missions > 1 ? 's' : ''}</div></a>`).join('') + '</div>').join('')
+    || `<div class="vide">${soldats.length ? 'Aucun soldat à ce nom.' : 'Aucun soldat enregistré pour le moment : la liste se remplit à mesure que les soldats se connectent au serveur.'}</div>`;
+  const enService = soldats.filter(s => maintenant - s.dernier < 150).length;
+  document.getElementById('resume').textContent = `${soldats.length} soldat${soldats.length > 1 ? 's' : ''} · ${enService} en service`;
+}
+async function actualiser() {
+  try { soldats = (await (await fetch('/effectifs/api', { cache: 'no-store' })).json()).soldats || []; afficher(); }
+  catch (e) { document.getElementById('resume').textContent = 'Site injoignable, nouvel essai…'; }
+}
+document.getElementById('recherche').oninput = afficher;
+actualiser();
+setInterval(actualiser, 30000);
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+GenericEntity {
+ ID "6A55338CFEB67BD3"
+ components {
+  MeshObject "{6A55338CFEB67B2B}" {
+   Object "{373AC823F947A395}Assets/Structures/Industrial/Containers/FuelTanks/FuelTank_01/FuelTank_01.xob"
+   LODFactors {
+   }
+  }
+  RigidBody "{6A55338CFEB67B35}" {
+   Mass 10
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{6A55338CFEB67B37}" {
+   Enabled 0
+   "Additional hit zones" {
+    SCR_HitZone Default {
+     HZDefault 1
+     "Melee multiplier" 1
+     "Kinetic multiplier" 1
+     "Explosive multiplier" 90
+     "Incendiary multiplier" 1
+    }
+   }
+   m_fBaseHealth 500
+   m_fForceToDamageScale 350
+   m_fDamageThresholdMaximum 40000
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{6A55338CFEB67B0F}" {
+     m_vOffsetPosition 0 0.3 0
+     m_ModelPrefabs {
+      "{AE6DE9DEA19D68B7}Assets/Props/Debris/Metal/FragmentMetal_dbr_03.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{AE6DE9DEA19D68B7}Assets/Props/Debris/Metal/FragmentMetal_dbr_03.xob" "{0A04F02D30BA8459}Assets/Props/Debris/Metal/FragmentMechanical_dbr_03.xob" "{0A04F02D30BA8459}Assets/Props/Debris/Metal/FragmentMechanical_dbr_03.xob"
+     }
+     m_fMass 1
+     m_eMaterialSoundType METAL_LIGHT
+    }
+    SCR_ParticleSpawnable "{6A55338CFEB67B0E}" {
+     m_Particle "{C436A8D33CE1AA4E}Particles/Props/Dest_Prop_Wood_Small.ptc"
+    }
+   }
+   m_eMaterialSoundType BREAK_WOOD_SOLID
+  }
+  SCR_SoundDataComponent "{6A55338CFEB67B08}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{6A55338CFEB67B0A}" {
+     m_sSoundProject "{A73D28179B395F19}Sounds/Props/Military/AmmoBoxes/AmmoBox_Big_Wooden/Props_AmmoBox_Big_Wooden.acp"
+     m_sSoundEventName "SOUND_CONTAINER_OPEN"
+    }
+    SCR_AudioSourceConfiguration "{6A55338CFEB67B05}" {
+     m_sSoundProject "{A73D28179B395F19}Sounds/Props/Military/AmmoBoxes/AmmoBox_Big_Wooden/Props_AmmoBox_Big_Wooden.acp"
+     m_sSoundEventName "SOUND_CONTAINER_CLOSE"
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{6A55338CFEB67B07}" {
+   Attributes SCR_ItemAttributeCollection "{6A55338CFEB67B01}" {
+    ItemDisplayName SCR_InventoryUIInfo "{6A55338CFEB67B00}" {
+     Name "#AR-Ammobox_Name"
+     Description "#AR-Ammobox_Name"
+     m_aItemHints {
+      SCR_SupplyAvailableItemHintUIInfo "{6A55338CFEB67B14}" {
+       Name "#AR-Item_SupplyConsumer_Hint1"
+       Icon "{8EB808BFA227C080}UI/Textures/Icons/InventoryHints/InventoryHint_SuppliesStored.edds"
+       m_bHideInArsenal 1
+      }
+     }
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6A55338CFEB67B12}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 2
+      FOV 30
+      AspectRatio 1
+     }
+     PreviewRenderAttributes "{6A55338CFEB67B6D}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.5
+      FOV 30
+      AspectRatio 1
+     }
+    }
+    m_SlotType SLOT_ANY
+   }
+   Priority 1000
+   UseCapacityCoefficient 0
+   MaxCumulativeVolume 1000000000
+   m_fMaxWeight 1000000000
+  }
+  SRP_DepotComponent "{6A55338FB00EB392}" {
+   m_eResource CARBURANT
+   m_iCapacity 5000
+  }
+  SRP_ContainerInventoryStorageManagerComponent "{6A553C267C24E2B2}" {
+  }
+  ActionsManagerComponent "{6A55338CFEB67B6E}" {
+   ActionContexts {
+    UserActionContext "{6A55338CFEB67B68}" {
+     ContextName "default"
+     Position PointInfo "{6A55338CFEB67B6A}" {
+      Offset 0.1225 1.2328 2.3873
+     }
+     Radius 0.5
+    }
+   }
+   additionalActions {
+    SCR_OpenStorageAction "{6A55338CFEB67B67}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6A55338CFEB67B66}" {
+      Name "#AR-Inventory_OpenAmmoBox"
+     }
+    }
+    SRP_DepotConsultAction "{6A55338F6F9AD4BC}" {
+     ParentContextList {
+      "default"
+     }
+     VisibilityRange 3
+    }
+   }
+  }
+  RplComponent "{6A55338CFEB67B63}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+ Flags 0x403 0
+ coords 7585.302 166.296 4264.209
+ angles 0 -163.807 0
+}

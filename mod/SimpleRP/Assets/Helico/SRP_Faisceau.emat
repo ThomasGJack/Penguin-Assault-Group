@@ -1,0 +1,22 @@
+MatCommon {
+ Diffuse 0 0 0 1
+ Ambient 0 0 0 1
+ Emissive 1 0.96 0.88 1
+ EmissiveLV 0
+ EmissiveAbsoluteLV 0
+ ApplyAlbedoToEmissive 1
+ Cull none
+ Sort translucent
+ ZWrite 0
+ CastShadow 0
+ ReceiveShadow 0
+ OccludeRain 0
+ OccludeWetness 0
+ Specular 0 0 0 1
+ SpecularMul 0
+ AlphaTest 0
+ AlphaMul 0.12
+ BlendMode Additive
+ DisableVertexColor 1
+ AlbedoMap "{0BACBB86B33B15DA}Common/Postprocess/LensFlares/Glow_01_BC.edds"
+}

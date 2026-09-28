@@ -1,0 +1,75 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{4CD9B977F230E7DF}Assets/Props/Furniture/Safe_01/Safe_01.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   ResponseIndex "HugeDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" : "{76DA308CC9E2AB84}Prefabs/Props/Core/DestructionMultiPhase_Base.ct" {
+   m_fBaseHealth 6000
+   m_fDamageThresholdMaximum 50000
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{6A4E86682AFAC879}" {
+     m_vOffsetPosition 0 1.5 0.4
+     m_ModelPrefabs {
+      "{407938CF48D8B657}Assets/Props/Debris/Metal/FragmentMetal_dbr_01.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{AE6DE9DEA19D68B7}Assets/Props/Debris/Metal/FragmentMetal_dbr_03.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{407938CF48D8B657}Assets/Props/Debris/Metal/FragmentMetal_dbr_01.xob" "{407938CF48D8B657}Assets/Props/Debris/Metal/FragmentMetal_dbr_01.xob"
+     }
+     m_fMass 1
+     m_fDamageToImpulse 3
+     m_fRandomVelocityLinear 3
+     m_eMaterialSoundType METAL_LIGHT
+    }
+   }
+   m_aDamagePhases {
+    SCR_DamagePhaseData "{6A4E86682AFAC9B8}" {
+     m_fPhaseHealth 5000
+     m_PhaseModel "{647B1D106023B158}Assets/Props/Furniture/Safe_01/Dst/Safe_01_dst.xob"
+     m_PhaseDestroySpawnObjects {
+      SCR_DebrisSpawnable "{6A4E86682AFAC9B6}" {
+       m_ModelPrefabs {
+        "{647B1D106023B158}Assets/Props/Furniture/Safe_01/Dst/Safe_01_dst.xob"
+       }
+       m_fMass 150
+       m_eMaterialSoundType METAL_HEAVY
+      }
+     }
+    }
+   }
+   m_eMaterialSoundType BREAK_METAL
+  }
+  ActionsManagerComponent "{6A4E866847FEF62D}" {
+   ActionContexts {
+    UserActionContext "{6A4E86687D53A365}" {
+     UIInfo UIInfo "{6A4E86687F245C72}" {
+      Name "coffre"
+     }
+     ContextName "coffre"
+     Position PointInfo "{6A4E8668792DEC44}" {
+      Offset 0 0.9667 0.2929
+     }
+     Radius 2
+    }
+   }
+   additionalActions {
+    SRP_SafeConsultAction "{6A4E8668642AAADB}" {
+     ParentContextList {
+      "coffre"
+     }
+     ActionTitle "Consulte"
+    }
+    SRP_SafeDepositAction "{6A4E86689CE85398}" {
+     ParentContextList {
+      "coffre"
+     }
+     ActionTitle "Depot"
+     Duration 2
+    }
+   }
+  }
+ }
+ coords 0 0 0
+}

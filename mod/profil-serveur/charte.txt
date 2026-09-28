@@ -1,0 +1,13 @@
+version: 2
+Bienvenue au Penguin Assault Group. Ce serveur est un milsim semi-RP de l'armée française : on y joue un soldat, pas un joueur.
+1. Le Discord est obligatoire : https://discord.gg/4QQgKQdhjU. Les ordres, les formations et les annonces passent par là.
+2. La hiérarchie se respecte : on suit la chaîne de commandement, on ne discute pas un ordre en pleine opération. Les grades et les certifications sont des règles de jeu, pas des décorations.
+3. Sans certification, on ne conduit pas, on ne pilote pas, on ne prend pas la mitrailleuse. Sans FGI, on ne sort pas de la base.
+4. Personne ne part en mission seul. Sans chef de groupe présent, on reste à la base, on s'instruit ou on attend le prochain.
+5. Le rôle avant tout : on reste dans son personnage, on parle comme sur un vrai réseau radio, pas de hors-jeu en vocal.
+6. Respect entre joueurs, en jeu comme sur le Discord. Pas d'insulte, pas de harcèlement, pas de politique.
+7. Pas de tir ami volontaire, pas de tir sur les civils, pas de pillage ni de destruction gratuite. Un crime de guerre est sanctionné.
+8. Le matériel est commun : on range les paquets, on ramène les véhicules, on signale la casse.
+9. Pas de triche, pas d'exploitation de bug, pas de déconnexion pour esquiver un combat ou une sanction.
+10. Le Staff a le dernier mot en jeu. Un désaccord se règle après, dans le salon objections du Discord.
+En acceptant, vous vous engagez à respecter ces règles. Serrés, on tient.

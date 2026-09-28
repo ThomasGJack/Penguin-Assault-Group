@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAG · Campagne d'Everon</title>
+<link rel="icon" type="image/png" href="/site/favicon.png">
+<style>
+  :root { --fond: #0c1116; --panneau: #121a22; --carte: #18222d; --bord: #24313d; --texte: #d7e0e8; --discret: #7f909f; --or: #c9a227; --nous: #4da3ff; --ennemi: #ff4d4d; --alerte: #ff7a1a; --mission: #ffb020; --ami: #4da3ff; --ambre: #ffb347; --en-ligne: #3ddc84; }
+  * { box-sizing: border-box; scrollbar-color: #2b3a47 #0c1116; scrollbar-width: thin; }
+  html, body { margin: 0; min-height: 100%; background: var(--fond); color: var(--texte); font: 15px/1.5 "Segoe UI", system-ui, sans-serif; }
+  .titre { font-family: Bahnschrift, "DIN Alternate", "Segoe UI", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; padding: 14px 26px; border-bottom: 1px solid var(--bord); }
+  header img { width: 40px; height: 40px; }
+  header h1 { margin: 0; font-size: 21px; }
+  header .etat { display: inline-flex; align-items: center; gap: 8px; color: var(--discret); font-size: 13.5px; }
+  header .etat i { width: 9px; height: 9px; border-radius: 50%; background: var(--discret); }
+  header .etat.oui i { background: var(--en-ligne); box-shadow: 0 0 0 0 #3ddc8499; animation: pouls 2s infinite; } header .etat.non i { background: var(--ennemi); }
+  @keyframes pouls { to { box-shadow: 0 0 0 9px #3ddc8400; } }
+  header nav { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  header nav a { color: var(--texte); text-decoration: none; border: 1px solid var(--bord); border-radius: 999px; padding: 5px 14px; font-size: 13px; }
+  header nav a:hover { border-color: var(--or); color: var(--or); }
+  main { padding: 20px 26px 34px; display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+  .bloc { background: var(--panneau); border: 1px solid var(--bord); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+  .bloc h2 { margin: 0 0 12px; font-size: 13px; color: var(--discret); font-weight: 600; }
+  .c3 { grid-column: span 3; } .c4 { grid-column: span 4; } .c5 { grid-column: span 5; } .c6 { grid-column: span 6; } .c7 { grid-column: span 7; } .c8 { grid-column: span 8; } .c12 { grid-column: span 12; }
+  .grand { font: 700 46px/1 Bahnschrift, "Segoe UI", sans-serif; color: #fff; }
+  .grand small { font-size: 22px; color: var(--discret); font-weight: 400; }
+  .sous { color: var(--discret); font-size: 13px; margin-top: 6px; }
+  .jauge { height: 10px; background: #0e151c; border-radius: 99px; margin-top: 14px; overflow: hidden; }
+  .jauge i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, #2a7fd4, var(--nous)); transition: width 1s ease-out; }
+  .jauge.ile { background: #2a1518; }
+  .jauge.menace i { background: linear-gradient(90deg, #ffb020, var(--ennemi)); }
+  .gel[hidden] { display: none; }
+  .gel { display: inline-block; margin-top: 10px; font-size: 12.5px; color: #cfe3ff; background: #16324d; border: 1px solid #2d5b86; border-radius: 6px; padding: 3px 9px; }
+  .ligne { display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-top: 1px solid #1b2630; }
+  .ligne:first-of-type { border-top: 0; }
+  .ligne .id { font: 600 12px Consolas, monospace; color: var(--mission); flex: none; }
+  .ligne .quoi { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+  .ligne .quoi small { display: block; color: var(--discret); font-size: 12.5px; }
+  .ligne .carre { font: 12px Consolas, monospace; color: var(--discret); flex: none; }
+  .pastille { font-size: 11.5px; border-radius: 999px; padding: 1px 9px; border: 1px solid; flex: none; }
+  .pastille.nous { color: var(--nous); border-color: #4da3ff66; } .pastille.ennemi { color: var(--ennemi); border-color: #ff4d4d66; } .pastille.gris { color: var(--discret); border-color: var(--bord); }
+  .pastille.ambre { color: var(--ambre); border-color: #ffb34766; } .pastille.or { color: var(--or); border-color: #c9a22766; } .pastille.alerte { color: var(--alerte); border-color: #ff7a1a66; }
+  .secteurs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .secteurs span { font-size: 12px; border-radius: 6px; padding: 2px 8px; background: #2a1518; color: #ff9a9a; border: 1px solid #ff4d4d33; }
+  .secteurs span.nous { background: #10223a; color: #a9d1ff; border-color: #4da3ff40; }
+  .secteurs span.contact { background: #3a1417; color: #ff7b7b; border-color: #ff4d4d88; font-weight: 600; }
+  .secteurs span.coupee { background: #2e2310; color: var(--ambre); border-color: #ffb34788; }
+  .secteurs span.attaque { background: #2e1d0c; color: #ffc27a; border-color: var(--alerte); animation: clignote 1.4s infinite; }
+  .secteurs .reste { color: var(--discret); font-size: 12.5px; align-self: center; }
+  .archive { cursor: pointer; }
+  .archive:hover .quoi { color: var(--or); }
+  #archive-detail { margin-top: 12px; }
+  #archive-detail a { color: var(--or); }
+  #archive-detail .liste { max-height: 340px; overflow-y: auto; }
+  @keyframes clignote { 50% { opacity: .45; } }
+  .stocks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .stock { background: var(--carte); border: 1px solid var(--bord); border-radius: 10px; padding: 10px 12px; text-align: center; }
+  .stock b { display: block; font: 700 26px/1.1 Bahnschrift, "Segoe UI", sans-serif; color: #fff; }
+  .stock span { color: var(--discret); font-size: 12px; }
+  .soldats { display: flex; flex-wrap: wrap; gap: 6px; }
+  .soldats a { text-decoration: none; color: var(--texte); background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; padding: 3px 10px; font-size: 13px; }
+  .soldats a small { color: var(--ami); margin-right: 5px; }
+  .vide { color: #4f5f6d; font-style: italic; font-size: 13.5px; }
+  footer { color: #4f5f6d; font-size: 12px; padding: 0 26px 24px; }
+  @media (max-width: 1100px) { .c3, .c4, .c5 { grid-column: span 6; } .c7, .c8 { grid-column: span 12; } }
+  @media (max-width: 700px) { main { padding: 14px; grid-template-columns: 1fr; } main > * { grid-column: 1 / -1 !important; } header { padding: 12px 14px; } .stocks { grid-template-columns: repeat(2, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header>
+  <img src="/site/favicon.png" alt="">
+  <h1 class="titre">Campagne d'Everon</h1>
+  <span class="etat" id="etat"><i></i><span>Connexion…</span></span>
+  <nav><a href="/">← Accueil</a><a href="/carte/">Carte</a><a href="/effectifs/">Effectifs</a><a href="/suivi/">Développement</a></nav>
+</header>
+<main>
+  <section class="bloc c5"><h2 class="titre">Territoire</h2><div class="grand" id="ile">–</div><div class="sous" id="ile-sous">de l'île tenue par la PAG</div><div class="jauge ile"><i id="j-ile"></i></div><div class="gel" id="gel" hidden>Front gelé par l'état-major : ni capture ni perte</div></section>
+  <section class="bloc c3"><h2 class="titre">Menace ennemie</h2><div class="grand" id="menace">–</div><div class="sous">monte avec nos succès, prépare les contre-attaques</div><div class="jauge menace"><i id="j-menace"></i></div></section>
+  <section class="bloc c4"><h2 class="titre">Trésorerie</h2><div class="grand" id="euros">–</div><div class="sous">dans le coffre de la base</div></section>
+
+  <section class="bloc c7"><h2 class="titre">Missions en cours</h2><div id="missions"></div></section>
+  <section class="bloc c5"><h2 class="titre">Soldats déployés · <span id="n-soldats">0</span></h2><div class="soldats" id="soldats"></div><div class="sous" id="heure"></div></section>
+
+  <section class="bloc c12"><h2 class="titre">Dépôts de la base</h2><div class="stocks">
+    <div class="stock"><b id="s-munitions">–</b><span>munitions</span></div><div class="stock"><b id="s-carburant">–</b><span>carburant</span></div>
+    <div class="stock"><b id="s-pieces">–</b><span>pièces</span></div><div class="stock"><b id="s-vivres">–</b><span>vivres</span></div></div>
+    <div class="sous" id="production"></div></section>
+
+  <section class="bloc c6"><h2 class="titre">Derniers mouvements du front</h2><div id="front"></div></section>
+  <section class="bloc c6"><h2 class="titre">Dernières missions terminées</h2><div id="terminees"></div></section>
+
+  <section class="bloc c7"><h2 class="titre" id="titre-zones">Zones</h2><div class="secteurs" id="liste-zones"></div></section>
+  <section class="bloc c5"><h2 class="titre">Parc de véhicules</h2><div id="parc"></div></section>
+
+  <section class="bloc c12"><h2 class="titre">Campagnes précédentes</h2><div id="archives"></div><div id="archive-detail"></div></section>
+</main>
+<footer>État envoyé par le serveur de jeu, actualisé toutes les 10 secondes ; le front reste affiché serveur éteint. La carte de situation montre le front carré par carré.</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const propre = t => String(t ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const nombre = n => Number(n || 0).toLocaleString('fr-FR');
+const quand = t => { const d = new Date(t * 1000), z = n => String(n).padStart(2, '0'); return `${z(d.getDate())}/${z(d.getMonth() + 1)} à ${z(d.getHours())} h ${z(d.getMinutes())}`; };
+let menaceMax = 10;
+const jour = t => { const d = new Date(t * 1000), z = n => String(n).padStart(2, '0'); return `${z(d.getDate())}/${z(d.getMonth() + 1)}/${d.getFullYear()}`; };
+const duree = s => s >= 3600 ? Math.round(s / 3600) + ' h' : Math.max(1, Math.round(s / 60)) + ' min';
+const MOUVEMENTS = { prise: ['prise', 'nous'], perte: ['perdue', 'ennemi'], defendue: ['défendue', 'nous'], coupee: ['coupée', 'ambre'], reliee: ['reliée', 'nous'],
+                     restauration: ['retour', 'gris'], victoire: ['victoire', 'or'], debut: ['début', 'gris'] };
+let signeArchives = '';
+
+// Une campagne archivée : secteurs (état final et prises ou pertes) ou front (mouvements et lien vers sa frise sur la carte)
+async function ouvrirArchive(nom) {
+  const cadre = $('archive-detail');
+  cadre.innerHTML = '<div class="vide">Lecture de l\'archive…</div>';
+  try {
+    const r = await fetch('/campagne/api/archives/' + encodeURIComponent(nom), { cache: 'no-cache' });
+    if (!r.ok) throw new Error();
+    const a = await r.json();
+    let html = `<h2 class="titre">${propre(a.titre || nom)} · du ${jour(a.debut)} au ${jour(a.fin)}</h2>`;
+    if (a.type === 'secteurs') {
+      const etat = Object.entries(a.etat || {}).sort((x, y) => (y[1].nous - x[1].nous) || x[0].localeCompare(y[0]));
+      const tenus = etat.filter(([, s]) => s.nous);
+      html += `<div class="sous">État final : ${tenus.length} secteur${tenus.length > 1 ? 's' : ''} tenu${tenus.length > 1 ? 's' : ''} sur ${etat.length}</div>`;
+      html += `<div class="secteurs" style="margin:10px 0 14px">${etat.map(([nomS, s]) => `<span class="${s.nous ? 'nous' : ''}">${propre(nomS)}</span>`).join('')}</div>`;
+      html += '<div class="liste">' + [...(a.historique || [])].slice(-500).reverse().map(h => `<div class="ligne"><span class="pastille ${h.nous ? 'nous' : 'ennemi'}">${h.nous ? 'pris' : 'perdu'}</span><span class="quoi">${propre(h.secteur)}<small>${quand(h.t)}</small></span><span class="carre">${propre(h.carre || '')}</span></div>`).join('') + '</div>';
+    } else {
+      html += `<div class="sous"><a href="/carte/?archive=${encodeURIComponent(nom)}">Rejouer sa frise sur la carte de situation</a></div>`;
+      html += '<div class="liste" style="margin-top:10px">' + [...(a.mouvements || [])].reverse().map(m => {
+        const [mot, couleur] = MOUVEMENTS[m.type] || [m.type, 'gris'];
+        return `<div class="ligne"><span class="pastille ${couleur}">${mot}</span><span class="quoi">${propre(m.texte)}<small>${quand(m.t)}</small></span></div>`;
+      }).join('') + '</div>';
+    }
+    cadre.innerHTML = html;
+  } catch (err) { cadre.innerHTML = '<div class="vide">Archive illisible</div>'; }
+}
+
+function afficher(e) {
+  $('etat').className = 'etat ' + (e.en_ligne ? 'oui' : 'non');
+  $('etat').lastElementChild.textContent = e.en_ligne ? 'Serveur en ligne' + (e.heure_jeu ? ' · ' + e.heure_jeu + ' sur l\'île' : '') : 'Serveur hors ligne : dernières données connues';
+
+  // Territoire : part de l'île tenue, en carrés de terre ; lue dans le front gardé par le bot, visible serveur éteint
+  if (e.ile_part !== null && e.ile_part !== undefined) {
+    $('ile').innerHTML = `${Number(e.ile_part).toFixed(1).replace('.', ',')}<small> %</small>`;
+    $('j-ile').style.width = Math.min(100, Number(e.ile_part)) + '%';
+    $('ile-sous').textContent = `de l'île tenue · ${nombre(e.carres_nous)} / ${nombre(e.carres_terre)} carrés · ${e.zones_nous} / ${e.zones_total} zones`;
+  } else if (e.secteurs_total) {                       // ancien mod, front pas encore reçu
+    $('ile').innerHTML = `${e.secteurs_nous}<small> / ${e.secteurs_total}</small>`;
+    $('j-ile').style.width = (100 * e.secteurs_nous / e.secteurs_total) + '%';
+    $('ile-sous').textContent = 'secteurs tenus par la PAG';
+  } else {
+    $('ile').textContent = '–';
+    $('j-ile').style.width = '0';
+    $('ile-sous').textContent = 'front pas encore reçu';
+  }
+  $('gel').hidden = !e.gele;
+  menaceMax = Math.max(menaceMax, e.menace || 0);
+  $('menace').textContent = e.en_ligne ? e.menace : '–';
+  $('j-menace').style.width = e.en_ligne ? Math.min(100, 100 * (e.menace || 0) / menaceMax) + '%' : '0';
+  $('euros').innerHTML = e.euros === null || e.euros === undefined ? '–' : `${nombre(e.euros)}<small> €</small>`;
+
+  $('missions').innerHTML = (e.missions || []).map(m => `<div class="ligne"><span class="id">${propre(m.id)}</span><span class="quoi">${propre(m.titre)}<small>${propre(m.lieu)} · difficulté ${m.difficulte}</small></span>
+    <span class="pastille ${m.chef ? 'nous' : 'gris'}">${m.chef ? 'prise par ' + propre(m.chef) : 'libre'}</span><span class="carre">${propre(m.carre || '')}</span></div>`).join('') || '<div class="vide">Aucune mission en cours</div>';
+
+  $('n-soldats').textContent = (e.soldats || []).length + (e.places ? ' / ' + e.places : '');
+  $('soldats').innerHTML = (e.soldats || []).map(s => `<a href="${s.code ? '/soldat/' + encodeURIComponent(s.code) : '/effectifs/'}"><small>${propre(s.grade)}</small>${propre(s.nom)}</a>`).join('') || '<div class="vide">Personne sur l\'île pour le moment</div>';
+
+  for (const cle of ['munitions', 'carburant', 'pieces', 'vivres']) $('s-' + cle).textContent = e.stocks && e.stocks[cle] !== undefined ? nombre(e.stocks[cle]) : '–';
+  $('production').textContent = (e.production || []).length ? 'Production à ramasser : ' + e.production.map(p => `${p.zone || p.secteur} (${p.nombre} ${p.ressource})`).join(' · ') : '';
+
+  // Derniers mouvements du front : pastille de couleur, jamais de noms de soldats
+  if (e.mouvements && e.mouvements.length) {
+    $('front').innerHTML = e.mouvements.map(m => {
+      const [mot, couleur] = MOUVEMENTS[m.type] || [m.type, 'gris'];
+      return `<div class="ligne"><span class="pastille ${couleur}">${mot}</span><span class="quoi">${propre(m.texte)}<small>${quand(m.t)}</small></span></div>`;
+    }).join('');
+  } else if (e.derniers_secteurs && e.derniers_secteurs.length) {    // ancien mod : les secteurs, comme avant
+    $('front').innerHTML = e.derniers_secteurs.map(h => `<div class="ligne"><span class="pastille ${h.nous ? 'nous' : 'ennemi'}">${h.nous ? 'pris' : 'perdu'}</span><span class="quoi">${propre(h.secteur)}<small>${quand(h.t)}</small></span><span class="carre">${propre(h.carre || '')}</span></div>`).join('');
+  } else $('front').innerHTML = '<div class="vide">Le front n\'a pas encore bougé</div>';
+  $('terminees').innerHTML = (e.missions_terminees || []).map(m => `<div class="ligne"><span class="quoi">${propre(m.texte)}<small>${quand(m.t)}</small></span></div>`).join('') || '<div class="vide">Aucune mission terminée enregistrée</div>';
+
+  // Zones : tenues (bleu), attaquées (orange qui clignote), au contact (rouge vif, carrés bleus / carrés), coupées (ambre), puis le reste
+  if (e.zones && e.zones.length) {
+    $('titre-zones').textContent = 'Zones';
+    const zones = e.zones, attaquees = zones.filter(z => z.a), tenues = zones.filter(z => z.o && !z.a), contact = zones.filter(z => !z.o && z.f && !z.a);
+    const arriere = zones.length - attaquees.length - tenues.length - contact.length;
+    const coupee = z => z.kr >= 0 ? `coupée de la base : ${duree(z.kr)} avant la perte` : 'coupée de la base';
+    $('liste-zones').innerHTML = attaquees.map(z => `<span class="attaque" title="${z.a === 2 ? 'assaut en cours' : 'attaque annoncée'}">${propre(z.l)} — ${z.a === 2 ? 'assaut' : 'attaque'}</span>`).join('')
+      + tenues.map(z => `<span class="${z.k ? 'coupee' : 'nous'}" title="${z.k ? coupee(z) : 'à nous'}">${propre(z.l)}${z.k ? ' — coupée' : ''}</span>`).join('')
+      + contact.map(z => `<span class="contact" title="au contact du front : ${z.b} carrés à nous sur ${z.t}">${propre(z.l)} · ${z.b}/${z.t}</span>`).join('')
+      + (arriere > 0 ? `<span class="reste">et ${arriere} zone${arriere > 1 ? 's' : ''} ennemie${arriere > 1 ? 's' : ''} à l'arrière</span>` : '');
+  } else {
+    // ancien mod : les secteurs
+    $('titre-zones').textContent = (e.secteurs || []).length ? 'Secteurs' : 'Zones';
+    const secteurs = [...(e.secteurs || [])].sort((a, b) => (b.attaque - a.attaque) || (b.nous - a.nous) || a.nom.localeCompare(b.nom));
+    $('liste-zones').innerHTML = secteurs.map(s => `<span class="${s.attaque ? 'attaque' : (s.nous ? 'nous' : '')}" title="carré ${propre(s.carre)}">${propre(s.nom)}${s.attaque ? ' — attaque' : ''}</span>`).join('') || '<div class="vide">Le serveur n\'a pas encore envoyé son front</div>';
+  }
+
+  // Campagnes précédentes (K1, B3) : un clic ouvre l'archive
+  const archives = e.archives || [];
+  const signe = JSON.stringify(archives);
+  if (signe !== signeArchives) {
+    signeArchives = signe;
+    $('archives').innerHTML = archives.map(a => `<div class="ligne archive" data-nom="${propre(a.nom)}"><span class="pastille ${a.type === 'front' ? 'nous' : 'gris'}">${a.type === 'front' ? 'front' : 'secteurs'}</span><span class="quoi">${propre(a.titre)}<small>du ${jour(a.debut)} au ${jour(a.fin)} · ${a.n} mouvement${a.n > 1 ? 's' : ''}</small></span></div>`).join('')
+      || '<div class="vide">Aucune campagne archivée pour le moment</div>';
+    for (const el of document.querySelectorAll('.archive')) el.onclick = () => ouvrirArchive(el.dataset.nom);
+  }
+  $('parc').innerHTML = (e.parc || []).map(v => `<div class="ligne"><span class="quoi">${propre(v.nom)}<small>${propre(v.etat)}</small></span><span class="pastille ${v.base ? 'nous' : 'gris'}">${v.base ? 'à la base' : 'sorti'}</span><span class="carre">${propre(v.carre)}</span></div>`).join('') || '<div class="vide">Aucun véhicule au parc</div>';
+}
+
+async function actualiser() {
+  try { afficher(await (await fetch('/campagne/api', { cache: 'no-store' })).json()); }
+  catch (err) { $('etat').className = 'etat non'; $('etat').lastElementChild.textContent = 'Site injoignable, nouvel essai…'; }
+}
+actualiser();
+setInterval(actualiser, 10000);
+</script>
+</body>
+</html>

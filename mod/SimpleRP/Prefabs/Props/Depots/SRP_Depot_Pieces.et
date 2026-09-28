@@ -1,0 +1,129 @@
+GenericEntity {
+ ID "6A55338FF7E21702"
+ components {
+  MeshObject "{6A55338FF7E21717}" {
+   Object "{208C4BA2BF6602D8}Assets/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01_vehicle.xob"
+   LODFactors {
+   }
+  }
+  RigidBody "{6A55338FF7E21763}" {
+   Mass 10
+   ResponseIndex "TinyDestructible"
+   ModelGeometry 1
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{6A55338FF7E2177C}" {
+   Enabled 0
+   "Additional hit zones" {
+    SCR_HitZone Default {
+     HZDefault 1
+     "Melee multiplier" 1
+     "Kinetic multiplier" 1
+     "Explosive multiplier" 90
+     "Incendiary multiplier" 1
+    }
+   }
+   m_fBaseHealth 500
+   m_fForceToDamageScale 350
+   m_fDamageThresholdMaximum 40000
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{6A55338FF7E21777}" {
+     m_vOffsetPosition 0 0.3 0
+     m_ModelPrefabs {
+      "{AE6DE9DEA19D68B7}Assets/Props/Debris/Metal/FragmentMetal_dbr_03.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{D9678156553F87C7}Assets/Props/Debris/Metal/FragmentMetal_dbr_02.xob" "{AE6DE9DEA19D68B7}Assets/Props/Debris/Metal/FragmentMetal_dbr_03.xob" "{0A04F02D30BA8459}Assets/Props/Debris/Metal/FragmentMechanical_dbr_03.xob" "{0A04F02D30BA8459}Assets/Props/Debris/Metal/FragmentMechanical_dbr_03.xob"
+     }
+     m_fMass 1
+     m_eMaterialSoundType METAL_LIGHT
+    }
+    SCR_ParticleSpawnable "{6A55338FF7E21771}" {
+     m_Particle "{C436A8D33CE1AA4E}Particles/Props/Dest_Prop_Wood_Small.ptc"
+    }
+   }
+   m_eMaterialSoundType BREAK_WOOD_SOLID
+  }
+  SCR_SoundDataComponent "{6A55338FF7E21772}" {
+   m_aAudioSourceConfiguration {
+    SCR_AudioSourceConfiguration "{6A55338FF7E2174F}" {
+     m_sSoundProject "{A73D28179B395F19}Sounds/Props/Military/AmmoBoxes/AmmoBox_Big_Wooden/Props_AmmoBox_Big_Wooden.acp"
+     m_sSoundEventName "SOUND_CONTAINER_OPEN"
+    }
+    SCR_AudioSourceConfiguration "{6A55338FF7E2174E}" {
+     m_sSoundProject "{A73D28179B395F19}Sounds/Props/Military/AmmoBoxes/AmmoBox_Big_Wooden/Props_AmmoBox_Big_Wooden.acp"
+     m_sSoundEventName "SOUND_CONTAINER_CLOSE"
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{6A55338FF7E21747}" {
+   Attributes SCR_ItemAttributeCollection "{6A55338FF7E21740}" {
+    ItemDisplayName SCR_InventoryUIInfo "{6A55338FF7E2175E}" {
+     Name "#AR-Ammobox_Name"
+     Description "#AR-Ammobox_Name"
+     m_aItemHints {
+      SCR_SupplyAvailableItemHintUIInfo "{6A55338FF7E216AD}" {
+       Name "#AR-Item_SupplyConsumer_Hint1"
+       Icon "{8EB808BFA227C080}UI/Textures/Icons/InventoryHints/InventoryHint_SuppliesStored.edds"
+       m_bHideInArsenal 1
+      }
+     }
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6A55338FF7E216A9}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 2
+      FOV 30
+      AspectRatio 1
+     }
+     PreviewRenderAttributes "{6A55338FF7E216AA}" {
+      CameraOrbitAngles -25 25 0
+      CameraDistanceToItem 1.5
+      FOV 30
+      AspectRatio 1
+     }
+    }
+    m_SlotType SLOT_ANY
+   }
+   Priority 1000
+   UseCapacityCoefficient 0
+   MaxCumulativeVolume 99999997952
+   m_fMaxWeight 1000000000
+  }
+  SRP_DepotComponent "{6A55338FF7E216A7}" {
+   m_eResource PIECES
+  }
+  SRP_ContainerInventoryStorageManagerComponent "{6A553C2677389758}" {
+  }
+  ActionsManagerComponent "{6A55338FF7E216A0}" {
+   ActionContexts {
+    UserActionContext "{6A55338FF7E216BE}" {
+     ContextName "default"
+     Position PointInfo "{6A55338FF7E216BB}" {
+      Offset -0.0301 0.3157 -0.028
+     }
+     Radius 0.5
+    }
+   }
+   additionalActions {
+    SCR_OpenStorageAction "{6A55338FF7E216B6}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6A55338FF7E216B0}" {
+      Name "#AR-Inventory_OpenAmmoBox"
+     }
+    }
+    SRP_DepotConsultAction "{6A55338FF7E216B3}" {
+     ParentContextList {
+      "default"
+     }
+     VisibilityRange 3
+    }
+   }
+  }
+  RplComponent "{6A55338FF7E2168C}" {
+   "Parent Node From Parent Entity" 0
+  }
+ }
+ Flags 0x403 0
+ coords 4919.906 642.874 6389.189
+ angles 0 -68.692 0
+}

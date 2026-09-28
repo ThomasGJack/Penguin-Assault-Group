@@ -1,0 +1,9 @@
+GenericEntity : "{6A5B0C0D0E0F8002}Prefabs/Missions/SRP_Cible_Mortier.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 1
+   m_fBaseHealth 1000
+  }
+ }
+}

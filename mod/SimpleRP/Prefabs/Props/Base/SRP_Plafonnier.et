@@ -1,0 +1,54 @@
+GenericEntity : "{97CCD43778D034CF}Prefabs/Props/Furniture/LightCeiling_01.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{6A5B0C0D0E0FE011}" {
+     SourceMaterial "LightCeiling_01_Glass"
+     AssignedMaterial "{E21591A9C6D08AE8}Assets/Props/Furniture/LightCeiling_01/data/LightCeiling_01_Glass_on.emat"
+    }
+   }
+  }
+  SCR_BaseInteractiveLightComponent "{6A5B0C0D0E0FE012}" {
+   m_aLightData {
+    SCR_BaseLightData "{6A5B0C0D0E0FE013}" {
+     m_eLightType SPOT
+     m_vLightOffset 0 -0.783 0
+     m_vLightColor 1 0.8659 0.702
+     m_vLightConeDirection 0 -1 0
+     m_fConeAngle 150
+     m_fRadius 8
+     m_fIntensityClipEV -10
+     m_eFlareType Disabled
+     m_eLightFlags 3
+    }
+   }
+   m_fLV 2
+   m_eInitialLightState LIT
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0FE015}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0FE016}" {
+     ContextName "Switch"
+     Position PointInfo "{6A5B0C0D0E0FE017}" {
+      Offset 0 -0.8 0
+     }
+     Radius 1.5
+    }
+   }
+   additionalActions {
+    SCR_SwitchLightUserAction "{6A5B0C0D0E0FE018}" {
+     ParentContextList {
+      "Switch"
+     }
+     Duration 0
+     m_sLightDescription "Allumer la lumière"
+     m_sExtinguishDescription "Éteindre la lumière"
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+}

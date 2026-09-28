@@ -1,0 +1,28 @@
+GenericEntity : "{AE09DA7896F9DB37}Prefabs/Props/Fabric/Flags/Flag_1_2.et" {
+ ID "50E2C85E7DD38DD0"
+ components {
+  MeshObject "{52AE82368499B365}" {
+   Enabled 0
+   Materials {
+    MaterialAssignClass "{6A4E97AF71935EC6}" {
+     SourceMaterial "Flag_1_2"
+     AssignedMaterial "{A5A2A73F368C2C17}Assets/Props/Fabric/Flags/Data/Flag_1_2_FRANCE.emat"
+    }
+   }
+  }
+  SRP_CivilZoneComponent "{6A4E97AF63574AB6}" {
+   m_fRadius 350
+   m_iWalkers 15
+   m_iAutoPosts 50
+   m_iAutoParked 50
+   m_iAutoDrivers 50
+  }
+  StaticSoundComponent "{56FAB4D3F4B7889A}" {
+   Enabled 0
+  }
+  FlagAnimationComponent "{665AFC2FA3F2A447}" {
+   Enabled 0
+  }
+ }
+ coords -1.181 4.118 6.336
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{371F3544B6C4BCEE}Prefabs/Characters/HeadGear/TCNVG_Helmet/MSA_TCNVG_CCE.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

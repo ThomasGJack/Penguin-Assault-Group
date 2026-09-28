@@ -1,0 +1,132 @@
+# Zones du front, écrit au démarrage du serveur le 2026-09-27 14:29:47. Ne pas modifier : les retouches se font dans front_retouches.txt
+# Grille de 64 x 64 carrés de 200 m ; 1399 carrés en jeu ; 66 zones ; 30 localités de zone
+# Base « Base de Levie » : 167 carrés (161 à 1500 m au plus du marqueur, 6 venus de petits morceaux versés dans la base)
+# Terre ou mer : 65536 points testés en 4 ms ; 6 îlot(s) sans localité retiré(s) (45 carrés) ; 1 île(s) gardée(s)
+# Morceaux de blocs : 82, puis 18 fusion(s) de morceaux de moins de 5 carrés
+# Localités : 34 lue(s) dans les zones civiles, 0 sur la carte ; localités de la base : Levie Laruns Camurac La Valette
+# Points clés : 30 posé(s), 35 manquant(s) (centre sur le nom de la carte ou QG absent)
+# Somme de contrôle de la géométrie : 5698564
+# Q3 : bloc 040 070 coupé entre Montignac / Gravette
+# Q3 : bloc 040 090 coupé entre Meaux / Tyrone
+
+ZONES
+S00 — Base de Levie — 167 carré(s) — la base (B2)
+S01 — LES SIX CLOCHES — 5 carré(s) — sans localité — voisine de la base
+S02 — VALLON VERT — 10 carré(s) — sans localité — voisine de la base
+S03 — La Valette — 13 carré(s) — sans localité — voisine de la base
+S04 — Skua Point — 7 carré(s) — sans localité — voisine de la base
+S05 — Régina — 21 carré(s) — village Régina : centre nom de la carte (MANQUANT), carré 072 022 — voisine de la base
+S06 — Morton — 25 carré(s) — ville Morton : centre nom de la carte (MANQUANT), carré 050 040, QG MANQUANT — voisine de la base
+S07 — Camurac — 15 carré(s) — sans localité — voisine de la base
+S08 — Sillon des Mouettes — 12 carré(s) — sans localité
+S09 — CRÊTE DES FANAUX — 27 carré(s) — sans localité — voisine de la base
+S10 — Durras — 25 carré(s) — village Durras : centre nom de la carte (MANQUANT), carré 088 026 — voisine de la base
+S11 — Chotain — 16 carré(s) — village Chotain : centre nom de la carte (MANQUANT), carré 070 060
+S12 — Figari — 25 carré(s) — village Figari : centre nom de la carte (MANQUANT), carré 052 052
+S13 — MONT SAINTE-MARGUERITE — 25 carré(s) — sans localité
+S14 — PLATEAU EST — 25 carré(s) — sans localité
+S15 — Perelle — 14 carré(s) — hameau Perelle : centre nom de la carte (MANQUANT), carré 092 050
+S16 — Vernon — 25 carré(s) — village Vernon : centre nom de la carte (MANQUANT), carré 092 020
+S17 — Le Bosc — 17 carré(s) — hameau Le Bosc : centre nom de la carte (MANQUANT), carré 078 014
+S18 — Provins — 25 carré(s) — village Provins : centre nom de la carte (MANQUANT), carré 054 060
+S19 — VALLÉE DE MORTON — 25 carré(s) — sans localité
+S20 — Pointe de la Souche — 7 carré(s) — sans localité
+S21 — COLLINE AU LOUP — 18 carré(s) — sans localité
+S22 — MONT-LA-DÉFERLE — 25 carré(s) — sans localité
+S23 — LE CALVAIRE — 25 carré(s) — sans localité
+S24 — PUY DU BRACONNIER — 16 carré(s) — sans localité
+S25 — Grotte des Passeurs — 12 carré(s) — sans localité
+S26 — Bénac — 25 carré(s) — hameau Bénac : centre nom de la carte (MANQUANT), carré 064 070
+S27 — Saint-Pierre — 26 carré(s) — ville Saint-Pierre : centre nom de la carte (MANQUANT), carré 096 014, QG MANQUANT
+S28 — Les Cascades — 25 carré(s) — sans localité
+S29 — BOIS-NEUF — 25 carré(s) — sans localité
+S30 — Entre-Deux — 25 carré(s) — village Entre-Deux : centre nom de la carte (MANQUANT), carré 056 070
+S31 — Roqueloup — 25 carré(s) — sans localité
+S32 — Courbet — 7 carré(s) — sans localité
+S33 — BOIS-VIEUX — 13 carré(s) — sans localité
+S34 — Richemont — 25 carré(s) — hameau Richemont : centre nom de la carte (MANQUANT), carré 034 050
+S35 — Cap de la Goëlette — 26 carré(s) — sans localité
+S36 — MONT DES PIOCHES — 15 carré(s) — sans localité
+S37 — Flambeau d'André — 26 carré(s) — sans localité
+S38 — Montignac — 12 carré(s) — ville Montignac : centre nom de la carte (MANQUANT), carré 046 070, QG MANQUANT
+S39 — Gravette — 13 carré(s) — village Gravette : centre nom de la carte (MANQUANT), carré 040 076
+S40 — La Roue — 20 carré(s) — sans localité
+S41 — Lacourt — 25 carré(s) — hameau Lacourt : centre nom de la carte (MANQUANT), carré 038 062
+S42 — Lancre — 16 carré(s) — hameau Lancre : centre nom de la carte (MANQUANT), carré 116 022
+S43 — GRANPIERRE — 22 carré(s) — sans localité
+S44 — Kervel — 25 carré(s) — hameau Kervel : centre nom de la carte (MANQUANT), carré 024 042
+S45 — Pointe du Varech — 10 carré(s) — sans localité
+S46 — Pointe des Escarpes — 18 carré(s) — sans localité
+S47 — Trou du Soc — 15 carré(s) — sans localité
+S48 — Le Moule — 25 carré(s) — village Le Moule : centre nom de la carte (MANQUANT), carré 026 052
+S49 — Gorey — 25 carré(s) — hameau Gorey : centre nom de la carte (MANQUANT), carré 048 080
+S50 — Kermovan — 8 carré(s) — hameau Kermovan : centre nom de la carte (MANQUANT), carré 062 096
+S51 — Villeneuve — 25 carré(s) — village Villeneuve : centre nom de la carte (MANQUANT), carré 028 062
+S52 — Promontoire de Lacan — 24 carré(s) — sans localité
+S53 — CRÊTE DE TYRONE — 6 carré(s) — sans localité
+S54 — Redon — 18 carré(s) — hameau Redon : centre nom de la carte (MANQUANT), carré 022 074
+S55 — PUY-LONG — 5 carré(s) — sans localité
+S56 — Tyrone — 3 carré(s) — village Tyrone : centre nom de la carte (MANQUANT), carré 048 090
+S57 — Cap du Pilori — 11 carré(s) — sans localité
+S58 — Étoupe — 29 carré(s) — hameau Étoupe : centre nom de la carte (MANQUANT), carré 052 100
+S59 — Meaux — 22 carré(s) — village Meaux : centre nom de la carte (MANQUANT), carré 044 094
+S60 — Lamentin — 22 carré(s) — ville Lamentin : centre nom de la carte (MANQUANT), carré 012 058, QG MANQUANT
+S61 — Saint-Philippe — 28 carré(s) — ville Saint-Philippe : centre nom de la carte (MANQUANT), carré 044 106, QG MANQUANT
+S62 — Les Creux — 15 carré(s) — hameau Les Creux : centre nom de la carte (MANQUANT), carré 052 112
+S63 — COLLINE AUX PENDUS — 18 carré(s) — sans localité
+S64 — La Gorgée du Barreur — 6 carré(s) — sans localité
+S65 — Pointe de la Genièvre — 9 carré(s) — sans localité
+S66 — Erquy — 34 carré(s) — village Erquy : centre nom de la carte (MANQUANT), carré 108 116 — île
+Liaison par la mer (Q5) : 106 114 dans Erquy (S66) <-> 076 092 dans Cap de la Goëlette (S35)
+
+AVERTISSEMENTS (35)
+- Saint-Philippe : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Saint-Philippe : ville sans QG (MANQUANT, repère SRP_PointCle_QG à poser au Workbench)
+- Morton : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Morton : ville sans QG (MANQUANT, repère SRP_PointCle_QG à poser au Workbench)
+- Saint-Pierre : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Saint-Pierre : ville sans QG (MANQUANT, repère SRP_PointCle_QG à poser au Workbench)
+- Montignac : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Montignac : ville sans QG (MANQUANT, repère SRP_PointCle_QG à poser au Workbench)
+- Lamentin : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Lamentin : ville sans QG (MANQUANT, repère SRP_PointCle_QG à poser au Workbench)
+- Gravette : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Erquy : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Chotain : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Meaux : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Provins : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Figari : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Le Moule : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Villeneuve : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Tyrone : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Entre-Deux : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Durras : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Vernon : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Régina : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Redon : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Perelle : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Les Creux : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Gorey : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Lacourt : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Kervel : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Kermovan : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Lancre : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Richemont : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Le Bosc : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Bénac : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+- Étoupe : aucun repère de centre, point clé sur le nom de la carte (MANQUANT, repère SRP_PointCle_Centre à poser au Workbench)
+
+RETOUCHES : 0 appliquée(s), 0 refusée(s)
+
+VILLAGES COUPÉS (carrés dont le centre est à moins de 200 m du centre de la localité, dans une autre zone)
+- Morton (Morton (S06)) : 050 038 dans Sillon des Mouettes (S08), 052 038 dans Sillon des Mouettes (S08)
+- Lamentin (Lamentin (S60)) : 012 060 dans Cap du Pilori (S57)
+- Chotain (Chotain (S11)) : 070 058 dans LES SIX CLOCHES (S01)
+- Provins (Provins (S18)) : 054 058 dans Figari (S12)
+- Tyrone (Tyrone (S56)) : 048 088 dans Gorey (S49), 050 090 dans Promontoire de Lacan (S52)
+- Entre-Deux (Entre-Deux (S30)) : 056 068 dans Provins (S18), 058 068 dans Provins (S18)
+- Vernon (Vernon (S16)) : 092 018 dans Saint-Pierre (S27)
+- Perelle (Perelle (S15)) : 092 048 dans CRÊTE DES FANAUX (S09)
+- Richemont (Richemont (S34)) : 034 048 dans Roqueloup (S31)
+- Le Bosc (Le Bosc (S17)) : 080 014 dans MONT-LA-DÉFERLE (S22)
+- Étoupe (Étoupe (S58)) : 052 098 dans Promontoire de Lacan (S52), 054 098 dans Promontoire de Lacan (S52)

@@ -1,0 +1,17 @@
+[Unit]
+Description=PAG-Bot (Discord <-> Arma Reforger)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pagbot
+WorkingDirectory=/opt/pag-bot
+Environment=DISCORD_TOKEN=COLLE-LE-JETON-ICI
+Environment=PYTHONUTF8=1
+ExecStart=/opt/pag-bot/venv/bin/python /opt/pag-bot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

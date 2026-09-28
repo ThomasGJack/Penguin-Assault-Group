@@ -1,0 +1,73 @@
+# Réglages du FRONT (cartes #75 et #76), lus au démarrage du serveur et par le bouton Staff « Relire les réglages »
+# Une ligne par réglage : clé = valeur   (le texte après # est une aide). Virgule ou point acceptés pour les décimaux.
+# Interrupteurs : 1 ou 0 (oui ou non). Une ligne effacée reprend sa valeur de départ : elle est réécrite en fin de fichier.
+# Durées en secondes (_s), minutes (_min) ou heures (_h) ; distances en mètres (_m) ; parts en centièmes ou « sur 100 ».
+# Valeurs de départ : les choix de Jack (QCM et arbitrages). Modifier la valeur après le signe égal, puis relire les réglages.
+
+# --- Front ---
+front_attaque_minutes_menace0 = 180   # Délai entre deux contre-attaques à menace 0, en minutes (F6)
+front_attaque_minutes_menace10 = 60   # Délai entre deux contre-attaques à menace 10, en minutes (F6)
+front_attaque_alea = 20   # Aléa du délai entre deux contre-attaques, en plus ou en moins, sur 100 (F6)
+front_attaque_joueurs = 4   # Joueurs connectés au moins pour que l'horloge des contre-attaques avance (H4)
+front_attaque_annonce_minutes = 15   # Annonce d'une contre-attaque avant l'assaut, en minutes (F6)
+front_attaque_vague_minutes = 5   # Intervalle entre deux vagues, en minutes (F6)
+front_attaque_vagues = 3   # Vagues prévues par contre-attaque (Commandeur gelé ou actif ; actif : révisées à la 2e vague, CA3)
+front_attaque_duree_max_minutes = 60   # L'ennemi rompt le contact après ce nombre de minutes d'assaut (C8)
+front_attaque_derniere_prise = 70   # Chance, sur 100, que la contre-attaque vise la dernière zone prise (F2)
+front_postes_max = 4   # Postes du front vivants en même temps, au plus (Q7)
+front_postes_part = 25   # Part des carrés rouges du front tenus par un poste, sur 100 (F8)
+front_poste_retour_heures = 6   # Un poste anéanti ne revient qu'après ce nombre d'heures, ou au redémarrage (F9)
+front_offensive = 1   # Offensive de la nuit, une fois par jour (H2) : 1 oui, 0 non
+front_offensive_base = 10   # Offensive de la nuit : chance de réussite de base, sur 100 (Q1)
+front_offensive_par_menace = 5   # Offensive de la nuit : chance ajoutée par point de menace, sur 100 (Q1)
+front_offensive_max = 60   # Offensive de la nuit : chance maximale, sur 100 (Q1)
+front_offensive_heure_debut = 3   # Offensive de la nuit : début de la fenêtre, heure du serveur (Q1)
+front_offensive_heure_fin = 7   # Offensive de la nuit : fin de la fenêtre, exclue, heure du serveur (Q1)
+front_offensive_vide_minutes = 30   # Offensive de la nuit : serveur vide depuis ce nombre de minutes (Q1)
+front_regarnissage_heures = 4   # Heures réelles pour qu'une localité soit de nouveau pleine, un quart par heure (F12)
+front_infiltration_chance = 15   # Chance, sur 100, d'une patrouille de fond côté bleu près du rouge (F10)
+front_capture_minutes = 1   # Minutes de présence sans ennemi pour prendre un carré (C4 ; 1 pour les essais)
+front_capture_redescente = 1   # Vitesse de redescente de la progression sans personne, comparée à la montée (C7 ; 1 = même vitesse)
+front_exclusion_minutes = 0   # Minutes pendant lesquelles un joueur ne compte pas après la fermeture du Game Master ou une possession (C3 ; 0 = seulement pendant ; la téléportation ne compte plus)
+front_reprise_secondes = 60   # Secondes d'occupation par un soldat de l'attaque, sans joueur, pour reprendre un carré (F3, Q2)
+front_garde_point_cle_m = 100   # Un joueur à moins de tant de mètres d'un point clé empêche la reprise de son carré (F5, Q2)
+front_saisie_rayon_m = 100   # Aucun ennemi en état de combattre à moins de tant de mètres du point clé pour saisir le poste (D5)
+front_chute_part = 50   # Part minimale de carrés bleus, sur 100, pour qu'une zone avec localité tombe une fois ses points clés saisis (D1)
+front_chute_sans_village_part = 50   # Part de carrés bleus, sur 100, pour qu'une zone sans localité tombe (Q4)
+front_perte_part = 50   # Une zone à nous repasse rouge quand plus de cette part, sur 100, de ses carrés est rouge et ses points clés repris (Q2)
+front_menace_prise = 1   # Menace ajoutée par zone prise (G9, Q6)
+front_menace_perte = 1   # Menace retirée par zone perdue (G9, Q6)
+front_coupure_minutes = 1440   # Minutes réelles au bout desquelles une zone coupée de la base repasse rouge (E4, Q1 : 1440 = 24 h ; 2 pour les essais)
+front_coupure_rappel_minutes = 60   # Rappel radio tant de minutes avant la perte d'une zone coupée (E4)
+front_sauvegarde_secondes = 30   # front.json est écrit au plus tant de secondes après un changement de carré
+front_copies_jours = 30   # Copies datées de front.json gardées, une par jour (J2)
+front_victoire_minutes = 0   # Minutes entre la victoire et la nouvelle campagne ; 0 = au prochain démarrage du serveur (B3)
+front_prod_vivres = 10   # Vivres par heure d'une zone de village, de bourg ou de ville (G4)
+front_prod_munitions = 6   # Munitions par heure d'une zone de hameau (G4)
+front_prod_carburant = 8   # Débit par défaut d'une zone désignée carburant dans front_retouches.txt (G5)
+front_prod_pieces = 6   # Débit par défaut d'une zone désignée pièces dans front_retouches.txt (G5)
+front_prod_plafond_heures = 3   # Heures de production au plus en attente dans la caisse d'une zone (G4)
+front_radio_carres = 1   # Une ligne radio par carré pris ou perdu au combat (I5 ; 1 = oui, 0 = non)
+front_radio_regroupe = 3   # Au-delà de tant de carrés d'une même zone dans un passage de 5 s, une seule ligne radio (I5)
+front_prime_hameau = 300   # Prime d'une zone prise sous mission, hameau, en euros (G8, Q9)
+front_prime_village = 500   # Prime d'une zone prise sous mission, village, en euros (G8, Q9)
+front_prime_ville = 800   # Prime d'une zone prise sous mission, ville ou bourg, en euros (G8, Q9)
+front_prime_sans_village = 200   # Prime d'une zone sans localité prise sous mission, en euros (Q4, Q9)
+front_captures_max = 1   # Captures en cours à la fois sous le seuil de joueurs connectés (G3)
+front_captures_max_monde = 2   # Captures en cours à la fois à partir du seuil de joueurs connectés (G3)
+front_captures_seuil_joueurs = 10   # Joueurs connectés à partir desquels la limite haute des captures s'applique (G3)
+front_capture_rayon_m = 3000   # Capture : un soldat à cette distance du point clé engage la mission et la tient, en mètres (G1)
+front_capture_absence_minutes = 15   # Capture engagée : minutes sans aucun soldat dans la zone avant l'échec (G1)
+front_controle_distance_base_m = 1000   # Contrôle routier : distance minimale de la base, en mètres (Q10)
+
+# Ajoutés le 2026-09-27 : réglages nouveaux de cette version du mod, avec leur valeur de départ
+
+# --- Front ---
+front_radio_passage = 1   # Message radio au joueur à chaque passage entre territoire ami et ennemi (1 = oui, 0 = non)
+
+# Ajoutés le 2026-09-27 : réglages nouveaux de cette version du mod, avec leur valeur de départ
+
+# --- Front ---
+front_bloc_genres = ville,village   # Genres de localités dont le centre se prend d'un seul bloc (ville, village, hameau ; séparés par des virgules)
+front_bloc_rayon_m = 600   # Bloc d'une localité : carrés de sa zone à moins de tant de mètres de son centre (0 = aucun bloc)
+front_bloc_minutes = 5   # Minutes de présence sans ennemi dans le bloc pour prendre tous ses carrés d'un coup

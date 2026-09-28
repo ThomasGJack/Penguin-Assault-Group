@@ -1,0 +1,41 @@
+GenericEntity : "{98079765627F6EA3}Prefabs/Props/Civilian/Computer_E_01/Computer_E_01_case.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  StaticSoundComponent "{6A4E8668B015F777}" {
+   Filenames {
+    "{5FC6F9522FDC06B3}Sounds/Props/Civilian/Computer_E_01/Props_Computer_E_01.acp"
+   }
+   Signals 0x6 0
+  }
+  ActionsManagerComponent "{6A4E8668A34EF25E}" {
+   ActionContexts {
+    UserActionContext "{6A4E8668A2707132}" {
+     UIInfo UIInfo "{6A4E8668D996DD3D}" {
+      Name "terminal"
+     }
+     ContextName "terminal"
+     Position PointInfo "{6A4E866B639F286B}" {
+      Offset 0 0.2594 0.0669
+     }
+    }
+   }
+   additionalActions {
+    SRP_TerminalAction "{6A4E8668D47C78F0}" {
+     ParentContextList {
+      "terminal"
+     }
+     Duration 3
+    }
+   }
+  }
+ }
+ coords 7543.744 166.283 4236.648
+ angles 0 104.443 7.42
+ {
+  GenericEntity : "{2595F6426CDFDBBB}Prefabs/Props/Civilian/Computer_E_01/Computer_E_01_Monitor_on.et" {
+   ID "6A4E8668B015F704"
+   coords 0 0.116 -0.08
+   angles 0 -1.906 0
+  }
+ }
+}

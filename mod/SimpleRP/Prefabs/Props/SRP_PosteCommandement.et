@@ -1,0 +1,76 @@
+GenericEntity : "{1A1020205E2B1710}Prefabs/Props/Military/Furniture/TableMilitary_USSR_01.et" {
+ ID "5272E314F01B2DBE"
+ components {
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0F7A31}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0F7A32}" {
+     UIInfo UIInfo "{6A5B0C0D0E0F7A33}" {
+      Name "pc"
+     }
+     ContextName "pc"
+     Position PointInfo "{6A5B0C0D0E0F7A34}" {
+      Offset 0 0.9 0
+     }
+     Radius 1.5
+     Omnidirectional 1
+    }
+   }
+   additionalActions {
+    SRP_SaisiePCAction "{6A5B0C0D0E0F7A35}" {
+     ParentContextList {
+      "pc"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0F7A36}" {
+      Name "Saisir le poste de commandement"
+     }
+     ActionTitle "Saisir le poste de commandement"
+     VisibilityRange 3
+     Duration 60
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+  SRP_PosteCommandementComponent "{6A5B0C0D0E0F7A37}" {
+  }
+ }
+ coords 0 0 0
+ {
+  GenericEntity : "{768CF778D67BC9D0}Prefabs/Props/Military/Radios/RadioStation_R107M_01.et" {
+   ID "6A5B0C0D0E0F7A38"
+   components {
+    SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+     Enabled 0
+    }
+    Hierarchy "{6A5B0C0D0E0F7A3B}" {
+    }
+   }
+   coords 0.15 0.899 -0.1
+   angles 0 8 0
+  }
+  GenericEntity : "{942A96E02BC7AFA6}Prefabs/Items/Equipment/Maps/Map_Paper_01/Map_Paper_01_unfolded_table_USSR.et" {
+   ID "6A5B0C0D0E0F7A39"
+   components {
+    RigidBody "{65C483320A3E75C2}" {
+     Static 1
+    }
+   }
+   coords -0.372 0.899 0.061
+   angles 0 -1.91 0
+  }
+  GenericEntity : "{31F557BF1315EF23}Prefabs/Props/Garbage/Generic/LitterInterior_01/Single/LitterInterior_USSR_01_document_V1.et" {
+   ID "6A5B0C0D0E0F7A3A"
+   components {
+    SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+     Enabled 0
+    }
+   }
+   coords 0.46 0.899 0.08
+   angles 0 -20 0
+  }
+ }
+}

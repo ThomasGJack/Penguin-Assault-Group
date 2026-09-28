@@ -1,0 +1,45 @@
+GenericEntity : "{4CC2C69DE1AEF103}Prefabs/Props/Core/DestructibleMultiPhase_Props_Base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{1F98F8597D147152}Assets/Props/Military/Antennas/Antenna_USSR_02/Antenna_USSR_02.xob"
+  }
+  RigidBody "{5872F0EB7DFB5A9D}" {
+   Static 1
+  }
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{6A5B0C0D0E0F8101}" {
+   ActionContexts {
+    UserActionContext "{6A5B0C0D0E0F8102}" {
+     UIInfo UIInfo "{6A5B0C0D0E0F8103}" {
+      Name "poste"
+     }
+     ContextName "poste"
+     Position PointInfo "{6A5B0C0D0E0F8104}" {
+      Offset 0 1 0
+     }
+     Radius 1.5
+    }
+   }
+   additionalActions {
+    SRP_SabotageAction "{6A5B0C0D0E0F8105}" {
+     ParentContextList {
+      "poste"
+     }
+     UIInfo UIInfo "{6A5B0C0D0E0F8106}" {
+      Name "Saboter"
+     }
+     ActionTitle "Saboter"
+     VisibilityRange 4
+     Duration 5
+    }
+   }
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 0 0 0
+}
